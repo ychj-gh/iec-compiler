@@ -67,6 +67,8 @@ extern runtime_options_t runtime_options;
 #define ERROR               error_exit(__FILE__,__LINE__)
 #define ERROR_MSG(msg, ...) error_exit(__FILE__,__LINE__, msg, ## __VA_ARGS__)
 
+#define CP(x) {fprintf(stderr, "check point %d\n", x);}
+
 extern void error_exit(const char *file_name, int line_no, const char *errmsg = NULL, ...);
 
 

@@ -4658,6 +4658,7 @@ function_declaration:
 | function_name_declaration ':' elementary_type_name io_OR_function_var_declarations_list function_body END_FUNCTION
 	{$$ = new function_declaration_c($1, $3, $4, $5, locloc(@$));
 	 add_en_eno_param_decl_c::add_to($$); /* add EN and ENO declarations, if not already there */
+//    variable_name_symtable.print();
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert($1, prev_declared_derived_function_name_token);
@@ -4666,6 +4667,7 @@ function_declaration:
 | function_name_declaration ':' derived_type_name io_OR_function_var_declarations_list function_body END_FUNCTION
 	{$$ = new function_declaration_c($1, $3, $4, $5, locloc(@$));
 	 add_en_eno_param_decl_c::add_to($$); /* add EN and ENO declarations, if not already there */
+//    variable_name_symtable.print();
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert($1, prev_declared_derived_function_name_token);
@@ -8340,47 +8342,14 @@ NULL
 };
 
 
-#define LIBFILE "ieclib.txt"
-#define DEF_LIBFILENAME LIBDIRECTORY "/" LIBFILE
-
 extern const char *INCLUDE_DIRECTORIES[];
 
 
-static int parse_files(const char *libfilename, const char *filename) {
-  /* first parse the standard library file... */  
-  /*   Do not debug the standard library, even if debug flag is set!
-  #if YYDEBUG
-    yydebug = 1;
-  #endif
-  */
-  FILE *libfile = NULL;
-  if((libfile = parse_file(libfilename)) == NULL) {
-    char *errmsg = strdup2("Error opening library file ", libfilename);
-    perror(errmsg);
-    free(errmsg);
-    /* we give up... */
-    return -1;
-  }
-
-  allow_function_overloading           = true;
-  allow_extensible_function_parameters = true;
-  full_token_loc                       = runtime_options.full_token_loc;
-  conversion_functions                 = runtime_options.conversion_functions;
-  allow_ref_dereferencing              = runtime_options.ref_standard_extensions;
-  allow_ref_to_any                     = runtime_options.ref_nonstand_extensions;
-  allow_ref_to_in_derived_datatypes    = runtime_options.ref_nonstand_extensions;
-  if (yyparse() != 0) {
-    fprintf (stderr, "\nParsing failed because of too many consecutive syntax errors in standard library. Bailing out!\n");
-    exit(EXIT_FAILURE);
-  }
-  fclose(libfile);
+static int parse_files(const char *filename) {
+  for(int i = 0; standard_function_names[i] != NULL; i++)
+    if (library_element_symtable.find(standard_function_names[i]) == library_element_symtable.end())
+      library_element_symtable.insert(standard_function_names[i], standard_function_name_token);
       
-  if (yynerrs > 0) {  /* NOTE: yynerrs is a global variable */
-    /* Hopefully the libraries do not contain any errors, so this should not occur! */
-    fprintf (stderr, "\n%d error(s) found in %s. Bailing out!\n", yynerrs, libfilename);
-    return -2;
-  }
-
   /* if by any chance the library is not complete, we now add the missing reserved keywords to the list!!!  */
   for(int i = 0; standard_function_block_names[i] != NULL; i++)
     if (library_element_symtable.find(standard_function_block_names[i]) ==
@@ -8391,6 +8360,7 @@ static int parse_files(const char *libfilename, const char *filename) {
   #if YYDEBUG
     yydebug = 1;
   #endif
+
   FILE *mainfile = NULL;
   if ((mainfile = parse_file(filename)) == NULL) {
     char *errmsg = strdup2("Error opening main file ", filename);
@@ -8457,18 +8427,9 @@ static int parse_files(const char *libfilename, const char *filename) {
 
 int stage2__(const char *filename, 
              symbol_c **tree_root_ref
-            ) {             
-  char *libfilename = NULL;
-
-  /* Determine the full path name of the standard library file... */
-  if (runtime_options.includedir != NULL)
-    INCLUDE_DIRECTORIES[0] = runtime_options.includedir;
-
-  if ((libfilename = strdup3(INCLUDE_DIRECTORIES[0], "/", LIBFILE)) == NULL) {
-    fprintf (stderr, "Out of memory. Bailing out!\n");
-    exit(EXIT_FAILURE);
-  }
-
+            ) 
+{             
+  
   /*******************************/
   /* Do the  PRE parsing run...! */
   /*******************************/
@@ -8476,7 +8437,7 @@ int stage2__(const char *filename,
     // fprintf (stderr, "----> Starting pre-parsing!\n");
     tree_root = NULL;
     set_preparse_state();
-    if (parse_files(libfilename, filename) < 0)
+    if (parse_files(filename) < 0)
       exit(EXIT_FAILURE);
     // TODO: delete the current AST. For the moment, we leave all the objects in memory (not much of an issue in a program that always runs to completion).
   }
@@ -8486,15 +8447,13 @@ int stage2__(const char *filename,
   // fprintf (stderr, "----> Starting normal parsing!\n");
   tree_root = NULL;
   rst_preparse_state();
-  if (parse_files(libfilename, filename) < 0)
+  if (parse_files(filename) < 0)
     exit(EXIT_FAILURE);
   
 
   /* Final clean-up... */
-  free(libfilename);
   if (tree_root_ref != NULL)
     *tree_root_ref = tree_root;
-
   return 0;
 }
 

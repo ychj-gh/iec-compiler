@@ -70,22 +70,23 @@ int main(int argc, char **argv) {
     printf("error: need more arguments !\n");
     exit(EXIT_FAILURE);
   }
-
+  CP(0);
+  runtime_options.pre_parsing = true;
   /* lexer and parser process */
   if (stage1_2(argv[1], &tree_root) < 0)
     return EXIT_FAILURE;
-  printf("Lexical and parser process successed !\n");
+  CP(1);
   /* basically loads some symbol tables to speed up look ups later on */
   absyntax_utils_init(tree_root);  
-  printf("absyntax utils init process successed !\n");
+  CP(2)
   /* semantics analysis */
   // if (stage3(tree_root, &ordered_tree_root) < 0)
   //   return EXIT_FAILURE;
-  
+  CP(3);
   /* code generator */
-  if (stage4(ordered_tree_root, builddir) < 0)
+  if (stage4(tree_root, builddir) < 0)
     return EXIT_FAILURE;
-  printf("code generator process successed !\n");
+  CP(4);
   
   return 0;
 }
