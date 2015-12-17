@@ -1,0 +1,36 @@
+FUNCTION_BLOCK PID
+  VAR_INPUT
+    AUTO : BOOL; (* 0: Man, 1: Auto *)
+    PV : REAL; (* Process Variable *)
+    SP : REAL; (* Set Point *)
+    X0 : REAL; (* Manual Output *)
+    KP : REAL; (* Proportionality Gain *)
+    TI : REAL; (* Reaet Time *)
+    TD : REAL; (* Derivative Time *)
+    TS : TIME; (* Sampling Period *)
+  END_VAR
+  VAR_OUTPUT
+    OUT : REAL;
+  END_VAR
+  VAR
+    X1 : REAL; (* Last Err *)
+    ERR : REAL; (* SP-PV *)
+    OUTI : REAL; (* Reset Output *)
+    OUTD : REAL; (* Derivative Output *)
+  END_VAR
+
+  ERR := SP - PV;
+  IF (TI > 1.0e6 OR NOT AUTO) THEN 
+    OUTI := 0.0;
+  ELSIF AUTO THEN 
+    OUTI := OUTI + ERR * TIME_TO_REAL(TS);
+  END_IF;
+
+  IF NOT AUTO THEN 
+    OUT := X0;
+  ELSE 
+    OUTD := (ERR - X1) / TIME_TO_REAL(TS);
+    X1 := ERR;
+    OUT := KP * (ERR + OUTI / TI + OUTD * TD);
+  END_IF;
+END_FUNCTION_BLOCK

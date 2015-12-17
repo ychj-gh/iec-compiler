@@ -246,5 +246,9 @@ void absyntax_utils_init(symbol_c *tree_root) {
   populate_symtables_c populate_symbols;
 
   tree_root->accept(populate_symbols);
+  function_symtable.print();
+  function_block_type_symtable.print();
+  program_type_symtable.print();
+  type_symtable.print();
 }
 

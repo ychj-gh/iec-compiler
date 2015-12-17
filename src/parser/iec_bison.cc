@@ -956,91 +956,91 @@ static const yytype_uint16 yyrline[] =
     4476,  4479,  4479,  4547,  4548,  4554,  4560,  4566,  4584,  4585,
     4586,  4587,  4588,  4589,  4590,  4591,  4592,  4593,  4594,  4595,
     4596,  4597,  4621,  4622,  4626,  4630,  4634,  4638,  4642,  4652,
-    4658,  4666,  4674,  4676,  4678,  4680,  4682,  4684,  4686,  4688,
-    4690,  4692,  4694,  4696,  4698,  4737,  4749,  4762,  4764,  4766,
-    4768,  4771,  4773,  4775,  4777,  4779,  4781,  4783,  4787,  4794,
-    4795,  4796,  4801,  4803,  4806,  4808,  4810,  4812,  4819,  4821,
-    4824,  4826,  4828,  4830,  4837,  4838,  4847,  4848,  4849,  4850,
-    4859,  4860,  4864,  4866,  4871,  4877,  4887,  4898,  4900,  4902,
-    4904,  4910,  4912,  4925,  4927,  4929,  4931,  4934,  4936,  4940,
-    4962,  4963,  4964,  4965,  4966,  4967,  4972,  4975,  4977,  4979,
-    4987,  4989,  4992,  4994,  4996,  4998,  5000,  5007,  5010,  5012,
-    5020,  5021,  5022,  5036,  5041,  5047,  5056,  5056,  5065,  5067,
-    5069,  5071,  5077,  5079,  5090,  5092,  5094,  5096,  5098,  5100,
-    5107,  5111,  5147,  5149,  5154,  5156,  5158,  5160,  5163,  5169,
-    5175,  5177,  5179,  5181,  5183,  5185,  5191,  5197,  5199,  5201,
-    5203,  5205,  5207,  5218,  5219,  5222,  5224,  5231,  5234,  5234,
-    5234,  5245,  5246,  5249,  5251,  5261,  5265,  5266,  5268,  5271,
-    5273,  5283,  5284,  5285,  5286,  5287,  5288,  5292,  5293,  5294,
-    5295,  5296,  5348,  5350,  5353,  5356,  5360,  5362,  5365,  5367,
-    5373,  5375,  5378,  5380,  5397,  5395,  5403,  5401,  5407,  5407,
-    5409,  5409,  5411,  5411,  5413,  5413,  5415,  5415,  5417,  5417,
-    5419,  5419,  5421,  5421,  5423,  5423,  5425,  5425,  5427,  5427,
-    5429,  5429,  5431,  5431,  5433,  5433,  5439,  5446,  5447,  5447,
-    5447,  5462,  5464,  5467,  5469,  5475,  5477,  5479,  5488,  5488,
-    5491,  5491,  5493,  5493,  5495,  5495,  5499,  5505,  5508,  5556,
-    5557,  5558,  5559,  5567,  5581,  5585,  5594,  5591,  5603,  5617,
-    5614,  5627,  5642,  5639,  5648,  5658,  5655,  5664,  5679,  5695,
-    5702,  5731,  5732,  5739,  5746,  5747,  5752,  5754,  5757,  5764,
-    5764,  5764,  5774,  5774,  5784,  5791,  5799,  5800,  5803,  5805,
-    5813,  5815,  5818,  5820,  5822,  5824,  5830,  5902,  5904,  5912,
-    5914,  5916,  5918,  5939,  5943,  5955,  5958,  5960,  5962,  5978,
-    5983,  5983,  5991,  5992,  5992,  5992,  5995,  5995,  5995,  5997,
-    5997,  5997,  5999,  5999,  5999,  6008,  6009,  6009,  6009,  6012,
-    6012,  6012,  6014,  6014,  6014,  6016,  6016,  6016,  6025,  6025,
-    6028,  6028,  6030,  6030,  6042,  6043,  6044,  6045,  6050,  6054,
-    6058,  6063,  6065,  6067,  6069,  6071,  6073,  6075,  6077,  6079,
-    6081,  6083,  6085,  6087,  6089,  6091,  6093,  6095,  6097,  6105,
-    6106,  6109,  6121,  6122,  6125,  6127,  6134,  6136,  6139,  6141,
-    6152,  6153,  6163,  6166,  6207,  6209,  6212,  6214,  6216,  6218,
-    6224,  6234,  6235,  6236,  6237,  6241,  6242,  6246,  6249,  6251,
-    6253,  6255,  6262,  6264,  6267,  6269,  6271,  6273,  6275,  6294,
-    6296,  6298,  6305,  6308,  6310,  6326,  6327,  6333,  6335,  6337,
-    6339,  6346,  6348,  6350,  6353,  6355,  6357,  6359,  6361,  6363,
-    6371,  6372,  6373,  6374,  6375,  6376,  6380,  6386,  6398,  6400,
-    6421,  6449,  6451,  6485,  6487,  6492,  6494,  6499,  6501,  6506,
-    6511,  6514,  6516,  6518,  6520,  6522,  6524,  6526,  6533,  6536,
-    6544,  6546,  6548,  6550,  6552,  6555,  6561,  6563,  6565,  6567,
-    6569,  6571,  6573,  6575,  6577,  6579,  6581,  6583,  6585,  6610,
-    6612,  6627,  6629,  6652,  6655,  6657,  6659,  6666,  6669,  6676,
-    6677,  6678,  6683,  6685,  6691,  6693,  6696,  6698,  6709,  6711,
-    6717,  6719,  6721,  6724,  6726,  6747,  6749,  6752,  6754,  6756,
-    6764,  6766,  6769,  6771,  6778,  6779,  6781,  6783,  6790,  6791,
-    6793,  6795,  6803,  6805,  6808,  6810,  6812,  6818,  6820,  6822,
-    6829,  6832,  6846,  6856,  6857,  6858,  6859,  6860,  6861,  6862,
-    6863,  6864,  6865,  6866,  6867,  6868,  6869,  6870,  6871,  6872,
-    6873,  6874,  6875,  6876,  6877,  6878,  6879,  6880,  6881,  6882,
-    6883,  6884,  6885,  6886,  6887,  6888,  6889,  6890,  6891,  6892,
-    6893,  6894,  6895,  6896,  6897,  6898,  6902,  6903,  6908,  6909,
-    6910,  6911,  6916,  6917,  6918,  6922,  6926,  6930,  6931,  6932,
-    6933,  6934,  6935,  6936,  6937,  6938,  6939,  6940,  6951,  6952,
-    6953,  6954,  6955,  6956,  6957,  6958,  6959,  6960,  6961,  6962,
-    6963,  6964,  6969,  6970,  6971,  6972,  6973,  6981,  6983,  6985,
-    6987,  6989,  6991,  6993,  6995,  6997,  6999,  7002,  7011,  7027,
-    7075,  7077,  7079,  7086,  7087,  7088,  7093,  7094,  7095,  7100,
-    7101,  7102,  7110,  7111,  7112,  7113,  7116,  7129,  7137,  7142,
-    7143,  7146,  7156,  7157,  7159,  7168,  7171,  7177,  7183,  7193,
-    7194,  7196,  7199,  7205,  7215,  7216,  7218,  7220,  7222,  7225,
-    7231,  7237,  7243,  7257,  7258,  7260,  7263,  7269,  7283,  7284,
-    7286,  7288,  7291,  7297,  7303,  7317,  7318,  7321,  7332,  7333,
-    7335,  7338,  7344,  7409,  7411,  7412,  7413,  7415,  7417,  7424,
-    7426,  7427,  7428,  7430,  7432,  7467,  7469,  7472,  7474,  7476,
-    7478,  7480,  7490,  7492,  7494,  7496,  7499,  7501,  7503,  7505,
-    7512,  7513,  7514,  7515,  7523,  7526,  7528,  7544,  7545,  7549,
-    7555,  7557,  7559,  7562,  7564,  7566,  7568,  7570,  7572,  7583,
-    7585,  7588,  7602,  7604,  7607,  7645,  7650,  7652,  7656,  7673,
-    7689,  7695,  7701,  7715,  7717,  7719,  7744,  7745,  7750,  7752,
-    7755,  7757,  7759,  7761,  7763,  7765,  7767,  7769,  7771,  7773,
-    7775,  7777,  7779,  7781,  7789,  7790,  7796,  7799,  7801,  7803,
-    7805,  7812,  7814,  7817,  7819,  7821,  7823,  7825,  7827,  7829,
-    7831,  7833,  7835,  7837,  7839,  7841,  7843,  7845,  7847,  7855,
-    7857,  7863,  7866,  7868,  7875,  7877,  7880,  7891,  7892,  7893,
-    7904,  7905,  7906,  7907,  7912,  7914,  7917,  7919,  7921,  7923,
-    7925,  7927,  7929,  7931,  7933,  7935,  7937,  7939,  7941,  7943,
-    7945,  7947,  7949,  7951,  7953,  7955,  7957,  7959,  7961,  7963,
-    7965,  7967,  7969,  7989,  8002,  8005,  8007,  8009,  8011,  8013,
-    8015,  8017,  8019,  8026,  8029,  8031,  8033,  8035,  8037,  8039,
-    8041,  8048
+    4658,  4667,  4676,  4678,  4680,  4682,  4684,  4686,  4688,  4690,
+    4692,  4694,  4696,  4698,  4700,  4739,  4751,  4764,  4766,  4768,
+    4770,  4773,  4775,  4777,  4779,  4781,  4783,  4785,  4789,  4796,
+    4797,  4798,  4803,  4805,  4808,  4810,  4812,  4814,  4821,  4823,
+    4826,  4828,  4830,  4832,  4839,  4840,  4849,  4850,  4851,  4852,
+    4861,  4862,  4866,  4868,  4873,  4879,  4889,  4900,  4902,  4904,
+    4906,  4912,  4914,  4927,  4929,  4931,  4933,  4936,  4938,  4942,
+    4964,  4965,  4966,  4967,  4968,  4969,  4974,  4977,  4979,  4981,
+    4989,  4991,  4994,  4996,  4998,  5000,  5002,  5009,  5012,  5014,
+    5022,  5023,  5024,  5038,  5043,  5049,  5058,  5058,  5067,  5069,
+    5071,  5073,  5079,  5081,  5092,  5094,  5096,  5098,  5100,  5102,
+    5109,  5113,  5149,  5151,  5156,  5158,  5160,  5162,  5165,  5171,
+    5177,  5179,  5181,  5183,  5185,  5187,  5193,  5199,  5201,  5203,
+    5205,  5207,  5209,  5220,  5221,  5224,  5226,  5233,  5236,  5236,
+    5236,  5247,  5248,  5251,  5253,  5263,  5267,  5268,  5270,  5273,
+    5275,  5285,  5286,  5287,  5288,  5289,  5290,  5294,  5295,  5296,
+    5297,  5298,  5350,  5352,  5355,  5358,  5362,  5364,  5367,  5369,
+    5375,  5377,  5380,  5382,  5399,  5397,  5405,  5403,  5409,  5409,
+    5411,  5411,  5413,  5413,  5415,  5415,  5417,  5417,  5419,  5419,
+    5421,  5421,  5423,  5423,  5425,  5425,  5427,  5427,  5429,  5429,
+    5431,  5431,  5433,  5433,  5435,  5435,  5441,  5448,  5449,  5449,
+    5449,  5464,  5466,  5469,  5471,  5477,  5479,  5481,  5490,  5490,
+    5493,  5493,  5495,  5495,  5497,  5497,  5501,  5507,  5510,  5558,
+    5559,  5560,  5561,  5569,  5583,  5587,  5596,  5593,  5605,  5619,
+    5616,  5629,  5644,  5641,  5650,  5660,  5657,  5666,  5681,  5697,
+    5704,  5733,  5734,  5741,  5748,  5749,  5754,  5756,  5759,  5766,
+    5766,  5766,  5776,  5776,  5786,  5793,  5801,  5802,  5805,  5807,
+    5815,  5817,  5820,  5822,  5824,  5826,  5832,  5904,  5906,  5914,
+    5916,  5918,  5920,  5941,  5945,  5957,  5960,  5962,  5964,  5980,
+    5985,  5985,  5993,  5994,  5994,  5994,  5997,  5997,  5997,  5999,
+    5999,  5999,  6001,  6001,  6001,  6010,  6011,  6011,  6011,  6014,
+    6014,  6014,  6016,  6016,  6016,  6018,  6018,  6018,  6027,  6027,
+    6030,  6030,  6032,  6032,  6044,  6045,  6046,  6047,  6052,  6056,
+    6060,  6065,  6067,  6069,  6071,  6073,  6075,  6077,  6079,  6081,
+    6083,  6085,  6087,  6089,  6091,  6093,  6095,  6097,  6099,  6107,
+    6108,  6111,  6123,  6124,  6127,  6129,  6136,  6138,  6141,  6143,
+    6154,  6155,  6165,  6168,  6209,  6211,  6214,  6216,  6218,  6220,
+    6226,  6236,  6237,  6238,  6239,  6243,  6244,  6248,  6251,  6253,
+    6255,  6257,  6264,  6266,  6269,  6271,  6273,  6275,  6277,  6296,
+    6298,  6300,  6307,  6310,  6312,  6328,  6329,  6335,  6337,  6339,
+    6341,  6348,  6350,  6352,  6355,  6357,  6359,  6361,  6363,  6365,
+    6373,  6374,  6375,  6376,  6377,  6378,  6382,  6388,  6400,  6402,
+    6423,  6451,  6453,  6487,  6489,  6494,  6496,  6501,  6503,  6508,
+    6513,  6516,  6518,  6520,  6522,  6524,  6526,  6528,  6535,  6538,
+    6546,  6548,  6550,  6552,  6554,  6557,  6563,  6565,  6567,  6569,
+    6571,  6573,  6575,  6577,  6579,  6581,  6583,  6585,  6587,  6612,
+    6614,  6629,  6631,  6654,  6657,  6659,  6661,  6668,  6671,  6678,
+    6679,  6680,  6685,  6687,  6693,  6695,  6698,  6700,  6711,  6713,
+    6719,  6721,  6723,  6726,  6728,  6749,  6751,  6754,  6756,  6758,
+    6766,  6768,  6771,  6773,  6780,  6781,  6783,  6785,  6792,  6793,
+    6795,  6797,  6805,  6807,  6810,  6812,  6814,  6820,  6822,  6824,
+    6831,  6834,  6848,  6858,  6859,  6860,  6861,  6862,  6863,  6864,
+    6865,  6866,  6867,  6868,  6869,  6870,  6871,  6872,  6873,  6874,
+    6875,  6876,  6877,  6878,  6879,  6880,  6881,  6882,  6883,  6884,
+    6885,  6886,  6887,  6888,  6889,  6890,  6891,  6892,  6893,  6894,
+    6895,  6896,  6897,  6898,  6899,  6900,  6904,  6905,  6910,  6911,
+    6912,  6913,  6918,  6919,  6920,  6924,  6928,  6932,  6933,  6934,
+    6935,  6936,  6937,  6938,  6939,  6940,  6941,  6942,  6953,  6954,
+    6955,  6956,  6957,  6958,  6959,  6960,  6961,  6962,  6963,  6964,
+    6965,  6966,  6971,  6972,  6973,  6974,  6975,  6983,  6985,  6987,
+    6989,  6991,  6993,  6995,  6997,  6999,  7001,  7004,  7013,  7029,
+    7077,  7079,  7081,  7088,  7089,  7090,  7095,  7096,  7097,  7102,
+    7103,  7104,  7112,  7113,  7114,  7115,  7118,  7131,  7139,  7144,
+    7145,  7148,  7158,  7159,  7161,  7170,  7173,  7179,  7185,  7195,
+    7196,  7198,  7201,  7207,  7217,  7218,  7220,  7222,  7224,  7227,
+    7233,  7239,  7245,  7259,  7260,  7262,  7265,  7271,  7285,  7286,
+    7288,  7290,  7293,  7299,  7305,  7319,  7320,  7323,  7334,  7335,
+    7337,  7340,  7346,  7411,  7413,  7414,  7415,  7417,  7419,  7426,
+    7428,  7429,  7430,  7432,  7434,  7469,  7471,  7474,  7476,  7478,
+    7480,  7482,  7492,  7494,  7496,  7498,  7501,  7503,  7505,  7507,
+    7514,  7515,  7516,  7517,  7525,  7528,  7530,  7546,  7547,  7551,
+    7557,  7559,  7561,  7564,  7566,  7568,  7570,  7572,  7574,  7585,
+    7587,  7590,  7604,  7606,  7609,  7647,  7652,  7654,  7658,  7675,
+    7691,  7697,  7703,  7717,  7719,  7721,  7746,  7747,  7752,  7754,
+    7757,  7759,  7761,  7763,  7765,  7767,  7769,  7771,  7773,  7775,
+    7777,  7779,  7781,  7783,  7791,  7792,  7798,  7801,  7803,  7805,
+    7807,  7814,  7816,  7819,  7821,  7823,  7825,  7827,  7829,  7831,
+    7833,  7835,  7837,  7839,  7841,  7843,  7845,  7847,  7849,  7857,
+    7859,  7865,  7868,  7870,  7877,  7879,  7882,  7893,  7894,  7895,
+    7906,  7907,  7908,  7909,  7914,  7916,  7919,  7921,  7923,  7925,
+    7927,  7929,  7931,  7933,  7935,  7937,  7939,  7941,  7943,  7945,
+    7947,  7949,  7951,  7953,  7955,  7957,  7959,  7961,  7963,  7965,
+    7967,  7969,  7971,  7991,  8004,  8007,  8009,  8011,  8013,  8015,
+    8017,  8019,  8021,  8028,  8031,  8033,  8035,  8037,  8039,  8041,
+    8043,  8050
 };
 #endif
 
@@ -12649,104 +12649,106 @@ yyreduce:
 #line 4659 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_declaration_c((yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 add_en_eno_param_decl_c::add_to((yyval.leaf)); /* add EN and ENO declarations, if not already there */
+//    variable_name_symtable.print();
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert((yyvsp[-5].leaf), prev_declared_derived_function_name_token);
 	}
-#line 12657 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12658 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 801:
-#line 4667 "iec_bison.yy" /* yacc.c:1646  */
+#line 4668 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_declaration_c((yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 add_en_eno_param_decl_c::add_to((yyval.leaf)); /* add EN and ENO declarations, if not already there */
+//    variable_name_symtable.print();
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert((yyvsp[-5].leaf), prev_declared_derived_function_name_token);
 	}
-#line 12668 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12670 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 802:
-#line 4675 "iec_bison.yy" /* yacc.c:1646  */
+#line 4677 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "':' missing after function name in function declaration."); yynerrs++;}
-#line 12674 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12676 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 803:
-#line 4677 "iec_bison.yy" /* yacc.c:1646  */
+#line 4679 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "':' missing after function name in function declaration."); yynerrs++;}
-#line 12680 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12682 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 804:
-#line 4679 "iec_bison.yy" /* yacc.c:1646  */
+#line 4681 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no return type defined in function declaration."); yynerrs++;}
-#line 12686 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12688 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 805:
-#line 4681 "iec_bison.yy" /* yacc.c:1646  */
+#line 4683 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid return type defined in function declaration."); yyerrok;}
-#line 12692 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12694 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 806:
-#line 4683 "iec_bison.yy" /* yacc.c:1646  */
+#line 4685 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no variable(s) declared in function declaration."); yynerrs++;}
-#line 12698 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12700 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 807:
-#line 4685 "iec_bison.yy" /* yacc.c:1646  */
+#line 4687 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no variable(s) declared in function declaration."); yynerrs++;}
-#line 12704 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12706 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 808:
-#line 4687 "iec_bison.yy" /* yacc.c:1646  */
+#line 4689 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no body defined in function declaration."); yynerrs++;}
-#line 12710 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12712 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 809:
-#line 4689 "iec_bison.yy" /* yacc.c:1646  */
+#line 4691 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no body defined in function declaration."); yynerrs++;}
-#line 12716 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12718 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 810:
-#line 4691 "iec_bison.yy" /* yacc.c:1646  */
+#line 4693 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable(s) declared and body defined in function declaration."); yynerrs++;}
-#line 12722 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12724 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 811:
-#line 4693 "iec_bison.yy" /* yacc.c:1646  */
+#line 4695 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable(s) declared and body defined in function declaration."); yynerrs++;}
-#line 12728 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12730 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 812:
-#line 4695 "iec_bison.yy" /* yacc.c:1646  */
+#line 4697 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locf((yylsp[-3])), "unclosed function declaration."); yynerrs++;}
-#line 12734 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12736 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 813:
-#line 4697 "iec_bison.yy" /* yacc.c:1646  */
+#line 4699 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-3])), "unclosed function declaration."); yynerrs++;}
-#line 12740 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12742 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 814:
-#line 4699 "iec_bison.yy" /* yacc.c:1646  */
+#line 4701 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in function declaration."); yyerrok;}
-#line 12746 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12748 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 815:
-#line 4738 "iec_bison.yy" /* yacc.c:1646  */
+#line 4740 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].leaf);
 	 /* the function name functions as a
 	  * variable within the function itself!
@@ -12757,192 +12759,192 @@ yyreduce:
 	  */
 	 variable_name_symtable.insert((yyvsp[0].leaf), prev_declared_variable_name_token);
 	}
-#line 12761 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12763 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 816:
-#line 4750 "iec_bison.yy" /* yacc.c:1646  */
+#line 4752 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no function name defined in function declaration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid function name in function declaration."); yyclearin;}
 	 yyerrok;
 	}
-#line 12771 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12773 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 817:
-#line 4763 "iec_bison.yy" /* yacc.c:1646  */
+#line 4765 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yylsp[0])));(yyval.list)->add_element((yyvsp[0].leaf));}
-#line 12777 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12779 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 818:
-#line 4765 "iec_bison.yy" /* yacc.c:1646  */
+#line 4767 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yylsp[0])));(yyval.list)->add_element((yyvsp[0].leaf));}
-#line 12783 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12785 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 819:
-#line 4767 "iec_bison.yy" /* yacc.c:1646  */
+#line 4769 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 12789 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12791 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 820:
-#line 4769 "iec_bison.yy" /* yacc.c:1646  */
+#line 4771 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 12795 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12797 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 821:
-#line 4772 "iec_bison.yy" /* yacc.c:1646  */
+#line 4774 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected retentive variable(s) declaration in function declaration."); yynerrs++;}
-#line 12801 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12803 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 822:
-#line 4774 "iec_bison.yy" /* yacc.c:1646  */
+#line 4776 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected located variable(s) declaration in function declaration."); yynerrs++;}
-#line 12807 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12809 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 823:
-#line 4776 "iec_bison.yy" /* yacc.c:1646  */
+#line 4778 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected external variable(s) declaration in function declaration."); yynerrs++;}
-#line 12813 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12815 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 824:
-#line 4778 "iec_bison.yy" /* yacc.c:1646  */
+#line 4780 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected global variable(s) declaration in function declaration."); yynerrs++;}
-#line 12819 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12821 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 825:
-#line 4780 "iec_bison.yy" /* yacc.c:1646  */
+#line 4782 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected incomplete located variable(s) declaration in function declaration."); yynerrs++;}
-#line 12825 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12827 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 826:
-#line 4782 "iec_bison.yy" /* yacc.c:1646  */
+#line 4784 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected temporary located variable(s) declaration in function declaration."); yynerrs++;}
-#line 12831 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12833 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 827:
-#line 4784 "iec_bison.yy" /* yacc.c:1646  */
+#line 4786 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected non-retentive variable(s) declaration in function declaration."); yynerrs++;}
-#line 12837 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12839 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 828:
-#line 4788 "iec_bison.yy" /* yacc.c:1646  */
+#line 4790 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected instance specific initialization(s) in function declaration."); yynerrs++;}
-#line 12843 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12845 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 832:
-#line 4802 "iec_bison.yy" /* yacc.c:1646  */
+#line 4804 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_var_decls_c(new constant_option_c(locloc((yylsp[-2]))), (yyvsp[-1].list), locloc((yyloc)));}
-#line 12849 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12851 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 833:
-#line 4804 "iec_bison.yy" /* yacc.c:1646  */
+#line 4806 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_var_decls_c(NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 12855 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12857 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 834:
-#line 4807 "iec_bison.yy" /* yacc.c:1646  */
+#line 4809 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unexpected token after 'VAR' in function variable(s) declaration."); yyerrok;}
-#line 12861 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12863 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 835:
-#line 4809 "iec_bison.yy" /* yacc.c:1646  */
+#line 4811 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unexpected token after 'CONSTANT' in constant function variable(s) declaration."); yyerrok;}
-#line 12867 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12869 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 836:
-#line 4811 "iec_bison.yy" /* yacc.c:1646  */
+#line 4813 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "unclosed function variable(s) declaration."); yyerrok;}
-#line 12873 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12875 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 837:
-#line 4813 "iec_bison.yy" /* yacc.c:1646  */
+#line 4815 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-3])), "unclosed constant function variable(s) declaration."); yyerrok;}
-#line 12879 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12881 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 838:
-#line 4820 "iec_bison.yy" /* yacc.c:1646  */
+#line 4822 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var2_init_decl_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 12885 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12887 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 839:
-#line 4822 "iec_bison.yy" /* yacc.c:1646  */
+#line 4824 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 12891 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12893 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 840:
-#line 4825 "iec_bison.yy" /* yacc.c:1646  */
+#line 4827 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var2_init_decl_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at end of function variable(s) declaration."); yyerrok;}
-#line 12897 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12899 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 841:
-#line 4827 "iec_bison.yy" /* yacc.c:1646  */
+#line 4829 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at end of function variable(s) declaration."); yyerrok;}
-#line 12903 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12905 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 842:
-#line 4829 "iec_bison.yy" /* yacc.c:1646  */
+#line 4831 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid function variable(s) declaration."); yyerrok;}
-#line 12909 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12911 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 843:
-#line 4831 "iec_bison.yy" /* yacc.c:1646  */
+#line 4833 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after function variable(s) declaration."); yynerrs++;}
-#line 12915 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12917 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 844:
-#line 4837 "iec_bison.yy" /* yacc.c:1646  */
+#line 4839 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].list);}
-#line 12921 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12923 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 845:
-#line 4838 "iec_bison.yy" /* yacc.c:1646  */
+#line 4840 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].list);}
-#line 12927 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12929 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 852:
-#line 4864 "iec_bison.yy" /* yacc.c:1646  */
+#line 4866 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 12933 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12935 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 854:
-#line 4872 "iec_bison.yy" /* yacc.c:1646  */
+#line 4874 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; 
 	 if (get_preparse_state())    {library_element_symtable.insert((yyvsp[-1].leaf), prev_declared_derived_function_block_name_token);}
 	 else                         {print_err_msg(locl((yylsp[-2])), locf((yylsp[0])), "FUNCTION_BLOCK with no variable declarations and no body."); yynerrs++;}
 	 }
-#line 12942 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12944 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 855:
-#line 4878 "iec_bison.yy" /* yacc.c:1646  */
+#line 4880 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_block_declaration_c((yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 add_en_eno_param_decl_c::add_to((yyval.leaf)); /* add EN and ENO declarations, if not already there */
 	 /* Clear the variable_name_symtable. Since we have finished parsing the function block,
@@ -12951,11 +12953,11 @@ yyreduce:
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	}
-#line 12955 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12957 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 856:
-#line 4888 "iec_bison.yy" /* yacc.c:1646  */
+#line 4890 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_block_declaration_c((yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 library_element_symtable.insert((yyvsp[-3].leaf), prev_declared_derived_function_block_name_token);
 	 add_en_eno_param_decl_c::add_to((yyval.leaf)); /* add EN and ENO declarations, if not already there */
@@ -12965,200 +12967,200 @@ yyreduce:
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	}
-#line 12969 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12971 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 857:
-#line 4899 "iec_bison.yy" /* yacc.c:1646  */
+#line 4901 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no function block name defined in function block declaration."); yynerrs++;}
-#line 12975 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12977 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 858:
-#line 4901 "iec_bison.yy" /* yacc.c:1646  */
+#line 4903 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid function block name in function block declaration."); yyerrok;}
-#line 12981 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12983 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 859:
-#line 4903 "iec_bison.yy" /* yacc.c:1646  */
+#line 4905 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no variable(s) declared in function declaration."); yynerrs++;}
-#line 12987 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12989 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 860:
-#line 4905 "iec_bison.yy" /* yacc.c:1646  */
+#line 4907 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no body defined in function block declaration."); yynerrs++;}
-#line 12993 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 12995 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 861:
-#line 4911 "iec_bison.yy" /* yacc.c:1646  */
+#line 4913 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-3])), "no variable(s) declared and body defined in function block declaration."); yynerrs++;}
-#line 12999 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13001 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 862:
-#line 4913 "iec_bison.yy" /* yacc.c:1646  */
+#line 4915 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in function block declaration."); yyerrok;}
-#line 13005 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13007 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 863:
-#line 4926 "iec_bison.yy" /* yacc.c:1646  */
+#line 4928 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yyloc)));(yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13011 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13013 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 864:
-#line 4928 "iec_bison.yy" /* yacc.c:1646  */
+#line 4930 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yyloc)));(yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13017 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13019 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 865:
-#line 4930 "iec_bison.yy" /* yacc.c:1646  */
+#line 4932 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13023 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13025 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 866:
-#line 4932 "iec_bison.yy" /* yacc.c:1646  */
+#line 4934 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13029 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13031 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 867:
-#line 4935 "iec_bison.yy" /* yacc.c:1646  */
+#line 4937 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected located variable(s) declaration in function block declaration."); yynerrs++;}
-#line 13035 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13037 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 868:
-#line 4937 "iec_bison.yy" /* yacc.c:1646  */
+#line 4939 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected global variable(s) declaration in function block declaration."); yynerrs++;}
-#line 13041 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13043 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 869:
-#line 4941 "iec_bison.yy" /* yacc.c:1646  */
+#line 4943 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected instance specific initialization(s) in function block declaration."); yynerrs++;}
-#line 13047 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13049 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 876:
-#line 4973 "iec_bison.yy" /* yacc.c:1646  */
+#line 4975 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new temp_var_decls_c((yyvsp[-1].list), locloc((yyloc)));}
-#line 13053 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13055 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 877:
-#line 4976 "iec_bison.yy" /* yacc.c:1646  */
+#line 4978 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable declared in temporary variable(s) declaration."); yynerrs++;}
-#line 13059 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13061 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 878:
-#line 4978 "iec_bison.yy" /* yacc.c:1646  */
+#line 4980 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "unclosed temporary variable(s) declaration."); yyerrok;}
-#line 13065 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13067 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 879:
-#line 4980 "iec_bison.yy" /* yacc.c:1646  */
+#line 4982 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unexpected token after 'VAR_TEMP' in function variable(s) declaration."); yyerrok;}
-#line 13071 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13073 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 880:
-#line 4988 "iec_bison.yy" /* yacc.c:1646  */
+#line 4990 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new temp_var_decls_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 13077 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13079 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 881:
-#line 4990 "iec_bison.yy" /* yacc.c:1646  */
+#line 4992 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 13083 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13085 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 882:
-#line 4993 "iec_bison.yy" /* yacc.c:1646  */
+#line 4995 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new temp_var_decls_list_c(locloc((yyloc))); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid temporary variable(s) declaration."); yyerrok;}
-#line 13089 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13091 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 883:
-#line 4995 "iec_bison.yy" /* yacc.c:1646  */
+#line 4997 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new temp_var_decls_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at end of temporary variable(s) declaration."); yyerrok;}
-#line 13095 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13097 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 884:
-#line 4997 "iec_bison.yy" /* yacc.c:1646  */
+#line 4999 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at end of temporary variable(s) declaration."); yyerrok;}
-#line 13101 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13103 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 885:
-#line 4999 "iec_bison.yy" /* yacc.c:1646  */
+#line 5001 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid temporary variable(s) declaration."); yyerrok;}
-#line 13107 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13109 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 886:
-#line 5001 "iec_bison.yy" /* yacc.c:1646  */
+#line 5003 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after temporary variable(s) declaration."); yynerrs++;}
-#line 13113 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13115 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 887:
-#line 5008 "iec_bison.yy" /* yacc.c:1646  */
+#line 5010 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new non_retentive_var_decls_c((yyvsp[-1].list), locloc((yyloc)));}
-#line 13119 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13121 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 888:
-#line 5011 "iec_bison.yy" /* yacc.c:1646  */
+#line 5013 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unclosed non-retentive temporary variable(s) declaration."); yyerrok;}
-#line 13125 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13127 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 889:
-#line 5013 "iec_bison.yy" /* yacc.c:1646  */
+#line 5015 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unexpected token after 'NON_RETAIN' in non-retentive temporary variable(s) declaration."); yyerrok;}
-#line 13131 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13133 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 890:
-#line 5020 "iec_bison.yy" /* yacc.c:1646  */
+#line 5022 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].list);}
-#line 13137 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13139 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 891:
-#line 5021 "iec_bison.yy" /* yacc.c:1646  */
+#line 5023 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].list);}
-#line 13143 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13145 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 892:
-#line 5022 "iec_bison.yy" /* yacc.c:1646  */
+#line 5024 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].list);}
-#line 13149 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13151 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 894:
-#line 5042 "iec_bison.yy" /* yacc.c:1646  */
+#line 5044 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; 
 	 if (get_preparse_state())    {library_element_symtable.insert((yyvsp[-1].leaf), prev_declared_program_type_name_token);}
 	 else                         {print_err_msg(locl((yylsp[-2])), locf((yylsp[0])), "PROGRAM with no variable declarations and no body."); yynerrs++;}
 	 }
-#line 13158 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13160 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 895:
-#line 5048 "iec_bison.yy" /* yacc.c:1646  */
+#line 5050 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_declaration_c((yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 /* Clear the variable_name_symtable. Since we have finished parsing the program declaration,
 	  * the variable names are now out of scope, so are no longer valid!
@@ -13166,17 +13168,17 @@ yyreduce:
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	}
-#line 13170 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13172 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 896:
-#line 5056 "iec_bison.yy" /* yacc.c:1646  */
+#line 5058 "iec_bison.yy" /* yacc.c:1646  */
     {library_element_symtable.insert((yyvsp[0].leaf), prev_declared_program_type_name_token);}
-#line 13176 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13178 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 897:
-#line 5057 "iec_bison.yy" /* yacc.c:1646  */
+#line 5059 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_declaration_c((yyvsp[-4].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 /* Clear the variable_name_symtable. Since we have finished parsing the program declaration,
 	  * the variable names are now out of scope, so are no longer valid!
@@ -13184,3943 +13186,3943 @@ yyreduce:
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	}
-#line 13188 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13190 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 898:
-#line 5066 "iec_bison.yy" /* yacc.c:1646  */
+#line 5068 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no program name defined in program declaration.");}
-#line 13194 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13196 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 899:
-#line 5068 "iec_bison.yy" /* yacc.c:1646  */
+#line 5070 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid program name in program declaration."); yyerrok;}
-#line 13200 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13202 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 900:
-#line 5070 "iec_bison.yy" /* yacc.c:1646  */
+#line 5072 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no variable(s) declared in program declaration."); yynerrs++;}
-#line 13206 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13208 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 901:
-#line 5072 "iec_bison.yy" /* yacc.c:1646  */
+#line 5074 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no body defined in program declaration."); yynerrs++;}
-#line 13212 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13214 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 902:
-#line 5078 "iec_bison.yy" /* yacc.c:1646  */
+#line 5080 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-3])), "unclosed program declaration."); yynerrs++;}
-#line 13218 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13220 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 903:
-#line 5080 "iec_bison.yy" /* yacc.c:1646  */
+#line 5082 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in program declaration."); yyerrok;}
-#line 13224 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13226 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 904:
-#line 5091 "iec_bison.yy" /* yacc.c:1646  */
+#line 5093 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13230 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13232 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 905:
-#line 5093 "iec_bison.yy" /* yacc.c:1646  */
+#line 5095 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13236 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13238 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 906:
-#line 5095 "iec_bison.yy" /* yacc.c:1646  */
+#line 5097 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new var_declarations_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13242 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13244 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 907:
-#line 5097 "iec_bison.yy" /* yacc.c:1646  */
+#line 5099 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13248 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13250 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 908:
-#line 5099 "iec_bison.yy" /* yacc.c:1646  */
+#line 5101 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13254 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13256 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 909:
-#line 5101 "iec_bison.yy" /* yacc.c:1646  */
+#line 5103 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13260 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13262 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 910:
-#line 5108 "iec_bison.yy" /* yacc.c:1646  */
+#line 5110 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected global variable(s) declaration in function block declaration."); yynerrs++;}
-#line 13266 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13268 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 911:
-#line 5112 "iec_bison.yy" /* yacc.c:1646  */
+#line 5114 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected instance specific initialization(s) in function block declaration."); yynerrs++;
 	}
-#line 13273 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13275 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 912:
-#line 5148 "iec_bison.yy" /* yacc.c:1646  */
+#line 5150 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new sequential_function_chart_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].list));}
-#line 13279 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13281 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 913:
-#line 5150 "iec_bison.yy" /* yacc.c:1646  */
+#line 5152 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].list));}
-#line 13285 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13287 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 914:
-#line 5155 "iec_bison.yy" /* yacc.c:1646  */
+#line 5157 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new sfc_network_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13291 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13293 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 915:
-#line 5157 "iec_bison.yy" /* yacc.c:1646  */
+#line 5159 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13297 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13299 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 916:
-#line 5159 "iec_bison.yy" /* yacc.c:1646  */
+#line 5161 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13303 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13305 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 917:
-#line 5161 "iec_bison.yy" /* yacc.c:1646  */
+#line 5163 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13309 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13311 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 918:
-#line 5164 "iec_bison.yy" /* yacc.c:1646  */
+#line 5166 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "unexpected token after SFC network in sequencial function chart."); yyerrok;}
-#line 13315 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13317 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 919:
-#line 5171 "iec_bison.yy" /* yacc.c:1646  */
+#line 5173 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new initial_step_c((yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));
 	 variable_name_symtable.insert((yyvsp[-3].leaf), prev_declared_variable_name_token); // A step name may later be used as a structured variable!!
 	}
-#line 13323 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13325 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 920:
-#line 5176 "iec_bison.yy" /* yacc.c:1646  */
+#line 5178 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-2])), "no step name defined in initial step declaration."); yynerrs++;}
-#line 13329 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13331 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 921:
-#line 5178 "iec_bison.yy" /* yacc.c:1646  */
+#line 5180 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid step name defined in initial step declaration."); yyerrok;}
-#line 13335 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13337 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 922:
-#line 5180 "iec_bison.yy" /* yacc.c:1646  */
+#line 5182 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after step name in initial step declaration."); yynerrs++;}
-#line 13341 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13343 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 923:
-#line 5182 "iec_bison.yy" /* yacc.c:1646  */
+#line 5184 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid action association list in initial step declaration."); yyerrok;}
-#line 13347 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13349 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 924:
-#line 5184 "iec_bison.yy" /* yacc.c:1646  */
+#line 5186 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-2])), "unclosed initial step declaration."); yynerrs++;}
-#line 13353 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13355 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 925:
-#line 5186 "iec_bison.yy" /* yacc.c:1646  */
+#line 5188 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in initial step declaration."); yyerrok;}
-#line 13359 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13361 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 926:
-#line 5193 "iec_bison.yy" /* yacc.c:1646  */
+#line 5195 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new step_c((yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));
 	 variable_name_symtable.insert((yyvsp[-3].leaf), prev_declared_variable_name_token); // A step name may later be used as a structured variable!!
 	}
-#line 13367 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13369 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 927:
-#line 5198 "iec_bison.yy" /* yacc.c:1646  */
+#line 5200 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no step name defined in step declaration."); yynerrs++;}
-#line 13373 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13375 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 928:
-#line 5200 "iec_bison.yy" /* yacc.c:1646  */
+#line 5202 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid step name defined in step declaration."); yyerrok;}
-#line 13379 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13381 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 929:
-#line 5202 "iec_bison.yy" /* yacc.c:1646  */
+#line 5204 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after step name in step declaration."); yynerrs++;}
-#line 13385 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13387 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 930:
-#line 5204 "iec_bison.yy" /* yacc.c:1646  */
+#line 5206 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid action association list in step declaration."); yyerrok;}
-#line 13391 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13393 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 931:
-#line 5206 "iec_bison.yy" /* yacc.c:1646  */
+#line 5208 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-2])), "invalid action association list in step declaration."); yynerrs++;}
-#line 13397 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13399 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 932:
-#line 5208 "iec_bison.yy" /* yacc.c:1646  */
+#line 5210 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in step declaration."); yyerrok;}
-#line 13403 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13405 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 933:
-#line 5218 "iec_bison.yy" /* yacc.c:1646  */
+#line 5220 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new action_association_list_c(locloc((yyloc)));}
-#line 13409 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13411 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 934:
-#line 5220 "iec_bison.yy" /* yacc.c:1646  */
+#line 5222 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 13415 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13417 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 935:
-#line 5223 "iec_bison.yy" /* yacc.c:1646  */
+#line 5225 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at end of action association declaration."); yyerrok;}
-#line 13421 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13423 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 936:
-#line 5225 "iec_bison.yy" /* yacc.c:1646  */
+#line 5227 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after action association declaration."); yynerrs++;}
-#line 13427 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13429 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 938:
-#line 5234 "iec_bison.yy" /* yacc.c:1646  */
+#line 5236 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_sfc_qualifier_state();}
-#line 13433 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13435 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 939:
-#line 5234 "iec_bison.yy" /* yacc.c:1646  */
+#line 5236 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 13439 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13441 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 940:
-#line 5235 "iec_bison.yy" /* yacc.c:1646  */
+#line 5237 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new action_association_c((yyvsp[-6].leaf), (yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));}
-#line 13445 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13447 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 941:
-#line 5245 "iec_bison.yy" /* yacc.c:1646  */
+#line 5247 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new indicator_name_list_c(locloc((yyloc)));}
-#line 13451 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13453 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 942:
-#line 5247 "iec_bison.yy" /* yacc.c:1646  */
+#line 5249 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13457 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13459 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 943:
-#line 5250 "iec_bison.yy" /* yacc.c:1646  */
+#line 5252 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing at end of action association declaration."); yynerrs++;}
-#line 13463 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13465 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 944:
-#line 5252 "iec_bison.yy" /* yacc.c:1646  */
+#line 5254 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no indicator defined in indicator list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid indicator in indicator list."); yyclearin;}
 	 yyerrok;
 	}
-#line 13473 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13475 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 946:
-#line 5265 "iec_bison.yy" /* yacc.c:1646  */
+#line 5267 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 13479 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13481 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 947:
-#line 5267 "iec_bison.yy" /* yacc.c:1646  */
+#line 5269 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new action_qualifier_c((yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 13485 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13487 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 948:
-#line 5269 "iec_bison.yy" /* yacc.c:1646  */
+#line 5271 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new action_qualifier_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 13491 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13493 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 949:
-#line 5272 "iec_bison.yy" /* yacc.c:1646  */
+#line 5274 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing between timed qualifier and action time in action qualifier."); yynerrs++;}
-#line 13497 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13499 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 950:
-#line 5274 "iec_bison.yy" /* yacc.c:1646  */
+#line 5276 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no action time defined in action qualifier.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid action time in action qualifier."); yyclearin;}
 	 yyerrok;
 	}
-#line 13507 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13509 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 951:
-#line 5283 "iec_bison.yy" /* yacc.c:1646  */
+#line 5285 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("N"), locloc((yyloc)));}
-#line 13513 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13515 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 952:
-#line 5284 "iec_bison.yy" /* yacc.c:1646  */
+#line 5286 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("R"), locloc((yyloc)));}
-#line 13519 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13521 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 953:
-#line 5285 "iec_bison.yy" /* yacc.c:1646  */
+#line 5287 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("S"), locloc((yyloc)));}
-#line 13525 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13527 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 954:
-#line 5286 "iec_bison.yy" /* yacc.c:1646  */
+#line 5288 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("P"), locloc((yyloc)));}
-#line 13531 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13533 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 955:
-#line 5287 "iec_bison.yy" /* yacc.c:1646  */
+#line 5289 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("P0"), locloc((yyloc)));}
-#line 13537 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13539 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 956:
-#line 5288 "iec_bison.yy" /* yacc.c:1646  */
+#line 5290 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new qualifier_c(strdup("P1"), locloc((yyloc)));}
-#line 13543 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13545 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 957:
-#line 5292 "iec_bison.yy" /* yacc.c:1646  */
+#line 5294 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new timed_qualifier_c(strdup("L"), locloc((yyloc)));}
-#line 13549 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13551 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 958:
-#line 5293 "iec_bison.yy" /* yacc.c:1646  */
+#line 5295 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new timed_qualifier_c(strdup("D"), locloc((yyloc)));}
-#line 13555 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13557 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 959:
-#line 5294 "iec_bison.yy" /* yacc.c:1646  */
+#line 5296 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new timed_qualifier_c(strdup("SD"), locloc((yyloc)));}
-#line 13561 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13563 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 960:
-#line 5295 "iec_bison.yy" /* yacc.c:1646  */
+#line 5297 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new timed_qualifier_c(strdup("DS"), locloc((yyloc)));}
-#line 13567 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13569 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 961:
-#line 5296 "iec_bison.yy" /* yacc.c:1646  */
+#line 5298 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new timed_qualifier_c(strdup("SL"), locloc((yyloc)));}
-#line 13573 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13575 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 966:
-#line 5361 "iec_bison.yy" /* yacc.c:1646  */
+#line 5363 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new steps_c((yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 13579 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13581 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 967:
-#line 5363 "iec_bison.yy" /* yacc.c:1646  */
+#line 5365 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new steps_c(NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 13585 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13587 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 968:
-#line 5366 "iec_bison.yy" /* yacc.c:1646  */
+#line 5368 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "expecting ')' at the end of step list in transition declaration."); yyerrok;}
-#line 13591 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13593 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 969:
-#line 5368 "iec_bison.yy" /* yacc.c:1646  */
+#line 5370 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid step list in transition declaration."); yyerrok;}
-#line 13597 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13599 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 970:
-#line 5374 "iec_bison.yy" /* yacc.c:1646  */
+#line 5376 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new step_name_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-2].leaf)); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13603 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13605 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 971:
-#line 5376 "iec_bison.yy" /* yacc.c:1646  */
+#line 5378 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 13609 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13611 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 972:
-#line 5379 "iec_bison.yy" /* yacc.c:1646  */
+#line 5381 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing in step list."); yynerrs++;}
-#line 13615 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13617 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 973:
-#line 5381 "iec_bison.yy" /* yacc.c:1646  */
+#line 5383 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no step name defined in step list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid step name in step list."); yyclearin;}
 	 yyerrok;
 	}
-#line 13625 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13627 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 974:
-#line 5397 "iec_bison.yy" /* yacc.c:1646  */
+#line 5399 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13631 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13633 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 975:
-#line 5399 "iec_bison.yy" /* yacc.c:1646  */
+#line 5401 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new transition_c(NULL, (yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 13637 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13639 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 976:
-#line 5403 "iec_bison.yy" /* yacc.c:1646  */
+#line 5405 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13643 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13645 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 977:
-#line 5405 "iec_bison.yy" /* yacc.c:1646  */
+#line 5407 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new transition_c((yyvsp[-8].leaf), (yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 13649 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13651 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 978:
-#line 5407 "iec_bison.yy" /* yacc.c:1646  */
+#line 5409 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13655 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13657 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 979:
-#line 5408 "iec_bison.yy" /* yacc.c:1646  */
+#line 5410 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-8])), locl((yylsp[-8])), "invalid transition name defined in transition declaration."); yyerrok;}
-#line 13661 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13663 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 980:
-#line 5409 "iec_bison.yy" /* yacc.c:1646  */
+#line 5411 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13667 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13669 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 981:
-#line 5410 "iec_bison.yy" /* yacc.c:1646  */
+#line 5412 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-7])), locl((yylsp[-7])), "invalid transition priority defined in transition declaration."); yyerrok;}
-#line 13673 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13675 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 982:
-#line 5411 "iec_bison.yy" /* yacc.c:1646  */
+#line 5413 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13679 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13681 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 983:
-#line 5412 "iec_bison.yy" /* yacc.c:1646  */
+#line 5414 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-5])), locf((yylsp[-4])), "no origin step(s) defined in transition declaration."); yynerrs++;}
-#line 13685 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13687 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 984:
-#line 5413 "iec_bison.yy" /* yacc.c:1646  */
+#line 5415 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13691 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13693 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 985:
-#line 5414 "iec_bison.yy" /* yacc.c:1646  */
+#line 5416 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-5])), locf((yylsp[-4])), "no origin step(s) defined in transition declaration."); yynerrs++;}
-#line 13697 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13699 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 986:
-#line 5415 "iec_bison.yy" /* yacc.c:1646  */
+#line 5417 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13703 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13705 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 987:
-#line 5416 "iec_bison.yy" /* yacc.c:1646  */
+#line 5418 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "invalid origin step(s) defined in transition declaration."); yyerrok;}
-#line 13709 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13711 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 988:
-#line 5417 "iec_bison.yy" /* yacc.c:1646  */
+#line 5419 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13715 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13717 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 989:
-#line 5418 "iec_bison.yy" /* yacc.c:1646  */
+#line 5420 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "invalid origin step(s) defined in transition declaration."); yyerrok;}
-#line 13721 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13723 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 990:
-#line 5419 "iec_bison.yy" /* yacc.c:1646  */
+#line 5421 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13727 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13729 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 991:
-#line 5420 "iec_bison.yy" /* yacc.c:1646  */
+#line 5422 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "'TO' missing between origin step(s) and destination step(s) in transition declaration."); yynerrs++;}
-#line 13733 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13735 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 992:
-#line 5421 "iec_bison.yy" /* yacc.c:1646  */
+#line 5423 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13739 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13741 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 993:
-#line 5422 "iec_bison.yy" /* yacc.c:1646  */
+#line 5424 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "'TO' missing between origin step(s) and destination step(s) in transition declaration."); yynerrs++;}
-#line 13745 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13747 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 994:
-#line 5423 "iec_bison.yy" /* yacc.c:1646  */
+#line 5425 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13751 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13753 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 995:
-#line 5424 "iec_bison.yy" /* yacc.c:1646  */
+#line 5426 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no destination step(s) defined in transition declaration."); yynerrs++;}
-#line 13757 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13759 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 996:
-#line 5425 "iec_bison.yy" /* yacc.c:1646  */
+#line 5427 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13763 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13765 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 997:
-#line 5426 "iec_bison.yy" /* yacc.c:1646  */
+#line 5428 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no destination step(s) defined in transition declaration."); yynerrs++;}
-#line 13769 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13771 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 998:
-#line 5427 "iec_bison.yy" /* yacc.c:1646  */
+#line 5429 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13775 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13777 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 999:
-#line 5428 "iec_bison.yy" /* yacc.c:1646  */
+#line 5430 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid destination step(s) defined in transition declaration."); yyerrok;}
-#line 13781 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13783 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1000:
-#line 5429 "iec_bison.yy" /* yacc.c:1646  */
+#line 5431 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13787 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13789 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1001:
-#line 5430 "iec_bison.yy" /* yacc.c:1646  */
+#line 5432 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid destination step(s) defined in transition declaration."); yyerrok;}
-#line 13793 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13795 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1002:
-#line 5431 "iec_bison.yy" /* yacc.c:1646  */
+#line 5433 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13799 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13801 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1003:
-#line 5432 "iec_bison.yy" /* yacc.c:1646  */
+#line 5434 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no origin and destination step(s) defined in transition declaration."); yynerrs++;}
-#line 13805 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13807 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1004:
-#line 5433 "iec_bison.yy" /* yacc.c:1646  */
+#line 5435 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13811 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13813 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1005:
-#line 5434 "iec_bison.yy" /* yacc.c:1646  */
+#line 5436 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no origin and destination step(s) defined in transition declaration."); yynerrs++;}
-#line 13817 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13819 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1006:
-#line 5440 "iec_bison.yy" /* yacc.c:1646  */
+#line 5442 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in transition declaration."); yyerrok;}
-#line 13823 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13825 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1007:
-#line 5446 "iec_bison.yy" /* yacc.c:1646  */
+#line 5448 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 13829 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13831 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1008:
-#line 5447 "iec_bison.yy" /* yacc.c:1646  */
+#line 5449 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_sfc_priority_state();}
-#line 13835 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13837 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1009:
-#line 5447 "iec_bison.yy" /* yacc.c:1646  */
+#line 5449 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 13841 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13843 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1010:
-#line 5448 "iec_bison.yy" /* yacc.c:1646  */
+#line 5450 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-1].leaf);}
-#line 13847 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13849 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1011:
-#line 5463 "iec_bison.yy" /* yacc.c:1646  */
+#line 5465 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new transition_condition_c((yyvsp[0].list), NULL, locloc((yyloc)));}
-#line 13853 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13855 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1012:
-#line 5465 "iec_bison.yy" /* yacc.c:1646  */
+#line 5467 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new transition_condition_c(NULL, (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 13859 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13861 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1013:
-#line 5468 "iec_bison.yy" /* yacc.c:1646  */
+#line 5470 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':' missing before IL condition in transition declaration."); yynerrs++;}
-#line 13865 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13867 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1014:
-#line 5470 "iec_bison.yy" /* yacc.c:1646  */
+#line 5472 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no instructions defined in IL condition of transition declaration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid instructions in IL condition of transition declaration."); yyclearin;}
 	 yyerrok;
 	}
-#line 13875 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13877 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1015:
-#line 5476 "iec_bison.yy" /* yacc.c:1646  */
+#line 5478 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined in ST condition of transition declaration."); yynerrs++;}
-#line 13881 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13883 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1016:
-#line 5478 "iec_bison.yy" /* yacc.c:1646  */
+#line 5480 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid expression defined in ST condition of transition declaration."); yyerrok;}
-#line 13887 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13889 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1017:
-#line 5480 "iec_bison.yy" /* yacc.c:1646  */
+#line 5482 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "expecting ';' after expression defined in ST condition of transition declaration."); yyerrok;}
-#line 13893 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13895 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1018:
-#line 5488 "iec_bison.yy" /* yacc.c:1646  */
+#line 5490 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13899 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13901 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1019:
-#line 5489 "iec_bison.yy" /* yacc.c:1646  */
+#line 5491 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new action_c((yyvsp[-3].leaf), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 13905 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13907 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1020:
-#line 5491 "iec_bison.yy" /* yacc.c:1646  */
+#line 5493 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13911 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13913 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1021:
-#line 5492 "iec_bison.yy" /* yacc.c:1646  */
+#line 5494 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no action name defined in action declaration."); yynerrs++;}
-#line 13917 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13919 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1022:
-#line 5493 "iec_bison.yy" /* yacc.c:1646  */
+#line 5495 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13923 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13925 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1023:
-#line 5494 "iec_bison.yy" /* yacc.c:1646  */
+#line 5496 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid action name defined in action declaration."); yyerrok;}
-#line 13929 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13931 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1024:
-#line 5495 "iec_bison.yy" /* yacc.c:1646  */
+#line 5497 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_body_state();}
-#line 13935 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13937 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1025:
-#line 5496 "iec_bison.yy" /* yacc.c:1646  */
+#line 5498 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "':' missing after action name in action declaration."); yynerrs++;}
-#line 13941 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13943 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1026:
-#line 5500 "iec_bison.yy" /* yacc.c:1646  */
+#line 5502 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in action declaration."); yyerrok;}
-#line 13947 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13949 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1027:
-#line 5506 "iec_bison.yy" /* yacc.c:1646  */
+#line 5508 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].leaf);}
-#line 13953 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13955 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1028:
-#line 5509 "iec_bison.yy" /* yacc.c:1646  */
+#line 5511 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no body defined in action declaration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid body defined in action declaration."); yyclearin;}
 	 yyerrok;
 	}
-#line 13963 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13965 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1029:
-#line 5556 "iec_bison.yy" /* yacc.c:1646  */
+#line 5558 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 13969 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13971 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1030:
-#line 5557 "iec_bison.yy" /* yacc.c:1646  */
+#line 5559 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 13975 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13977 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1031:
-#line 5558 "iec_bison.yy" /* yacc.c:1646  */
+#line 5560 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 13981 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13983 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1032:
-#line 5559 "iec_bison.yy" /* yacc.c:1646  */
+#line 5561 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 13987 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13989 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1035:
-#line 5586 "iec_bison.yy" /* yacc.c:1646  */
+#line 5588 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; 
 	 if (get_preparse_state())    {library_element_symtable.insert((yyvsp[-1].leaf), prev_declared_configuration_name_token);}
 	 else                         {print_err_msg(locl((yylsp[-2])), locf((yylsp[0])), "no resource(s) nor program(s) defined in configuration declaration."); yynerrs++;}
 	 }
-#line 13996 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 13998 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1036:
-#line 5594 "iec_bison.yy" /* yacc.c:1646  */
+#line 5596 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.pop();
     direct_variable_symtable.pop();}
-#line 14003 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14005 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1037:
-#line 5599 "iec_bison.yy" /* yacc.c:1646  */
+#line 5601 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new configuration_declaration_c((yyvsp[-6].leaf), (yyvsp[-5].list), (yyvsp[-4].leaf), (yyvsp[-2].leaf), (yyvsp[-1].leaf), locloc((yyloc)));
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	}
-#line 14012 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14014 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1038:
-#line 5609 "iec_bison.yy" /* yacc.c:1646  */
+#line 5611 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new configuration_declaration_c((yyvsp[-5].leaf), (yyvsp[-4].list), (yyvsp[-3].list), (yyvsp[-2].leaf), (yyvsp[-1].leaf), locloc((yyloc)));
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 }
-#line 14021 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14023 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1039:
-#line 5617 "iec_bison.yy" /* yacc.c:1646  */
+#line 5619 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.pop();
     direct_variable_symtable.pop();}
-#line 14028 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14030 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1040:
-#line 5622 "iec_bison.yy" /* yacc.c:1646  */
+#line 5624 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new configuration_declaration_c((yyvsp[-6].leaf), (yyvsp[-5].list), (yyvsp[-4].leaf), (yyvsp[-2].leaf), (yyvsp[-1].leaf), locloc((yyloc)));
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert((yyvsp[-6].leaf), prev_declared_configuration_name_token);
 	}
-#line 14038 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14040 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1041:
-#line 5633 "iec_bison.yy" /* yacc.c:1646  */
+#line 5635 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new configuration_declaration_c((yyvsp[-5].leaf), (yyvsp[-4].list), (yyvsp[-3].list), (yyvsp[-2].leaf), (yyvsp[-1].leaf), locloc((yyloc)));
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 library_element_symtable.insert((yyvsp[-5].leaf), prev_declared_configuration_name_token);
 }
-#line 14048 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14050 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1042:
-#line 5642 "iec_bison.yy" /* yacc.c:1646  */
+#line 5644 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.pop();
     direct_variable_symtable.pop();}
-#line 14055 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14057 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1043:
-#line 5647 "iec_bison.yy" /* yacc.c:1646  */
+#line 5649 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-6])), locf((yylsp[-5])), "no configuration name defined in configuration declaration."); yynerrs++;}
-#line 14061 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14063 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1044:
-#line 5654 "iec_bison.yy" /* yacc.c:1646  */
+#line 5656 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-5])), locf((yylsp[-4])), "no configuration name defined in configuration declaration."); yynerrs++;}
-#line 14067 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14069 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1045:
-#line 5658 "iec_bison.yy" /* yacc.c:1646  */
+#line 5660 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.pop();
     direct_variable_symtable.pop();}
-#line 14074 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14076 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1046:
-#line 5663 "iec_bison.yy" /* yacc.c:1646  */
+#line 5665 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-6])), "invalid configuration name defined in configuration declaration."); yyerrok;}
-#line 14080 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14082 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1047:
-#line 5670 "iec_bison.yy" /* yacc.c:1646  */
+#line 5672 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "invalid configuration name defined in configuration declaration."); yyerrok;}
-#line 14086 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14088 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1048:
-#line 5685 "iec_bison.yy" /* yacc.c:1646  */
+#line 5687 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid resource(s) defined in configuration declaration."); yyerrok;}
-#line 14092 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14094 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1049:
-#line 5701 "iec_bison.yy" /* yacc.c:1646  */
+#line 5703 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-5])), "unclosed configuration declaration."); yyerrok;}
-#line 14098 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14100 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1050:
-#line 5703 "iec_bison.yy" /* yacc.c:1646  */
+#line 5705 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in configuration declaration."); yyerrok;}
-#line 14104 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14106 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1051:
-#line 5731 "iec_bison.yy" /* yacc.c:1646  */
+#line 5733 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new global_var_declarations_list_c(locloc((yyloc)));}
-#line 14110 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14112 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1052:
-#line 5733 "iec_bison.yy" /* yacc.c:1646  */
+#line 5735 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14116 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14118 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1053:
-#line 5739 "iec_bison.yy" /* yacc.c:1646  */
+#line 5741 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14122 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14124 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1054:
-#line 5746 "iec_bison.yy" /* yacc.c:1646  */
+#line 5748 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14128 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14130 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1056:
-#line 5753 "iec_bison.yy" /* yacc.c:1646  */
+#line 5755 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new resource_declaration_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14134 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14136 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1057:
-#line 5755 "iec_bison.yy" /* yacc.c:1646  */
+#line 5757 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14140 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14142 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1058:
-#line 5758 "iec_bison.yy" /* yacc.c:1646  */
+#line 5760 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected token after resource declaration."); yyerrok;}
-#line 14146 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14148 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1059:
-#line 5764 "iec_bison.yy" /* yacc.c:1646  */
+#line 5766 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.push();direct_variable_symtable.push();}
-#line 14152 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14154 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1060:
-#line 5764 "iec_bison.yy" /* yacc.c:1646  */
+#line 5766 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.insert((yyvsp[0].leaf), prev_declared_resource_name_token);}
-#line 14158 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14160 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1061:
-#line 5768 "iec_bison.yy" /* yacc.c:1646  */
+#line 5770 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new resource_declaration_c((yyvsp[-6].leaf), (yyvsp[-3].leaf), (yyvsp[-2].list), (yyvsp[-1].leaf), locloc((yyloc)));
 	 variable_name_symtable.pop();
 	 direct_variable_symtable.pop();
 	 variable_name_symtable.insert((yyvsp[-6].leaf), prev_declared_resource_name_token);
 	}
-#line 14168 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14170 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1062:
-#line 5774 "iec_bison.yy" /* yacc.c:1646  */
+#line 5776 "iec_bison.yy" /* yacc.c:1646  */
     {variable_name_symtable.push();direct_variable_symtable.push();}
-#line 14174 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14176 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1063:
-#line 5778 "iec_bison.yy" /* yacc.c:1646  */
+#line 5780 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-6])), locf((yylsp[-4])), "no resource name defined in resource declaration."); yynerrs++;}
-#line 14180 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14182 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1064:
-#line 5785 "iec_bison.yy" /* yacc.c:1646  */
+#line 5787 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in resource declaration."); yyerrok;}
-#line 14186 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14188 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1065:
-#line 5792 "iec_bison.yy" /* yacc.c:1646  */
+#line 5794 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new single_resource_declaration_c((yyvsp[-1].list), (yyvsp[0].list), locloc((yyloc)));}
-#line 14192 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14194 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1066:
-#line 5799 "iec_bison.yy" /* yacc.c:1646  */
+#line 5801 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new task_configuration_list_c(locloc((yyloc)));}
-#line 14198 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14200 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1067:
-#line 5801 "iec_bison.yy" /* yacc.c:1646  */
+#line 5803 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14204 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14206 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1068:
-#line 5804 "iec_bison.yy" /* yacc.c:1646  */
+#line 5806 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "';' missing at the end of task configuration in resource declaration."); yyerrok;}
-#line 14210 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14212 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1069:
-#line 5806 "iec_bison.yy" /* yacc.c:1646  */
+#line 5808 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after task configuration in resource declaration."); yynerrs++;}
-#line 14216 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14218 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1070:
-#line 5814 "iec_bison.yy" /* yacc.c:1646  */
+#line 5816 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new program_configuration_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14222 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14224 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1071:
-#line 5816 "iec_bison.yy" /* yacc.c:1646  */
+#line 5818 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14228 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14230 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1072:
-#line 5819 "iec_bison.yy" /* yacc.c:1646  */
+#line 5821 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new program_configuration_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of program configuration in resource declaration."); yyerrok;}
-#line 14234 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14236 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1073:
-#line 5821 "iec_bison.yy" /* yacc.c:1646  */
+#line 5823 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of program configuration in resource declaration."); yyerrok;}
-#line 14240 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14242 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1074:
-#line 5823 "iec_bison.yy" /* yacc.c:1646  */
+#line 5825 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid program configuration in resource declaration."); yyerrok;}
-#line 14246 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14248 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1075:
-#line 5825 "iec_bison.yy" /* yacc.c:1646  */
+#line 5827 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after program configuration in resource declaration."); yynerrs++;}
-#line 14252 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14254 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1077:
-#line 5902 "iec_bison.yy" /* yacc.c:1646  */
+#line 5904 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new any_fb_name_list_c(locloc((yyloc)));}
-#line 14258 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14260 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1078:
-#line 5905 "iec_bison.yy" /* yacc.c:1646  */
+#line 5907 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14264 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14266 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1079:
-#line 5913 "iec_bison.yy" /* yacc.c:1646  */
+#line 5915 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new global_var_reference_c(NULL, (yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 14270 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14272 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1080:
-#line 5915 "iec_bison.yy" /* yacc.c:1646  */
+#line 5917 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new global_var_reference_c(NULL, (yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14276 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14278 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1081:
-#line 5917 "iec_bison.yy" /* yacc.c:1646  */
+#line 5919 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new global_var_reference_c((yyvsp[-2].leaf), (yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 14282 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14284 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1082:
-#line 5919 "iec_bison.yy" /* yacc.c:1646  */
+#line 5921 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new global_var_reference_c((yyvsp[-4].leaf), (yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14288 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14290 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1083:
-#line 5940 "iec_bison.yy" /* yacc.c:1646  */
+#line 5942 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_output_reference_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14294 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14296 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1085:
-#line 5956 "iec_bison.yy" /* yacc.c:1646  */
+#line 5958 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new task_configuration_c((yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14300 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14302 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1086:
-#line 5959 "iec_bison.yy" /* yacc.c:1646  */
+#line 5961 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no task name defined in task declaration."); yynerrs++;}
-#line 14306 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14308 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1087:
-#line 5961 "iec_bison.yy" /* yacc.c:1646  */
+#line 5963 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid task name defined in task declaration."); yyerrok;}
-#line 14312 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14314 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1088:
-#line 5963 "iec_bison.yy" /* yacc.c:1646  */
+#line 5965 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no task initialization defined in task declaration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid task initialization in task declaration."); yyclearin;}
 	 yyerrok;
 	}
-#line 14322 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14324 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1090:
-#line 5983 "iec_bison.yy" /* yacc.c:1646  */
+#line 5985 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14328 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14330 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1091:
-#line 5984 "iec_bison.yy" /* yacc.c:1646  */
+#line 5986 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new task_initialization_c((yyvsp[-3].leaf), (yyvsp[-2].leaf), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 14334 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14336 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1092:
-#line 5991 "iec_bison.yy" /* yacc.c:1646  */
+#line 5993 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14340 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14342 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1093:
-#line 5992 "iec_bison.yy" /* yacc.c:1646  */
+#line 5994 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14346 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14348 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1094:
-#line 5992 "iec_bison.yy" /* yacc.c:1646  */
+#line 5994 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14352 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14354 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1095:
-#line 5993 "iec_bison.yy" /* yacc.c:1646  */
+#line 5995 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-2].leaf);}
-#line 14358 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14360 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1096:
-#line 5995 "iec_bison.yy" /* yacc.c:1646  */
+#line 5997 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14364 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14366 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1097:
-#line 5995 "iec_bison.yy" /* yacc.c:1646  */
+#line 5997 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14370 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14372 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1098:
-#line 5996 "iec_bison.yy" /* yacc.c:1646  */
+#line 5998 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-2])), "':=' missing after 'SINGLE' in task initialization."); yynerrs++;}
-#line 14376 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14378 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1099:
-#line 5997 "iec_bison.yy" /* yacc.c:1646  */
+#line 5999 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14382 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14384 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1100:
-#line 5997 "iec_bison.yy" /* yacc.c:1646  */
+#line 5999 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14388 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14390 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1101:
-#line 5998 "iec_bison.yy" /* yacc.c:1646  */
+#line 6000 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no data source defined in 'SINGLE' statement of task initialization."); yynerrs++;}
-#line 14394 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14396 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1102:
-#line 5999 "iec_bison.yy" /* yacc.c:1646  */
+#line 6001 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14400 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14402 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1103:
-#line 5999 "iec_bison.yy" /* yacc.c:1646  */
+#line 6001 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14406 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14408 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1104:
-#line 6000 "iec_bison.yy" /* yacc.c:1646  */
+#line 6002 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid data source defined in 'SINGLE' statement of task initialization."); yyerrok;}
-#line 14412 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14414 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1105:
-#line 6008 "iec_bison.yy" /* yacc.c:1646  */
+#line 6010 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14418 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14420 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1106:
-#line 6009 "iec_bison.yy" /* yacc.c:1646  */
+#line 6011 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14424 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14426 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1107:
-#line 6009 "iec_bison.yy" /* yacc.c:1646  */
+#line 6011 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14430 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14432 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1108:
-#line 6010 "iec_bison.yy" /* yacc.c:1646  */
+#line 6012 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-2].leaf);}
-#line 14436 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14438 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1109:
-#line 6012 "iec_bison.yy" /* yacc.c:1646  */
+#line 6014 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14442 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14444 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1110:
-#line 6012 "iec_bison.yy" /* yacc.c:1646  */
+#line 6014 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14448 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14450 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1111:
-#line 6013 "iec_bison.yy" /* yacc.c:1646  */
+#line 6015 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-2])), "':=' missing after 'INTERVAL' in task initialization.");}
-#line 14454 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14456 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1112:
-#line 6014 "iec_bison.yy" /* yacc.c:1646  */
+#line 6016 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14460 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14462 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1113:
-#line 6014 "iec_bison.yy" /* yacc.c:1646  */
+#line 6016 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14466 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14468 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1114:
-#line 6015 "iec_bison.yy" /* yacc.c:1646  */
+#line 6017 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-1])), "no data source defined in 'INTERVAL' statement of task initialization."); yynerrs++;}
-#line 14472 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14474 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1115:
-#line 6016 "iec_bison.yy" /* yacc.c:1646  */
+#line 6018 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14478 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14480 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1116:
-#line 6016 "iec_bison.yy" /* yacc.c:1646  */
+#line 6018 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_goto_task_init_state();}
-#line 14484 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14486 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1117:
-#line 6017 "iec_bison.yy" /* yacc.c:1646  */
+#line 6019 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid data source defined in 'INTERVAL' statement of task initialization."); yyerrok;}
-#line 14490 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14492 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1118:
-#line 6025 "iec_bison.yy" /* yacc.c:1646  */
+#line 6027 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14496 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14498 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1119:
-#line 6026 "iec_bison.yy" /* yacc.c:1646  */
+#line 6028 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].leaf);}
-#line 14502 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14504 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1120:
-#line 6028 "iec_bison.yy" /* yacc.c:1646  */
+#line 6030 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14508 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14510 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1121:
-#line 6029 "iec_bison.yy" /* yacc.c:1646  */
+#line 6031 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[0])), "':=' missing after 'PRIORITY' in task initialization."); yynerrs++;}
-#line 14514 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14516 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1122:
-#line 6030 "iec_bison.yy" /* yacc.c:1646  */
+#line 6032 "iec_bison.yy" /* yacc.c:1646  */
     {cmd_pop_state();}
-#line 14520 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14522 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1123:
-#line 6031 "iec_bison.yy" /* yacc.c:1646  */
+#line 6033 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-2])), locf((yylsp[0])), "no priority number defined in 'PRIORITY' statement of task initialization.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid priority number in 'PRIORITY' statement of task initialization."); yyclearin;}
 	 yyerrok;
 	}
-#line 14530 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14532 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1128:
-#line 6051 "iec_bison.yy" /* yacc.c:1646  */
+#line 6053 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_configuration_c(NULL, (yyvsp[-4].leaf), (yyvsp[-3].leaf), (yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));
 	 variable_name_symtable.insert((yyvsp[-4].leaf), prev_declared_program_name_token);
 	}
-#line 14538 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14540 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1129:
-#line 6055 "iec_bison.yy" /* yacc.c:1646  */
+#line 6057 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_configuration_c(new retain_option_c(locloc((yylsp[-5]))), (yyvsp[-4].leaf), (yyvsp[-3].leaf), (yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));
 	 variable_name_symtable.insert((yyvsp[-4].leaf), prev_declared_program_name_token);
 	}
-#line 14546 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14548 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1130:
-#line 6059 "iec_bison.yy" /* yacc.c:1646  */
+#line 6061 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new program_configuration_c(new non_retain_option_c(locloc((yylsp[-5]))), (yyvsp[-4].leaf), (yyvsp[-3].leaf), (yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));
 	 variable_name_symtable.insert((yyvsp[-4].leaf), prev_declared_program_name_token);
 	}
-#line 14554 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14556 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1131:
-#line 6064 "iec_bison.yy" /* yacc.c:1646  */
+#line 6066 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid program type name after ':' in program configuration."); yynerrs++;}
-#line 14560 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14562 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1132:
-#line 6066 "iec_bison.yy" /* yacc.c:1646  */
+#line 6068 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid program type name after ':' in program configuration."); yynerrs++;}
-#line 14566 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14568 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1133:
-#line 6068 "iec_bison.yy" /* yacc.c:1646  */
+#line 6070 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid program type name after ':' in program configuration."); yynerrs++;}
-#line 14572 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14574 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1134:
-#line 6070 "iec_bison.yy" /* yacc.c:1646  */
+#line 6072 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "unexpected token after 'PROGRAM' in program configuration."); yyerrok;}
-#line 14578 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14580 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1135:
-#line 6072 "iec_bison.yy" /* yacc.c:1646  */
+#line 6074 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "unexpected token after 'RETAIN' in retentive program configuration."); yyerrok;}
-#line 14584 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14586 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1136:
-#line 6074 "iec_bison.yy" /* yacc.c:1646  */
+#line 6076 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "unexpected token after 'NON_RETAIN' in non-retentive program configuration."); yyerrok;}
-#line 14590 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14592 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1137:
-#line 6076 "iec_bison.yy" /* yacc.c:1646  */
+#line 6078 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no program name defined in program configuration."); yynerrs++;}
-#line 14596 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14598 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1138:
-#line 6078 "iec_bison.yy" /* yacc.c:1646  */
+#line 6080 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no program name defined in retentive program configuration."); yynerrs++;}
-#line 14602 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14604 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1139:
-#line 6080 "iec_bison.yy" /* yacc.c:1646  */
+#line 6082 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no program name defined in non-retentive program configuration."); yynerrs++;}
-#line 14608 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14610 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1140:
-#line 6082 "iec_bison.yy" /* yacc.c:1646  */
+#line 6084 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid program name defined in program configuration."); yyerrok;}
-#line 14614 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14616 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1141:
-#line 6084 "iec_bison.yy" /* yacc.c:1646  */
+#line 6086 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid program name defined in retentive program configuration."); yyerrok;}
-#line 14620 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14622 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1142:
-#line 6086 "iec_bison.yy" /* yacc.c:1646  */
+#line 6088 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid program name defined in non-retentive program configuration."); yyerrok;}
-#line 14626 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14628 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1143:
-#line 6088 "iec_bison.yy" /* yacc.c:1646  */
+#line 6090 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after program name or optional task name in program configuration."); yynerrs++;}
-#line 14632 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14634 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1144:
-#line 6090 "iec_bison.yy" /* yacc.c:1646  */
+#line 6092 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after program name or optional task name in retentive program configuration."); yynerrs++;}
-#line 14638 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14640 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1145:
-#line 6092 "iec_bison.yy" /* yacc.c:1646  */
+#line 6094 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after program name or optional task name in non-retentive program configuration."); yynerrs++;}
-#line 14644 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14646 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1146:
-#line 6094 "iec_bison.yy" /* yacc.c:1646  */
+#line 6096 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no program type defined in program configuration."); yynerrs++;}
-#line 14650 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14652 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1147:
-#line 6096 "iec_bison.yy" /* yacc.c:1646  */
+#line 6098 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no program type defined in retentive program configuration."); yynerrs++;}
-#line 14656 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14658 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1148:
-#line 6098 "iec_bison.yy" /* yacc.c:1646  */
+#line 6100 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no program type defined in non-retentive program configuration."); yynerrs++;}
-#line 14662 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14664 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1149:
-#line 6105 "iec_bison.yy" /* yacc.c:1646  */
+#line 6107 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14668 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14670 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1150:
-#line 6107 "iec_bison.yy" /* yacc.c:1646  */
+#line 6109 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[0].leaf);}
-#line 14674 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14676 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1151:
-#line 6110 "iec_bison.yy" /* yacc.c:1646  */
+#line 6112 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no task name defined in optional task name of program configuration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid task name in optional task name of program configuration."); yyclearin;}
 	 yyerrok;
 	}
-#line 14684 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14686 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1152:
-#line 6121 "iec_bison.yy" /* yacc.c:1646  */
+#line 6123 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;}
-#line 14690 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14692 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1153:
-#line 6123 "iec_bison.yy" /* yacc.c:1646  */
+#line 6125 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-1].list);}
-#line 14696 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14698 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1154:
-#line 6126 "iec_bison.yy" /* yacc.c:1646  */
+#line 6128 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid program configuration elements in program configuration."); yyerrok;}
-#line 14702 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14704 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1155:
-#line 6128 "iec_bison.yy" /* yacc.c:1646  */
+#line 6130 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of program configuration elements in program configuration."); yyerrok;}
-#line 14708 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14710 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1156:
-#line 6135 "iec_bison.yy" /* yacc.c:1646  */
+#line 6137 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new prog_conf_elements_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14714 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14716 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1157:
-#line 6137 "iec_bison.yy" /* yacc.c:1646  */
+#line 6139 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14720 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14722 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1158:
-#line 6140 "iec_bison.yy" /* yacc.c:1646  */
+#line 6142 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing in program configuration elements list."); yynerrs++;}
-#line 14726 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14728 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1159:
-#line 6142 "iec_bison.yy" /* yacc.c:1646  */
+#line 6144 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no value defined for program configuration element in program configuration list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid value for program configuration element in program configuration list."); yyclearin;}
 	 yyerrok;
 	}
-#line 14736 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14738 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1162:
-#line 6164 "iec_bison.yy" /* yacc.c:1646  */
+#line 6166 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new fb_task_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14742 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14744 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1163:
-#line 6167 "iec_bison.yy" /* yacc.c:1646  */
+#line 6169 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no task name defined in function block configuration.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid task name in function block configuration."); yyclearin;}
 	 yyerrok;
 	}
-#line 14752 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14754 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1164:
-#line 6208 "iec_bison.yy" /* yacc.c:1646  */
+#line 6210 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new prog_cnxn_assign_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14758 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14760 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1165:
-#line 6210 "iec_bison.yy" /* yacc.c:1646  */
+#line 6212 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new prog_cnxn_sendto_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14764 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14766 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1166:
-#line 6213 "iec_bison.yy" /* yacc.c:1646  */
+#line 6215 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':=' missing between parameter and value in program configuration element."); yynerrs++;}
-#line 14770 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14772 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1167:
-#line 6215 "iec_bison.yy" /* yacc.c:1646  */
+#line 6217 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':=' missing between parameter and value in program configuration element."); yynerrs++;}
-#line 14776 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14778 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1168:
-#line 6217 "iec_bison.yy" /* yacc.c:1646  */
+#line 6219 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':=' or '=>' missing between parameter and variable in program configuration element."); yynerrs++;}
-#line 14782 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14784 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1169:
-#line 6219 "iec_bison.yy" /* yacc.c:1646  */
+#line 6221 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no value or variable defined in program configuration assignment element.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid value or variable in program configuration assignment element."); yyclearin;}
 	 yyerrok;
 	}
-#line 14792 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14794 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1170:
-#line 6225 "iec_bison.yy" /* yacc.c:1646  */
+#line 6227 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable defined in program configuration sendto element.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid variable in program configuration sendto element."); yyclearin;}
 	 yyerrok;
 	}
-#line 14802 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14804 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1177:
-#line 6247 "iec_bison.yy" /* yacc.c:1646  */
+#line 6249 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new instance_specific_initializations_c((yyvsp[-1].list), locloc((yyloc)));}
-#line 14808 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14810 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1178:
-#line 6250 "iec_bison.yy" /* yacc.c:1646  */
+#line 6252 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable declared in configuration variable(s) initialization."); yynerrs++;}
-#line 14814 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14816 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1179:
-#line 6252 "iec_bison.yy" /* yacc.c:1646  */
+#line 6254 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unexpected token after 'VAR_CONFIG' in configuration variable(s) initialization."); yyerrok;}
-#line 14820 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14822 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1180:
-#line 6254 "iec_bison.yy" /* yacc.c:1646  */
+#line 6256 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "unclosed configuration variable(s) initialization."); yyerrok;}
-#line 14826 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14828 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1181:
-#line 6256 "iec_bison.yy" /* yacc.c:1646  */
+#line 6258 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in configuration variable(s) initialization."); yyerrok;}
-#line 14832 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14834 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1182:
-#line 6263 "iec_bison.yy" /* yacc.c:1646  */
+#line 6265 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new instance_specific_init_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14838 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14840 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1183:
-#line 6265 "iec_bison.yy" /* yacc.c:1646  */
+#line 6267 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14844 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14846 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1184:
-#line 6268 "iec_bison.yy" /* yacc.c:1646  */
+#line 6270 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new instance_specific_init_list_c(locloc((yyloc))); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid configuration variable initialization."); yyerrok;}
-#line 14850 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14852 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1185:
-#line 6270 "iec_bison.yy" /* yacc.c:1646  */
+#line 6272 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new instance_specific_init_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of configuration variable initialization."); yyerrok;}
-#line 14856 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14858 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1186:
-#line 6272 "iec_bison.yy" /* yacc.c:1646  */
+#line 6274 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of configuration variable initialization."); yyerrok;}
-#line 14862 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14864 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1187:
-#line 6274 "iec_bison.yy" /* yacc.c:1646  */
+#line 6276 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid configuration variable initialization."); yyerrok;}
-#line 14868 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14870 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1188:
-#line 6276 "iec_bison.yy" /* yacc.c:1646  */
+#line 6278 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after configuration variable initialization."); yynerrs++;}
-#line 14874 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14876 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1189:
-#line 6295 "iec_bison.yy" /* yacc.c:1646  */
+#line 6297 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new instance_specific_init_c((yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].list), (yyvsp[-2].leaf), NULL, (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14880 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14882 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1190:
-#line 6297 "iec_bison.yy" /* yacc.c:1646  */
+#line 6299 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new instance_specific_init_c((yyvsp[-8].leaf), (yyvsp[-6].leaf), (yyvsp[-4].list), (yyvsp[-3].leaf), (yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14886 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14888 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1191:
-#line 6299 "iec_bison.yy" /* yacc.c:1646  */
+#line 6301 "iec_bison.yy" /* yacc.c:1646  */
     {(yyvsp[-3].list)->add_element((yyvsp[-2].leaf)); (yyval.leaf) = new instance_specific_init_c((yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].list), NULL, NULL, (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14892 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14894 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1192:
-#line 6306 "iec_bison.yy" /* yacc.c:1646  */
+#line 6308 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new fb_initialization_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 14898 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14900 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1193:
-#line 6309 "iec_bison.yy" /* yacc.c:1646  */
+#line 6311 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':=' missing between function block name and initialization in function block initialization."); yynerrs++;}
-#line 14904 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14906 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1194:
-#line 6311 "iec_bison.yy" /* yacc.c:1646  */
+#line 6313 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no initial value defined in function block initialization.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid initial value in function block initialization."); yyclearin;}
 	 yyerrok;
 	}
-#line 14914 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14916 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1197:
-#line 6334 "iec_bison.yy" /* yacc.c:1646  */
+#line 6336 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new instruction_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14920 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14922 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1198:
-#line 6336 "iec_bison.yy" /* yacc.c:1646  */
+#line 6338 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new instruction_list_c(locloc((yylsp[-1]))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 14926 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14928 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1199:
-#line 6338 "iec_bison.yy" /* yacc.c:1646  */
+#line 6340 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14932 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14934 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1200:
-#line 6340 "iec_bison.yy" /* yacc.c:1646  */
+#line 6342 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 14938 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14940 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1201:
-#line 6347 "iec_bison.yy" /* yacc.c:1646  */
+#line 6349 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_instruction_c(NULL, (yyvsp[-1].leaf), locloc((yylsp[-1])));}
-#line 14944 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14946 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1202:
-#line 6349 "iec_bison.yy" /* yacc.c:1646  */
+#line 6351 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_instruction_c((yyvsp[-3].leaf), (yyvsp[-1].leaf), locf((yylsp[-3])), locl((yylsp[-1])));}
-#line 14950 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14952 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1203:
-#line 6351 "iec_bison.yy" /* yacc.c:1646  */
+#line 6353 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_instruction_c((yyvsp[-2].leaf), NULL, locf((yylsp[-2])), locl((yylsp[-1])));}
-#line 14956 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14958 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1204:
-#line 6354 "iec_bison.yy" /* yacc.c:1646  */
+#line 6356 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid IL instruction."); yyerrok;}
-#line 14962 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14964 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1205:
-#line 6356 "iec_bison.yy" /* yacc.c:1646  */
+#line 6358 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of IL instruction."); yyerrok;}
-#line 14968 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14970 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1206:
-#line 6358 "iec_bison.yy" /* yacc.c:1646  */
+#line 6360 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid label in IL instruction."); yyerrok;}
-#line 14974 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14976 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1207:
-#line 6360 "iec_bison.yy" /* yacc.c:1646  */
+#line 6362 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "':' missing after label in IL instruction."); yynerrs++;}
-#line 14980 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14982 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1208:
-#line 6362 "iec_bison.yy" /* yacc.c:1646  */
+#line 6364 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid IL instruction."); yyerrok;}
-#line 14986 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14988 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1209:
-#line 6364 "iec_bison.yy" /* yacc.c:1646  */
+#line 6366 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of IL instruction."); yyerrok;}
-#line 14992 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 14994 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1217:
-#line 6387 "iec_bison.yy" /* yacc.c:1646  */
+#line 6389 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_operation_c((yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 14998 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15000 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1218:
-#line 6399 "iec_bison.yy" /* yacc.c:1646  */
+#line 6401 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_operation_c((yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15004 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15006 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1219:
-#line 6401 "iec_bison.yy" /* yacc.c:1646  */
+#line 6403 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_operation_c((yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15010 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15012 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1220:
-#line 6422 "iec_bison.yy" /* yacc.c:1646  */
+#line 6424 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_function_call_c((yyvsp[0].leaf), NULL, locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[0].leaf))) ERROR;}
-#line 15016 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15018 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1221:
-#line 6450 "iec_bison.yy" /* yacc.c:1646  */
+#line 6452 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_function_call_c((yyvsp[-1].leaf), (yyvsp[0].list), locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-1].leaf))) ERROR;}
-#line 15022 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15024 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1222:
-#line 6452 "iec_bison.yy" /* yacc.c:1646  */
+#line 6454 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_function_call_c(il_operator_c_2_poutype_identifier_c((yyvsp[-1].leaf)), (yyvsp[0].list), locloc((yyloc)));}
-#line 15028 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15030 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1223:
-#line 6486 "iec_bison.yy" /* yacc.c:1646  */
+#line 6488 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_expression_c((yyvsp[-3].leaf), NULL, NULL, locloc((yyloc)));}
-#line 15034 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15036 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1224:
-#line 6488 "iec_bison.yy" /* yacc.c:1646  */
+#line 6490 "iec_bison.yy" /* yacc.c:1646  */
     { simple_instr_list_c *tmp_simple_instr_list = new simple_instr_list_c(locloc((yylsp[-2])));
 	  tmp_simple_instr_list ->insert_element(new il_simple_instruction_c(new il_simple_operation_c(new LD_operator_c(locloc((yylsp[-2]))), (yyvsp[-2].leaf), locloc((yylsp[-2]))), locloc((yylsp[-2]))), 0);
 	  (yyval.leaf) = new il_expression_c((yyvsp[-4].leaf), (yyvsp[-2].leaf), tmp_simple_instr_list, locloc((yyloc)));
 	}
-#line 15043 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15045 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1225:
-#line 6493 "iec_bison.yy" /* yacc.c:1646  */
+#line 6495 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_expression_c((yyvsp[-4].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 15049 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15051 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1226:
-#line 6495 "iec_bison.yy" /* yacc.c:1646  */
+#line 6497 "iec_bison.yy" /* yacc.c:1646  */
     { simple_instr_list_c *tmp_simple_instr_list = dynamic_cast <simple_instr_list_c *> (yyvsp[-1].list);
 	  tmp_simple_instr_list ->insert_element(new il_simple_instruction_c(new il_simple_operation_c(new LD_operator_c(locloc((yylsp[-3]))), (yyvsp[-3].leaf), locloc((yylsp[-3]))), locloc((yylsp[-3]))), 0);
 	  (yyval.leaf) = new il_expression_c((yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));
 	}
-#line 15058 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15060 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1227:
-#line 6500 "iec_bison.yy" /* yacc.c:1646  */
+#line 6502 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_expression_c((yyvsp[-3].leaf), NULL, NULL, locloc((yyloc)));}
-#line 15064 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15066 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1228:
-#line 6502 "iec_bison.yy" /* yacc.c:1646  */
+#line 6504 "iec_bison.yy" /* yacc.c:1646  */
     { simple_instr_list_c *tmp_simple_instr_list = new simple_instr_list_c(locloc((yylsp[-2])));
 	  tmp_simple_instr_list ->insert_element(new il_simple_instruction_c(new il_simple_operation_c(new LD_operator_c(locloc((yylsp[-2]))), (yyvsp[-2].leaf), locloc((yylsp[-2]))), locloc((yylsp[-2]))), 0);
 	  (yyval.leaf) = new il_expression_c((yyvsp[-4].leaf), (yyvsp[-2].leaf), tmp_simple_instr_list, locloc((yyloc)));
 	}
-#line 15073 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15075 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1229:
-#line 6507 "iec_bison.yy" /* yacc.c:1646  */
+#line 6509 "iec_bison.yy" /* yacc.c:1646  */
     { simple_instr_list_c *tmp_simple_instr_list = dynamic_cast <simple_instr_list_c *> (yyvsp[-1].list);
 	  tmp_simple_instr_list ->insert_element(new il_simple_instruction_c(new il_simple_operation_c(new LD_operator_c(locloc((yylsp[-3]))), (yyvsp[-3].leaf), locloc((yylsp[-3]))), locloc((yylsp[-3]))), 0);
 	  (yyval.leaf) = new il_expression_c((yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));
 	}
-#line 15082 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15084 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1230:
-#line 6512 "iec_bison.yy" /* yacc.c:1646  */
+#line 6514 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_expression_c((yyvsp[-2].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 15088 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15090 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1231:
-#line 6515 "iec_bison.yy" /* yacc.c:1646  */
+#line 6517 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15094 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15096 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1232:
-#line 6517 "iec_bison.yy" /* yacc.c:1646  */
+#line 6519 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15100 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15102 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1233:
-#line 6519 "iec_bison.yy" /* yacc.c:1646  */
+#line 6521 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15106 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15108 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1234:
-#line 6521 "iec_bison.yy" /* yacc.c:1646  */
+#line 6523 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15112 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15114 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1235:
-#line 6523 "iec_bison.yy" /* yacc.c:1646  */
+#line 6525 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15118 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15120 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1236:
-#line 6525 "iec_bison.yy" /* yacc.c:1646  */
+#line 6527 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15124 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15126 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1237:
-#line 6527 "iec_bison.yy" /* yacc.c:1646  */
+#line 6529 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL expression."); yyerrok;}
-#line 15130 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15132 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1238:
-#line 6534 "iec_bison.yy" /* yacc.c:1646  */
+#line 6536 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_jump_operation_c((yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15136 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15138 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1239:
-#line 6537 "iec_bison.yy" /* yacc.c:1646  */
+#line 6539 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid label defined in IL jump operation."); yyerrok;}
-#line 15142 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15144 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1240:
-#line 6545 "iec_bison.yy" /* yacc.c:1646  */
+#line 6547 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_fb_call_c((yyvsp[-1].leaf), (yyvsp[0].leaf), NULL, NULL, locloc((yyloc)));}
-#line 15148 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15150 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1241:
-#line 6547 "iec_bison.yy" /* yacc.c:1646  */
+#line 6549 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_fb_call_c((yyvsp[-3].leaf), (yyvsp[-2].leaf), NULL, NULL, locloc((yyloc)));}
-#line 15154 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15156 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1242:
-#line 6549 "iec_bison.yy" /* yacc.c:1646  */
+#line 6551 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_fb_call_c((yyvsp[-4].leaf), (yyvsp[-3].leaf), NULL, NULL, locloc((yyloc)));}
-#line 15160 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15162 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1243:
-#line 6551 "iec_bison.yy" /* yacc.c:1646  */
+#line 6553 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_fb_call_c((yyvsp[-4].leaf), (yyvsp[-3].leaf), (yyvsp[-1].list), NULL, locloc((yyloc)));}
-#line 15166 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15168 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1244:
-#line 6553 "iec_bison.yy" /* yacc.c:1646  */
+#line 6555 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_fb_call_c((yyvsp[-5].leaf), (yyvsp[-4].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 15172 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15174 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1245:
-#line 6556 "iec_bison.yy" /* yacc.c:1646  */
+#line 6558 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no function block name defined in IL function block call.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid function block name in IL function block call."); yyclearin;}
 	 yyerrok;
 	}
-#line 15182 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15184 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1246:
-#line 6562 "iec_bison.yy" /* yacc.c:1646  */
+#line 6564 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no function block name defined in IL function block call."); yynerrs++;}
-#line 15188 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15190 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1247:
-#line 6564 "iec_bison.yy" /* yacc.c:1646  */
+#line 6566 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no function block name defined in IL function block call."); yynerrs++;}
-#line 15194 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15196 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1248:
-#line 6566 "iec_bison.yy" /* yacc.c:1646  */
+#line 6568 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no function block name defined in IL function block call."); yynerrs++;}
-#line 15200 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15202 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1249:
-#line 6568 "iec_bison.yy" /* yacc.c:1646  */
+#line 6570 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no function block name defined in IL function block call."); yynerrs++;}
-#line 15206 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15208 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1250:
-#line 6570 "iec_bison.yy" /* yacc.c:1646  */
+#line 6572 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid function block name defined in IL function block call."); yyerrok;}
-#line 15212 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15214 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1251:
-#line 6572 "iec_bison.yy" /* yacc.c:1646  */
+#line 6574 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid function block name defined in IL function block call."); yyerrok;}
-#line 15218 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15220 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1252:
-#line 6574 "iec_bison.yy" /* yacc.c:1646  */
+#line 6576 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid function block name defined in IL function block call."); yyerrok;}
-#line 15224 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15226 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1253:
-#line 6576 "iec_bison.yy" /* yacc.c:1646  */
+#line 6578 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid function block name defined in IL function block call."); yyerrok;}
-#line 15230 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15232 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1254:
-#line 6578 "iec_bison.yy" /* yacc.c:1646  */
+#line 6580 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "'(' missing after function block name defined in IL function block call."); yynerrs++;}
-#line 15236 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15238 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1255:
-#line 6580 "iec_bison.yy" /* yacc.c:1646  */
+#line 6582 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "'(' missing after function block name defined in IL function block call."); yynerrs++;}
-#line 15242 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15244 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1256:
-#line 6582 "iec_bison.yy" /* yacc.c:1646  */
+#line 6584 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL function block call."); yyerrok;}
-#line 15248 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15250 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1257:
-#line 6584 "iec_bison.yy" /* yacc.c:1646  */
+#line 6586 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL function block call."); yyerrok;}
-#line 15254 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15256 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1258:
-#line 6586 "iec_bison.yy" /* yacc.c:1646  */
+#line 6588 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of IL function block call."); yyerrok;}
-#line 15260 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15262 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1259:
-#line 6611 "iec_bison.yy" /* yacc.c:1646  */
+#line 6613 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_formal_funct_call_c((yyvsp[-3].leaf), NULL, locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-3].leaf))) ERROR;}
-#line 15266 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15268 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1260:
-#line 6613 "iec_bison.yy" /* yacc.c:1646  */
+#line 6615 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_formal_funct_call_c((yyvsp[-3].leaf), NULL, locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-3].leaf))) ERROR;}
-#line 15272 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15274 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1261:
-#line 6628 "iec_bison.yy" /* yacc.c:1646  */
+#line 6630 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_formal_funct_call_c((yyvsp[-4].leaf), (yyvsp[-1].list), locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-4].leaf))) ERROR;}
-#line 15278 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15280 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1262:
-#line 6630 "iec_bison.yy" /* yacc.c:1646  */
+#line 6632 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_formal_funct_call_c((yyvsp[-4].leaf), (yyvsp[-1].list), locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-4].leaf))) ERROR;}
-#line 15284 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15286 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1263:
-#line 6653 "iec_bison.yy" /* yacc.c:1646  */
+#line 6655 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_formal_funct_call_c(il_operator_c_2_poutype_identifier_c((yyvsp[-2].leaf)), (yyvsp[-1].list), locloc((yyloc)));}
-#line 15290 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15292 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1264:
-#line 6656 "iec_bison.yy" /* yacc.c:1646  */
+#line 6658 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter list defined in IL formal function call."); yyerrok;}
-#line 15296 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15298 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1265:
-#line 6658 "iec_bison.yy" /* yacc.c:1646  */
+#line 6660 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter list defined in IL formal function call."); yyerrok;}
-#line 15302 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15304 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1266:
-#line 6660 "iec_bison.yy" /* yacc.c:1646  */
+#line 6662 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter list defined in IL formal function call."); yyerrok;}
-#line 15308 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15310 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1267:
-#line 6667 "iec_bison.yy" /* yacc.c:1646  */
+#line 6669 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-2].leaf);}
-#line 15314 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15316 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1268:
-#line 6670 "iec_bison.yy" /* yacc.c:1646  */
+#line 6672 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-2].leaf); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing after '(' in IL instruction."); yyerrok;}
-#line 15320 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15322 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1272:
-#line 6684 "iec_bison.yy" /* yacc.c:1646  */
+#line 6686 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_operand_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15326 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15328 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1274:
-#line 6692 "iec_bison.yy" /* yacc.c:1646  */
+#line 6694 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_operand_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-2].leaf)); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15332 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15334 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1275:
-#line 6694 "iec_bison.yy" /* yacc.c:1646  */
+#line 6696 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15338 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15340 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1276:
-#line 6697 "iec_bison.yy" /* yacc.c:1646  */
+#line 6699 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing in IL operand list."); yynerrs++;}
-#line 15344 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15346 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1277:
-#line 6699 "iec_bison.yy" /* yacc.c:1646  */
+#line 6701 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_operand_list_c(locloc((yyloc)));
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no operand defined in IL operand list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid operand name in IL operand list."); yyclearin;}
 	 yyerrok;
 	}
-#line 15354 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15356 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1278:
-#line 6710 "iec_bison.yy" /* yacc.c:1646  */
+#line 6712 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new simple_instr_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15360 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15362 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1279:
-#line 6712 "iec_bison.yy" /* yacc.c:1646  */
+#line 6714 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15366 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15368 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1280:
-#line 6718 "iec_bison.yy" /* yacc.c:1646  */
+#line 6720 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_instruction_c((yyvsp[-1].leaf), locloc((yylsp[-1])));}
-#line 15372 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15374 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1281:
-#line 6720 "iec_bison.yy" /* yacc.c:1646  */
+#line 6722 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_instruction_c((yyvsp[-1].leaf), locloc((yylsp[-1])));}
-#line 15378 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15380 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1282:
-#line 6722 "iec_bison.yy" /* yacc.c:1646  */
+#line 6724 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_simple_instruction_c((yyvsp[-1].leaf), locloc((yylsp[-1])));}
-#line 15384 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15386 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1283:
-#line 6725 "iec_bison.yy" /* yacc.c:1646  */
+#line 6727 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing after expression IL instruction."); yyerrok;}
-#line 15390 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15392 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1284:
-#line 6727 "iec_bison.yy" /* yacc.c:1646  */
+#line 6729 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing after formal function call IL instruction."); yyerrok;}
-#line 15396 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15398 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1285:
-#line 6748 "iec_bison.yy" /* yacc.c:1646  */
+#line 6750 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15402 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15404 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1286:
-#line 6750 "iec_bison.yy" /* yacc.c:1646  */
+#line 6752 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_param_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15408 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15410 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1287:
-#line 6753 "iec_bison.yy" /* yacc.c:1646  */
+#line 6755 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid parameter assignment in parameter assignment list."); yyerrok;}
-#line 15414 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15416 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1288:
-#line 6755 "iec_bison.yy" /* yacc.c:1646  */
+#line 6757 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_param_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing at the end of parameter assignment in parameter assignment list."); yynerrs++;}
-#line 15420 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15422 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1289:
-#line 6757 "iec_bison.yy" /* yacc.c:1646  */
+#line 6759 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing at the end of parameter assignment in parameter assignment list."); yynerrs++;}
-#line 15426 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15428 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1290:
-#line 6765 "iec_bison.yy" /* yacc.c:1646  */
+#line 6767 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_param_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15432 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15434 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1291:
-#line 6767 "iec_bison.yy" /* yacc.c:1646  */
+#line 6769 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 15438 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15440 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1292:
-#line 6770 "iec_bison.yy" /* yacc.c:1646  */
+#line 6772 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new il_param_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing at the end of parameter assignment in parameter assignment list."); yynerrs++;}
-#line 15444 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15446 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1293:
-#line 6772 "iec_bison.yy" /* yacc.c:1646  */
+#line 6774 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "',' missing at the end of parameter assignment in parameter assignment list."); yynerrs++;}
-#line 15450 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15452 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1296:
-#line 6782 "iec_bison.yy" /* yacc.c:1646  */
+#line 6784 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of parameter assignment in parameter assignment list."); yyerrok;}
-#line 15456 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15458 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1297:
-#line 6784 "iec_bison.yy" /* yacc.c:1646  */
+#line 6786 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of parameter out assignment in parameter assignment list."); yyerrok;}
-#line 15462 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15464 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1300:
-#line 6794 "iec_bison.yy" /* yacc.c:1646  */
+#line 6796 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of last parameter assignment in parameter assignment list."); yyerrok;}
-#line 15468 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15470 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1301:
-#line 6796 "iec_bison.yy" /* yacc.c:1646  */
+#line 6798 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "EOL missing at the end of last parameter out assignment in parameter assignment list."); yyerrok;}
-#line 15474 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15476 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1302:
-#line 6804 "iec_bison.yy" /* yacc.c:1646  */
+#line 6806 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_param_assignment_c((yyvsp[-1].leaf), (yyvsp[0].leaf), NULL, locloc((yyloc)));}
-#line 15480 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15482 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1303:
-#line 6806 "iec_bison.yy" /* yacc.c:1646  */
+#line 6808 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_param_assignment_c((yyvsp[-4].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 15486 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15488 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1304:
-#line 6809 "iec_bison.yy" /* yacc.c:1646  */
+#line 6811 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid operator in parameter assignment."); yyerrok;}
-#line 15492 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15494 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1305:
-#line 6811 "iec_bison.yy" /* yacc.c:1646  */
+#line 6813 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid operator in parameter assignment."); yyerrok;}
-#line 15498 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15500 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1306:
-#line 6813 "iec_bison.yy" /* yacc.c:1646  */
+#line 6815 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no operand defined in parameter assignment.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid operand in parameter assignment."); yyclearin;}
 	 yyerrok;
 	}
-#line 15508 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15510 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1307:
-#line 6819 "iec_bison.yy" /* yacc.c:1646  */
+#line 6821 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no instruction list defined in parameter assignment."); yynerrs++;}
-#line 15514 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15516 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1308:
-#line 6821 "iec_bison.yy" /* yacc.c:1646  */
+#line 6823 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid instruction list defined in parameter assignment."); yyerrok;}
-#line 15520 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15522 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1309:
-#line 6823 "iec_bison.yy" /* yacc.c:1646  */
+#line 6825 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of instruction list defined in parameter assignment."); yyerrok;}
-#line 15526 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15528 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1310:
-#line 6830 "iec_bison.yy" /* yacc.c:1646  */
+#line 6832 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_param_out_assignment_c((yyvsp[-1].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15532 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15534 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1311:
-#line 6833 "iec_bison.yy" /* yacc.c:1646  */
+#line 6835 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no variable defined in IL operand list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid variable in IL operand list."); yyclearin;}
 	 yyerrok;
 	}
-#line 15542 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15544 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1312:
-#line 6846 "iec_bison.yy" /* yacc.c:1646  */
+#line 6848 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new identifier_c((yyvsp[0].ID), locloc((yyloc)));}
-#line 15548 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15550 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1313:
-#line 6856 "iec_bison.yy" /* yacc.c:1646  */
+#line 6858 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new LD_operator_c(locloc((yyloc)));}
-#line 15554 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15556 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1314:
-#line 6857 "iec_bison.yy" /* yacc.c:1646  */
+#line 6859 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new LDN_operator_c(locloc((yyloc)));}
-#line 15560 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15562 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1315:
-#line 6858 "iec_bison.yy" /* yacc.c:1646  */
+#line 6860 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ST_operator_c(locloc((yyloc)));}
-#line 15566 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15568 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1316:
-#line 6859 "iec_bison.yy" /* yacc.c:1646  */
+#line 6861 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new STN_operator_c(locloc((yyloc)));}
-#line 15572 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15574 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1317:
-#line 6860 "iec_bison.yy" /* yacc.c:1646  */
+#line 6862 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new NOT_operator_c(locloc((yyloc)));}
-#line 15578 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15580 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1318:
-#line 6861 "iec_bison.yy" /* yacc.c:1646  */
+#line 6863 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new S_operator_c(locloc((yyloc)));}
-#line 15584 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15586 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1319:
-#line 6862 "iec_bison.yy" /* yacc.c:1646  */
+#line 6864 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new R_operator_c(locloc((yyloc)));}
-#line 15590 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15592 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1320:
-#line 6863 "iec_bison.yy" /* yacc.c:1646  */
+#line 6865 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new S1_operator_c(locloc((yyloc)));}
-#line 15596 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15598 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1321:
-#line 6864 "iec_bison.yy" /* yacc.c:1646  */
+#line 6866 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new R1_operator_c(locloc((yyloc)));}
-#line 15602 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15604 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1322:
-#line 6865 "iec_bison.yy" /* yacc.c:1646  */
+#line 6867 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CLK_operator_c(locloc((yyloc)));}
-#line 15608 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15610 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1323:
-#line 6866 "iec_bison.yy" /* yacc.c:1646  */
+#line 6868 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CU_operator_c(locloc((yyloc)));}
-#line 15614 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15616 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1324:
-#line 6867 "iec_bison.yy" /* yacc.c:1646  */
+#line 6869 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CD_operator_c(locloc((yyloc)));}
-#line 15620 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15622 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1325:
-#line 6868 "iec_bison.yy" /* yacc.c:1646  */
+#line 6870 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new PV_operator_c(locloc((yyloc)));}
-#line 15626 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15628 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1326:
-#line 6869 "iec_bison.yy" /* yacc.c:1646  */
+#line 6871 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new IN_operator_c(locloc((yyloc)));}
-#line 15632 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15634 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1327:
-#line 6870 "iec_bison.yy" /* yacc.c:1646  */
+#line 6872 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new PT_operator_c(locloc((yyloc)));}
-#line 15638 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15640 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1328:
-#line 6871 "iec_bison.yy" /* yacc.c:1646  */
+#line 6873 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new AND_operator_c(locloc((yyloc)));}
-#line 15644 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15646 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1329:
-#line 6872 "iec_bison.yy" /* yacc.c:1646  */
+#line 6874 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new AND_operator_c(locloc((yyloc)));}
-#line 15650 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15652 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1330:
-#line 6873 "iec_bison.yy" /* yacc.c:1646  */
+#line 6875 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new OR_operator_c(locloc((yyloc)));}
-#line 15656 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15658 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1331:
-#line 6874 "iec_bison.yy" /* yacc.c:1646  */
+#line 6876 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new XOR_operator_c(locloc((yyloc)));}
-#line 15662 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15664 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1332:
-#line 6875 "iec_bison.yy" /* yacc.c:1646  */
+#line 6877 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ANDN_operator_c(locloc((yyloc)));}
-#line 15668 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15670 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1333:
-#line 6876 "iec_bison.yy" /* yacc.c:1646  */
+#line 6878 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ANDN_operator_c(locloc((yyloc)));}
-#line 15674 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15676 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1334:
-#line 6877 "iec_bison.yy" /* yacc.c:1646  */
+#line 6879 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ORN_operator_c(locloc((yyloc)));}
-#line 15680 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15682 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1335:
-#line 6878 "iec_bison.yy" /* yacc.c:1646  */
+#line 6880 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new XORN_operator_c(locloc((yyloc)));}
-#line 15686 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15688 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1336:
-#line 6879 "iec_bison.yy" /* yacc.c:1646  */
+#line 6881 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ADD_operator_c(locloc((yyloc)));}
-#line 15692 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15694 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1337:
-#line 6880 "iec_bison.yy" /* yacc.c:1646  */
+#line 6882 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new SUB_operator_c(locloc((yyloc)));}
-#line 15698 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15700 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1338:
-#line 6881 "iec_bison.yy" /* yacc.c:1646  */
+#line 6883 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new MUL_operator_c(locloc((yyloc)));}
-#line 15704 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15706 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1339:
-#line 6882 "iec_bison.yy" /* yacc.c:1646  */
+#line 6884 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new DIV_operator_c(locloc((yyloc)));}
-#line 15710 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15712 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1340:
-#line 6883 "iec_bison.yy" /* yacc.c:1646  */
+#line 6885 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new MOD_operator_c(locloc((yyloc)));}
-#line 15716 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15718 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1341:
-#line 6884 "iec_bison.yy" /* yacc.c:1646  */
+#line 6886 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new GT_operator_c(locloc((yyloc)));}
-#line 15722 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15724 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1342:
-#line 6885 "iec_bison.yy" /* yacc.c:1646  */
+#line 6887 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new GE_operator_c(locloc((yyloc)));}
-#line 15728 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15730 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1343:
-#line 6886 "iec_bison.yy" /* yacc.c:1646  */
+#line 6888 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new EQ_operator_c(locloc((yyloc)));}
-#line 15734 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15736 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1344:
-#line 6887 "iec_bison.yy" /* yacc.c:1646  */
+#line 6889 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new LT_operator_c(locloc((yyloc)));}
-#line 15740 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15742 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1345:
-#line 6888 "iec_bison.yy" /* yacc.c:1646  */
+#line 6890 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new LE_operator_c(locloc((yyloc)));}
-#line 15746 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15748 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1346:
-#line 6889 "iec_bison.yy" /* yacc.c:1646  */
+#line 6891 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new NE_operator_c(locloc((yyloc)));}
-#line 15752 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15754 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1347:
-#line 6890 "iec_bison.yy" /* yacc.c:1646  */
+#line 6892 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CAL_operator_c(locloc((yyloc)));}
-#line 15758 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15760 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1348:
-#line 6891 "iec_bison.yy" /* yacc.c:1646  */
+#line 6893 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CALC_operator_c(locloc((yyloc)));}
-#line 15764 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15766 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1349:
-#line 6892 "iec_bison.yy" /* yacc.c:1646  */
+#line 6894 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new CALCN_operator_c(locloc((yyloc)));}
-#line 15770 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15772 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1350:
-#line 6893 "iec_bison.yy" /* yacc.c:1646  */
+#line 6895 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new RET_operator_c(locloc((yyloc)));}
-#line 15776 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15778 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1351:
-#line 6894 "iec_bison.yy" /* yacc.c:1646  */
+#line 6896 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new RETC_operator_c(locloc((yyloc)));}
-#line 15782 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15784 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1352:
-#line 6895 "iec_bison.yy" /* yacc.c:1646  */
+#line 6897 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new RETCN_operator_c(locloc((yyloc)));}
-#line 15788 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15790 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1353:
-#line 6896 "iec_bison.yy" /* yacc.c:1646  */
+#line 6898 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new JMP_operator_c(locloc((yyloc)));}
-#line 15794 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15796 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1354:
-#line 6897 "iec_bison.yy" /* yacc.c:1646  */
+#line 6899 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new JMPC_operator_c(locloc((yyloc)));}
-#line 15800 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15802 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1355:
-#line 6898 "iec_bison.yy" /* yacc.c:1646  */
+#line 6900 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new JMPCN_operator_c(locloc((yyloc)));}
-#line 15806 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15808 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1397:
-#line 6982 "iec_bison.yy" /* yacc.c:1646  */
+#line 6984 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c((yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15812 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15814 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1398:
-#line 6984 "iec_bison.yy" /* yacc.c:1646  */
+#line 6986 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c((yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15818 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15820 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1399:
-#line 6986 "iec_bison.yy" /* yacc.c:1646  */
+#line 6988 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15824 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15826 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1400:
-#line 6988 "iec_bison.yy" /* yacc.c:1646  */
+#line 6990 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15830 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15832 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1401:
-#line 6990 "iec_bison.yy" /* yacc.c:1646  */
+#line 6992 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15836 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15838 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1402:
-#line 6992 "iec_bison.yy" /* yacc.c:1646  */
+#line 6994 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15842 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15844 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1403:
-#line 6994 "iec_bison.yy" /* yacc.c:1646  */
+#line 6996 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15848 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15850 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1404:
-#line 6996 "iec_bison.yy" /* yacc.c:1646  */
+#line 6998 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15854 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15856 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1405:
-#line 6998 "iec_bison.yy" /* yacc.c:1646  */
+#line 7000 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15860 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15862 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1406:
-#line 7000 "iec_bison.yy" /* yacc.c:1646  */
+#line 7002 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_operator_c(il_operator_c_2_identifier_c((yyvsp[-1].leaf)), locloc((yyloc)));}
-#line 15866 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15868 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1407:
-#line 7003 "iec_bison.yy" /* yacc.c:1646  */
+#line 7005 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter defined in parameter assignment."); yyerrok;}
-#line 15872 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15874 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1408:
-#line 7012 "iec_bison.yy" /* yacc.c:1646  */
+#line 7014 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_out_operator_c(NULL, (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15878 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15880 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1409:
-#line 7028 "iec_bison.yy" /* yacc.c:1646  */
+#line 7030 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new il_assign_out_operator_c(new not_paramassign_c(locloc((yylsp[-2]))), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15884 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15886 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1410:
-#line 7076 "iec_bison.yy" /* yacc.c:1646  */
+#line 7078 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter defined in parameter out assignment."); yyerrok;}
-#line 15890 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15892 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1411:
-#line 7078 "iec_bison.yy" /* yacc.c:1646  */
+#line 7080 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no parameter defined in parameter out assignment."); yynerrs++;}
-#line 15896 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15898 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1412:
-#line 7080 "iec_bison.yy" /* yacc.c:1646  */
+#line 7082 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter defined in parameter out assignment."); yyerrok;}
-#line 15902 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15904 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1425:
-#line 7114 "iec_bison.yy" /* yacc.c:1646  */
+#line 7116 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new or_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15908 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15910 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1426:
-#line 7117 "iec_bison.yy" /* yacc.c:1646  */
+#line 7119 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after 'OR' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after 'OR' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 15918 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15920 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1427:
-#line 7130 "iec_bison.yy" /* yacc.c:1646  */
+#line 7132 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ref_expression_c((yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15924 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15926 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1428:
-#line 7138 "iec_bison.yy" /* yacc.c:1646  */
+#line 7140 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new deref_expression_c((yyvsp[-1].leaf), locloc((yyloc)));}
-#line 15930 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15932 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1430:
-#line 7144 "iec_bison.yy" /* yacc.c:1646  */
+#line 7146 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new xor_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15936 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15938 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1431:
-#line 7147 "iec_bison.yy" /* yacc.c:1646  */
+#line 7149 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after 'XOR' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after 'XOR' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 15946 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15948 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1433:
-#line 7158 "iec_bison.yy" /* yacc.c:1646  */
+#line 7160 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new and_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15952 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15954 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1434:
-#line 7160 "iec_bison.yy" /* yacc.c:1646  */
+#line 7162 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new and_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15958 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15960 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1435:
-#line 7169 "iec_bison.yy" /* yacc.c:1646  */
+#line 7171 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new and_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 15964 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15966 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1436:
-#line 7172 "iec_bison.yy" /* yacc.c:1646  */
+#line 7174 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '&' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '&' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 15974 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15976 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1437:
-#line 7178 "iec_bison.yy" /* yacc.c:1646  */
+#line 7180 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after 'AND' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after 'AND' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 15984 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15986 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1438:
-#line 7184 "iec_bison.yy" /* yacc.c:1646  */
+#line 7186 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '&' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '&' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 15994 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 15996 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1440:
-#line 7195 "iec_bison.yy" /* yacc.c:1646  */
+#line 7197 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new equ_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16000 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16002 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1441:
-#line 7197 "iec_bison.yy" /* yacc.c:1646  */
+#line 7199 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new notequ_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16006 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16008 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1442:
-#line 7200 "iec_bison.yy" /* yacc.c:1646  */
+#line 7202 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '=' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '=' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16016 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16018 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1443:
-#line 7206 "iec_bison.yy" /* yacc.c:1646  */
+#line 7208 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '<>' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '<>' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16026 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16028 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1445:
-#line 7217 "iec_bison.yy" /* yacc.c:1646  */
+#line 7219 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new lt_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16032 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16034 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1446:
-#line 7219 "iec_bison.yy" /* yacc.c:1646  */
+#line 7221 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new gt_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16038 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16040 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1447:
-#line 7221 "iec_bison.yy" /* yacc.c:1646  */
+#line 7223 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new le_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16044 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16046 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1448:
-#line 7223 "iec_bison.yy" /* yacc.c:1646  */
+#line 7225 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new ge_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16050 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16052 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1449:
-#line 7226 "iec_bison.yy" /* yacc.c:1646  */
+#line 7228 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '<' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '<' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16060 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16062 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1450:
-#line 7232 "iec_bison.yy" /* yacc.c:1646  */
+#line 7234 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '>' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '>' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16070 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16072 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1451:
-#line 7238 "iec_bison.yy" /* yacc.c:1646  */
+#line 7240 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '<=' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '<=' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16080 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16082 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1452:
-#line 7244 "iec_bison.yy" /* yacc.c:1646  */
+#line 7246 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '>=' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '>=' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16090 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16092 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1454:
-#line 7259 "iec_bison.yy" /* yacc.c:1646  */
+#line 7261 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new add_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16096 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16098 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1455:
-#line 7261 "iec_bison.yy" /* yacc.c:1646  */
+#line 7263 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new sub_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16102 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16104 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1456:
-#line 7264 "iec_bison.yy" /* yacc.c:1646  */
+#line 7266 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '+' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '+' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16112 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16114 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1457:
-#line 7270 "iec_bison.yy" /* yacc.c:1646  */
+#line 7272 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '-' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '-' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16122 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16124 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1459:
-#line 7285 "iec_bison.yy" /* yacc.c:1646  */
+#line 7287 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new mul_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16128 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16130 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1460:
-#line 7287 "iec_bison.yy" /* yacc.c:1646  */
+#line 7289 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new div_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16134 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16136 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1461:
-#line 7289 "iec_bison.yy" /* yacc.c:1646  */
+#line 7291 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new mod_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16140 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16142 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1462:
-#line 7292 "iec_bison.yy" /* yacc.c:1646  */
+#line 7294 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '*' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '*' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16150 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16152 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1463:
-#line 7298 "iec_bison.yy" /* yacc.c:1646  */
+#line 7300 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '/' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '/' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16160 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16162 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1464:
-#line 7304 "iec_bison.yy" /* yacc.c:1646  */
+#line 7306 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after 'MOD' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after 'MOD' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16170 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16172 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1466:
-#line 7319 "iec_bison.yy" /* yacc.c:1646  */
+#line 7321 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new power_expression_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16176 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16178 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1467:
-#line 7322 "iec_bison.yy" /* yacc.c:1646  */
+#line 7324 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '**' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '**' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16186 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16188 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1469:
-#line 7334 "iec_bison.yy" /* yacc.c:1646  */
+#line 7336 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new neg_expression_c((yyvsp[0].leaf), locloc((yyloc)));}
-#line 16192 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16194 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1470:
-#line 7336 "iec_bison.yy" /* yacc.c:1646  */
+#line 7338 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new not_expression_c((yyvsp[0].leaf), locloc((yyloc)));}
-#line 16198 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16200 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1471:
-#line 7339 "iec_bison.yy" /* yacc.c:1646  */
+#line 7341 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after '-' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after '-' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16208 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16210 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1472:
-#line 7345 "iec_bison.yy" /* yacc.c:1646  */
+#line 7347 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after 'NOT' in ST expression.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after 'NOT' in ST expression."); yyclearin;}
 	 yyerrok;
 	}
-#line 16218 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16220 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1476:
-#line 7414 "iec_bison.yy" /* yacc.c:1646  */
+#line 7416 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-1].leaf);}
-#line 16224 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16226 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1478:
-#line 7418 "iec_bison.yy" /* yacc.c:1646  */
+#line 7420 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of expression in ST expression."); yyerrok;}
-#line 16230 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16232 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1482:
-#line 7429 "iec_bison.yy" /* yacc.c:1646  */
+#line 7431 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = (yyvsp[-1].leaf);}
-#line 16236 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16238 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1484:
-#line 7433 "iec_bison.yy" /* yacc.c:1646  */
+#line 7435 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of expression in ST expression."); yyerrok;}
-#line 16242 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16244 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1485:
-#line 7468 "iec_bison.yy" /* yacc.c:1646  */
+#line 7470 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_invocation_c((yyvsp[-3].leaf), (yyvsp[-1].list), NULL, locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-3].leaf))) ERROR;}
-#line 16248 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16250 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1486:
-#line 7470 "iec_bison.yy" /* yacc.c:1646  */
+#line 7472 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new function_invocation_c((yyvsp[-3].leaf), NULL, (yyvsp[-1].list), locloc((yyloc))); if (NULL == dynamic_cast<poutype_identifier_c*>((yyvsp[-3].leaf))) ERROR;}
-#line 16254 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16256 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1487:
-#line 7473 "iec_bison.yy" /* yacc.c:1646  */
+#line 7475 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "'(' missing after function name in ST expression."); yynerrs++;}
-#line 16260 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16262 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1488:
-#line 7475 "iec_bison.yy" /* yacc.c:1646  */
+#line 7477 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no parameter defined in function invocation of ST expression."); yynerrs++;}
-#line 16266 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16268 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1489:
-#line 7477 "iec_bison.yy" /* yacc.c:1646  */
+#line 7479 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter(s) defined in function invocation of ST expression."); yyerrok;}
-#line 16272 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16274 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1490:
-#line 7479 "iec_bison.yy" /* yacc.c:1646  */
+#line 7481 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of function invocation in ST expression."); yyerrok;}
-#line 16278 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16280 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1491:
-#line 7481 "iec_bison.yy" /* yacc.c:1646  */
+#line 7483 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing at the end of function invocation in ST expression."); yyerrok;}
-#line 16284 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16286 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1492:
-#line 7491 "iec_bison.yy" /* yacc.c:1646  */
+#line 7493 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new statement_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 16290 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16292 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1493:
-#line 7493 "iec_bison.yy" /* yacc.c:1646  */
+#line 7495 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new statement_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16296 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16298 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1494:
-#line 7495 "iec_bison.yy" /* yacc.c:1646  */
+#line 7497 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[-1].leaf));}
-#line 16302 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16304 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1495:
-#line 7497 "iec_bison.yy" /* yacc.c:1646  */
+#line 7499 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16308 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16310 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1496:
-#line 7500 "iec_bison.yy" /* yacc.c:1646  */
+#line 7502 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new statement_list_c(locloc((yyloc))); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of statement in ST statement."); yyerrok;}
-#line 16314 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16316 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1497:
-#line 7502 "iec_bison.yy" /* yacc.c:1646  */
+#line 7504 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "';' missing at the end of statement in ST statement."); yyerrok;}
-#line 16320 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16322 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1498:
-#line 7504 "iec_bison.yy" /* yacc.c:1646  */
+#line 7506 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement in ST statement."); yyerrok;}
-#line 16326 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16328 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1499:
-#line 7506 "iec_bison.yy" /* yacc.c:1646  */
+#line 7508 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "unexpected ';' after statement in ST statement."); yynerrs++;}
-#line 16332 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16334 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1504:
-#line 7524 "iec_bison.yy" /* yacc.c:1646  */
+#line 7526 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new assignment_statement_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16338 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16340 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1505:
-#line 7527 "iec_bison.yy" /* yacc.c:1646  */
+#line 7529 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid variable before ':=' in ST assignment statement."); yyerrok;}
-#line 16344 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16346 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1506:
-#line 7529 "iec_bison.yy" /* yacc.c:1646  */
+#line 7531 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined after ':=' in ST assignment statement.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression after ':=' in ST assignment statement."); yyclearin;}
 	 yyerrok;
 	}
-#line 16354 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16356 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1509:
-#line 7549 "iec_bison.yy" /* yacc.c:1646  */
+#line 7551 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new return_statement_c(locloc((yyloc)));}
-#line 16360 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16362 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1510:
-#line 7556 "iec_bison.yy" /* yacc.c:1646  */
+#line 7558 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new fb_invocation_c((yyvsp[-2].leaf), NULL, NULL, locloc((yyloc)));	}
-#line 16366 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16368 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1511:
-#line 7558 "iec_bison.yy" /* yacc.c:1646  */
+#line 7560 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new fb_invocation_c((yyvsp[-3].leaf), (yyvsp[-1].list), NULL, locloc((yyloc)));}
-#line 16372 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16374 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1512:
-#line 7560 "iec_bison.yy" /* yacc.c:1646  */
+#line 7562 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new fb_invocation_c((yyvsp[-3].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 16378 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16380 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1513:
-#line 7563 "iec_bison.yy" /* yacc.c:1646  */
+#line 7565 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "'(' missing after function block name in ST statement."); yynerrs++;}
-#line 16384 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16386 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1514:
-#line 7565 "iec_bison.yy" /* yacc.c:1646  */
+#line 7567 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "'(' missing after function block name in ST statement."); yynerrs++;}
-#line 16390 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16392 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1515:
-#line 7567 "iec_bison.yy" /* yacc.c:1646  */
+#line 7569 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid parameter list in function block invocation in ST statement."); yyerrok;}
-#line 16396 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16398 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1516:
-#line 7569 "iec_bison.yy" /* yacc.c:1646  */
+#line 7571 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing after parameter list of function block invocation in ST statement."); yyerrok;}
-#line 16402 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16404 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1517:
-#line 7571 "iec_bison.yy" /* yacc.c:1646  */
+#line 7573 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing after parameter list of function block invocation in ST statement."); yyerrok;}
-#line 16408 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16410 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1518:
-#line 7573 "iec_bison.yy" /* yacc.c:1646  */
+#line 7575 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "')' missing after parameter list of function block invocation in ST statement."); yyerrok;}
-#line 16414 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16416 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1519:
-#line 7584 "iec_bison.yy" /* yacc.c:1646  */
+#line 7586 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new param_assignment_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16420 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16422 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1520:
-#line 7586 "iec_bison.yy" /* yacc.c:1646  */
+#line 7588 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16426 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16428 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1521:
-#line 7589 "iec_bison.yy" /* yacc.c:1646  */
+#line 7591 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no parameter assignment defined in ST parameter assignment list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid parameter assignment in ST parameter assignment list."); yyclearin;}
 	 yyerrok;
 	}
-#line 16436 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16438 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1522:
-#line 7603 "iec_bison.yy" /* yacc.c:1646  */
+#line 7605 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new param_assignment_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16442 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16444 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1523:
-#line 7605 "iec_bison.yy" /* yacc.c:1646  */
+#line 7607 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16448 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16450 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1524:
-#line 7608 "iec_bison.yy" /* yacc.c:1646  */
+#line 7610 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no parameter assignment defined in ST parameter assignment list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid parameter assignment in ST parameter assignment list."); yyclearin;}
 	 yyerrok;
 	}
-#line 16458 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16460 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1526:
-#line 7651 "iec_bison.yy" /* yacc.c:1646  */
+#line 7653 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new input_variable_param_assignment_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16464 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16466 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1527:
-#line 7653 "iec_bison.yy" /* yacc.c:1646  */
+#line 7655 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new input_variable_param_assignment_c((yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16470 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16472 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1528:
-#line 7657 "iec_bison.yy" /* yacc.c:1646  */
+#line 7659 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new output_variable_param_assignment_c(NULL, (yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16476 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16478 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1529:
-#line 7674 "iec_bison.yy" /* yacc.c:1646  */
+#line 7676 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new output_variable_param_assignment_c(new not_paramassign_c(locloc((yyloc))), (yyvsp[-2].leaf), (yyvsp[0].leaf), locloc((yyloc)));}
-#line 16482 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16484 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1530:
-#line 7690 "iec_bison.yy" /* yacc.c:1646  */
+#line 7692 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined in ST formal parameter assignment.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression in ST formal parameter assignment."); yyclearin;}
 	 yyerrok;
 	}
-#line 16492 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16494 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1531:
-#line 7696 "iec_bison.yy" /* yacc.c:1646  */
+#line 7698 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined in ST formal parameter assignment.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression in ST formal parameter assignment."); yyclearin;}
 	 yyerrok;
 	}
-#line 16502 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16504 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1532:
-#line 7702 "iec_bison.yy" /* yacc.c:1646  */
+#line 7704 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined in ST formal parameter out assignment.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression in ST formal parameter out assignment."); yyclearin;}
 	 yyerrok;
 	}
-#line 16512 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16514 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1533:
-#line 7716 "iec_bison.yy" /* yacc.c:1646  */
+#line 7718 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no parameter name defined in ST formal parameter out negated assignment."); yynerrs++;}
-#line 16518 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16520 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1534:
-#line 7718 "iec_bison.yy" /* yacc.c:1646  */
+#line 7720 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid parameter name defined in ST formal parameter out negated assignment."); yyerrok;}
-#line 16524 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16526 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1535:
-#line 7720 "iec_bison.yy" /* yacc.c:1646  */
+#line 7722 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL;
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no expression defined in ST formal parameter out negated assignment.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid expression in ST formal parameter out negated assignment."); yyclearin;}
 	 yyerrok;
 	}
-#line 16534 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16536 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1538:
-#line 7751 "iec_bison.yy" /* yacc.c:1646  */
+#line 7753 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new if_statement_c((yyvsp[-4].leaf), (yyvsp[-2].list), (yyvsp[-1].list), NULL, locloc((yyloc)));}
-#line 16540 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16542 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1539:
-#line 7753 "iec_bison.yy" /* yacc.c:1646  */
+#line 7755 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new if_statement_c((yyvsp[-6].leaf), (yyvsp[-4].list), (yyvsp[-3].list), (yyvsp[-1].list), locloc((yyloc)));}
-#line 16546 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16548 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1540:
-#line 7756 "iec_bison.yy" /* yacc.c:1646  */
+#line 7758 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no test expression defined in ST 'IF' statement."); yynerrs++;}
-#line 16552 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16554 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1541:
-#line 7758 "iec_bison.yy" /* yacc.c:1646  */
+#line 7760 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-6])), locf((yylsp[-5])), "no test expression defined in ST 'IF' statement."); yynerrs++;}
-#line 16558 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16560 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1542:
-#line 7760 "iec_bison.yy" /* yacc.c:1646  */
+#line 7762 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "invalid test expression defined for ST 'IF' statement."); yyerrok;}
-#line 16564 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16566 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1543:
-#line 7762 "iec_bison.yy" /* yacc.c:1646  */
+#line 7764 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-6])), "invalid test expression defined for ST 'IF' statement."); yyerrok;}
-#line 16570 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16572 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1544:
-#line 7764 "iec_bison.yy" /* yacc.c:1646  */
+#line 7766 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "expecting 'THEN' after test expression in ST 'IF' statement."); yyerrok;}
-#line 16576 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16578 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1545:
-#line 7766 "iec_bison.yy" /* yacc.c:1646  */
+#line 7768 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "expecting 'THEN' after test expression in ST 'IF' statement."); yyerrok;}
-#line 16582 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16584 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1546:
-#line 7768 "iec_bison.yy" /* yacc.c:1646  */
+#line 7770 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no statement defined after 'THEN' in ST 'IF' statement."); yynerrs++;}
-#line 16588 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16590 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1547:
-#line 7770 "iec_bison.yy" /* yacc.c:1646  */
+#line 7772 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-4])), locf((yylsp[-3])), "no statement defined after 'THEN' in ST 'IF' statement."); yynerrs++;}
-#line 16594 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16596 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1548:
-#line 7772 "iec_bison.yy" /* yacc.c:1646  */
+#line 7774 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no statement defined after 'ELSE' in ST 'IF' statement."); yynerrs++;}
-#line 16600 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16602 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1549:
-#line 7774 "iec_bison.yy" /* yacc.c:1646  */
+#line 7776 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement defined after 'ELSE' in ST 'IF' statement."); yynerrs++; yyerrok;}
-#line 16606 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16608 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1550:
-#line 7776 "iec_bison.yy" /* yacc.c:1646  */
+#line 7778 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-2])), "unclosed 'IF' statement in ST."); yyerrok;}
-#line 16612 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16614 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1551:
-#line 7778 "iec_bison.yy" /* yacc.c:1646  */
+#line 7780 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-3])), "unclosed 'IF' statement in ST."); yynerrs++;}
-#line 16618 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16620 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1552:
-#line 7780 "iec_bison.yy" /* yacc.c:1646  */
+#line 7782 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-7])), locl((yylsp[-5])), "unclosed 'IF' statement in ST."); yynerrs++;}
-#line 16624 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16626 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1553:
-#line 7782 "iec_bison.yy" /* yacc.c:1646  */
+#line 7784 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in ST 'IF' statement."); yyerrok;}
-#line 16630 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16632 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1554:
-#line 7789 "iec_bison.yy" /* yacc.c:1646  */
+#line 7791 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new elseif_statement_list_c(locloc((yyloc)));}
-#line 16636 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16638 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1555:
-#line 7791 "iec_bison.yy" /* yacc.c:1646  */
+#line 7793 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16642 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16644 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1556:
-#line 7797 "iec_bison.yy" /* yacc.c:1646  */
+#line 7799 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new elseif_statement_c((yyvsp[-2].leaf), (yyvsp[0].list), locloc((yyloc)));}
-#line 16648 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16650 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1557:
-#line 7800 "iec_bison.yy" /* yacc.c:1646  */
+#line 7802 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-2])), locf((yylsp[-1])), "no test expression defined for 'ELSEIF' statement in ST 'IF' statement."); yynerrs++;}
-#line 16654 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16656 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1558:
-#line 7802 "iec_bison.yy" /* yacc.c:1646  */
+#line 7804 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "invalid test expression defined for 'ELSEIF' statement in ST 'IF' statement."); yyerrok;}
-#line 16660 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16662 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1559:
-#line 7804 "iec_bison.yy" /* yacc.c:1646  */
+#line 7806 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "expecting 'THEN' after test expression in 'ELSEIF' statement of ST 'IF' statement."); yyerrok;}
-#line 16666 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16668 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1560:
-#line 7806 "iec_bison.yy" /* yacc.c:1646  */
+#line 7808 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid statement list in 'ELSEIF' statement of ST 'IF' statement."); yyerrok;}
-#line 16672 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16674 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1561:
-#line 7813 "iec_bison.yy" /* yacc.c:1646  */
+#line 7815 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new case_statement_c((yyvsp[-3].leaf), (yyvsp[-1].list), NULL, locloc((yyloc)));}
-#line 16678 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16680 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1562:
-#line 7815 "iec_bison.yy" /* yacc.c:1646  */
+#line 7817 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new case_statement_c((yyvsp[-5].leaf), (yyvsp[-3].list), (yyvsp[-1].list), locloc((yyloc)));}
-#line 16684 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16686 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1563:
-#line 7818 "iec_bison.yy" /* yacc.c:1646  */
+#line 7820 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no test expression defined in ST 'CASE' statement."); yynerrs++;}
-#line 16690 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16692 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1564:
-#line 7820 "iec_bison.yy" /* yacc.c:1646  */
+#line 7822 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-5])), locf((yylsp[-4])), "no test expression defined in ST 'CASE' statement."); yynerrs++;}
-#line 16696 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16698 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1565:
-#line 7822 "iec_bison.yy" /* yacc.c:1646  */
+#line 7824 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid test expression defined for ST 'CASE' statement."); yyerrok;}
-#line 16702 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16704 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1566:
-#line 7824 "iec_bison.yy" /* yacc.c:1646  */
+#line 7826 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "invalid test expression defined for ST 'CASE' statement."); yyerrok;}
-#line 16708 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16710 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1567:
-#line 7826 "iec_bison.yy" /* yacc.c:1646  */
+#line 7828 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "expecting 'OF' after test expression in ST 'CASE' statement."); yyerrok;}
-#line 16714 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16716 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1568:
-#line 7828 "iec_bison.yy" /* yacc.c:1646  */
+#line 7830 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "expecting 'OF' after test expression in ST 'CASE' statement."); yyerrok;}
-#line 16720 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16722 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1569:
-#line 7830 "iec_bison.yy" /* yacc.c:1646  */
+#line 7832 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no case element(s) defined after 'OF' in ST 'CASE' statement."); yynerrs++;}
-#line 16726 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16728 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1570:
-#line 7832 "iec_bison.yy" /* yacc.c:1646  */
+#line 7834 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no case element(s) defined after 'OF' in ST 'CASE' statement."); yynerrs++;}
-#line 16732 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16734 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1571:
-#line 7834 "iec_bison.yy" /* yacc.c:1646  */
+#line 7836 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid case element(s) defined after 'OF' in ST 'CASE' statement."); yyerrok;}
-#line 16738 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16740 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1572:
-#line 7836 "iec_bison.yy" /* yacc.c:1646  */
+#line 7838 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid case element(s) defined after 'OF' in ST 'CASE' statement."); yyerrok;}
-#line 16744 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16746 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1573:
-#line 7838 "iec_bison.yy" /* yacc.c:1646  */
+#line 7840 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no statement defined after 'ELSE' in ST 'CASE' statement."); yynerrs++;}
-#line 16750 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16752 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1574:
-#line 7840 "iec_bison.yy" /* yacc.c:1646  */
+#line 7842 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement defined after 'ELSE' in ST 'CASE' statement."); yyerrok;}
-#line 16756 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16758 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1575:
-#line 7842 "iec_bison.yy" /* yacc.c:1646  */
+#line 7844 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-2])), "unclosed 'CASE' statement in ST."); yyerrok;}
-#line 16762 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16764 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1576:
-#line 7844 "iec_bison.yy" /* yacc.c:1646  */
+#line 7846 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-2])), "unclosed 'CASE' statement in ST."); yynerrs++;}
-#line 16768 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16770 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1577:
-#line 7846 "iec_bison.yy" /* yacc.c:1646  */
+#line 7848 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-4])), "unclosed 'CASE' statement in ST."); yynerrs++;}
-#line 16774 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16776 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1578:
-#line 7848 "iec_bison.yy" /* yacc.c:1646  */
+#line 7850 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in ST 'CASE' statement."); yyerrok;}
-#line 16780 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16782 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1579:
-#line 7856 "iec_bison.yy" /* yacc.c:1646  */
+#line 7858 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new case_element_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16786 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16788 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1580:
-#line 7858 "iec_bison.yy" /* yacc.c:1646  */
+#line 7860 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-1].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16792 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16794 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1581:
-#line 7864 "iec_bison.yy" /* yacc.c:1646  */
+#line 7866 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new case_element_c((yyvsp[-2].list), (yyvsp[0].list), locloc((yyloc)));}
-#line 16798 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16800 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1582:
-#line 7867 "iec_bison.yy" /* yacc.c:1646  */
+#line 7869 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "':' missing after case list in ST 'CASE' statement."); yynerrs++;}
-#line 16804 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16806 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1583:
-#line 7869 "iec_bison.yy" /* yacc.c:1646  */
+#line 7871 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid statement in case element of ST 'CASE' statement."); yyerrok;}
-#line 16810 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16812 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1584:
-#line 7876 "iec_bison.yy" /* yacc.c:1646  */
+#line 7878 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = new case_list_c(locloc((yyloc))); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16816 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16818 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1585:
-#line 7878 "iec_bison.yy" /* yacc.c:1646  */
+#line 7880 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list); (yyval.list)->add_element((yyvsp[0].leaf));}
-#line 16822 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16824 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1586:
-#line 7881 "iec_bison.yy" /* yacc.c:1646  */
+#line 7883 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.list) = (yyvsp[-2].list);
 	 if (is_current_syntax_token()) {print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no case defined in case list of ST parameter assignment list.");}
 	 else {print_err_msg(locf((yylsp[0])), locl((yylsp[0])), "invalid case in case list of ST parameter assignment list."); yyclearin;}
 	 yyerrok;
 	}
-#line 16832 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16834 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1594:
-#line 7913 "iec_bison.yy" /* yacc.c:1646  */
+#line 7915 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new for_statement_c((yyvsp[-9].leaf), (yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));}
-#line 16838 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16840 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1595:
-#line 7915 "iec_bison.yy" /* yacc.c:1646  */
+#line 7917 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new for_statement_c((yyvsp[-7].leaf), (yyvsp[-5].leaf), (yyvsp[-3].leaf), NULL, (yyvsp[-1].list), locloc((yyloc)));}
-#line 16844 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16846 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1596:
-#line 7918 "iec_bison.yy" /* yacc.c:1646  */
+#line 7920 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-9])), locf((yylsp[-8])), "no control variable defined in ST 'FOR' statement."); yynerrs++;}
-#line 16850 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16852 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1597:
-#line 7920 "iec_bison.yy" /* yacc.c:1646  */
+#line 7922 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-7])), locf((yylsp[-6])), "no control variable defined in ST 'FOR' statement."); yynerrs++;}
-#line 16856 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16858 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1598:
-#line 7922 "iec_bison.yy" /* yacc.c:1646  */
+#line 7924 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-9])), locl((yylsp[-9])), "invalid control variable defined for ST 'FOR' statement."); yyerrok;}
-#line 16862 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16864 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1599:
-#line 7924 "iec_bison.yy" /* yacc.c:1646  */
+#line 7926 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-7])), locl((yylsp[-7])), "invalid control variable defined for ST 'FOR' statement."); yyerrok;}
-#line 16868 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16870 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1600:
-#line 7926 "iec_bison.yy" /* yacc.c:1646  */
+#line 7928 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-8])), locf((yylsp[-7])), "':=' missing between control variable and start expression in ST 'FOR' statement."); yynerrs++;}
-#line 16874 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16876 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1601:
-#line 7928 "iec_bison.yy" /* yacc.c:1646  */
+#line 7930 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-6])), locf((yylsp[-5])), "':=' missing between control variable and start expression in ST 'FOR' statement."); yynerrs++;}
-#line 16880 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16882 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1602:
-#line 7930 "iec_bison.yy" /* yacc.c:1646  */
+#line 7932 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-8])), locl((yylsp[-8])), "expecting ':=' between control variable and start expression in ST 'FOR' statement."); yyerrok;}
-#line 16886 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16888 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1603:
-#line 7932 "iec_bison.yy" /* yacc.c:1646  */
+#line 7934 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-6])), "expecting ':=' between control variable and start expression in ST 'FOR' statement."); yyerrok;}
-#line 16892 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16894 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1604:
-#line 7934 "iec_bison.yy" /* yacc.c:1646  */
+#line 7936 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-7])), locf((yylsp[-6])), "no start expression defined in ST 'FOR' statement."); yynerrs++;}
-#line 16898 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16900 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1605:
-#line 7936 "iec_bison.yy" /* yacc.c:1646  */
+#line 7938 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-5])), locf((yylsp[-4])), "no start expression defined in ST 'FOR' statement."); yynerrs++;}
-#line 16904 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16906 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1606:
-#line 7938 "iec_bison.yy" /* yacc.c:1646  */
+#line 7940 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-7])), locl((yylsp[-7])), "invalid start expression defined in ST 'FOR' statement."); yyerrok;}
-#line 16910 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16912 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1607:
-#line 7940 "iec_bison.yy" /* yacc.c:1646  */
+#line 7942 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "invalid start expression in ST 'FOR' statement."); yyerrok;}
-#line 16916 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16918 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1608:
-#line 7942 "iec_bison.yy" /* yacc.c:1646  */
+#line 7944 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-6])), locl((yylsp[-6])), "expecting 'TO' between start expression and end expression in ST 'FOR' statement."); yyerrok;}
-#line 16922 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16924 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1609:
-#line 7944 "iec_bison.yy" /* yacc.c:1646  */
+#line 7946 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "expecting 'TO' between start expression and end expression in ST 'FOR' statement."); yyerrok;}
-#line 16928 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16930 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1610:
-#line 7946 "iec_bison.yy" /* yacc.c:1646  */
+#line 7948 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "expecting 'BY' between end expression and step expression in ST 'FOR' statement."); yyerrok;}
-#line 16934 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16936 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1611:
-#line 7948 "iec_bison.yy" /* yacc.c:1646  */
+#line 7950 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "expecting 'DO' after step expression in ST 'FOR' statement."); yyerrok;}
-#line 16940 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16942 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1612:
-#line 7950 "iec_bison.yy" /* yacc.c:1646  */
+#line 7952 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "expecting 'DO' after end expression in ST 'FOR' statement."); yyerrok;}
-#line 16946 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16948 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1613:
-#line 7952 "iec_bison.yy" /* yacc.c:1646  */
+#line 7954 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no statement(s) defined after 'DO' in ST 'FOR' statement."); yynerrs++;}
-#line 16952 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16954 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1614:
-#line 7954 "iec_bison.yy" /* yacc.c:1646  */
+#line 7956 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no statement(s) defined after 'DO' in ST 'FOR' statement."); yynerrs++;}
-#line 16958 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16960 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1615:
-#line 7956 "iec_bison.yy" /* yacc.c:1646  */
+#line 7958 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement(s) defined after 'DO' in ST 'FOR' statement."); yyerrok;}
-#line 16964 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16966 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1616:
-#line 7958 "iec_bison.yy" /* yacc.c:1646  */
+#line 7960 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement(s) defined after 'DO' in ST 'FOR' statement."); yyerrok;}
-#line 16970 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16972 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1617:
-#line 7960 "iec_bison.yy" /* yacc.c:1646  */
+#line 7962 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "unclosed 'FOR' statement in ST."); yyerrok;}
-#line 16976 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16978 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1618:
-#line 7962 "iec_bison.yy" /* yacc.c:1646  */
+#line 7964 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "unclosed 'FOR' statement in ST."); yyerrok;}
-#line 16982 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16984 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1619:
-#line 7964 "iec_bison.yy" /* yacc.c:1646  */
+#line 7966 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-8])), locl((yylsp[-8])), "unclosed 'FOR' statement in ST."); yynerrs++;}
-#line 16988 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16990 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1620:
-#line 7966 "iec_bison.yy" /* yacc.c:1646  */
+#line 7968 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-9])), locl((yylsp[-9])), "unclosed 'FOR' statement in ST."); yyerrok;}
-#line 16994 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 16996 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1621:
-#line 7968 "iec_bison.yy" /* yacc.c:1646  */
+#line 7970 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-10])), locl((yylsp[-10])), "unclosed 'FOR' statement in ST."); yynerrs++;}
-#line 17000 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17002 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1622:
-#line 7970 "iec_bison.yy" /* yacc.c:1646  */
+#line 7972 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in ST 'FOR' statement."); yyerrok;}
-#line 17006 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17008 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1623:
-#line 7990 "iec_bison.yy" /* yacc.c:1646  */
+#line 7992 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new symbolic_variable_c((yyvsp[0].leaf),locloc((yyloc)));}
-#line 17012 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17014 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1624:
-#line 8003 "iec_bison.yy" /* yacc.c:1646  */
+#line 8005 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new while_statement_c((yyvsp[-3].leaf), (yyvsp[-1].list), locloc((yyloc)));}
-#line 17018 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17020 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1625:
-#line 8006 "iec_bison.yy" /* yacc.c:1646  */
+#line 8008 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no test expression defined in ST 'WHILE' statement."); yynerrs++;}
-#line 17024 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17026 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1626:
-#line 8008 "iec_bison.yy" /* yacc.c:1646  */
+#line 8010 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid test expression defined for ST 'WHILE' statement."); yyerrok;}
-#line 17030 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17032 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1627:
-#line 8010 "iec_bison.yy" /* yacc.c:1646  */
+#line 8012 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "expecting 'DO' after test expression in ST 'WHILE' statement."); yyerrok;}
-#line 17036 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17038 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1628:
-#line 8012 "iec_bison.yy" /* yacc.c:1646  */
+#line 8014 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no statement(s) defined after 'DO' in ST 'WHILE' statement."); yynerrs++;}
-#line 17042 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17044 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1629:
-#line 8014 "iec_bison.yy" /* yacc.c:1646  */
+#line 8016 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid statement(s) defined after 'DO' in ST 'WHILE' statement."); yyerrok;}
-#line 17048 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17050 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1630:
-#line 8016 "iec_bison.yy" /* yacc.c:1646  */
+#line 8018 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "unclosed 'WHILE' statement in ST."); yyerrok;}
-#line 17054 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17056 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1631:
-#line 8018 "iec_bison.yy" /* yacc.c:1646  */
+#line 8020 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-4])), locl((yylsp[-4])), "unclosed 'WHILE' statement in ST."); yynerrs++;}
-#line 17060 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17062 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1632:
-#line 8020 "iec_bison.yy" /* yacc.c:1646  */
+#line 8022 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in ST 'WHILE' statement."); yyerrok;}
-#line 17066 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17068 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1633:
-#line 8027 "iec_bison.yy" /* yacc.c:1646  */
+#line 8029 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new repeat_statement_c((yyvsp[-3].list), (yyvsp[-1].leaf), locloc((yyloc)));}
-#line 17072 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17074 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1634:
-#line 8030 "iec_bison.yy" /* yacc.c:1646  */
+#line 8032 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-3])), locf((yylsp[-2])), "no statement(s) defined after 'REPEAT' in ST 'REPEAT' statement."); yynerrs++;}
-#line 17078 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17080 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1635:
-#line 8032 "iec_bison.yy" /* yacc.c:1646  */
+#line 8034 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-3])), locl((yylsp[-3])), "invalid statement(s) defined after 'REPEAT' for ST 'REPEAT' statement."); yyerrok;}
-#line 17084 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17086 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1636:
-#line 8034 "iec_bison.yy" /* yacc.c:1646  */
+#line 8036 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locl((yylsp[-1])), locf((yylsp[0])), "no test expression defined after 'UNTIL' in ST 'REPEAT' statement.");}
-#line 17090 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17092 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1637:
-#line 8036 "iec_bison.yy" /* yacc.c:1646  */
+#line 8038 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "invalid test expression defined after 'UNTIL' in ST 'REPEAT' statement."); yyerrok;}
-#line 17096 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17098 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1638:
-#line 8038 "iec_bison.yy" /* yacc.c:1646  */
+#line 8040 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-2])), locl((yylsp[-2])), "unclosed 'REPEAT' statement in ST."); yynerrs++;}
-#line 17102 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17104 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1639:
-#line 8040 "iec_bison.yy" /* yacc.c:1646  */
+#line 8042 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-5])), locl((yylsp[-5])), "unclosed 'REPEAT' statement in ST."); yyerrok;}
-#line 17108 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17110 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1640:
-#line 8042 "iec_bison.yy" /* yacc.c:1646  */
+#line 8044 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = NULL; print_err_msg(locf((yylsp[-1])), locl((yylsp[-1])), "unknown error in ST 'REPEAT' statement."); yyerrok;}
-#line 17114 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17116 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
   case 1641:
-#line 8048 "iec_bison.yy" /* yacc.c:1646  */
+#line 8050 "iec_bison.yy" /* yacc.c:1646  */
     {(yyval.leaf) = new exit_statement_c(locloc((yyloc)));}
-#line 17120 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17122 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
     break;
 
 
-#line 17124 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
+#line 17126 "/root/workspace/SoftPLC_space/iec-compiler/src/parser/iec_bison.cc" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -17355,7 +17357,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 8055 "iec_bison.yy" /* yacc.c:1906  */
+#line 8057 "iec_bison.yy" /* yacc.c:1906  */
 
 
 #include <stdio.h>	/* required for printf() */
@@ -17644,47 +17646,14 @@ NULL
 };
 
 
-#define LIBFILE "ieclib.txt"
-#define DEF_LIBFILENAME LIBDIRECTORY "/" LIBFILE
-
 extern const char *INCLUDE_DIRECTORIES[];
 
 
-static int parse_files(const char *libfilename, const char *filename) {
-  /* first parse the standard library file... */  
-  /*   Do not debug the standard library, even if debug flag is set!
-  #if YYDEBUG
-    yydebug = 1;
-  #endif
-  */
-  FILE *libfile = NULL;
-  if((libfile = parse_file(libfilename)) == NULL) {
-    char *errmsg = strdup2("Error opening library file ", libfilename);
-    perror(errmsg);
-    free(errmsg);
-    /* we give up... */
-    return -1;
-  }
-
-  allow_function_overloading           = true;
-  allow_extensible_function_parameters = true;
-  full_token_loc                       = runtime_options.full_token_loc;
-  conversion_functions                 = runtime_options.conversion_functions;
-  allow_ref_dereferencing              = runtime_options.ref_standard_extensions;
-  allow_ref_to_any                     = runtime_options.ref_nonstand_extensions;
-  allow_ref_to_in_derived_datatypes    = runtime_options.ref_nonstand_extensions;
-  if (yyparse() != 0) {
-    fprintf (stderr, "\nParsing failed because of too many consecutive syntax errors in standard library. Bailing out!\n");
-    exit(EXIT_FAILURE);
-  }
-  fclose(libfile);
+static int parse_files(const char *filename) {
+  for(int i = 0; standard_function_names[i] != NULL; i++)
+    if (library_element_symtable.find(standard_function_names[i]) == library_element_symtable.end())
+      library_element_symtable.insert(standard_function_names[i], standard_function_name_token);
       
-  if (yynerrs > 0) {  /* NOTE: yynerrs is a global variable */
-    /* Hopefully the libraries do not contain any errors, so this should not occur! */
-    fprintf (stderr, "\n%d error(s) found in %s. Bailing out!\n", yynerrs, libfilename);
-    return -2;
-  }
-
   /* if by any chance the library is not complete, we now add the missing reserved keywords to the list!!!  */
   for(int i = 0; standard_function_block_names[i] != NULL; i++)
     if (library_element_symtable.find(standard_function_block_names[i]) ==
@@ -17695,6 +17664,7 @@ static int parse_files(const char *libfilename, const char *filename) {
   #if YYDEBUG
     yydebug = 1;
   #endif
+
   FILE *mainfile = NULL;
   if ((mainfile = parse_file(filename)) == NULL) {
     char *errmsg = strdup2("Error opening main file ", filename);
@@ -17761,18 +17731,9 @@ static int parse_files(const char *libfilename, const char *filename) {
 
 int stage2__(const char *filename, 
              symbol_c **tree_root_ref
-            ) {             
-  char *libfilename = NULL;
-
-  /* Determine the full path name of the standard library file... */
-  if (runtime_options.includedir != NULL)
-    INCLUDE_DIRECTORIES[0] = runtime_options.includedir;
-
-  if ((libfilename = strdup3(INCLUDE_DIRECTORIES[0], "/", LIBFILE)) == NULL) {
-    fprintf (stderr, "Out of memory. Bailing out!\n");
-    exit(EXIT_FAILURE);
-  }
-
+            ) 
+{             
+  
   /*******************************/
   /* Do the  PRE parsing run...! */
   /*******************************/
@@ -17780,7 +17741,7 @@ int stage2__(const char *filename,
     // fprintf (stderr, "----> Starting pre-parsing!\n");
     tree_root = NULL;
     set_preparse_state();
-    if (parse_files(libfilename, filename) < 0)
+    if (parse_files(filename) < 0)
       exit(EXIT_FAILURE);
     // TODO: delete the current AST. For the moment, we leave all the objects in memory (not much of an issue in a program that always runs to completion).
   }
@@ -17790,15 +17751,13 @@ int stage2__(const char *filename,
   // fprintf (stderr, "----> Starting normal parsing!\n");
   tree_root = NULL;
   rst_preparse_state();
-  if (parse_files(libfilename, filename) < 0)
+  if (parse_files(filename) < 0)
     exit(EXIT_FAILURE);
   
-
+  // library_element_symtable.print();
   /* Final clean-up... */
-  free(libfilename);
   if (tree_root_ref != NULL)
     *tree_root_ref = tree_root;
-
   return 0;
 }
 

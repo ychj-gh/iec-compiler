@@ -8450,7 +8450,7 @@ int stage2__(const char *filename,
   if (parse_files(filename) < 0)
     exit(EXIT_FAILURE);
   
-
+  // library_element_symtable.print();
   /* Final clean-up... */
   if (tree_root_ref != NULL)
     *tree_root_ref = tree_root;

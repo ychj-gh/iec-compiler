@@ -1,0 +1,13 @@
+FUNCTION FUNCTEST : INT
+	VAR_INPUT
+		A : INT;
+		B : INT;
+	END_VAR
+
+  VAR
+    C : INT;
+  END_VAR
+
+  C := A + B;
+	FUNCTEST := C * 2;
+END_FUNCTION 

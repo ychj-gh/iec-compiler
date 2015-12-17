@@ -17,15 +17,20 @@
 
 
 // #include <stdio.h>  /* required for NULL */
+#include <string.h>
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <typeinfo>
+#include <vector>
 #include "generate_iec.hh"
 
 #include "stage4.hh"
 #include "../main.hh" // required for ERROR() and ERROR_MSG() macros.
 
+//add by yaoshun
+#include "pre_generate_info.hh"
+#define TRACE(classname) printf("\n____%s____\n",classname);
 
 
 /***********************************************************************/
@@ -47,14 +52,16 @@ void stage4_print_options(void) {
 /***********************************************************************/
 
 
-//class generate_iec_c: public iterator_visitor_c {
+// class generate_iec_c: public iterator_visitor_c {
 class generate_iec_c: public visitor_c {
   private:
     stage4out_c &s4o;
-
+    pre_generate_info_c pre_code_info;
+    pre_generate_pou_info_c* pou_info;
 
   public:
-    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {}
+    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {
+    }
     ~generate_iec_c(void) {}
 
 
@@ -114,6 +121,174 @@ void *print_token(token_c *token) {
   return s4o.print(token->value);
 }
 
+//add by yaoshun
+void *return_token(token_c *token) {
+  return strdup(token->value);
+}
+
+void *return_striped_token(token_c *token, int offset = 0) {
+  std::string str = "";
+  bool leading_zero = true;
+  for (unsigned int i = offset; i < strlen(token->value); i++) {
+    if (leading_zero
+        && (   token->value[i] != '0'
+            || i == strlen(token->value) - 1
+            || token->value[i + 1] == '.'
+            )
+        )
+      leading_zero = false;
+        if (!leading_zero && token->value[i] != '_')
+      str += token->value[i];
+  }
+  return strdup(str.c_str());
+}
+
+void *return_striped_binary_token(token_c *token, unsigned int offset = 0) {
+  /* convert the binary value to hexadecimal format... */
+  unsigned long val = 0;
+  unsigned int i;
+  
+  for (i = offset; i < strlen(token->value); i++) {
+    if (token->value[i] != '_') {
+      if(token->value[i] == '1')
+        val = val * 2 + 1;
+      else
+        val = val * 2;
+    }
+  }
+
+  std::stringstream stream;
+  std::string result;
+  stream << val; 
+  stream >> result; 
+
+  return strdup(result.c_str());
+}
+
+void *return_striped_octal_token(token_c *token, unsigned int offset = 0) {
+  /* convert the binary value to hexadecimal format... */
+  unsigned long val = 0;
+  unsigned int i;
+  
+  for (i = offset; i < strlen(token->value); i++) {
+    if (token->value[i] != '_') {
+      switch(token->value[i])
+      {
+        case '0':
+          val = val * 8;
+          break;
+        case '1':
+          val = val * 8 + 1;
+          break;
+        case '2':
+          val = val * 8 + 2;
+          break;
+        case '3':
+          val = val * 8 + 3;
+          break;
+        case '4':
+          val = val * 8 + 4;
+          break;
+        case '5':
+          val = val * 8 + 5;
+          break;
+        case '6':
+          val = val * 8 + 6;
+          break;
+        case '7':
+          val = val * 8 + 7;
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  std::stringstream stream;
+  std::string result;
+  stream << val; 
+  stream >> result; 
+
+  return strdup(result.c_str());
+}
+
+
+void *return_striped_hex_token(token_c *token, unsigned int offset = 0) {
+  /* convert the binary value to hexadecimal format... */
+  unsigned long val = 0;
+  unsigned int i;
+  
+  for (i = offset; i < strlen(token->value); i++) {
+    if (token->value[i] != '_') {
+      switch(token->value[i])
+      {
+        case '0':
+          val = val * 16;
+          break;
+        case '1':
+          val = val * 16 + 1;
+          break;
+        case '2':
+          val = val * 16 + 2;
+          break;
+        case '3':
+          val = val * 16 + 3;
+          break;
+        case '4':
+          val = val * 16 + 4;
+          break;
+        case '5':
+          val = val * 16 + 5;
+          break;
+        case '6':
+          val = val * 16 + 6;
+          break;
+        case '7':
+          val = val * 16 + 7;
+          break;
+        case '8':
+          val = val * 16 + 8;
+          break;
+        case '9':
+          val = val * 16 + 9;
+          break;
+        case 'A':
+        case 'a':
+          val = val * 16 + 10;
+          break;
+        case 'B':
+        case 'b':
+          val = val * 16 + 11;
+          break;
+        case 'C':
+        case 'c':
+          val = val * 16 + 12;
+          break;
+        case 'D':
+        case 'd':
+          val = val * 16 + 13;
+          break;
+        case 'E':
+        case 'e':
+          val = val * 16 + 14;
+          break;
+        case 'F':
+        case 'f':
+          val = val * 16 + 15;
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  std::stringstream stream;
+  std::string result;
+  stream << val; 
+  stream >> result; 
+
+  return strdup(result.c_str());
+}
 
 void *print_literal(symbol_c *type, symbol_c *value) {
   print_const_value(value);
@@ -121,8 +296,8 @@ void *print_literal(symbol_c *type, symbol_c *value) {
     type->accept(*this);
     s4o.print("#");
   }
-  value->accept(*this);
-  return NULL;
+  return value->accept(*this);
+  // return NULL;
 }
 
 void *print_list(list_c *list,
@@ -199,6 +374,7 @@ void *visit(eno_param_c *symbol) {
 /* This is only used from stage3 onwards. Stages 1 and 2 will never create any instances of invalid_type_name_c */
 // SYM_REF0(invalid_type_name_c)
 void *visit(invalid_type_name_c *symbol) {
+  TRACE("invalid_type_name_c");
   ERROR;
   return NULL;
 }
@@ -207,22 +383,22 @@ void *visit(invalid_type_name_c *symbol) {
 /******************/
 /* 2.1.6 Pragmas  */
 /******************/
-void *visit(enable_code_generation_pragma_c*)  {s4o.print("{enable code generation}");  return NULL;}
-void *visit(disable_code_generation_pragma_c*) {s4o.print("{disable code generation}"); return NULL;}
-void *visit(pragma_c *symbol)                  {return print_token(symbol);}
+void *visit(enable_code_generation_pragma_c*)  {TRACE("enable_code_generation_pragma_c"); s4o.print("{enable code generation}");  return NULL;}
+void *visit(disable_code_generation_pragma_c*) {TRACE("disable_code_generation_pragma_c"); s4o.print("{disable code generation}"); return NULL;}
+void *visit(pragma_c *symbol)                  {TRACE("pragma_c"); return print_token(symbol);}
 
 
 /***************************/
 /* B 0 - Programming Model */
 /***************************/
-void *visit(library_c *symbol) {return print_list(symbol);}
+void *visit(library_c *symbol) {TRACE("library_c"); return print_list(symbol);}
 
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
 /*******************************************/
-void *visit(                 identifier_c *symbol) {return print_token(symbol);}
-void *visit(derived_datatype_identifier_c *symbol) {return print_token(symbol);}
-void *visit(         poutype_identifier_c *symbol) {return print_token(symbol);}
+void *visit(                 identifier_c *symbol) { TRACE("identifier_c"); print_token(symbol); return strdup(symbol->value); }
+void *visit(derived_datatype_identifier_c *symbol) { TRACE("derived_datatype_identifier_c"); return print_token(symbol);}
+void *visit(         poutype_identifier_c *symbol) { TRACE("poutype_identifier_c"); return print_token(symbol);}
 
 /*********************/
 /* B 1.2 - Constants */
@@ -231,27 +407,28 @@ void *visit(         poutype_identifier_c *symbol) {return print_token(symbol);}
 /* B 1.2.XX - Reference Literals */
 /*********************************/
 /* defined in IEC 61131-3 v3 - Basically the 'NULL' keyword! */
-void *visit(ref_value_null_literal_c *symbol)  {s4o.print("NULL"); return NULL;}
+void *visit(ref_value_null_literal_c *symbol)  { TRACE("ref_value_null_literal_c"); s4o.print("NULL"); return NULL;}
 
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *visit(real_c *symbol)               {return print_token(symbol);}
-void *visit(neg_real_c *symbol)           {return print_unary_expression(symbol, symbol->exp, "-");}
-void *visit(integer_c *symbol)            {return print_token(symbol);}
-void *visit(neg_integer_c *symbol)        {return print_unary_expression(symbol, symbol->exp, "-");}
-void *visit(binary_integer_c *symbol)     {return print_token(symbol);}
-void *visit(octal_integer_c *symbol)      {return print_token(symbol);}
-void *visit(hex_integer_c *symbol)        {return print_token(symbol);}
+void *visit(real_c *symbol)               { TRACE("real_c"); print_token(symbol); return return_striped_token(symbol);}
+void *visit(integer_c *symbol)            { TRACE("integer_c"); print_token(symbol); return return_striped_token(symbol);}
+void *visit(binary_integer_c *symbol)     { TRACE("binary_integer_c"); return return_striped_binary_token(symbol, 2);}
+void *visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return return_striped_octal_token(symbol, 2);}
+void *visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return return_striped_hex_token(symbol, 3);}
 
-void *visit(integer_literal_c *symbol)    {return print_literal(symbol->type, symbol->value);}
-void *visit(real_literal_c *symbol)       {return print_literal(symbol->type, symbol->value);}
-void *visit(bit_string_literal_c *symbol) {return print_literal(symbol->type, symbol->value);}
-void *visit(boolean_literal_c *symbol)    {return print_literal(symbol->type, symbol->value);}
+void *visit(neg_real_c *symbol)           { TRACE("neg_real_c"); return print_unary_expression(symbol, symbol->exp, "-");}
+void *visit(neg_integer_c *symbol)        { TRACE("neg_integer_c"); return print_unary_expression(symbol, symbol->exp, "-");}
+
+void *visit(integer_literal_c *symbol)    { TRACE("integer_literal_c"); return print_literal(symbol->type, symbol->value);}
+void *visit(real_literal_c *symbol)       { TRACE("real_literal_c"); return print_literal(symbol->type, symbol->value);}
+void *visit(bit_string_literal_c *symbol) { TRACE("bit_string_literal_c"); return print_literal(symbol->type, symbol->value);}
+void *visit(boolean_literal_c *symbol)    { TRACE("boolean_literal_c"); return print_literal(symbol->type, symbol->value);}
 
 /* helper class for boolean_literal_c */
-void *visit(boolean_true_c *symbol)       {s4o.print(/*"TRUE" */"1"); return NULL;}
-void *visit(boolean_false_c *symbol)      {s4o.print(/*"FALSE"*/"0"); return NULL;}
+void *visit(boolean_true_c *symbol)       { TRACE("boolean_true_c");  s4o.print(/*"TRUE" */"1"); return NULL;}
+void *visit(boolean_false_c *symbol)      { TRACE("boolean_false_c");  s4o.print(/*"FALSE"*/"0"); return NULL;}
 
 /*******************************/
 /* B.1.2.2   Character Strings */
@@ -359,27 +536,27 @@ void *visit(date_and_time_c *symbol) {
 /***********************************/
 /* B 1.3.1 - Elementary Data Types */
 /***********************************/
-void *visit(time_type_name_c *symbol)        {s4o.print("TIME");        return NULL;}
-void *visit(bool_type_name_c *symbol)        {s4o.print("BOOL");        return NULL;}
-void *visit(sint_type_name_c *symbol)        {s4o.print("SINT");        return NULL;}
-void *visit(int_type_name_c *symbol)         {s4o.print("INT");         return NULL;}
-void *visit(dint_type_name_c *symbol)        {s4o.print("DINT");        return NULL;}
-void *visit(lint_type_name_c *symbol)        {s4o.print("LINT");        return NULL;}
-void *visit(usint_type_name_c *symbol)       {s4o.print("USINT");       return NULL;}
-void *visit(uint_type_name_c *symbol)        {s4o.print("UINT");        return NULL;}
-void *visit(udint_type_name_c *symbol)       {s4o.print("UDINT");       return NULL;}
-void *visit(ulint_type_name_c *symbol)       {s4o.print("ULINT");       return NULL;}
-void *visit(real_type_name_c *symbol)        {s4o.print("REAL");        return NULL;}
-void *visit(lreal_type_name_c *symbol)       {s4o.print("LREAL");       return NULL;}
-void *visit(date_type_name_c *symbol)        {s4o.print("DATE");        return NULL;}
-void *visit(tod_type_name_c *symbol)         {s4o.print("TOD");         return NULL;}
-void *visit(dt_type_name_c *symbol)          {s4o.print("DT");          return NULL;}
-void *visit(byte_type_name_c *symbol)        {s4o.print("BYTE");        return NULL;}
-void *visit(word_type_name_c *symbol)        {s4o.print("WORD");        return NULL;}
-void *visit(lword_type_name_c *symbol)       {s4o.print("LWORD");       return NULL;}
-void *visit(dword_type_name_c *symbol)       {s4o.print("DWORD");       return NULL;}
-void *visit(string_type_name_c *symbol)      {s4o.print("STRING");      return NULL;}
-void *visit(wstring_type_name_c *symbol)     {s4o.print("WSTRING");     return NULL;}
+void *visit(time_type_name_c *symbol)        {s4o.print("TIME");        return strdup("TIME");}
+void *visit(bool_type_name_c *symbol)        {s4o.print("BOOL");        return strdup("BOOL");}
+void *visit(sint_type_name_c *symbol)        {s4o.print("SINT");        return strdup("SINT");}
+void *visit(int_type_name_c *symbol)         {s4o.print("INT");         return strdup("INT");}
+void *visit(dint_type_name_c *symbol)        {s4o.print("DINT");        return strdup("DINT");}
+void *visit(lint_type_name_c *symbol)        {s4o.print("LINT");        return strdup("USINT");}
+void *visit(usint_type_name_c *symbol)       {s4o.print("USINT");       return strdup("USINT");}
+void *visit(uint_type_name_c *symbol)        {s4o.print("UINT");        return strdup("UINT");}
+void *visit(udint_type_name_c *symbol)       {s4o.print("UDINT");       return strdup("UDINT");}
+void *visit(ulint_type_name_c *symbol)       {s4o.print("ULINT");       return strdup("ULINT");}
+void *visit(real_type_name_c *symbol)        {s4o.print("REAL");        return strdup("REAL");}
+void *visit(lreal_type_name_c *symbol)       {s4o.print("LREAL");       return strdup("LREAL");}
+void *visit(date_type_name_c *symbol)        {s4o.print("DATE");        return strdup("DATE");}
+void *visit(tod_type_name_c *symbol)         {s4o.print("TOD");         return strdup("TOD");}
+void *visit(dt_type_name_c *symbol)          {s4o.print("DT");          return strdup("DT");}
+void *visit(byte_type_name_c *symbol)        {s4o.print("BYTE");        return strdup("BYTE");}
+void *visit(word_type_name_c *symbol)        {s4o.print("WORD");        return strdup("WORD");}
+void *visit(lword_type_name_c *symbol)       {s4o.print("LWORD");       return strdup("LWORD");}
+void *visit(dword_type_name_c *symbol)       {s4o.print("DWORD");       return strdup("DWORD");}
+void *visit(string_type_name_c *symbol)      {s4o.print("STRING");      return strdup("STRING");}
+void *visit(wstring_type_name_c *symbol)     {s4o.print("WSTRING");     return strdup("WSTRING");}
 
 void *visit(safetime_type_name_c *symbol)    {s4o.print("SAFETIME");    return NULL;}
 void *visit(safebool_type_name_c *symbol)    {s4o.print("SAFEBOOL");    return NULL;}
@@ -437,12 +614,16 @@ void *visit(simple_type_declaration_c *symbol) {
   return NULL;
 }
 
+std::string var_value;
+std::string var_type;
 /* simple_specification ASSIGN constant */
 void *visit(simple_spec_init_c *symbol) {
-  symbol->simple_specification->accept(*this);
+  
+  var_type = (char*)symbol->simple_specification->accept(*this);
+  
   if (symbol->constant != NULL) {
     s4o.print(" := ");
-    symbol->constant->accept(*this);
+    var_value = (char*)symbol->constant->accept(*this);
   }
   return NULL;
 }
@@ -790,15 +971,47 @@ void *visit(falling_edge_option_c *symbol) {
  *    subrange_spec_init_c *
  *    enumerated_spec_init_c *
  */
+std::vector<std::string> var_name_set;
 void *visit(var1_init_decl_c *symbol) {
+  TRACE("var1_init_decl_c");
+  var_name_set.clear();
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
+
   symbol->spec_init->accept(*this);
+  if((ivt = pou_info->variable_type_check(var_type)) == TUNDEF){
+     ERROR_MSG("variable type check error!");
+  }
+  for(auto elem : var_name_set) {
+    IValue iv;
+    iv.type = ivt;
+    if(ivt == TINT)
+      if (!var_value.empty())
+        iv.v.value_i = stoi(var_value);
+    else if(ivt == TUINT)
+      iv.v.value_u = stoi(var_value);
+    else if(ivt == TDOUBLE)
+      iv.v.value_d = stod(var_value);
+    else {
+      iv.v.value_s.str = strdup(var_value.c_str());
+      iv.v.value_s.length = strlen(var_value.c_str());
+    }
+    pou_info->input_variable.push_back(iv);
+  }
+
   return NULL;
 }
 
 
-void *visit(var1_list_c *symbol) {return print_list(symbol, "", ", ");}
+void *visit(var1_list_c *symbol) {
+  TRACE("var1_list_c");
+  print_list(symbol, "", ", ");
+  for(int i = 0; i < symbol->n; i++) {
+    std::string str = (char*)symbol->elements[i]->accept(*this);
+    var_name_set.push_back(str);
+  }
+  return NULL;
+}
 
 /* | [var1_list ','] variable_name '..' */
 /* NOTE: This is an extension to the standard!!! */
@@ -1154,14 +1367,31 @@ void *visit(var_init_decl_list_c *symbol) {
 /***********************/
 /* B 1.5.1 - Functions */
 /***********************/
+internal_value_t ivt;
 void *visit(function_declaration_c *symbol) {
+  std::string temp;
+  
   s4o.print("FUNCTION ");
-  symbol->derived_function_name->accept(*this);
+  temp = (char*)symbol->derived_function_name->accept(*this);
+  pou_info = new pre_generate_pou_info_c(temp);
+
   s4o.print(" : ");
-  symbol->type_name->accept(*this);
+
+  temp = (char*)symbol->type_name->accept(*this);
+  if((ivt = pou_info->variable_type_check(temp)) != TUNDEF){
+    IValue iv;
+    iv.type = ivt;
+    iv.name = pou_info->get_pou_name();
+    pou_info->output_variable.push_back(iv);
+  }
+
   s4o.print("\n");
   s4o.indent_right();
+  
   symbol->var_declarations_list->accept(*this);
+
+  pou_info->print_detail_info();
+
   s4o.print("\n");
   symbol->function_body->accept(*this);
   s4o.indent_left();
