@@ -1,13 +1,16 @@
-FUNCTION FUNCTEST : INT
+FUNCTION FUNC : INT
 	VAR_INPUT
-		A : INT;
-		B : INT;
+		A, D : REAL := 1.56;
+		B : INT := 3;
 	END_VAR
 
-  VAR
-    C : INT;
-  END_VAR
+	VAR
+		C, F : INT := 5;
+	END_VAR
 
-  C := A + B;
-	FUNCTEST := C * 2;
+	C := A ;
+	C := A + B ;
+	B := F + C ;
+	FUNC := D + B;
+	(* FUNC := C * 2; *)
 END_FUNCTION 

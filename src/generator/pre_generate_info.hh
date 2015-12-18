@@ -42,6 +42,11 @@ public:
         //uint16_t value_p; [> reference or pointer value <]
     } v;
 public:
+	IValue(){
+		name = "";
+		type = TUNDEF;
+		v.value_i = 0;
+	}
 	//just for debug
 	void print(void) {
 		std::cout << "IValue name: " << name 
@@ -60,9 +65,30 @@ public:
 
 };
 
+//pou status :
+#define POU_STA_INIT 0
+#define POU_STA_HEADER 1
+#define POU_STA_VAR_DEC 2
+#define POU_STA_VAR_IN_DEC 3
+#define POU_STA_VAR_OUT_DEC 4
+#define POU_STA_VAR_INOUT_DEC 5
+#define POU_STA_VAR_LOCAL_DEC 6
+#define POU_STA_BODY 7
+
+//pou type
+#define POU_TYPE_UNDEF 0
+#define POU_TYPE_FUN 1
+#define POU_TYPE_FB 2
+#define POU_TYPE_PROG 3
+
+
 class pre_generate_pou_info_c {
 private:
 	std::string pou_name;
+	unsigned int pou_status;
+	unsigned int pou_type;
+
+	unsigned int pou_reg_num;
 
 	inst_number_t pou_inst_number;
 
@@ -70,13 +96,34 @@ public:
 	pre_generate_pou_info_c(std::string pou_name) {
 		this->pou_name = pou_name; 
 		pre_code = "";
+		pou_status = POU_STA_INIT;
+		pou_reg_num = 0;
+
 	}
 	virtual ~pre_generate_pou_info_c(){}
     
     void set_pou_name(std::string pou_name) { this->pou_name = pou_name; }
     std::string get_pou_name(void) const { return this->pou_name; }
+
+    void set_pou_status(unsigned int status) { this->pou_status = status; }
+    unsigned int get_pou_status(void) const { return this->pou_status; }
+
+    void set_pou_type(unsigned int type) { pou_type = type; }
+    unsigned int get_pou_type(void) const { return this->pou_type; }
+
+    std::string get_pou_reg_num() const { 
+    	std::stringstream strm;
+    	std::string result;
+    	strm << (this->pou_reg_num + input_variable.size() + input_output_variable.size() + output_variable.size() + local_variable.size() );
+    	strm >> result;
+    	return result;
+    }
+    void inc_pou_reg_num() { this->pou_reg_num ++; }
+    void dec_pou_reg_num() { this->pou_reg_num --; }
+
 public:
 	std::string pre_code;
+	
 
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;
@@ -84,8 +131,10 @@ public:
 	std::vector<IValue> local_variable;
 	std::vector<std::string> inst_code;
 
+
 public:
 	internal_value_t variable_type_check(std::string type);
+	int find_var_return_num(std::string var_name);
 
 	//just for debug
 	void print(void);
