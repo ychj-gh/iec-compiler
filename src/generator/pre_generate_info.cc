@@ -90,6 +90,7 @@ void pre_generate_pou_info_c::print_detail_info(void)
 	std::cout << "inst number: " << inst_code.size() << std::endl;
 	for(auto elem : inst_code)
 		std::cout << ++count << " : "<< elem << std::endl;
+	std::cout << std::endl;
 	std::cout << "++++++POU DETAIL INFO END++++++++" << std::endl;
 	std::cout << std::endl;
 }
