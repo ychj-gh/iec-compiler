@@ -57,7 +57,12 @@ typedef struct {
 extern runtime_options_t runtime_options;
 
 
-
+#define DEBUG
+#ifdef DEBUG
+#define TRACE(classname) printf("\n____%s____\n",classname);
+#else
+#define TRACE(classname)
+#endif
 
 
 

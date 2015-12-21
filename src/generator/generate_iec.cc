@@ -30,13 +30,10 @@
 
 //add by yaoshun
 #include "pre_generate_info.hh"
+#include "generate_assignment_r_exp.hh"
+#include "generate_assignment_l_exp.hh"
 
-#define DEBUG
-#ifdef DEBUG
-#define TRACE(classname) printf("\n____%s____\n",classname);
-#else
-#define TRACE(classname)
-#endif
+
 
 
 /***********************************************************************/
@@ -1060,15 +1057,15 @@ void *visit(var1_init_decl_c *symbol) {
     iv.name = elem;
     if(ivt == TINT) {
       if (!var_value.empty())
-        iv.v.value_i = stoi(var_value);
+        iv.v.value_i = std::stoi(var_value);
     }
     else if(ivt == TUINT) {
       if (!var_value.empty())
-        iv.v.value_u = stoi(var_value);
+        iv.v.value_u = std::stoi(var_value);
     }
     else if(ivt == TDOUBLE) {
       if (!var_value.empty())
-       iv.v.value_d = stod(var_value);
+       iv.v.value_d = std::stod(var_value);
     }
     else {
       iv.v.value_s.str = strdup(var_value.c_str());
@@ -1094,17 +1091,13 @@ void *visit(var1_init_decl_c *symbol) {
 
 void *visit(var1_list_c *symbol) {
   TRACE("var1_list_c");
-//  print_list(symbol, "", ", ");
+
   for(int i = 0; i < symbol->n; i++) {
     std::string str = (char*)symbol->elements[i]->accept(*this);
-    // std::cout << "\ncheck: " << str << std::endl;
+
     var_name_set.push_back(str);
   }
-  //just for debug
-  // std::cout << "\ncheck: " << std::endl; 
-  // for(auto elem : var_name_set)
-  //   std::cout << elem << std::endl;
-  // std::cout << "check end: " << std::endl; 
+
   return NULL;
 }
 
@@ -2306,139 +2299,11 @@ void *visit(    gt_expression_c *symbol) {TRACE("gt_expression_c"); return print
 void *visit(    le_expression_c *symbol) {TRACE("le_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " <= ");}
 void *visit(    ge_expression_c *symbol) {TRACE("ge_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " >= ");}
 
-void *visit(   add_expression_c *symbol) {
-  TRACE("add_expression_c"); 
-  int temp_num;
-  std::string temp_code = "add ";
-  std::string temp_reg_num;
-  std::string temp_str;
-  if(typeid(*(symbol->l_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->l_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + numeric_to_string(temp_num);
-  } else {
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
-  }  
-  if(typeid(*(symbol->r_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->r_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_code += " " + numeric_to_string(temp_num);
-    pou_info->inst_code.push_back(temp_code);
-  } else {
-    temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
-    pou_info->inst_code.push_back(temp_code);
-  }
-  return strdup(temp_reg_num.c_str());
-  // return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " + ");
-}
+void *visit(   add_expression_c *symbol) {TRACE("add_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " + ");}
+void *visit(   sub_expression_c *symbol) {TRACE("sub_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " - ");}
+void *visit(   mul_expression_c *symbol) {TRACE("mul_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " * ");}
+void *visit(   div_expression_c *symbol) {TRACE("div_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " / ");}
 
-void *visit(   sub_expression_c *symbol) {
-  TRACE("sub_expression_c"); 
-  int temp_num;
-  std::string temp_code = "sub ";
-  std::string temp_reg_num;
-  std::string temp_str;
-  if(typeid(*(symbol->l_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->l_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + numeric_to_string(temp_num);
-  } else {
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
-  }  
-  if(typeid(*(symbol->r_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->r_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_code += " " + numeric_to_string(temp_num);
-    pou_info->inst_code.push_back(temp_code);
-  } else {
-    temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
-    pou_info->inst_code.push_back(temp_code);
-  }
-  return strdup(temp_reg_num.c_str());
-  // return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " - ");
-}
-void *visit(   mul_expression_c *symbol) {
-  TRACE("mul_expression_c"); 
-  int temp_num;
-  std::string temp_code = "mul ";
-  std::string temp_reg_num;
-  std::string temp_str;
-  if(typeid(*(symbol->l_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->l_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + numeric_to_string(temp_num);
-  } else {
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
-  }  
-  if(typeid(*(symbol->r_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->r_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_code += " " + numeric_to_string(temp_num);
-    pou_info->inst_code.push_back(temp_code);
-  } else {
-    temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
-    pou_info->inst_code.push_back(temp_code);
-  }
-  return strdup(temp_reg_num.c_str());
-  // return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " * ");
-}
-void *visit(   div_expression_c *symbol) {
-  TRACE("div_expression_c"); 
-  int temp_num;
-  std::string temp_code = "div ";
-  std::string temp_reg_num;
-  std::string temp_str;
-  if(typeid(*(symbol->l_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->l_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + numeric_to_string(temp_num);
-  } else {
-    temp_reg_num = pou_info->get_pou_reg_num();
-    pou_info->inc_pou_reg_num();
-    temp_code += temp_reg_num;
-    temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
-  }  
-  if(typeid(*(symbol->r_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->r_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_code += " " + numeric_to_string(temp_num);
-    pou_info->inst_code.push_back(temp_code);
-  } else {
-    temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
-    pou_info->inst_code.push_back(temp_code);
-  }
-  return strdup(temp_reg_num.c_str());
-  // return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " / ");
-}
 void *visit(   mod_expression_c *symbol) {TRACE("mod_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " MOD ");}
 void *visit( power_expression_c *symbol) {TRACE("power_expression_c"); return print_binary_expression(symbol, symbol->l_exp, symbol->r_exp, " ** ");}
 void *visit(   neg_expression_c *symbol) {TRACE("neg_expression_c"); return print_unary_expression (symbol, symbol->exp, "-");}
@@ -2474,27 +2339,20 @@ void *visit(statement_list_c *symbol) {
 void *visit( assignment_statement_c *symbol) {
   TRACE("assignment_statement_c");
 
-  int temp_num = 0;
+  generate_assign_r_exp_c temp_r_exp(pou_info);
+  generate_assign_l_exp_c temp_l_exp(pou_info);
+
   std::string temp_code = "mov ";
-  std::string temp_str = (char*)symbol->l_exp->accept(*this);
-  if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-    ERROR_MSG("cannot find the specific variable !");
-  temp_code += numeric_to_string(temp_num) + " ";
   
+  temp_code += (char*)symbol->l_exp->accept(temp_l_exp) + std::string(" ");
+
   s4o.print(" := ");
 
-  if(typeid(*(symbol->r_exp)) == typeid(symbolic_variable_c)) {
-    temp_str = (char*)symbol->r_exp->accept(*this);
-    if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
-      ERROR_MSG("cannot find the specific variable !");
-    temp_code += numeric_to_string(temp_num);
-  } else {
-    temp_code += (char*)symbol->r_exp->accept(*this);
-    pou_info->dec_pou_reg_num();
-  }
+  temp_code += (char*)symbol->r_exp->accept(temp_r_exp);
+//  pou_info->dec_pou_reg_num();
+
   pou_info->inst_code.push_back(temp_code);
  
-
   return NULL;
 }
 

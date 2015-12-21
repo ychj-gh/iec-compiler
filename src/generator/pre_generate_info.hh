@@ -121,6 +121,14 @@ public:
     void inc_pou_reg_num() { this->pou_reg_num ++; }
     void dec_pou_reg_num() { this->pou_reg_num --; }
 
+    std::string get_pou_const_num() const {
+    	std::stringstream strm;
+    	std::string result;
+    	strm << (this->constant_value.size() - 1) ;
+    	strm >> result;
+    	return result;
+    }
+
 public:
 	std::string pre_code;
 	
@@ -129,7 +137,9 @@ public:
 	std::vector<IValue> input_output_variable;
 	std::vector<IValue> output_variable;
 	std::vector<IValue> local_variable;
+	std::vector<IValue> constant_value;
 	std::vector<std::string> inst_code;
+
 
 
 public:

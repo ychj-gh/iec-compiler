@@ -86,6 +86,10 @@ void pre_generate_pou_info_c::print_detail_info(void)
 	for(auto elem : local_variable)
 		elem.print();
 	std::cout << std::endl;
+	std::cout << "constant number: " << constant_value.size() << std::endl;
+	for(auto elem : constant_value)
+		elem.print();
+	std::cout << std::endl;
 	std::cout << "------------Code-----------------" << std::endl;
 	std::cout << "inst number: " << inst_code.size() << std::endl;
 	for(auto elem : inst_code)

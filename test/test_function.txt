@@ -8,10 +8,11 @@ FUNCTION FUNC : INT
 		D, E : INT := 5;
 	END_VAR
 
-	C := A ;
-	C := A * (B - C) * D;
+	C := A + (REAL#12.0) ;
+	D := C + 2.01 * B;
+(*	C := A * (B - C) * D;
 	C := A + B + C + D;
 	B := E + C;
-	FUNC := D + B;
+	FUNC := D + B; *)
 	(* FUNC := C * 2; *)
 END_FUNCTION 
