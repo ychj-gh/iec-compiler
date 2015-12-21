@@ -36,6 +36,7 @@
 
 
 
+//#define _CODE_GENERATOR
 
 /***********************************************************************/
 /***********************************************************************/
@@ -56,16 +57,18 @@ void stage4_print_options(void) {
 /***********************************************************************/
 
 
-// class generate_iec_c: public iterator_visitor_c {
+//class generate_iec_c: public iterator_visitor_c {
 class generate_iec_c: public visitor_c {
   private:
     stage4out_c &s4o;
+
+#ifdef _CODE_GENERATOR
     pre_generate_info_c pre_code_info;
     pre_generate_pou_info_c* pou_info;
+#endif
 
   public:
-    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {
-    }
+    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {}
     ~generate_iec_c(void) {}
 
 
@@ -125,6 +128,7 @@ void *print_token(token_c *token) {
   return s4o.print(token->value);
 }
 
+#ifdef _CODE_GENERATOR
 //add by yaoshun
 std::string numeric_to_string(int num) {
   std::stringstream strm;
@@ -309,6 +313,7 @@ void *return_striped_hex_token(token_c *token, unsigned int offset = 0) {
 
   return strdup(result.c_str());
 }
+#endif
 
 void *print_literal(symbol_c *type, symbol_c *value) {
   print_const_value(value);
@@ -316,8 +321,12 @@ void *print_literal(symbol_c *type, symbol_c *value) {
     type->accept(*this);
     s4o.print("#");
   }
+#ifdef _CODE_GENERATOR
   return value->accept(*this);
-  // return NULL;
+#else
+  value->accept(*this);
+  return NULL;
+#endif
 }
 
 void *print_list(list_c *list,
@@ -416,7 +425,15 @@ void *visit(library_c *symbol) {TRACE("library_c"); return print_list(symbol);}
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
 /*******************************************/
-void *visit(                 identifier_c *symbol) { TRACE("identifier_c"); print_token(symbol); return strdup(symbol->value); }
+void *visit(                 identifier_c *symbol) { 
+	TRACE("identifier_c"); 
+#ifdef _CODE_GENERATOR
+	print_token(symbol); 
+	return strdup(symbol->value); 
+#else
+	return print_token(symbol);
+#endif
+}
 void *visit(derived_datatype_identifier_c *symbol) { TRACE("derived_datatype_identifier_c"); return print_token(symbol);}
 void *visit(         poutype_identifier_c *symbol) { TRACE("poutype_identifier_c"); return print_token(symbol);}
 
@@ -432,16 +449,49 @@ void *visit(ref_value_null_literal_c *symbol)  { TRACE("ref_value_null_literal_c
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *visit(real_c *symbol)               { TRACE("real_c"); print_token(symbol); return return_striped_token(symbol);}
-void *visit(integer_c *symbol)            { TRACE("integer_c"); print_token(symbol); return return_striped_token(symbol);}
+void *visit(real_c *symbol)               { 
+	TRACE("real_c"); 
+#ifdef _CODE_GENERATOR
+	print_token(symbol); 
+	return return_striped_token(symbol);
+#else
+	return print_token(symbol);
+#endif
+}
+void *visit(integer_c *symbol)            { 
+	TRACE("integer_c"); 
+#ifdef _CODE_GENERATOR
+	print_token(symbol); 
+	return return_striped_token(symbol);
+#else
+	return print_token(symbol);
+#endif
+}
 void *visit(binary_integer_c *symbol)     { 
   TRACE("binary_integer_c"); 
-  // std::cout << (char*)return_striped_binary_token(symbol, 2) << "===" << std::endl;
+#ifdef _CODE_GENERATOR
   return return_striped_binary_token(symbol, 2);
+#else
+	return print_token(symbol);
+#endif
 }
 
-void *visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return return_striped_octal_token(symbol, 2);}
-void *visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return return_striped_hex_token(symbol, 3);}
+void *visit(octal_integer_c *symbol)      { 
+	TRACE("octal_integer_c"); 
+#ifdef _CODE_GENERATOR
+	return return_striped_octal_token(symbol, 2);
+#else
+	return print_token(symbol);
+#endif
+}
+void *visit(hex_integer_c *symbol)        { 
+	TRACE("hex_integer_c"); 
+#ifdef _CODE_GENERATOR
+	return return_striped_hex_token(symbol, 3);
+#else
+	return print_token(symbol);
+#endif
+}
 
 void *visit(neg_real_c *symbol)           { TRACE("neg_real_c"); return print_unary_expression(symbol, symbol->exp, "-");}
 void *visit(neg_integer_c *symbol)        { TRACE("neg_integer_c"); return print_unary_expression(symbol, symbol->exp, "-");}
@@ -654,6 +704,7 @@ std::string var_type;
 /* simple_specification ASSIGN constant */
 void *visit(simple_spec_init_c *symbol) {
   TRACE("simple_spec_init_c"); 
+#ifdef _CODE_GENERATOR
   var_type = (char*)symbol->simple_specification->accept(*this);
   
   if (symbol->constant != NULL) {
@@ -662,6 +713,13 @@ void *visit(simple_spec_init_c *symbol) {
   } else {
     var_value = "0";
   }
+#else
+	symbol->simple_specification->accept(*this);
+	if (symbol->constant != NULL) {
+		s4o.print(" := ");
+		symbol->constant->accept(*this);
+	}
+#endif
 
   return NULL;
 }
@@ -966,7 +1024,9 @@ void *visit(non_retain_option_c *symbol) {TRACE("non_retain_option_c"); s4o.prin
 /* option -> the RETAIN/NON_RETAIN/<NULL> directive... */
 void *visit(input_declarations_c *symbol) {
   TRACE("input_declarations_c"); 
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_IN_DEC);
+#endif
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     s4o.print(s4o.indent_spaces); s4o.print("VAR_INPUT ");
     if (symbol->option != NULL)
@@ -1044,6 +1104,7 @@ void *visit(falling_edge_option_c *symbol) {
 std::vector<std::string> var_name_set;
 void *visit(var1_init_decl_c *symbol) {
   TRACE("var1_init_decl_c");
+#ifdef _CODE_GENERATOR
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
 
@@ -1085,14 +1146,18 @@ void *visit(var1_init_decl_c *symbol) {
 
   }
   var_name_set.clear();
-
+#else
+	symbol->var1_list->accept(*this);
+	s4o.print(" : ");
+	symbol->spec_init->accept(*this);
+#endif
   return NULL;
 }
 
 
 void *visit(var1_list_c *symbol) {
   TRACE("var1_list_c");
-
+#ifdef _CODE_GENERATOR
   for(int i = 0; i < symbol->n; i++) {
     std::string str = (char*)symbol->elements[i]->accept(*this);
 
@@ -1100,6 +1165,9 @@ void *visit(var1_list_c *symbol) {
   }
 
   return NULL;
+#else
+	return print_list(symbol, "", ", ");
+#endif
 }
 
 /* | [var1_list ','] variable_name '..' */
@@ -1166,7 +1234,9 @@ void *visit(fb_name_list_c *symbol) {TRACE("fb_name_list_c"); return print_list(
 /* option -> may be NULL ! */
 void *visit(output_declarations_c *symbol) {
   TRACE("output_declarations_c"); 
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_OUT_DEC);
+#endif
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     s4o.print(s4o.indent_spaces); s4o.print("VAR_OUTPUT ");
     if (symbol->option != NULL)
@@ -1183,7 +1253,9 @@ void *visit(output_declarations_c *symbol) {
 /*  VAR_IN_OUT  END_VAR */
 void *visit(input_output_declarations_c *symbol) {
   TRACE("input_output_declarations_c"); 
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_INOUT_DEC);
+#endif
   s4o.print(s4o.indent_spaces); s4o.print("VAR_IN_OUT ");
   s4o.print("\n");
   s4o.indent_right();
@@ -1494,8 +1566,8 @@ void *visit(var_init_decl_list_c *symbol) {
 internal_value_t ivt;
 void *visit(function_declaration_c *symbol) {
   TRACE("function_declaration_c");
+#ifdef _CODE_GENERATOR
   std::string temp;
-
 
   s4o.print("FUNCTION ");
   temp = (char*)symbol->derived_function_name->accept(*this);
@@ -1526,19 +1598,36 @@ void *visit(function_declaration_c *symbol) {
   pou_info->print_detail_info();
   // pre_code_info.insert();
   pou_info->set_pou_status(POU_STA_INIT);
+#else
+  s4o.print("FUNCTION ");
+  symbol->derived_function_name->accept(*this);
+  s4o.print(" : ");
+  symbol->type_name->accept(*this);
+  s4o.print("\n");
+  s4o.indent_right();
+  symbol->var_declarations_list->accept(*this);
+  s4o.print("\n");
+  symbol->function_body->accept(*this);
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces + "END_FUNCTION\n\n\n");
+#endif
   return NULL;
 }
 
 /* intermediate helper symbol for function_declaration */
 void *visit(var_declarations_list_c *symbol) { 
   TRACE("var_declarations_list_c"); 
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_DEC);
+#endif
   return print_list(symbol);
 }
 
 void *visit(function_var_decls_c *symbol) {
   TRACE("function_var_decls_c"); 
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_LOCAL_DEC);
+#endif
   s4o.print(s4o.indent_spaces); 
   s4o.print("VAR ");
   if (symbol->option != NULL)
@@ -2332,7 +2421,9 @@ void *visit(function_invocation_c *symbol) {
 /********************/
 void *visit(statement_list_c *symbol) {
   TRACE("statement_list_c");
+#ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_BODY);
+#endif
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
@@ -2341,7 +2432,7 @@ void *visit(statement_list_c *symbol) {
 /*********************************/
 void *visit( assignment_statement_c *symbol) {
   TRACE("assignment_statement_c");
-
+#ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_r_exp(pou_info);
   generate_assign_l_exp_c temp_l_exp(pou_info);
 
@@ -2355,7 +2446,11 @@ void *visit( assignment_statement_c *symbol) {
 //  pou_info->dec_pou_reg_num();
 
   pou_info->inst_code.push_back(temp_code);
- 
+#else
+  symbol->l_exp->accept(*this);
+  s4o.print(" := ");
+  symbol->r_exp->accept(*this);
+#endif
   return NULL;
 }
 

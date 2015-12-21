@@ -6,6 +6,7 @@ FUNCTION FUNC : INT
 
 	VAR
 		D, E : INT := 5;
+		F : BOOL := 4.8;
 	END_VAR
 
 	C := A + (REAL#12.0) ;
@@ -13,6 +14,6 @@ FUNCTION FUNC : INT
 (*	C := A * (B - C) * D;
 	C := A + B + C + D;
 	B := E + C;
-	FUNC := D + B; 
+	FUNC := D + B ; 
 	FUNC := C * 2; *)
 END_FUNCTION 
