@@ -32,6 +32,7 @@
 #include "pre_generate_info.hh"
 #include "generate_assignment_r_exp.hh"
 #include "generate_assignment_l_exp.hh"
+#include "generate_pou_var_declaration.hh"
 
 
 
@@ -1495,6 +1496,7 @@ void *visit(function_declaration_c *symbol) {
   TRACE("function_declaration_c");
   std::string temp;
 
+
   s4o.print("FUNCTION ");
   temp = (char*)symbol->derived_function_name->accept(*this);
   pou_info = new pre_generate_pou_info_c(temp);
@@ -1513,7 +1515,8 @@ void *visit(function_declaration_c *symbol) {
   s4o.print("\n");
   s4o.indent_right();
   
-  symbol->var_declarations_list->accept(*this);
+  generate_pou_var_declaration_c temp_pou_var_dec(pou_info);
+  symbol->var_declarations_list->accept(temp_pou_var_dec);
 
   s4o.print("\n");
   symbol->function_body->accept(*this);

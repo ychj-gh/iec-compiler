@@ -1,6 +1,6 @@
 FUNCTION FUNC : INT
 	VAR_INPUT
-		A, B : REAL := 1.56;
+		A, B : REAL := 1.56 ;
 		C : INT ;
 	END_VAR
 
@@ -13,6 +13,6 @@ FUNCTION FUNC : INT
 (*	C := A * (B - C) * D;
 	C := A + B + C + D;
 	B := E + C;
-	FUNC := D + B; *)
-	(* FUNC := C * 2; *)
+	FUNC := D + B; 
+	FUNC := C * 2; *)
 END_FUNCTION 
