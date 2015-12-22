@@ -130,13 +130,11 @@ private:
 	/********************************************/
 	void *visit(direct_variable_c *symbol) ;
 
-
 	/*************************************/
 	/* B.1.4.2   Multi-element Variables */
 	/*************************************/
 	/*  subscripted_variable '[' subscript_list ']' */
 	void *visit(array_variable_c *symbol) ;
-
 
 	/* subscript_list ',' subscript */
 	void *visit(subscript_list_c *symbol) ;
@@ -154,6 +152,13 @@ private:
 	void *visit(   mul_expression_c *symbol);
 
 	void *visit(   div_expression_c *symbol);
+
+	void *visit(   equ_expression_c *symbol) ;
+	void *visit(notequ_expression_c *symbol) ;
+	void *visit(    lt_expression_c *symbol) ;
+	void *visit(    gt_expression_c *symbol) ;
+	void *visit(    le_expression_c *symbol) ;
+	void *visit(    ge_expression_c *symbol) ;
 
 };
 

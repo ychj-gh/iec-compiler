@@ -8,7 +8,7 @@ internal_value_t pre_generate_pou_info_c::variable_type_check(std::string type)
 	if(type == "SINT" || type == "INT" || type == "DINT" || type == "LINT")
 		return TINT;
 	else if(type == "USINT" || type == "UINT" || type == "UDINT" || type == "ULINT" 
-		|| type == "BYTE" || type == "WORD" || type == "LWORD" || type == "DWORD")
+		|| type == "BYTE" || type == "WORD" || type == "LWORD" || type == "DWORD" || type == "BOOL")
 		return TUINT;
 	else if(type == "REAL" || type == "LREAL")
 		return TDOUBLE;

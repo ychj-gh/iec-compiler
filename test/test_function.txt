@@ -6,9 +6,16 @@ FUNCTION FUNC : INT
 
 	VAR
 		D, E : INT := 5;
-		F : BOOL := 4.8;
+		F : BOOL := true;
+		G : BOOL := BOOL#false;
 	END_VAR
-
+	G := A > B;
+	F := A < B;
+	
+	F := C <= A;
+	G := C >= B;
+	F := A = B;
+	G := A <> B;
 	C := A + (REAL#12.0) ;
 	D := C + 2.01 * B;
 (*	C := A * (B - C) * D;

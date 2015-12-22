@@ -518,6 +518,8 @@ void *generate_assign_r_exp_c::visit(structured_variable_c *symbol) {
 /***********************/
 /* B 3.1 - Expressions */
 /***********************/
+
+/* arithmetic expressions */
 void *generate_assign_r_exp_c::visit( add_expression_c *symbol) {
 	TRACE("add_expression_c"); 
 
@@ -586,5 +588,96 @@ void *generate_assign_r_exp_c::visit(   div_expression_c *symbol) {
 	return strdup(temp_reg_num.c_str());
 }
 
+/* logical expressions */
+void *generate_assign_r_exp_c::visit(   equ_expression_c *symbol) {
+  TRACE("equ_expression_c"); 
+  std::string temp_code = "eq ";
+  std::string temp_reg_num;
 
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+void *generate_assign_r_exp_c::visit(notequ_expression_c *symbol) {
+  TRACE("notequ_expression_c"); 
+  std::string temp_code = "ne ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+void *generate_assign_r_exp_c::visit(    lt_expression_c *symbol) {
+  TRACE("lt_expression_c"); 
+
+  std::string temp_code = "lt ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+void *generate_assign_r_exp_c::visit(    gt_expression_c *symbol) {
+  TRACE("gt_expression_c"); 
+  std::string temp_code = "gt ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+void *generate_assign_r_exp_c::visit(    le_expression_c *symbol) {
+  TRACE("le_expression_c"); 
+  std::string temp_code = "le ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+void *generate_assign_r_exp_c::visit(    ge_expression_c *symbol) {
+  TRACE("ge_expression_c"); 
+  std::string temp_code = "ge ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
 

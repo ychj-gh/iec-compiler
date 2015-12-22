@@ -276,11 +276,23 @@ void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        { TRAC
 void *generate_pou_var_declaration_c::visit(integer_literal_c *symbol)    { TRACE("integer_literal_c"); return print_literal(symbol->type, symbol->value);}
 void *generate_pou_var_declaration_c::visit(real_literal_c *symbol)       { TRACE("real_literal_c"); return print_literal(symbol->type, symbol->value);}
 void *generate_pou_var_declaration_c::visit(bit_string_literal_c *symbol) { TRACE("bit_string_literal_c"); return print_literal(symbol->type, symbol->value);}
-void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    { TRACE("boolean_literal_c"); return print_literal(symbol->type, symbol->value);}
+void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    { 
+  TRACE("boolean_literal_c"); 
+  if (NULL != symbol->type) {
+    symbol->type->accept(*this);
+  }
+  return symbol->value->accept(*this);
+}
 
 /* helper class for boolean_literal_c */
-void *generate_pou_var_declaration_c::visit(boolean_true_c *symbol)       { TRACE("boolean_true_c");  return NULL;}
-void *generate_pou_var_declaration_c::visit(boolean_false_c *symbol)      { TRACE("boolean_false_c");  return NULL;}
+void *generate_pou_var_declaration_c::visit(boolean_true_c *symbol)       { 
+  TRACE("boolean_true_c");  
+  return strdup("1");
+}
+void *generate_pou_var_declaration_c::visit(boolean_false_c *symbol)      { 
+  TRACE("boolean_false_c");  
+  return strdup("0");
+}
 
 /*******************************/
 /* B.1.2.2   Character Strings */
