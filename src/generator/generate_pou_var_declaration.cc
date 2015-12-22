@@ -9,190 +9,7 @@ void *generate_pou_var_declaration_c::print_token(token_c *token) {
   return NULL;
 }
 
-//add by yaoshun
-std::string generate_pou_var_declaration_c::numeric_to_string(int num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
 
-std::string generate_pou_var_declaration_c::numeric_to_string(double num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
-
-void *generate_pou_var_declaration_c::return_token(token_c *token) {
-  return strdup(token->value);
-}
-
-void *generate_pou_var_declaration_c::return_striped_token(token_c *token, int offset) {
-  std::string str = "";
-  bool leading_zero = true;
-  for (unsigned int i = offset; i < strlen(token->value); i++) {
-    if (leading_zero
-        && (   token->value[i] != '0'
-            || i == strlen(token->value) - 1
-            || token->value[i + 1] == '.'
-            )
-        )
-      leading_zero = false;
-        if (!leading_zero && token->value[i] != '_')
-      str += token->value[i];
-  }
-  return strdup(str.c_str());
-}
-
-void *generate_pou_var_declaration_c::return_striped_binary_token(token_c *token, unsigned int offset ) {
-  /* convert the binary value to hexadecimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      if(token->value[i] == '1')
-        val = val * 2 + 1;
-      else
-        val = val * 2;
-    }
-  }
-
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
-
-  return strdup(result.c_str());
-}
-
-void *generate_pou_var_declaration_c::return_striped_octal_token(token_c *token, unsigned int offset ) {
-  /* convert the binary value to hexadecimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      switch(token->value[i])
-      {
-        case '0':
-          val = val * 8;
-          break;
-        case '1':
-          val = val * 8 + 1;
-          break;
-        case '2':
-          val = val * 8 + 2;
-          break;
-        case '3':
-          val = val * 8 + 3;
-          break;
-        case '4':
-          val = val * 8 + 4;
-          break;
-        case '5':
-          val = val * 8 + 5;
-          break;
-        case '6':
-          val = val * 8 + 6;
-          break;
-        case '7':
-          val = val * 8 + 7;
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
-
-  return strdup(result.c_str());
-}
-
-
-void *generate_pou_var_declaration_c::return_striped_hex_token(token_c *token, unsigned int offset ) {
-  /* convert the binary value to hexadecimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      switch(token->value[i])
-      {
-        case '0':
-          val = val * 16;
-          break;
-        case '1':
-          val = val * 16 + 1;
-          break;
-        case '2':
-          val = val * 16 + 2;
-          break;
-        case '3':
-          val = val * 16 + 3;
-          break;
-        case '4':
-          val = val * 16 + 4;
-          break;
-        case '5':
-          val = val * 16 + 5;
-          break;
-        case '6':
-          val = val * 16 + 6;
-          break;
-        case '7':
-          val = val * 16 + 7;
-          break;
-        case '8':
-          val = val * 16 + 8;
-          break;
-        case '9':
-          val = val * 16 + 9;
-          break;
-        case 'A':
-        case 'a':
-          val = val * 16 + 10;
-          break;
-        case 'B':
-        case 'b':
-          val = val * 16 + 11;
-          break;
-        case 'C':
-        case 'c':
-          val = val * 16 + 12;
-          break;
-        case 'D':
-        case 'd':
-          val = val * 16 + 13;
-          break;
-        case 'E':
-        case 'e':
-          val = val * 16 + 14;
-          break;
-        case 'F':
-        case 'f':
-          val = val * 16 + 15;
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
-
-  return strdup(result.c_str());
-}
 
 void *generate_pou_var_declaration_c::print_literal(symbol_c *type, symbol_c *value) {
 
@@ -259,16 +76,16 @@ void *generate_pou_var_declaration_c::visit(ref_value_null_literal_c *symbol)  {
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *generate_pou_var_declaration_c::visit(real_c *symbol)               { TRACE("real_c"); print_token(symbol); return return_striped_token(symbol);}
-void *generate_pou_var_declaration_c::visit(integer_c *symbol)            { TRACE("integer_c"); print_token(symbol); return return_striped_token(symbol);}
+void *generate_pou_var_declaration_c::visit(real_c *symbol)               { TRACE("real_c"); print_token(symbol); return utility_token_get_c::return_striped_token(symbol);}
+void *generate_pou_var_declaration_c::visit(integer_c *symbol)            { TRACE("integer_c"); print_token(symbol); return utility_token_get_c::return_striped_token(symbol);}
 void *generate_pou_var_declaration_c::visit(binary_integer_c *symbol)     { 
   TRACE("binary_integer_c"); 
   // std::cout << (char*)return_striped_binary_token(symbol, 2) << "===" << std::endl;
-  return return_striped_binary_token(symbol, 2);
+  return utility_token_get_c::return_striped_binary_token(symbol, 2);
 }
 
-void *generate_pou_var_declaration_c::visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return return_striped_octal_token(symbol, 2);}
-void *generate_pou_var_declaration_c::visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return return_striped_hex_token(symbol, 3);}
+void *generate_pou_var_declaration_c::visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return utility_token_get_c::return_striped_octal_token(symbol, 2);}
+void *generate_pou_var_declaration_c::visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return utility_token_get_c::return_striped_hex_token(symbol, 3);}
 
 void *generate_pou_var_declaration_c::visit(neg_real_c *symbol)           { TRACE("neg_real_c"); return print_unary_expression(symbol, symbol->exp, "-");}
 void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        { TRACE("neg_integer_c"); return print_unary_expression(symbol, symbol->exp, "-");}

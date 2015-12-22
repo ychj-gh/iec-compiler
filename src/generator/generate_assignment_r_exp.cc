@@ -1,5 +1,5 @@
 #include "generate_assignment_r_exp.hh"
-
+#include "utility_token_get.hh"
 
 
 
@@ -7,189 +7,10 @@
 /* ************ utility functions ******** */
 /*******************************************/
 
-std::string generate_assign_r_exp_c::numeric_to_string(int num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
-
-std::string generate_assign_r_exp_c::numeric_to_string(double num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
-
-void *generate_assign_r_exp_c::return_token(token_c *token) {
-  return strdup(token->value);
-}
-
-void *generate_assign_r_exp_c::return_striped_token(token_c *token, int offset) {
-  std::string str = "";
-  bool leading_zero = true;
-  for (unsigned int i = offset; i < strlen(token->value); i++) {
-    if (leading_zero
-        && (   token->value[i] != '0'
-            || i == strlen(token->value) - 1
-            || token->value[i + 1] == '.'
-            )
-        )
-      leading_zero = false;
-        if (!leading_zero && token->value[i] != '_')
-      str += token->value[i];
-  }
-  return strdup(str.c_str());
-}
-
-void *generate_assign_r_exp_c::return_striped_binary_token(token_c *token, unsigned int offset) {
-  /* convert the binary value to decimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      if(token->value[i] == '1')
-        val = val * 2 + 1;
-      else
-        val = val * 2;
-    }
-  }
-
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
-
-  return strdup(result.c_str());
-}
-
-void *generate_assign_r_exp_c::return_striped_octal_token(token_c *token, unsigned int offset) {
-  /* convert the octal value to decimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      switch(token->value[i])
-      {
-        case '0':
-          val = val * 8;
-          break;
-        case '1':
-          val = val * 8 + 1;
-          break;
-        case '2':
-          val = val * 8 + 2;
-          break;
-        case '3':
-          val = val * 8 + 3;
-          break;
-        case '4':
-          val = val * 8 + 4;
-          break;
-        case '5':
-          val = val * 8 + 5;
-          break;
-        case '6':
-          val = val * 8 + 6;
-          break;
-        case '7':
-          val = val * 8 + 7;
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
-
-  return strdup(result.c_str());
-}
 
 
-void *generate_assign_r_exp_c::return_striped_hex_token(token_c *token, unsigned int offset) {
-  /* convert the hex value to decimal format... */
-  unsigned long val = 0;
-  unsigned int i;
-  
-  for (i = offset; i < strlen(token->value); i++) {
-    if (token->value[i] != '_') {
-      switch(token->value[i])
-      {
-        case '0':
-          val = val * 16;
-          break;
-        case '1':
-          val = val * 16 + 1;
-          break;
-        case '2':
-          val = val * 16 + 2;
-          break;
-        case '3':
-          val = val * 16 + 3;
-          break;
-        case '4':
-          val = val * 16 + 4;
-          break;
-        case '5':
-          val = val * 16 + 5;
-          break;
-        case '6':
-          val = val * 16 + 6;
-          break;
-        case '7':
-          val = val * 16 + 7;
-          break;
-        case '8':
-          val = val * 16 + 8;
-          break;
-        case '9':
-          val = val * 16 + 9;
-          break;
-        case 'A':
-        case 'a':
-          val = val * 16 + 10;
-          break;
-        case 'B':
-        case 'b':
-          val = val * 16 + 11;
-          break;
-        case 'C':
-        case 'c':
-          val = val * 16 + 12;
-          break;
-        case 'D':
-        case 'd':
-          val = val * 16 + 13;
-          break;
-        case 'E':
-        case 'e':
-          val = val * 16 + 14;
-          break;
-        case 'F':
-        case 'f':
-          val = val * 16 + 15;
-          break;
-        default:
-          break;
-      }
-    }
-  }
 
-  std::stringstream stream;
-  std::string result;
-  stream << val; 
-  stream >> result; 
 
-  return strdup(result.c_str());
-}
 
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
@@ -221,7 +42,7 @@ void *generate_assign_r_exp_c::visit(real_c *symbol)               {
 
 	IValue iv;
 	iv.type = TDOUBLE;
-	iv.v.value_d = std::stod((char*)return_striped_token(symbol));
+	iv.v.value_d = std::stod((char*)utility_token_get_c::return_striped_token(symbol));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -241,7 +62,7 @@ void *generate_assign_r_exp_c::visit(integer_c *symbol) {
 
 	IValue iv;
 	iv.type = TUINT;
-	iv.v.value_u = std::stoi((char*)return_striped_token(symbol));
+	iv.v.value_u = std::stoi((char*)utility_token_get_c::return_striped_token(symbol));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -260,7 +81,7 @@ void *generate_assign_r_exp_c::visit(binary_integer_c *symbol)     {
 
 	IValue iv;
 	iv.type = TUINT;
-	iv.v.value_u = std::stoi((char*)return_striped_binary_token(symbol, 2));
+	iv.v.value_u = std::stoi((char*)utility_token_get_c::return_striped_binary_token(symbol, 2));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -279,7 +100,7 @@ void *generate_assign_r_exp_c::visit(octal_integer_c *symbol) {
 
 	IValue iv;
 	iv.type = TUINT;
-	iv.v.value_u = std::stoi((char*)return_striped_octal_token(symbol, 2));
+	iv.v.value_u = std::stoi((char*)utility_token_get_c::return_striped_octal_token(symbol, 2));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -299,7 +120,7 @@ void *generate_assign_r_exp_c::visit(hex_integer_c *symbol) {
 
 	IValue iv;
 	iv.type = TUINT;
-	iv.v.value_u = std::stoi((char*)return_striped_hex_token(symbol, 3));
+	iv.v.value_u = std::stoi((char*)utility_token_get_c::return_striped_hex_token(symbol, 3));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -318,7 +139,7 @@ void *generate_assign_r_exp_c::visit(neg_real_c *symbol) {
 
 	IValue iv;
 	iv.type = TDOUBLE;
-	iv.v.value_d = -1 * std::stod((char*)return_striped_token(dynamic_cast<token_c*>(symbol->exp)));
+	iv.v.value_d = -1 * std::stod((char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp)));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -338,7 +159,7 @@ void *generate_assign_r_exp_c::visit(neg_integer_c *symbol) {
 
 	IValue iv;
 	iv.type = TINT;
-	iv.v.value_i = -1 * std::stoi((char*)return_striped_token(dynamic_cast<token_c*>(symbol->exp)));
+	iv.v.value_i = -1 * std::stoi((char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp)));
 	pou_info->constant_value.push_back(iv);
 
 	temp_code += pou_info->get_pou_const_num();
@@ -507,7 +328,7 @@ void *generate_assign_r_exp_c::visit(symbolic_variable_c *symbol) {
 	if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
 	  ERROR_MSG("cannot find the specific variable !");
 
-	temp_num_str = numeric_to_string(temp_num);
+	temp_num_str = utility_token_get_c::numeric_to_string(temp_num);
 
 	return strdup(temp_num_str.c_str());
 }

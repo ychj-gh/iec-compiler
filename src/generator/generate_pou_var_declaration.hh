@@ -12,6 +12,7 @@
 
 //add by yaoshun
 #include "pre_generate_info.hh"
+#include "utility_token_get.hh"
 
 
 
@@ -37,20 +38,6 @@ private:
 private:
 
   void *print_token(token_c *token) ;
-
-  //add by yaoshun
-  std::string numeric_to_string(int num) ;
-
-  std::string numeric_to_string(double num) ;
-
-  void *return_token(token_c *token) ;
-
-  void *return_striped_token(token_c *token, int offset = 0) ;
-  void *return_striped_binary_token(token_c *token, unsigned int offset = 0) ;
-  void *return_striped_octal_token(token_c *token, unsigned int offset = 0) ;
-
-
-  void *return_striped_hex_token(token_c *token, unsigned int offset = 0) ;
 
   void *print_literal(symbol_c *type, symbol_c *value) ;
   void *print_list(list_c *list,

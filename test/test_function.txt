@@ -9,7 +9,10 @@ FUNCTION FUNC : INT
 		F : BOOL := true;
 		G : BOOL := BOOL#false;
 	END_VAR
-	F := BOOL#TRUE AND NOT G;
+	
+	IF (A < B) THEN
+		A := B + C;
+	END_IF;
 
 	C := A + (REAL#12.0) ;
 	D := C + 2.01 * B;

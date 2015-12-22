@@ -15,6 +15,7 @@
 
 #include "pre_generate_info.hh"
 #include "../absyntax/visitor.hh"
+#include "utility_token_get.hh"
 
 
 class generate_assign_l_exp_c : public null_visitor_c {
@@ -28,11 +29,6 @@ public:
 	~generate_assign_l_exp_c(void) {} ;
 
 private:
-
-	std::string numeric_to_string(int num) ;
-
-	std::string numeric_to_string(double num);
-
 
 	/*******************************************/
 	/* B 1.1 - Letters, digits and identifiers */

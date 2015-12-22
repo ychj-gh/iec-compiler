@@ -4,28 +4,6 @@
 
 
 /*******************************************/
-/* ************ utility functions ******** */
-/*******************************************/
-
-std::string generate_assign_l_exp_c::numeric_to_string(int num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
-
-std::string generate_assign_l_exp_c::numeric_to_string(double num) {
-  std::stringstream strm;
-  std::string result;
-  strm << num;
-  strm >> result;
-  return result;
-}
-
-
-
-/*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
 /*******************************************/
 void *generate_assign_l_exp_c::visit(                 identifier_c *symbol) { TRACE("identifier_c");  return strdup(symbol->value); }
@@ -48,7 +26,7 @@ void *generate_assign_l_exp_c::visit(symbolic_variable_c *symbol) {
 	if((temp_num = pou_info->find_var_return_num(temp_str)) == -1)
 	  ERROR_MSG("cannot find the specific variable !");
 
-	temp_num_str = numeric_to_string(temp_num);
+	temp_num_str = utility_token_get_c::numeric_to_string(temp_num);
 	
 	return strdup(temp_num_str.c_str());
 }
