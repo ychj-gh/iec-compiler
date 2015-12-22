@@ -9,13 +9,8 @@ FUNCTION FUNC : INT
 		F : BOOL := true;
 		G : BOOL := BOOL#false;
 	END_VAR
-	G := A > B;
-	F := A < B;
-	
-	F := C <= A;
-	G := C >= B;
-	F := A = B;
-	G := A <> B;
+	F := BOOL#TRUE AND NOT G;
+
 	C := A + (REAL#12.0) ;
 	D := C + 2.01 * B;
 (*	C := A * (B - C) * D;

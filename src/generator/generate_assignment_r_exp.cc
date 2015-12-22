@@ -364,11 +364,40 @@ void *generate_assign_r_exp_c::visit(real_literal_c *symbol)       {
 }
 
 void *generate_assign_r_exp_c::visit(bit_string_literal_c *symbol) { TRACE("bit_string_literal_c"); return NULL;}
-void *generate_assign_r_exp_c::visit(boolean_literal_c *symbol)    { TRACE("boolean_literal_c"); return NULL;}
+void *generate_assign_r_exp_c::visit(boolean_literal_c *symbol)    { 
+  TRACE("boolean_literal_c"); 
+
+  /* useless code, just for structrue complete */
+  if (NULL != symbol->type) {
+    symbol->type->accept(*this);
+  }
+  /* formal code */
+  std::string temp_code = std::string("kload ") ;
+  std::string temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+
+  temp_code += temp_reg_num + std::string(" ");
+
+  IValue iv;
+  iv.type = TUINT;
+  iv.v.value_u = std::stoi((char*)symbol->value->accept(*this));
+  pou_info->constant_value.push_back(iv);
+
+  temp_code += pou_info->get_pou_const_num();
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
 
 /* helper class for boolean_literal_c */
-void *generate_assign_r_exp_c::visit(boolean_true_c *symbol)       { TRACE("boolean_true_c");  return NULL;}
-void *generate_assign_r_exp_c::visit(boolean_false_c *symbol)      { TRACE("boolean_false_c");  return NULL;}
+void *generate_assign_r_exp_c::visit(boolean_true_c *symbol)       { 
+  TRACE("boolean_true_c");  
+  return strdup("1");
+}
+void *generate_assign_r_exp_c::visit(boolean_false_c *symbol)      { 
+  TRACE("boolean_false_c");  
+  return strdup("0");
+}
 
 /*******************************/
 /* B.1.2.2   Character Strings */
@@ -588,7 +617,7 @@ void *generate_assign_r_exp_c::visit(   div_expression_c *symbol) {
 	return strdup(temp_reg_num.c_str());
 }
 
-/* logical expressions */
+/* comparison expressions */
 void *generate_assign_r_exp_c::visit(   equ_expression_c *symbol) {
   TRACE("equ_expression_c"); 
   std::string temp_code = "eq ";
@@ -681,3 +710,66 @@ void *generate_assign_r_exp_c::visit(    ge_expression_c *symbol) {
   return strdup(temp_reg_num.c_str());
 }
 
+/* logical expressions */
+void *generate_assign_r_exp_c::visit(    or_expression_c *symbol) {
+  TRACE("or_expression_c"); 
+  std::string temp_code = "lor ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+
+void *generate_assign_r_exp_c::visit(   xor_expression_c *symbol) {
+  TRACE("xor_expression_c"); 
+  std::string temp_code = "lxor ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+
+void *generate_assign_r_exp_c::visit(   and_expression_c *symbol) {
+  TRACE("and_expression_c"); 
+  std::string temp_code = "land ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->l_exp->accept(*this);
+  temp_code += std::string(" ") + (char*)symbol->r_exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
+
+void *generate_assign_r_exp_c::visit(   not_expression_c *symbol) {
+  TRACE("not_expression_c"); 
+  std::string temp_code = "lnot ";
+  std::string temp_reg_num;
+
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num;
+  temp_code += std::string(" ") + (char*)symbol->exp->accept(*this);
+
+  pou_info->inst_code.push_back(temp_code);
+
+  return strdup(temp_reg_num.c_str());
+}
