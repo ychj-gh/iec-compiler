@@ -65,6 +65,133 @@ public:
 
 };
 
+
+class cond_statement_cnt_c {
+public:
+	bool push_not_first_time_flag;
+	unsigned int start_num;
+	unsigned int end_num;
+
+	unsigned int if_insert_times;
+	unsigned int if_find_times;
+	cond_statement_cnt_c *inner_scope;
+	
+
+public:
+	cond_statement_cnt_c(void)  {
+		start_num = 0;
+		end_num = 0;
+		if_insert_times = 0;
+		if_find_times = 0;
+		inner_scope = NULL;
+		push_not_first_time_flag = false;
+	}
+	~cond_statement_cnt_c(void) {
+		clear();
+	}
+
+public:
+	void push(void) {
+		if(push_not_first_time_flag == true) {
+			if(inner_scope != NULL) {
+				inner_scope->push();
+			} else {
+				inner_scope = new cond_statement_cnt_c();
+			}
+		} else {
+			push_not_first_time_flag = true;
+		}
+	}
+	int pop(void) {
+		if(inner_scope != NULL) {
+			if(inner_scope->pop() == 1) {
+				delete inner_scope;
+				inner_scope = NULL;
+			} 
+			return 0;
+		} else {
+			start_num = 0;
+			end_num = 0;
+			if_insert_times = 0;
+			if_find_times = 0;
+			return 1;
+		}
+	}
+	void clear(void) {
+		if(inner_scope != NULL) {
+			inner_scope->clear();
+			delete inner_scope;
+		}
+		start_num = 0;
+		end_num = 0;
+		if_insert_times = 0;
+		if_find_times = 0;
+	}
+	void inc(void) {
+		end_num ++;
+		if(inner_scope != NULL) {
+			start_num ++;
+			inner_scope->inc();
+		}
+	}
+	
+	unsigned int get_end_num(void) {
+		if(inner_scope != NULL) {
+			return inner_scope->get_end_num();
+		} else {
+			return end_num;
+		}
+	}
+	unsigned int get_start_num(void) {
+		if(inner_scope != NULL) {
+			return inner_scope->get_start_num();
+		} else {
+			return start_num;
+		}
+	}
+
+	void inc_if_insert_times(void) {
+		if_insert_times++;
+		if(inner_scope != NULL) {
+			inner_scope->inc_if_insert_times();
+		} 
+	}
+	void inc_if_find_times(void) {
+		if_find_times++;
+		if(inner_scope != NULL) {
+			inner_scope->inc_if_find_times();
+		} 
+	}
+	unsigned int get_if_insert_times(void) {
+		if(inner_scope != NULL) {
+			return inner_scope->get_if_insert_times();
+		} else {
+			return if_insert_times;
+		}
+	}
+	unsigned int get_if_find_times(void) {
+		if(inner_scope != NULL) {
+			return inner_scope->get_if_find_times();
+		} else {
+			return if_find_times;
+		}
+	}
+	void set_if_insert_times(unsigned int n) {
+		if(inner_scope != NULL) {
+			inner_scope->set_if_insert_times(n) ;
+		} else {
+			if_insert_times = n;
+		}
+	}
+	void set_if_find_times(unsigned int n) {
+		if(inner_scope != NULL) {
+			inner_scope->set_if_find_times(n);
+		} else {
+			if_find_times = n;
+		}
+	}
+};
+
 //pou status :
 #define POU_STA_INIT 0
 #define POU_STA_HEADER 1
@@ -98,7 +225,6 @@ public:
 		pre_code = "";
 		pou_status = POU_STA_INIT;
 		pou_reg_num = 0;
-
 	}
 	virtual ~pre_generate_pou_info_c(){}
     
@@ -129,9 +255,14 @@ public:
     	return result;
     }
 
+	
+
 public:
 	std::string pre_code;
-	
+
+
+	cond_statement_cnt_c jmp_cnt;
+	cond_statement_cnt_c if_cnt;
 
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;

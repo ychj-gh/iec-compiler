@@ -11,14 +11,19 @@ FUNCTION FUNC : INT
 	END_VAR
 	
 	IF (A < B) THEN
-		A := B + C;
+		IF F THEN
+			A := B + C;
+		ELSIF G THEN
+			C := C + 1;
+		ELSE
+			B := C;
+		END_IF;
+	ELSIF G THEN
+		A := C + 1;
+	ELSE
+		A := B + 1;
 	END_IF;
 
-	C := A + (REAL#12.0) ;
-	D := C + 2.01 * B;
-(*	C := A * (B - C) * D;
-	C := A + B + C + D;
-	B := E + C;
-	FUNC := D + B ; 
-	FUNC := C * 2; *)
+	C := A  ;
+
 END_FUNCTION 
