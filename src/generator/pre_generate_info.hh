@@ -7,6 +7,7 @@
 #include <sstream>
 #include <utility>
 #include <vector>
+#include <deque>
 
 typedef unsigned int varible_number_t;
 typedef unsigned int inst_number_t;
@@ -69,8 +70,8 @@ public:
 class cond_statement_cnt_c {
 public:
 	bool push_not_first_time_flag;
-	unsigned int start_num;
-	unsigned int end_num;
+
+	std::deque<unsigned int> jmp_times;
 
 	unsigned int if_insert_times;
 	unsigned int if_find_times;
@@ -79,8 +80,6 @@ public:
 
 public:
 	cond_statement_cnt_c(void)  {
-		start_num = 0;
-		end_num = 0;
 		if_insert_times = 0;
 		if_find_times = 0;
 		inner_scope = NULL;
@@ -110,8 +109,7 @@ public:
 			} 
 			return 0;
 		} else {
-			start_num = 0;
-			end_num = 0;
+			jmp_times.clear();
 			if_insert_times = 0;
 			if_find_times = 0;
 			return 1;
@@ -122,31 +120,45 @@ public:
 			inner_scope->clear();
 			delete inner_scope;
 		}
-		start_num = 0;
-		end_num = 0;
+		jmp_times.clear();
 		if_insert_times = 0;
 		if_find_times = 0;
 	}
-	void inc(void) {
-		end_num ++;
+	void inc_jmp_times(void) {
+		auto beg = jmp_times.begin();
+		auto end = jmp_times.end();
+		while(beg != end) {
+			*beg = *beg + 1;
+			beg++;
+		}
 		if(inner_scope != NULL) {
-			start_num ++;
-			inner_scope->inc();
+			inner_scope->inc_jmp_times();
+		} else {
+			jmp_times.push_front(1);
+		}
+	}
+	void print_jmp_times(void) {
+		std::cout << "====LAYER====" << std::endl;
+		for(auto elem : jmp_times)
+			std::cout << elem << ", " ;
+		std::cout << std::endl;
+		if(inner_scope != NULL) {
+			inner_scope->print_jmp_times();
 		}
 	}
 	
-	unsigned int get_end_num(void) {
+	unsigned int get_jmp_times_first_elem(void) {
 		if(inner_scope != NULL) {
-			return inner_scope->get_end_num();
+			inner_scope->get_jmp_times_first_elem();
 		} else {
-			return end_num;
+			return jmp_times.front();
 		}
 	}
-	unsigned int get_start_num(void) {
+	unsigned int pop_jmp_times_first_elem(void) {
 		if(inner_scope != NULL) {
-			return inner_scope->get_start_num();
+			inner_scope->pop_jmp_times_first_elem();
 		} else {
-			return start_num;
+			jmp_times.pop_front();
 		}
 	}
 

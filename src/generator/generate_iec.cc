@@ -2343,12 +2343,25 @@ void *visit(if_statement_c *symbol) {
   TRACE("if_statement_c"); 
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_if_exp(pou_info);
-  std::string temp_code = "condj ";
+  std::string temp_code;
+  std::string temp_reg_num;
 
   s4o.print("IF ");
-  temp_code += (char*)symbol->expression->accept(temp_if_exp) + std::string(" ");
-  pou_info->inst_code.push_back(temp_code);
+
   pou_info->if_cnt.push();
+  pou_info->jmp_cnt.push();
+
+  temp_code = "lnot ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  temp_code += (char*)symbol->expression->accept(temp_if_exp);
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+
   pou_info->if_cnt.inc_if_insert_times();
 
   s4o.print(" THEN\n");
@@ -2360,7 +2373,6 @@ void *visit(if_statement_c *symbol) {
   unsigned int temp_if_insert_times = pou_info->if_cnt.get_if_insert_times();
   unsigned int temp_if_find_times = pou_info->if_cnt.get_if_find_times();
   if(temp_if_insert_times > temp_if_find_times) {
-    CP(111);
     auto temp_beg = pou_info->inst_code.rbegin();
     auto temp_end = pou_info->inst_code.rend();
     int temp_cnt = 0;
@@ -2390,19 +2402,16 @@ void *visit(if_statement_c *symbol) {
 
   temp_code = "jmp ";
   pou_info->inst_code.push_back(temp_code);
-  pou_info->jmp_cnt.push();
-  pou_info->jmp_cnt.inc();
+  pou_info->jmp_cnt.inc_jmp_times();
+  // pou_info->jmp_cnt.print_jmp_times();
 
   if (symbol->else_statement_list != NULL) {
     s4o.print(s4o.indent_spaces); s4o.print("ELSE\n");
     s4o.indent_right();
     symbol->else_statement_list->accept(*this);
     s4o.indent_left();
-    
   }
-
-  unsigned int temp_jmp_start_num = pou_info->jmp_cnt.get_start_num();
-  unsigned int temp_jmp_end_num = pou_info->jmp_cnt.get_end_num();
+  
 
   auto temp_beg = pou_info->inst_code.rbegin();
   auto temp_end = pou_info->inst_code.rend();
@@ -2410,10 +2419,11 @@ void *visit(if_statement_c *symbol) {
   int temp_inst_num_diff = 0;
   while(temp_beg != temp_end) {
     if((*temp_beg).find("jmp") == 0) {
-      if((temp_cnt >= temp_jmp_start_num) && (temp_cnt <= temp_jmp_end_num)) {
+      temp_cnt ++;
+      if(temp_cnt == pou_info->jmp_cnt.get_jmp_times_first_elem()) {
+        pou_info->jmp_cnt.pop_jmp_times_first_elem();
         *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
       }   
-      temp_cnt ++;
     } 
     temp_inst_num_diff ++;
     ++temp_beg;
@@ -2454,15 +2464,25 @@ void *visit(elseif_statement_c *symbol) {
   TRACE("elseif_statement_c"); 
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_if_exp(pou_info);
+  std::string temp_reg_num;
   std::string temp_code = "jmp ";
   pou_info->inst_code.push_back(temp_code);
-  pou_info->jmp_cnt.inc();
-
+  pou_info->jmp_cnt.inc_jmp_times();
+  // pou_info->jmp_cnt.print_jmp_times();
+  
   s4o.print(s4o.indent_spaces); s4o.print("ELSIF ");
 
-  temp_code = "condj ";
-  temp_code += (char*)symbol->expression->accept(temp_if_exp) + std::string(" ");
+  temp_code = "lnot ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  temp_code += (char*)symbol->expression->accept(temp_if_exp);
   pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+
   pou_info->if_cnt.inc_if_insert_times();
   s4o.print(s4o.indent_spaces); s4o.print("THEN\n");
   s4o.indent_right();
@@ -2472,7 +2492,6 @@ void *visit(elseif_statement_c *symbol) {
   unsigned int temp_if_insert_times = pou_info->if_cnt.get_if_insert_times();
   unsigned int temp_if_find_times = pou_info->if_cnt.get_if_find_times();
   if(temp_if_insert_times > temp_if_find_times) {
-    CP(222);
     auto temp_beg = pou_info->inst_code.rbegin();
     auto temp_end = pou_info->inst_code.rend();
     int temp_cnt = 0;

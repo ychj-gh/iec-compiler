@@ -19,9 +19,22 @@ FUNCTION FUNC : INT
 			B := C;
 		END_IF;
 	ELSIF G THEN
-		A := C + 1;
+		IF F THEN
+			A := B + C;
+		ELSIF G THEN
+			C := C + 1;
+		ELSE
+			B := C;
+		END_IF;
 	ELSE
 		A := B + 1;
+		IF F THEN
+			A := B + C;
+		ELSIF G THEN
+			C := C + 1;
+		ELSE
+			B := C;
+		END_IF;
 	END_IF;
 
 	C := A  ;
