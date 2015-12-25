@@ -27,5 +27,8 @@
 *.out
 *.app
 
+# log files
+*.log
+
 # build directory
 build
