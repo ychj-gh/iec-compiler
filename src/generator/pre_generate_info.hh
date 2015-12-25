@@ -9,6 +9,8 @@
 #include <vector>
 #include <deque>
 
+#include "utility_condition_statement_cnt.hh"
+
 typedef unsigned int varible_number_t;
 typedef unsigned int inst_number_t;
 
@@ -66,143 +68,6 @@ public:
 
 };
 
-
-class cond_statement_cnt_c {
-public:
-	bool push_not_first_time_flag;
-
-	std::deque<unsigned int> jmp_times;
-
-	unsigned int if_insert_times;
-	unsigned int if_find_times;
-	cond_statement_cnt_c *inner_scope;
-	
-
-public:
-	cond_statement_cnt_c(void)  {
-		if_insert_times = 0;
-		if_find_times = 0;
-		inner_scope = NULL;
-		push_not_first_time_flag = false;
-	}
-	~cond_statement_cnt_c(void) {
-		clear();
-	}
-
-public:
-	void push(void) {
-		if(push_not_first_time_flag == true) {
-			if(inner_scope != NULL) {
-				inner_scope->push();
-			} else {
-				inner_scope = new cond_statement_cnt_c();
-			}
-		} else {
-			push_not_first_time_flag = true;
-		}
-	}
-	int pop(void) {
-		if(inner_scope != NULL) {
-			if(inner_scope->pop() == 1) {
-				delete inner_scope;
-				inner_scope = NULL;
-			} 
-			return 0;
-		} else {
-			jmp_times.clear();
-			if_insert_times = 0;
-			if_find_times = 0;
-			return 1;
-		}
-	}
-	void clear(void) {
-		if(inner_scope != NULL) {
-			inner_scope->clear();
-			delete inner_scope;
-		}
-		jmp_times.clear();
-		if_insert_times = 0;
-		if_find_times = 0;
-	}
-	void inc_jmp_times(void) {
-		auto beg = jmp_times.begin();
-		auto end = jmp_times.end();
-		while(beg != end) {
-			*beg = *beg + 1;
-			beg++;
-		}
-		if(inner_scope != NULL) {
-			inner_scope->inc_jmp_times();
-		} else {
-			jmp_times.push_front(1);
-		}
-	}
-	void print_jmp_times(void) {
-		std::cout << "====LAYER====" << std::endl;
-		for(auto elem : jmp_times)
-			std::cout << elem << ", " ;
-		std::cout << std::endl;
-		if(inner_scope != NULL) {
-			inner_scope->print_jmp_times();
-		}
-	}
-	
-	unsigned int get_jmp_times_first_elem(void) {
-		if(inner_scope != NULL) {
-			inner_scope->get_jmp_times_first_elem();
-		} else {
-			return jmp_times.front();
-		}
-	}
-	unsigned int pop_jmp_times_first_elem(void) {
-		if(inner_scope != NULL) {
-			inner_scope->pop_jmp_times_first_elem();
-		} else {
-			jmp_times.pop_front();
-		}
-	}
-
-	void inc_if_insert_times(void) {
-		if_insert_times++;
-		if(inner_scope != NULL) {
-			inner_scope->inc_if_insert_times();
-		} 
-	}
-	void inc_if_find_times(void) {
-		if_find_times++;
-		if(inner_scope != NULL) {
-			inner_scope->inc_if_find_times();
-		} 
-	}
-	unsigned int get_if_insert_times(void) {
-		if(inner_scope != NULL) {
-			return inner_scope->get_if_insert_times();
-		} else {
-			return if_insert_times;
-		}
-	}
-	unsigned int get_if_find_times(void) {
-		if(inner_scope != NULL) {
-			return inner_scope->get_if_find_times();
-		} else {
-			return if_find_times;
-		}
-	}
-	void set_if_insert_times(unsigned int n) {
-		if(inner_scope != NULL) {
-			inner_scope->set_if_insert_times(n) ;
-		} else {
-			if_insert_times = n;
-		}
-	}
-	void set_if_find_times(unsigned int n) {
-		if(inner_scope != NULL) {
-			inner_scope->set_if_find_times(n);
-		} else {
-			if_find_times = n;
-		}
-	}
-};
 
 //pou status :
 #define POU_STA_INIT 0
@@ -270,8 +135,7 @@ public:
 	
 
 public:
-	std::string pre_code;
-
+	std::string pre_code;  //no use
 
 	cond_statement_cnt_c jmp_cnt;
 	cond_statement_cnt_c if_cnt;

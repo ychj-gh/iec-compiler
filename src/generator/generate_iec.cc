@@ -34,6 +34,7 @@
 #include "generate_assignment_l_exp.hh"
 #include "generate_pou_var_declaration.hh"
 #include "utility_token_get.hh"
+ #include "utility_case_exp_value.hh"
 
 
 
@@ -2526,55 +2527,7 @@ void *visit(elseif_statement_c *symbol) {
 #endif
   return NULL;
 }
-class case_exp_value_c {
-public:
-  std::string case_exp_value;
-  case_exp_value_c *inner_scope;
-  bool push_not_first_time;
-public:
-  case_exp_value_c(void) {
-    case_exp_value = "";
-    inner_scope = NULL;
-    push_not_first_time = false;
-  }
 
-  void push(void) {
-    if(push_not_first_time == true) {
-      if(inner_scope != NULL) {
-        inner_scope->push();
-      } else {
-        inner_scope = new case_exp_value_c();
-      }
-    } else {
-      push_not_first_time = true;
-    }
-  }
-  int pop(void) {
-    if(inner_scope != NULL) {
-      if(inner_scope->pop() == 1) {
-        delete inner_scope;
-      } 
-      return 0;
-    } else {
-      case_exp_value.clear();
-      return 1;
-    }
-  }
-
-  std::string get_case_exp_value(void) {
-    if(inner_scope != NULL) {
-      return inner_scope->get_case_exp_value();
-    }
-    return case_exp_value;
-  } 
-  void set_case_exp_value(std::string value) {
-    if(inner_scope != NULL) {
-      inner_scope->set_case_exp_value(value);
-    } else {
-      case_exp_value = value;
-    }
-  }
-};
 case_exp_value_c temp_case_exp_value;
 void *visit(case_statement_c *symbol) {
   TRACE("case_statement_c"); 
