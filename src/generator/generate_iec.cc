@@ -2526,9 +2526,98 @@ void *visit(elseif_statement_c *symbol) {
 #endif
   return NULL;
 }
+class case_exp_value_c {
+public:
+  std::string case_exp_value;
+  case_exp_value_c *inner_scope;
+  bool push_not_first_time;
+public:
+  case_exp_value_c(void) {
+    case_exp_value = "";
+    inner_scope = NULL;
+    push_not_first_time = false;
+  }
 
+  void push(void) {
+    if(push_not_first_time == true) {
+      if(inner_scope != NULL) {
+        inner_scope->push();
+      } else {
+        inner_scope = new case_exp_value_c();
+      }
+    } else {
+      push_not_first_time = true;
+    }
+  }
+  int pop(void) {
+    if(inner_scope != NULL) {
+      if(inner_scope->pop() == 1) {
+        delete inner_scope;
+      } 
+      return 0;
+    } else {
+      case_exp_value.clear();
+      return 1;
+    }
+  }
+
+  std::string get_case_exp_value(void) {
+    if(inner_scope != NULL) {
+      return inner_scope->get_case_exp_value();
+    }
+    return case_exp_value;
+  } 
+  void set_case_exp_value(std::string value) {
+    if(inner_scope != NULL) {
+      inner_scope->set_case_exp_value(value);
+    } else {
+      case_exp_value = value;
+    }
+  }
+};
+case_exp_value_c temp_case_exp_value;
 void *visit(case_statement_c *symbol) {
   TRACE("case_statement_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_case_exp(pou_info);
+  temp_case_exp_value.push();
+  pou_info->case_if_cnt.push();
+  pou_info->case_jmp_cnt.push();
+
+  s4o.print("CASE ");
+  temp_case_exp_value.set_case_exp_value((char*)symbol->expression->accept(temp_case_exp));
+  s4o.print(" OF\n");
+  s4o.indent_right();
+  symbol->case_element_list->accept(*this);
+  if (symbol->statement_list != NULL) {
+    s4o.print(s4o.indent_spaces + "ELSE\n");
+    s4o.indent_right();
+    symbol->statement_list->accept(*this);
+    s4o.indent_left();
+  }
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces + "END_CASE");
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_cnt = 0;
+  int temp_inst_num_diff = 0;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("jmp") == 0) {
+      temp_cnt ++;
+      if(temp_cnt == pou_info->case_jmp_cnt.get_jmp_times_first_elem()) {
+        pou_info->case_jmp_cnt.pop_jmp_times_first_elem();
+        *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
+      }   
+    } 
+    temp_inst_num_diff ++;
+    ++temp_beg;
+  }
+
+  temp_case_exp_value.pop();
+  pou_info->case_if_cnt.pop();
+  pou_info->case_jmp_cnt.pop();
+#else
   s4o.print("CASE ");
   symbol->expression->accept(*this);
   s4o.print(" OF\n");
@@ -2542,27 +2631,120 @@ void *visit(case_statement_c *symbol) {
   }
   s4o.indent_left();
   s4o.print(s4o.indent_spaces + "END_CASE");
+#endif
+
   return NULL;
 }
 
 /* helper symbol for case_statement */
 void *visit(case_element_list_c *symbol) {
   TRACE("case_element_list_c");
+#ifdef _CODE_GENERATOR
   return print_list(symbol);
+#else
+  return print_list(symbol);
+#endif
 }
 
 void *visit(case_element_c *symbol) {
   TRACE("case_element_c");
+#ifdef _CODE_GENERATOR
+  s4o.print(s4o.indent_spaces);
+
+  std::string temp_code = "lnot ";
+  std::string temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  temp_code += (char*)symbol->case_list->accept(*this);
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+  pou_info->case_if_cnt.inc_if_insert_times();
+
+
+  s4o.print(":\n");
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+
+  temp_code = "jmp ";
+  pou_info->inst_code.push_back(temp_code);
+  pou_info->case_jmp_cnt.inc_jmp_times();
+
+  unsigned int temp_condj_insert_times = pou_info->case_if_cnt.get_if_insert_times();
+  unsigned int temp_condj_find_times = pou_info->case_if_cnt.get_if_find_times();
+  if(temp_condj_insert_times > temp_condj_find_times) {
+    auto temp_beg = pou_info->inst_code.rbegin();
+    auto temp_end = pou_info->inst_code.rend();
+    int temp_cnt = 0;
+    int temp_inst_num_diff = 0;
+    while(temp_beg != temp_end) {
+      if((*temp_beg).find("condj") == 0) {
+        if(temp_cnt == temp_condj_find_times) {
+          *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
+          pou_info->case_if_cnt.inc_if_find_times();
+          break;
+        } else {
+          temp_cnt ++;
+        }
+      } 
+      temp_inst_num_diff ++;
+      ++temp_beg;
+    }
+  }
+  temp_condj_find_times = pou_info->case_if_cnt.get_if_find_times();
+  if(temp_condj_insert_times == temp_condj_find_times) {
+    pou_info->case_if_cnt.set_if_insert_times(0);
+    pou_info->case_if_cnt.set_if_find_times(0);
+  }
+
+#else
   s4o.print(s4o.indent_spaces);
   symbol->case_list->accept(*this);
   s4o.print(":\n");
   s4o.indent_right();
   symbol->statement_list->accept(*this);
   s4o.indent_left();
+#endif
   return NULL;
 }
 
-void *visit(case_list_c *symbol) {TRACE("case_list_c"); return print_list(symbol, "", ", ");}
+void *visit(case_list_c *symbol) {
+  TRACE("case_list_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_case_list_exp(pou_info);
+  std::string temp_reg_num;
+  std::string last_res;
+  for(int i = 0; i < symbol->n; i++) {
+    std::string temp_code = std::string("eq ") ;
+    temp_reg_num = pou_info->get_pou_reg_num();
+    pou_info->inc_pou_reg_num();
+
+    temp_code += temp_reg_num + std::string(" ") ;
+    temp_code += temp_case_exp_value.get_case_exp_value() + std::string(" ");
+    temp_code += (char*)symbol->elements[i]->accept(temp_case_list_exp);
+    pou_info->inst_code.push_back(temp_code);
+    if(symbol->n > 1 && !last_res.empty()) {
+      std::string tmp ;
+      tmp = temp_reg_num;
+      temp_code = std::string("lor ") ;
+      temp_reg_num = pou_info->get_pou_reg_num();
+      pou_info->inc_pou_reg_num();
+
+      temp_code += temp_reg_num + std::string(" ");
+      temp_code += last_res + std::string(" ");
+      temp_code += tmp;
+      pou_info->inst_code.push_back(temp_code);
+    }
+    last_res = temp_reg_num;
+  }
+  return strdup(temp_reg_num.c_str());
+#else
+  return print_list(symbol, "", ", ");
+#endif
+}
 
 /********************************/
 /* B 3.2.4 Iteration Statements */

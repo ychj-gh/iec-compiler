@@ -10,32 +10,12 @@ FUNCTION FUNC : INT
 		G : BOOL := BOOL#false;
 	END_VAR
 	
-	IF (A < B) THEN
-		IF F THEN
-			A := B + C;
-		ELSIF G THEN
-			C := C + 1;
-		ELSE
-			B := C;
-		END_IF;
-	ELSIF G THEN
-		IF F THEN
-			A := B + C;
-		ELSIF G THEN
-			C := C + 1;
-		ELSE
-			B := C;
-		END_IF;
-	ELSE
-		A := B + 1;
-		IF F THEN
-			A := B + C;
-		ELSIF G THEN
-			C := C + 1;
-		ELSE
-			B := C;
-		END_IF;
-	END_IF;
+	CASE C OF 
+		1: D := 1;
+		2: D := 2;
+		3,4,5: D := 3;
+		ELSE D := 0;
+	END_CASE;
 
 	C := A  ;
 
