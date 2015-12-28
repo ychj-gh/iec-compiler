@@ -2820,7 +2820,7 @@ void *visit(while_statement_c *symbol) {
   std::string temp_reg_num;
 
   pou_info->while_condj_cnt.push();
-  pou_info->while_jmp_cnt.push();
+  // pou_info->while_jmp_cnt.push();
 
   s4o.print("WHILE ");
 
@@ -2881,7 +2881,7 @@ void *visit(while_statement_c *symbol) {
   s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
 
   pou_info->while_condj_cnt.pop();
-  pou_info->while_jmp_cnt.pop();
+  // pou_info->while_jmp_cnt.pop();
 #else
   TRACE("while_statement_c"); 
   s4o.print("WHILE ");
@@ -2897,6 +2897,41 @@ void *visit(while_statement_c *symbol) {
 
 void *visit(repeat_statement_c *symbol) {
   TRACE("repeat_statement_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_repeat_exp(pou_info);
+  std::string temp_code;
+  std::string temp_reg_num;
+
+  s4o.print("REPEAT\n");
+
+  temp_code = "repeat_dummy_order";
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces); s4o.print("UNTIL ");
+
+  temp_code = "condj_repeat ";
+  temp_code += (char*)symbol->expression->accept(temp_repeat_exp) + std::string(" ");
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  int find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("repeat_dummy_order") == 0) {
+        temp_code += std::to_string(temp_inst_num_diff  * (-1));
+        pou_info->inst_code.erase((++temp_beg).base());
+        break;
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.print("\n" + s4o.indent_spaces + "END_REPEAT");
+#else
   s4o.print("REPEAT\n");
   s4o.indent_right();
   symbol->statement_list->accept(*this);
@@ -2904,6 +2939,7 @@ void *visit(repeat_statement_c *symbol) {
   s4o.print(s4o.indent_spaces); s4o.print("UNTIL ");
   symbol->expression->accept(*this);
   s4o.print("\n" + s4o.indent_spaces + "END_REPEAT");
+#endif
   return NULL;
 }
 

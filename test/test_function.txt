@@ -10,13 +10,14 @@ FUNCTION FUNC : INT
 		G : BOOL := BOOL#false;
 	END_VAR
 	
-	WHILE D < 100 DO
-		D := D + 2;
-		F := 20;
-		WHILE F > 10 DO
-			F := F - 1;
-		END_WHILE;
-	END_WHILE;
+	REPEAT
+		C := C + 1;
+		REPEAT
+			D := D + 1;
+		UNTIL D = 10
+		END_REPEAT;
+	UNTIL C = 100
+	END_REPEAT;
 
 	C := A  ;
 

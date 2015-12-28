@@ -148,7 +148,10 @@ public:
 	cond_statement_cnt_c for_jmp_cnt;
 
 	cond_statement_cnt_c while_condj_cnt;
-	cond_statement_cnt_c while_jmp_cnt;
+	// cond_statement_cnt_c while_jmp_cnt;
+
+	cond_statement_cnt_c repeat_condj_cnt;
+	// cond_statement_cnt_c repeat_jmp_cnt;
 
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;
