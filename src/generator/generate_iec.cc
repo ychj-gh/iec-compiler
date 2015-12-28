@@ -2712,6 +2712,8 @@ void *visit(for_statement_c *symbol) {
   std::string temp_reg_num;
   std::string temp_inc_exp;
 
+  pou_info->for_condj_cnt.push();
+
   s4o.print("FOR ");
   temp_code = "mov ";
   temp_ctrl_var = (char*)symbol->control_variable->accept(temp_for_exp);
@@ -2755,6 +2757,7 @@ void *visit(for_statement_c *symbol) {
   temp_code = "condj_for ";
   temp_code += temp_reg_num + std::string(" ");
   pou_info->inst_code.push_back(temp_code);
+  pou_info->for_condj_cnt.inc_condj_insert_times();
 
   s4o.print(" DO\n");
   s4o.indent_right();
@@ -2770,19 +2773,25 @@ void *visit(for_statement_c *symbol) {
   auto temp_beg = pou_info->inst_code.rbegin();
   auto temp_end = pou_info->inst_code.rend();
   int temp_inst_num_diff = 0;
+  int find_cnt = 1;
   while(temp_beg != temp_end) {
     if((*temp_beg).find("condj_for") == 0) {
-      temp_code += std::to_string((temp_inst_num_diff+2) * (-1));
-      *temp_beg += std::to_string(temp_inst_num_diff + 2);
-      break;
+      if(find_cnt == pou_info->for_condj_cnt.get_condj_insert_times()) {
+        temp_code += std::to_string((temp_inst_num_diff+2) * (-1));
+        *temp_beg += std::to_string(temp_inst_num_diff + 2);
+        break;
+      } else {
+        find_cnt ++;
+      }
     }
     temp_beg++;
     temp_inst_num_diff++;
   }
   pou_info->inst_code.push_back(temp_code);
 
-
   s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
+
+  pou_info->for_condj_cnt.pop();
 #else
   s4o.print("FOR ");
   symbol->control_variable->accept(*this);

@@ -6,12 +6,15 @@ FUNCTION FUNC : INT
 
 	VAR
 		D, E : INT := 5;
-		F : BOOL := true;
+		F : INT ;
 		G : BOOL := BOOL#false;
 	END_VAR
 	
 	FOR C := 1 TO 100 BY 1 DO
 		D := D + 1;
+		FOR E := 1 TO 10 BY 2 DO
+			F := F + 3;
+		END_FOR;
 	END_FOR;
 
 	C := A  ;
