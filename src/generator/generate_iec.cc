@@ -34,6 +34,7 @@
 #include "generate_assignment_l_exp.hh"
 #include "generate_pou_var_declaration.hh"
 #include "utility_token_get.hh"
+ #include "utility_case_exp_value.hh"
 
 
 
@@ -2348,8 +2349,8 @@ void *visit(if_statement_c *symbol) {
 
   s4o.print("IF ");
 
-  pou_info->if_cnt.push();
-  pou_info->jmp_cnt.push();
+  pou_info->if_condj_cnt.push();
+  pou_info->if_jmp_cnt.push();
 
   temp_code = "lnot ";
   temp_reg_num = pou_info->get_pou_reg_num();
@@ -2358,11 +2359,11 @@ void *visit(if_statement_c *symbol) {
   temp_code += (char*)symbol->expression->accept(temp_if_exp);
   pou_info->inst_code.push_back(temp_code);
 
-  temp_code = "condj ";
+  temp_code = "condj_if ";
   temp_code += temp_reg_num + std::string(" ");
   pou_info->inst_code.push_back(temp_code);
 
-  pou_info->if_cnt.inc_if_insert_times();
+  pou_info->if_condj_cnt.inc_condj_insert_times();
 
   s4o.print(" THEN\n");
   s4o.indent_right();
@@ -2370,18 +2371,18 @@ void *visit(if_statement_c *symbol) {
   s4o.indent_left();
   
 
-  unsigned int temp_if_insert_times = pou_info->if_cnt.get_if_insert_times();
-  unsigned int temp_if_find_times = pou_info->if_cnt.get_if_find_times();
-  if(temp_if_insert_times > temp_if_find_times) {
+  unsigned int temp_condj_insert_times = pou_info->if_condj_cnt.get_condj_insert_times();
+  unsigned int temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
+  if(temp_condj_insert_times > temp_condj_find_times) {
     auto temp_beg = pou_info->inst_code.rbegin();
     auto temp_end = pou_info->inst_code.rend();
     int temp_cnt = 0;
     int temp_inst_num_diff = 0;
     while(temp_beg != temp_end) {
-      if((*temp_beg).find("condj") == 0) {
-        if(temp_cnt == temp_if_find_times) {
+      if((*temp_beg).find("condj_if") == 0) {
+        if(temp_cnt == temp_condj_find_times) {
           *temp_beg += std::to_string(temp_inst_num_diff+2) + std::string(" ");
-          pou_info->if_cnt.inc_if_find_times();
+          pou_info->if_condj_cnt.inc_condj_find_times();
           break;
         } else {
           temp_cnt ++;
@@ -2391,18 +2392,18 @@ void *visit(if_statement_c *symbol) {
       ++temp_beg;
     }
   }
-  temp_if_find_times = pou_info->if_cnt.get_if_find_times();
-  if(temp_if_insert_times == temp_if_find_times) {
-    pou_info->if_cnt.set_if_insert_times(0);
-    pou_info->if_cnt.set_if_find_times(0);
+  temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
+  if(temp_condj_insert_times == temp_condj_find_times) {
+    pou_info->if_condj_cnt.set_condj_insert_times(0);
+    pou_info->if_condj_cnt.set_condj_find_times(0);
   }
    
     
   symbol->elseif_statement_list->accept(*this);
 
-  temp_code = "jmp ";
+  temp_code = "jmp_if ";
   pou_info->inst_code.push_back(temp_code);
-  pou_info->jmp_cnt.inc_jmp_times();
+  pou_info->if_jmp_cnt.inc_jmp_times();
   // pou_info->jmp_cnt.print_jmp_times();
 
   if (symbol->else_statement_list != NULL) {
@@ -2418,18 +2419,18 @@ void *visit(if_statement_c *symbol) {
   int temp_cnt = 0;
   int temp_inst_num_diff = 0;
   while(temp_beg != temp_end) {
-    if((*temp_beg).find("jmp") == 0) {
+    if((*temp_beg).find("jmp_if") == 0) {
       temp_cnt ++;
-      if(temp_cnt == pou_info->jmp_cnt.get_jmp_times_first_elem()) {
-        pou_info->jmp_cnt.pop_jmp_times_first_elem();
+      if(temp_cnt == pou_info->if_jmp_cnt.get_jmp_times_first_elem()) {
+        pou_info->if_jmp_cnt.pop_jmp_times_first_elem();
         *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
       }   
     } 
     temp_inst_num_diff ++;
     ++temp_beg;
   }
-  pou_info->jmp_cnt.pop();
-  pou_info->if_cnt.pop();
+  pou_info->if_jmp_cnt.pop();
+  pou_info->if_condj_cnt.pop();
 
   s4o.print(s4o.indent_spaces); s4o.print("END_IF");
 #else
@@ -2465,9 +2466,9 @@ void *visit(elseif_statement_c *symbol) {
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_if_exp(pou_info);
   std::string temp_reg_num;
-  std::string temp_code = "jmp ";
+  std::string temp_code = "jmp_if ";
   pou_info->inst_code.push_back(temp_code);
-  pou_info->jmp_cnt.inc_jmp_times();
+  pou_info->if_jmp_cnt.inc_jmp_times();
   // pou_info->jmp_cnt.print_jmp_times();
   
   s4o.print(s4o.indent_spaces); s4o.print("ELSIF ");
@@ -2479,28 +2480,28 @@ void *visit(elseif_statement_c *symbol) {
   temp_code += (char*)symbol->expression->accept(temp_if_exp);
   pou_info->inst_code.push_back(temp_code);
 
-  temp_code = "condj ";
+  temp_code = "condj_if ";
   temp_code += temp_reg_num + std::string(" ");
   pou_info->inst_code.push_back(temp_code);
 
-  pou_info->if_cnt.inc_if_insert_times();
+  pou_info->if_condj_cnt.inc_condj_insert_times();
   s4o.print(s4o.indent_spaces); s4o.print("THEN\n");
   s4o.indent_right();
   symbol->statement_list->accept(*this);
   s4o.indent_left();
   
-  unsigned int temp_if_insert_times = pou_info->if_cnt.get_if_insert_times();
-  unsigned int temp_if_find_times = pou_info->if_cnt.get_if_find_times();
-  if(temp_if_insert_times > temp_if_find_times) {
+  unsigned int temp_condj_insert_times = pou_info->if_condj_cnt.get_condj_insert_times();
+  unsigned int temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
+  if(temp_condj_insert_times > temp_condj_find_times) {
     auto temp_beg = pou_info->inst_code.rbegin();
     auto temp_end = pou_info->inst_code.rend();
     int temp_cnt = 0;
     int temp_inst_num_diff = 0;
     while(temp_beg != temp_end) {
-      if((*temp_beg).find("condj") == 0) {
-        if(temp_cnt == temp_if_find_times) {
+      if((*temp_beg).find("condj_if") == 0) {
+        if(temp_cnt == temp_condj_find_times) {
           *temp_beg += std::to_string(temp_inst_num_diff+2) + std::string(" ");
-          pou_info->if_cnt.inc_if_find_times();
+          pou_info->if_condj_cnt.inc_condj_find_times();
           break;
         } else {
           temp_cnt ++;
@@ -2510,10 +2511,10 @@ void *visit(elseif_statement_c *symbol) {
       ++temp_beg;
     }
   }
-  temp_if_find_times = pou_info->if_cnt.get_if_find_times();
-  if(temp_if_insert_times == temp_if_find_times) {
-    pou_info->if_cnt.set_if_insert_times(0);
-    pou_info->if_cnt.set_if_find_times(0);
+  temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
+  if(temp_condj_insert_times == temp_condj_find_times) {
+    pou_info->if_condj_cnt.set_condj_insert_times(0);
+    pou_info->if_condj_cnt.set_condj_find_times(0);
   }
 
 #else
@@ -2526,62 +2527,14 @@ void *visit(elseif_statement_c *symbol) {
 #endif
   return NULL;
 }
-class case_exp_value_c {
-public:
-  std::string case_exp_value;
-  case_exp_value_c *inner_scope;
-  bool push_not_first_time;
-public:
-  case_exp_value_c(void) {
-    case_exp_value = "";
-    inner_scope = NULL;
-    push_not_first_time = false;
-  }
 
-  void push(void) {
-    if(push_not_first_time == true) {
-      if(inner_scope != NULL) {
-        inner_scope->push();
-      } else {
-        inner_scope = new case_exp_value_c();
-      }
-    } else {
-      push_not_first_time = true;
-    }
-  }
-  int pop(void) {
-    if(inner_scope != NULL) {
-      if(inner_scope->pop() == 1) {
-        delete inner_scope;
-      } 
-      return 0;
-    } else {
-      case_exp_value.clear();
-      return 1;
-    }
-  }
-
-  std::string get_case_exp_value(void) {
-    if(inner_scope != NULL) {
-      return inner_scope->get_case_exp_value();
-    }
-    return case_exp_value;
-  } 
-  void set_case_exp_value(std::string value) {
-    if(inner_scope != NULL) {
-      inner_scope->set_case_exp_value(value);
-    } else {
-      case_exp_value = value;
-    }
-  }
-};
 case_exp_value_c temp_case_exp_value;
 void *visit(case_statement_c *symbol) {
   TRACE("case_statement_c"); 
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_case_exp(pou_info);
   temp_case_exp_value.push();
-  pou_info->case_if_cnt.push();
+  pou_info->case_condj_cnt.push();
   pou_info->case_jmp_cnt.push();
 
   s4o.print("CASE ");
@@ -2603,7 +2556,7 @@ void *visit(case_statement_c *symbol) {
   int temp_cnt = 0;
   int temp_inst_num_diff = 0;
   while(temp_beg != temp_end) {
-    if((*temp_beg).find("jmp") == 0) {
+    if((*temp_beg).find("jmp_case") == 0) {
       temp_cnt ++;
       if(temp_cnt == pou_info->case_jmp_cnt.get_jmp_times_first_elem()) {
         pou_info->case_jmp_cnt.pop_jmp_times_first_elem();
@@ -2615,7 +2568,7 @@ void *visit(case_statement_c *symbol) {
   }
 
   temp_case_exp_value.pop();
-  pou_info->case_if_cnt.pop();
+  pou_info->case_condj_cnt.pop();
   pou_info->case_jmp_cnt.pop();
 #else
   s4o.print("CASE ");
@@ -2658,10 +2611,10 @@ void *visit(case_element_c *symbol) {
   temp_code += (char*)symbol->case_list->accept(*this);
   pou_info->inst_code.push_back(temp_code);
 
-  temp_code = "condj ";
+  temp_code = "condj_case ";
   temp_code += temp_reg_num + std::string(" ");
   pou_info->inst_code.push_back(temp_code);
-  pou_info->case_if_cnt.inc_if_insert_times();
+  pou_info->case_condj_cnt.inc_condj_insert_times();
 
 
   s4o.print(":\n");
@@ -2669,22 +2622,22 @@ void *visit(case_element_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
 
-  temp_code = "jmp ";
+  temp_code = "jmp_case ";
   pou_info->inst_code.push_back(temp_code);
   pou_info->case_jmp_cnt.inc_jmp_times();
 
-  unsigned int temp_condj_insert_times = pou_info->case_if_cnt.get_if_insert_times();
-  unsigned int temp_condj_find_times = pou_info->case_if_cnt.get_if_find_times();
+  unsigned int temp_condj_insert_times = pou_info->case_condj_cnt.get_condj_insert_times();
+  unsigned int temp_condj_find_times = pou_info->case_condj_cnt.get_condj_find_times();
   if(temp_condj_insert_times > temp_condj_find_times) {
     auto temp_beg = pou_info->inst_code.rbegin();
     auto temp_end = pou_info->inst_code.rend();
     int temp_cnt = 0;
     int temp_inst_num_diff = 0;
     while(temp_beg != temp_end) {
-      if((*temp_beg).find("condj") == 0) {
+      if((*temp_beg).find("condj_case") == 0) {
         if(temp_cnt == temp_condj_find_times) {
           *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
-          pou_info->case_if_cnt.inc_if_find_times();
+          pou_info->case_condj_cnt.inc_condj_find_times();
           break;
         } else {
           temp_cnt ++;
@@ -2694,10 +2647,10 @@ void *visit(case_element_c *symbol) {
       ++temp_beg;
     }
   }
-  temp_condj_find_times = pou_info->case_if_cnt.get_if_find_times();
+  temp_condj_find_times = pou_info->case_condj_cnt.get_condj_find_times();
   if(temp_condj_insert_times == temp_condj_find_times) {
-    pou_info->case_if_cnt.set_if_insert_times(0);
-    pou_info->case_if_cnt.set_if_find_times(0);
+    pou_info->case_condj_cnt.set_condj_insert_times(0);
+    pou_info->case_condj_cnt.set_condj_find_times(0);
   }
 
 #else
@@ -2751,6 +2704,95 @@ void *visit(case_list_c *symbol) {
 /********************************/
 void *visit(for_statement_c *symbol) {
   TRACE("for_statement_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_for_exp(pou_info);
+  std::string temp_code ;
+  std::string temp_ctrl_var;
+  std::string temp_end_exp;
+  std::string temp_reg_num;
+  std::string temp_inc_exp;
+
+  pou_info->for_condj_cnt.push();
+
+  s4o.print("FOR ");
+  temp_code = "mov ";
+  temp_ctrl_var = (char*)symbol->control_variable->accept(temp_for_exp);
+  temp_code += temp_ctrl_var + std::string(" ") ;
+  s4o.print(" := ");
+  temp_code += (char*)symbol->beg_expression->accept(temp_for_exp);
+  pou_info->inst_code.push_back(temp_code);
+
+  if (symbol->by_expression != NULL) {
+    s4o.print(" BY ");
+    temp_inc_exp = (char*)symbol->by_expression->accept(temp_for_exp);
+  } else {
+    temp_code = std::string("kload ") ;
+    temp_inc_exp = pou_info->get_pou_reg_num();
+    pou_info->inc_pou_reg_num();
+
+    temp_code += temp_inc_exp + std::string(" ");
+
+    IValue iv;
+    iv.type = TUINT;
+    iv.v.value_u = 1;
+    pou_info->constant_value.push_back(iv);
+
+    temp_code += pou_info->get_pou_const_num();
+    pou_info->inst_code.push_back(temp_code);
+  }
+
+  s4o.print(" TO ");
+  temp_end_exp = (char*)symbol->end_expression->accept(temp_for_exp);
+
+  // pou_info->inst_code.push_back("for_dummy_order");
+
+  temp_code = "ne ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_end_exp + std::string(" ");
+  temp_code += temp_ctrl_var;
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj_for ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+  pou_info->for_condj_cnt.inc_condj_insert_times();
+
+  s4o.print(" DO\n");
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+  
+  temp_code = "add ";
+  temp_code += temp_ctrl_var + std::string(" ") + temp_ctrl_var + std::string(" ") + temp_inc_exp;
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "jmp_for ";
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  int find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("condj_for") == 0) {
+      if(find_cnt == pou_info->for_condj_cnt.get_condj_insert_times()) {
+        temp_code += std::to_string((temp_inst_num_diff+2) * (-1));
+        *temp_beg += std::to_string(temp_inst_num_diff + 2);
+        break;
+      } else {
+        find_cnt ++;
+      }
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
+
+  pou_info->for_condj_cnt.pop();
+#else
   s4o.print("FOR ");
   symbol->control_variable->accept(*this);
   s4o.print(" := ");
@@ -2766,6 +2808,7 @@ void *visit(for_statement_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
+#endif
   return NULL;
 }
 
