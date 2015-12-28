@@ -10,12 +10,13 @@ FUNCTION FUNC : INT
 		G : BOOL := BOOL#false;
 	END_VAR
 	
-	FOR C := 1 TO 100 BY 1 DO
-		D := D + 1;
-		FOR E := 1 TO 10 BY 2 DO
-			F := F + 3;
-		END_FOR;
-	END_FOR;
+	WHILE D < 100 DO
+		D := D + 2;
+		F := 20;
+		WHILE F > 10 DO
+			F := F - 1;
+		END_WHILE;
+	END_WHILE;
 
 	C := A  ;
 

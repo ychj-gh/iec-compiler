@@ -8,6 +8,7 @@
 #include <utility>
 #include <vector>
 #include <deque>
+#include <list>
 
 #include "utility_condition_statement_cnt.hh"
 
@@ -146,12 +147,16 @@ public:
 	cond_statement_cnt_c for_condj_cnt;
 	cond_statement_cnt_c for_jmp_cnt;
 
+	cond_statement_cnt_c while_condj_cnt;
+	cond_statement_cnt_c while_jmp_cnt;
+
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;
 	std::vector<IValue> output_variable;
 	std::vector<IValue> local_variable;
 	std::vector<IValue> constant_value;
-	std::vector<std::string> inst_code;
+
+	std::list<std::string> inst_code;
 
 
 

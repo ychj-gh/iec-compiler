@@ -2813,6 +2813,76 @@ void *visit(for_statement_c *symbol) {
 }
 
 void *visit(while_statement_c *symbol) {
+#ifdef _CODE_GENERATOR
+  TRACE("while_statement_c"); 
+  generate_assign_r_exp_c temp_while_exp(pou_info);
+  std::string temp_code;
+  std::string temp_reg_num;
+
+  pou_info->while_condj_cnt.push();
+  pou_info->while_jmp_cnt.push();
+
+  s4o.print("WHILE ");
+
+  temp_code = "while_dummy_order";
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "lnot ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inc_pou_reg_num();
+  temp_code += (char*)symbol->expression->accept(temp_while_exp);
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj_while ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+  pou_info->while_condj_cnt.inc_condj_insert_times();
+
+  s4o.print(" DO\n");
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+
+  temp_code = "jmp_while ";
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  int find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("condj_while") == 0) {
+      if(find_cnt == pou_info->while_condj_cnt.get_condj_insert_times()) {
+        *temp_beg += std::to_string(temp_inst_num_diff + 2);
+        break;
+      } else {
+        find_cnt ++;
+      }
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  temp_inst_num_diff = 0;
+  find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("while_dummy_order") == 0) {
+        temp_code += std::to_string(temp_inst_num_diff  * (-1));
+        pou_info->inst_code.erase((++temp_beg).base());
+        break;
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
+
+  pou_info->while_condj_cnt.pop();
+  pou_info->while_jmp_cnt.pop();
+#else
   TRACE("while_statement_c"); 
   s4o.print("WHILE ");
   symbol->expression->accept(*this);
@@ -2821,6 +2891,7 @@ void *visit(while_statement_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
+#endif
   return NULL;
 }
 
