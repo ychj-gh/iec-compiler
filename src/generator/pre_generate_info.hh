@@ -136,12 +136,15 @@ public:
 
 public:
 	std::string pre_code;  //no use
-
-	cond_statement_cnt_c jmp_cnt;
-	cond_statement_cnt_c if_cnt;
-
-	cond_statement_cnt_c case_if_cnt;
+	
+	cond_statement_cnt_c if_condj_cnt;
+	cond_statement_cnt_c if_jmp_cnt;
+	
+	cond_statement_cnt_c case_condj_cnt;
 	cond_statement_cnt_c case_jmp_cnt;
+
+	cond_statement_cnt_c for_condj_cnt;
+	cond_statement_cnt_c for_jmp_cnt;
 
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;
