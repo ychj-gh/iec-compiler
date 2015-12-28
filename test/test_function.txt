@@ -10,12 +10,9 @@ FUNCTION FUNC : INT
 		G : BOOL := BOOL#false;
 	END_VAR
 	
-	CASE C OF 
-		1: D := 1;
-		2: D := 2;
-		3,4,5: D := 3;
-		ELSE D := 0;
-	END_CASE;
+	FOR C := 1 TO 100 BY 1 DO
+		D := D + 1;
+	END_FOR;
 
 	C := A  ;
 

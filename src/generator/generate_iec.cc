@@ -2704,6 +2704,86 @@ void *visit(case_list_c *symbol) {
 /********************************/
 void *visit(for_statement_c *symbol) {
   TRACE("for_statement_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_for_exp(pou_info);
+  std::string temp_code ;
+  std::string temp_ctrl_var;
+  std::string temp_end_exp;
+  std::string temp_reg_num;
+  std::string temp_inc_exp;
+
+  s4o.print("FOR ");
+  temp_code = "mov ";
+  temp_ctrl_var = (char*)symbol->control_variable->accept(temp_for_exp);
+  temp_code += temp_ctrl_var + std::string(" ") ;
+  s4o.print(" := ");
+  temp_code += (char*)symbol->beg_expression->accept(temp_for_exp);
+  pou_info->inst_code.push_back(temp_code);
+
+  if (symbol->by_expression != NULL) {
+    s4o.print(" BY ");
+    temp_inc_exp = (char*)symbol->by_expression->accept(temp_for_exp);
+  } else {
+    temp_code = std::string("kload ") ;
+    temp_inc_exp = pou_info->get_pou_reg_num();
+    pou_info->inc_pou_reg_num();
+
+    temp_code += temp_inc_exp + std::string(" ");
+
+    IValue iv;
+    iv.type = TUINT;
+    iv.v.value_u = 1;
+    pou_info->constant_value.push_back(iv);
+
+    temp_code += pou_info->get_pou_const_num();
+    pou_info->inst_code.push_back(temp_code);
+  }
+
+  s4o.print(" TO ");
+  temp_end_exp = (char*)symbol->end_expression->accept(temp_for_exp);
+
+  // pou_info->inst_code.push_back("for_dummy_order");
+
+  temp_code = "ne ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inc_pou_reg_num();
+  temp_code += temp_end_exp + std::string(" ");
+  temp_code += temp_ctrl_var;
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.print(" DO\n");
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+  
+  temp_code = "add ";
+  temp_code += temp_ctrl_var + std::string(" ") + temp_ctrl_var + std::string(" ") + temp_inc_exp;
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "jmp ";
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("condj") == 0) {
+      temp_code += std::to_string((temp_inst_num_diff+2) * (-1));
+      *temp_beg += std::to_string(temp_inst_num_diff + 2);
+      break;
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+
+
+  s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
+#else
   s4o.print("FOR ");
   symbol->control_variable->accept(*this);
   s4o.print(" := ");
@@ -2719,6 +2799,7 @@ void *visit(for_statement_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
+#endif
   return NULL;
 }
 
