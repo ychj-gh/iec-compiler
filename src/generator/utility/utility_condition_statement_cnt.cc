@@ -23,8 +23,8 @@ int cond_statement_cnt_c::pop(void) {
 		return 0;
 	} else {
 		jmp_times.clear();
-		if_insert_times = 0;
-		if_find_times = 0;
+		condj_insert_times = 0;
+		condj_find_times = 0;
 		return 1;
 	}
 }
@@ -34,8 +34,8 @@ void cond_statement_cnt_c::clear(void) {
 		delete inner_scope;
 	}
 	jmp_times.clear();
-	if_insert_times = 0;
-	if_find_times = 0;
+	condj_insert_times = 0;
+	condj_find_times = 0;
 }
 void cond_statement_cnt_c::inc_jmp_times(void) {
 	auto beg = jmp_times.begin();
@@ -75,44 +75,44 @@ unsigned int cond_statement_cnt_c::pop_jmp_times_first_elem(void) {
 	}
 }
 
-void cond_statement_cnt_c::inc_if_insert_times(void) {
-	if_insert_times++;
+void cond_statement_cnt_c::inc_condj_insert_times(void) {
+	condj_insert_times++;
 	if(inner_scope != NULL) {
-		inner_scope->inc_if_insert_times();
+		inner_scope->inc_condj_insert_times();
 	} 
 }
-void cond_statement_cnt_c::inc_if_find_times(void) {
-	if_find_times++;
+void cond_statement_cnt_c::inc_condj_find_times(void) {
+	condj_find_times++;
 	if(inner_scope != NULL) {
-		inner_scope->inc_if_find_times();
+		inner_scope->inc_condj_find_times();
 	} 
 }
-unsigned int cond_statement_cnt_c::get_if_insert_times(void) {
+unsigned int cond_statement_cnt_c::get_condj_insert_times(void) {
 	if(inner_scope != NULL) {
-		return inner_scope->get_if_insert_times();
+		return inner_scope->get_condj_insert_times();
 	} else {
-		return if_insert_times;
+		return condj_insert_times;
 	}
 }
-unsigned int cond_statement_cnt_c::get_if_find_times(void) {
+unsigned int cond_statement_cnt_c::get_condj_find_times(void) {
 	if(inner_scope != NULL) {
-		return inner_scope->get_if_find_times();
+		return inner_scope->get_condj_find_times();
 	} else {
-		return if_find_times;
+		return condj_find_times;
 	}
 }
-void cond_statement_cnt_c::set_if_insert_times(unsigned int n) {
+void cond_statement_cnt_c::set_condj_insert_times(unsigned int n) {
 	if(inner_scope != NULL) {
-		inner_scope->set_if_insert_times(n) ;
+		inner_scope->set_condj_insert_times(n) ;
 	} else {
-		if_insert_times = n;
+		condj_insert_times = n;
 	}
 }
-void cond_statement_cnt_c::set_if_find_times(unsigned int n) {
+void cond_statement_cnt_c::set_condj_find_times(unsigned int n) {
 	if(inner_scope != NULL) {
-		inner_scope->set_if_find_times(n);
+		inner_scope->set_condj_find_times(n);
 	} else {
-		if_find_times = n;
+		condj_find_times = n;
 	}
 }
 

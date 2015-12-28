@@ -23,15 +23,15 @@ public:
 
 	std::deque<unsigned int> jmp_times;
 
-	unsigned int if_insert_times;
-	unsigned int if_find_times;
+	unsigned int condj_insert_times;
+	unsigned int condj_find_times;
 	cond_statement_cnt_c *inner_scope;
 	
 
 public:
 	cond_statement_cnt_c(void)  {
-		if_insert_times = 0;
-		if_find_times = 0;
+		condj_insert_times = 0;
+		condj_find_times = 0;
 		inner_scope = NULL;
 		push_not_first_time_flag = false;
 	}
@@ -49,12 +49,12 @@ public:
 	unsigned int get_jmp_times_first_elem(void) ;
 	unsigned int pop_jmp_times_first_elem(void) ;
 
-	void inc_if_insert_times(void) ;
-	void inc_if_find_times(void) ;
-	unsigned int get_if_insert_times(void) ;
-	unsigned int get_if_find_times(void) ;
-	void set_if_insert_times(unsigned int n) ;
-	void set_if_find_times(unsigned int n) ;
+	void inc_condj_insert_times(void) ;
+	void inc_condj_find_times(void) ;
+	unsigned int get_condj_insert_times(void) ;
+	unsigned int get_condj_find_times(void) ;
+	void set_condj_insert_times(unsigned int n) ;
+	void set_condj_find_times(unsigned int n) ;
 };
 
 
