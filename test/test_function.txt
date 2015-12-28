@@ -14,6 +14,9 @@ FUNCTION FUNC : INT
 		C := C + 1;
 		REPEAT
 			D := D + 1;
+			IF D > 4 THEN
+				EXIT;
+			END_IF;
 		UNTIL D = 10
 		END_REPEAT;
 	UNTIL C = 100

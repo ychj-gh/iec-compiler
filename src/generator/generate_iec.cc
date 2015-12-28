@@ -2789,6 +2789,15 @@ void *visit(for_statement_c *symbol) {
   }
   pou_info->inst_code.push_back(temp_code);
 
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
+
   s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
 
   pou_info->for_condj_cnt.pop();
@@ -2844,8 +2853,6 @@ void *visit(while_statement_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
 
-  temp_code = "jmp_while ";
-
   auto temp_beg = pou_info->inst_code.rbegin();
   auto temp_end = pou_info->inst_code.rend();
   int temp_inst_num_diff = 0;
@@ -2863,6 +2870,8 @@ void *visit(while_statement_c *symbol) {
     temp_inst_num_diff++;
   }
 
+  temp_code = "jmp_while ";
+
   temp_beg = pou_info->inst_code.rbegin();
   temp_end = pou_info->inst_code.rend();
   temp_inst_num_diff = 0;
@@ -2879,6 +2888,15 @@ void *visit(while_statement_c *symbol) {
   pou_info->inst_code.push_back(temp_code);
 
   s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
+
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
 
   pou_info->while_condj_cnt.pop();
   // pou_info->while_jmp_cnt.pop();
@@ -2929,6 +2947,15 @@ void *visit(repeat_statement_c *symbol) {
     temp_inst_num_diff++;
   }
   pou_info->inst_code.push_back(temp_code);
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
 
   s4o.print("\n" + s4o.indent_spaces + "END_REPEAT");
 #else
@@ -2945,7 +2972,14 @@ void *visit(repeat_statement_c *symbol) {
 
 void *visit(exit_statement_c *symbol) {
   TRACE("exit_statement_c"); 
+#ifdef _CODE_GENERATOR
+  std::string temp_code = "jmp_exit ";
+  pou_info->inst_code.push_back(temp_code);
+
   s4o.print("EXIT");
+#else
+  s4o.print("EXIT");
+#endif
   return NULL;
 }
 
