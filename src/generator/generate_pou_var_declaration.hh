@@ -1,3 +1,6 @@
+#ifndef __GENERATE_POU_VAR_DECLARATION_HH__
+#define __GENERATE_POU_VAR_DECLARATION_HH__
+
 #include <stdio.h>  /* required for NULL */
 #include <string.h>
 #include <string>
@@ -234,6 +237,10 @@ public:
   /*  VAR_IN_OUT  END_VAR */
   void *visit(input_output_declarations_c *symbol) ;
 
+  /* helper symbol for input_output_declarations */
+/* var_declaration_list var_declaration ';' */
+  void *visit(var_declaration_list_c *symbol) ;
+
   /* VAR [CONSTANT] var_init_decl_list END_VAR */
   /* option -> may be NULL ! */
   void *visit(var_declarations_c *symbol) ;
@@ -339,7 +346,7 @@ public:
 
 
 
-
+#endif
 
 
 

@@ -108,7 +108,38 @@ pre_generate_info_c::pre_generate_info_c()
 
 }
 
-bool pre_generate_info_c::insert(std::string pou_name, pre_generate_pou_info_c *info)
+bool pre_generate_info_c::insert(pre_generate_pou_info_c info)
 {
-	pre_generate_info_collector.insert(std::pair<std::string, pre_generate_pou_info_c *>(pou_name, info));
+	pre_generate_info_collector.push_back(info);
+}
+
+
+void pre_generate_info_c::print(void)
+{
+	int i = 1;
+	std::cout << std::endl;
+	std::cout << "|+++++++POU LIST INFO START++++++|" << std::endl;
+	std::cout << "pou number: " << pre_generate_info_collector.size() << std::endl;
+	std::cout << "+--------------------------------+" << std::endl;
+	for(auto elem : pre_generate_info_collector) {
+		std::cout << "POU No." << i++ << std::endl;
+		elem.print_detail_info();
+	}
+	std::cout << std::endl;
+	std::cout << "|++++++++POU LIST INFO END+++++++|" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "|++++CONFIGURATION INFO START++++|" << std::endl;
+	std::cout << "configuration name: " << configuration_info.configuration_name << std::endl;
+	std::cout << std::endl;
+	std::cout << "-----CONFIGURATION GLOBAL VAR-----" << std::endl;
+	std::cout << "configuration global number: " << configuration_info.config_global_var_set.size() << std::endl;
+	for(auto elem : configuration_info.config_global_var_set)
+		elem.print();
+	std::cout << std::endl;
+	std::cout << "resource number: " << configuration_info.res_list_set.size() << std::endl;
+	for(auto elem : configuration_info.res_list_set)
+		elem.print();
+	std::cout << std::endl;
+	std::cout << "|+++++CONFIGURATION INFO END+++++|" << std::endl;
 }

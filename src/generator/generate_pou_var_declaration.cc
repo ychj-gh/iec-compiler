@@ -76,21 +76,42 @@ void *generate_pou_var_declaration_c::visit(ref_value_null_literal_c *symbol)  {
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *generate_pou_var_declaration_c::visit(real_c *symbol)               { TRACE("real_c"); print_token(symbol); return utility_token_get_c::return_striped_token(symbol);}
-void *generate_pou_var_declaration_c::visit(integer_c *symbol)            { TRACE("integer_c"); print_token(symbol); return utility_token_get_c::return_striped_token(symbol);}
+void *generate_pou_var_declaration_c::visit(real_c *symbol)               { 
+  TRACE("real_c"); print_token(symbol); 
+  return utility_token_get_c::return_striped_token(symbol);
+}
+
+void *generate_pou_var_declaration_c::visit(integer_c *symbol)            { 
+  TRACE("integer_c"); print_token(symbol); 
+  return utility_token_get_c::return_striped_token(symbol);
+}
+
 void *generate_pou_var_declaration_c::visit(binary_integer_c *symbol)     { 
   TRACE("binary_integer_c"); 
-  // std::cout << (char*)return_striped_binary_token(symbol, 2) << "===" << std::endl;
   return utility_token_get_c::return_striped_binary_token(symbol, 2);
 }
 
 void *generate_pou_var_declaration_c::visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return utility_token_get_c::return_striped_octal_token(symbol, 2);}
 void *generate_pou_var_declaration_c::visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return utility_token_get_c::return_striped_hex_token(symbol, 3);}
 
-void *generate_pou_var_declaration_c::visit(neg_real_c *symbol)           { TRACE("neg_real_c"); return print_unary_expression(symbol, symbol->exp, "-");}
-void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        { TRACE("neg_integer_c"); return print_unary_expression(symbol, symbol->exp, "-");}
+void *generate_pou_var_declaration_c::visit(neg_real_c *symbol)           { 
+  TRACE("neg_real_c"); 
+  std::string temp_str = "-";
+  temp_str += (char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp));
+  return strdup(temp_str.c_str());
+}
 
-void *generate_pou_var_declaration_c::visit(integer_literal_c *symbol)    { TRACE("integer_literal_c"); return print_literal(symbol->type, symbol->value);}
+void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        { 
+  TRACE("neg_integer_c"); 
+  std::string temp_str = "-";
+  temp_str += (char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp));
+  return strdup(temp_str.c_str());
+}
+
+void *generate_pou_var_declaration_c::visit(integer_literal_c *symbol)    { 
+  TRACE("integer_literal_c"); 
+  return print_literal(symbol->type, symbol->value);
+}
 void *generate_pou_var_declaration_c::visit(real_literal_c *symbol)       { TRACE("real_literal_c"); return print_literal(symbol->type, symbol->value);}
 void *generate_pou_var_declaration_c::visit(bit_string_literal_c *symbol) { TRACE("bit_string_literal_c"); return print_literal(symbol->type, symbol->value);}
 void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    { 
@@ -402,10 +423,15 @@ void *generate_pou_var_declaration_c::visit(output_declarations_c *symbol) {
 void *generate_pou_var_declaration_c::visit(input_output_declarations_c *symbol) {
   TRACE("input_output_declarations_c"); 
   pou_info->set_pou_status(POU_STA_VAR_INOUT_DEC);
-
   symbol->var_declaration_list->accept(*this);
-
   return NULL;
+}
+
+/* helper symbol for input_output_declarations */
+/* var_declaration_list var_declaration ';' */
+void *generate_pou_var_declaration_c::visit(var_declaration_list_c *symbol) {
+  TRACE("var_declaration_list_c"); 
+  return print_list(symbol);
 }
 
 
@@ -413,7 +439,7 @@ void *generate_pou_var_declaration_c::visit(input_output_declarations_c *symbol)
 /* option -> may be NULL ! */
 void *generate_pou_var_declaration_c::visit(var_declarations_c *symbol) {
   TRACE("var_declarations_c");
-  
+  pou_info->set_pou_status(POU_STA_VAR_LOCAL_DEC);
   if (symbol->option != NULL)
     symbol->option->accept(*this);
 

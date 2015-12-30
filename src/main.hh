@@ -56,6 +56,7 @@ typedef struct {
 
 extern runtime_options_t runtime_options;
 
+#define _CODE_GENERATOR
 
 #define DEBUG
 #ifdef DEBUG
