@@ -34,11 +34,12 @@
 #include "generate_assignment_l_exp.hh"
 #include "generate_pou_var_declaration.hh"
 #include "utility_token_get.hh"
- #include "utility_case_exp_value.hh"
+#include "utility_case_exp_value.hh"
+#include "generate_pou_invocation.hh"
+#include "generate_configuration.hh"
 
 
 
-#define _CODE_GENERATOR
 
 /***********************************************************************/
 /***********************************************************************/
@@ -242,7 +243,17 @@ void *visit(pragma_c *symbol)                  {TRACE("pragma_c"); return print_
 /***************************/
 /* B 0 - Programming Model */
 /***************************/
-void *visit(library_c *symbol) {TRACE("library_c"); return print_list(symbol);}
+void *visit(library_c *symbol) {
+  TRACE("library_c"); 
+#ifdef _CODE_GENERATOR
+  print_list(symbol);
+  pre_code_info.print();
+  return NULL;
+#else
+  return print_list(symbol);
+#endif 
+  
+}
 
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
@@ -257,7 +268,16 @@ void *visit(                 identifier_c *symbol) {
 #endif
 }
 void *visit(derived_datatype_identifier_c *symbol) { TRACE("derived_datatype_identifier_c"); return print_token(symbol);}
-void *visit(         poutype_identifier_c *symbol) { TRACE("poutype_identifier_c"); return print_token(symbol);}
+void *visit(         poutype_identifier_c *symbol) { 
+#ifdef _CODE_GENERATOR
+  TRACE("poutype_identifier_c"); 
+  print_token(symbol);
+  return strdup(symbol->value); 
+#else
+  TRACE("poutype_identifier_c"); 
+  return print_token(symbol);
+#endif
+}
 
 /*********************/
 /* B 1.2 - Constants */
@@ -356,7 +376,8 @@ void *visit(fixed_point_c *symbol) { TRACE("fixed_point_c"); return print_token(
 
 /* SYM_REF5(interval_c, days, hours, minutes, seconds, milliseconds) */
 void *visit(interval_c *symbol) {
-  TRACE("interval_c");
+    TRACE("interval_c");
+
   if (NULL != symbol->days) {
     symbol->days->accept(*this);
     s4o.print("d");
@@ -383,6 +404,7 @@ void *visit(interval_c *symbol) {
   }
 
   return NULL;
+
 }
 
 
@@ -1415,11 +1437,16 @@ void *visit(function_declaration_c *symbol) {
   s4o.print("\n");
   symbol->function_body->accept(*this);
   s4o.indent_left();
+
+  pou_info->inst_code.push_back("ret ");
+
   s4o.print(s4o.indent_spaces + "END_FUNCTION\n\n\n");
 
-  pou_info->print_detail_info();
-  // pre_code_info.insert();
+  // pou_info->print_detail_info();
   pou_info->set_pou_status(POU_STA_INIT);
+
+  pre_code_info.insert(*pou_info);
+  delete pou_info;
 #else
   s4o.print("FUNCTION ");
   symbol->derived_function_name->accept(*this);
@@ -1474,6 +1501,33 @@ void *visit(var2_init_decl_list_c *symbol) {
 /*****************************/
 /*  FUNCTION_BLOCK derived_function_block_name io_OR_other_var_declarations function_block_body END_FUNCTION_BLOCK */
 void *visit(function_block_declaration_c *symbol) {
+#ifdef _CODE_GENERATOR
+  TRACE("function_block_declaration_c"); 
+
+  std::string temp;
+
+  s4o.print("FUNCTION_BLOCK ");
+  temp = (char*)symbol->fblock_name->accept(*this);
+  pou_info = new pre_generate_pou_info_c(temp);
+  pou_info->set_pou_status(POU_STA_HEADER);
+  
+  s4o.print("\n");
+  s4o.indent_right();
+
+  generate_pou_var_declaration_c temp_pou_var_dec(pou_info);
+  symbol->var_declarations->accept(temp_pou_var_dec);
+
+  s4o.print("\n");
+  symbol->fblock_body->accept(*this);
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces + "END_FUNCTION_BLOCK\n\n\n");
+
+  // pou_info->print_detail_info();
+  pou_info->set_pou_status(POU_STA_INIT);
+
+  pre_code_info.insert(*pou_info);
+  delete pou_info;
+#else
   TRACE("function_block_declaration_c"); 
   s4o.print("FUNCTION_BLOCK ");
   symbol->fblock_name->accept(*this);
@@ -1484,6 +1538,7 @@ void *visit(function_block_declaration_c *symbol) {
   symbol->fblock_body->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces + "END_FUNCTION_BLOCK\n\n\n");
+#endif
   return NULL;
 }
 
@@ -1518,6 +1573,32 @@ void *visit(non_retentive_var_decls_c *symbol) {
 /**********************/
 /*  PROGRAM program_type_name program_var_declarations_list function_block_body END_PROGRAM */
 void *visit(program_declaration_c *symbol) {
+#ifdef _CODE_GENERATOR
+  TRACE("program_declaration_c"); 
+
+  std::string temp;
+
+  s4o.print("PROGRAM ");
+  temp = (char*)symbol->program_type_name->accept(*this);
+  pou_info = new pre_generate_pou_info_c(temp);
+  pou_info->set_pou_status(POU_STA_HEADER);
+
+  s4o.print("\n");
+  s4o.indent_right();
+  generate_pou_var_declaration_c temp_pou_var_dec(pou_info);
+  symbol->var_declarations->accept(temp_pou_var_dec);
+
+  s4o.print("\n");
+  symbol->function_block_body->accept(*this);
+  s4o.indent_left();
+  s4o.print("END_PROGRAM\n\n\n");
+  
+  // pou_info->print_detail_info();
+  pou_info->set_pou_status(POU_STA_INIT);
+
+  pre_code_info.insert(*pou_info);
+  delete pou_info;
+#else
   TRACE("program_declaration_c"); 
   s4o.print("PROGRAM ");
   symbol->program_type_name->accept(*this);
@@ -1528,6 +1609,7 @@ void *visit(program_declaration_c *symbol) {
   symbol->function_block_body->accept(*this);
   s4o.indent_left();
   s4o.print("END_PROGRAM\n\n\n");
+#endif
   return NULL;
 }
 
@@ -1731,6 +1813,23 @@ END_CONFIGURATION
 */
 void *visit(configuration_declaration_c *symbol) {
   TRACE("configuration_declaration_c");
+#ifdef _CODE_GENERATOR
+  s4o.print("CONFIGURATION ");
+  generate_configuration_c temp_configuration_info(pou_info, &pre_code_info);
+
+  pre_code_info.configuration_info.configuration_name = (char*)symbol->configuration_name->accept(temp_configuration_info);
+  s4o.print("\n");
+  s4o.indent_right();
+  if (symbol->global_var_declarations != NULL)
+    symbol->global_var_declarations->accept(temp_configuration_info);
+  symbol->resource_declarations->accept(temp_configuration_info);
+  if (symbol->access_declarations != NULL)
+    symbol->access_declarations->accept(temp_configuration_info);
+  if (symbol->instance_specific_initializations != NULL)
+    symbol->instance_specific_initializations->accept(temp_configuration_info);
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces + "END_CONFIGURATION\n\n\n");
+#else
   s4o.print("CONFIGURATION ");
   symbol->configuration_name->accept(*this);
   s4o.print("\n");
@@ -1744,6 +1843,7 @@ void *visit(configuration_declaration_c *symbol) {
     symbol->instance_specific_initializations->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces + "END_CONFIGURATION\n\n\n");
+#endif
   return NULL;
 }
 
@@ -1763,8 +1863,10 @@ RESOURCE resource_name ON resource_type_name
    single_resource_declaration
 END_RESOURCE
 */
+
 void *visit(resource_declaration_c *symbol) {
   TRACE("resource_declaration_c"); 
+
   s4o.print(s4o.indent_spaces + "RESOURCE ");
   symbol->resource_name->accept(*this);
   s4o.print(" ON ");
@@ -1836,9 +1938,11 @@ void *visit(program_output_reference_c *symbol) {
   return NULL;
 }
 
+
 /*  TASK task_name task_initialization */
 void *visit(task_configuration_c *symbol) {
   TRACE("task_configuration_c");
+
   s4o.print("TASK ");
   symbol->task_name->accept(*this);
   s4o.print(" ");
@@ -1849,6 +1953,7 @@ void *visit(task_configuration_c *symbol) {
 /*  '(' [SINGLE ASSIGN data_source ','] [INTERVAL ASSIGN data_source ','] PRIORITY ASSIGN integer ')' */
 void *visit(task_initialization_c *symbol) {
   TRACE("task_initialization_c");
+
   s4o.print("(");
   if (symbol->single_data_source != NULL) {
     s4o.print("SINGLE := ");
@@ -2225,17 +2330,51 @@ void *visit(   not_expression_c *symbol) {TRACE("not_expression_c"); return prin
 
 void *visit(function_invocation_c *symbol) {
   TRACE("function_invocation_c"); 
+#ifdef _CODE_GENERATOR
+  generate_pou_invocation_c temp_pou_invocation(pou_info);
+  std::string temp_pou_invo_name;
+  std::string temp_reg_num;
+  std::string temp_code = "ucall ";
+
+  temp_pou_invo_name = (char*)symbol->function_name->accept(temp_pou_invocation);
+  s4o.print("(");
+
+  if (symbol->   formal_param_list != NULL) {
+    std::cout << " formal param list " << std::endl;
+    temp_code += (char*)symbol->   formal_param_list->accept(temp_pou_invocation);
+  }
+  if (symbol->nonformal_param_list != NULL) {
+    std::cout << " nonformal param list " << std::endl; 
+    temp_code += (char*)symbol->nonformal_param_list->accept(temp_pou_invocation);
+  }
+  temp_reg_num = pou_info->get_pou_reg_num();
+  pou_info->inc_pou_reg_num();
+
+  temp_code += std::string(" ") + temp_pou_invo_name + std::string(" ") + temp_reg_num;
+  
+  pou_info->inst_code.push_back(temp_code);
+  s4o.print(")");
+  return strdup(temp_reg_num.c_str());
+#else
   symbol->function_name->accept(*this);
   s4o.print("(");
 
   /* If the syntax parser is working correctly, exactly one of the 
    * following two symbols will be NULL, while the other is != NULL.
    */
-  if (symbol->   formal_param_list != NULL) symbol->   formal_param_list->accept(*this);
-  if (symbol->nonformal_param_list != NULL) symbol->nonformal_param_list->accept(*this);
+  if (symbol->   formal_param_list != NULL) {
+    std::cout << " formal param list " << std::endl;
+    symbol->   formal_param_list->accept(*this);
+  }
+  if (symbol->nonformal_param_list != NULL) {
+    std::cout << " nonformal param list " << std::endl; 
+    symbol->nonformal_param_list->accept(*this);
+  }
 
   s4o.print(")");
   return NULL;
+#endif
+  
 }
 
 /********************/
@@ -2263,10 +2402,13 @@ void *visit( assignment_statement_c *symbol) {
   temp_code += (char*)symbol->l_exp->accept(temp_l_exp) + std::string(" ");
 
   s4o.print(" := ");
-
-  temp_code += (char*)symbol->r_exp->accept(temp_r_exp);
+  
+  if(typeid(*symbol->r_exp) == typeid(function_invocation_c)) {
+    temp_code += (char*)symbol->r_exp->accept(*this);
+  } else {
+    temp_code += (char*)symbol->r_exp->accept(temp_r_exp);
+  }
 //  pou_info->dec_pou_reg_num();
-
   pou_info->inst_code.push_back(temp_code);
 #else
   symbol->l_exp->accept(*this);
@@ -2307,7 +2449,10 @@ void *visit(fb_invocation_c *symbol) {
 
 /* helper symbol for fb_invocation */
 /* param_assignment_list ',' param_assignment */
-void *visit(param_assignment_list_c *symbol) {TRACE("param_assignment_list_c"); return print_list(symbol, "", ", ");}
+void *visit(param_assignment_list_c *symbol) {
+  TRACE("param_assignment_list_c"); 
+  return print_list(symbol, "", ", ");
+}
 
 
 void *visit(input_variable_param_assignment_c *symbol) {
@@ -2789,6 +2934,15 @@ void *visit(for_statement_c *symbol) {
   }
   pou_info->inst_code.push_back(temp_code);
 
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
+
   s4o.print(s4o.indent_spaces); s4o.print("END_FOR");
 
   pou_info->for_condj_cnt.pop();
@@ -2813,6 +2967,85 @@ void *visit(for_statement_c *symbol) {
 }
 
 void *visit(while_statement_c *symbol) {
+#ifdef _CODE_GENERATOR
+  TRACE("while_statement_c"); 
+  generate_assign_r_exp_c temp_while_exp(pou_info);
+  std::string temp_code;
+  std::string temp_reg_num;
+
+  pou_info->while_condj_cnt.push();
+  // pou_info->while_jmp_cnt.push();
+
+  s4o.print("WHILE ");
+
+  temp_code = "while_dummy_order";
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "lnot ";
+  temp_reg_num = pou_info->get_pou_reg_num();
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inc_pou_reg_num();
+  temp_code += (char*)symbol->expression->accept(temp_while_exp);
+  pou_info->inst_code.push_back(temp_code);
+
+  temp_code = "condj_while ";
+  temp_code += temp_reg_num + std::string(" ");
+  pou_info->inst_code.push_back(temp_code);
+  pou_info->while_condj_cnt.inc_condj_insert_times();
+
+  s4o.print(" DO\n");
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  int find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("condj_while") == 0) {
+      if(find_cnt == pou_info->while_condj_cnt.get_condj_insert_times()) {
+        *temp_beg += std::to_string(temp_inst_num_diff + 2);
+        break;
+      } else {
+        find_cnt ++;
+      }
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+
+  temp_code = "jmp_while ";
+
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  temp_inst_num_diff = 0;
+  find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("while_dummy_order") == 0) {
+        temp_code += std::to_string(temp_inst_num_diff  * (-1));
+        pou_info->inst_code.erase((++temp_beg).base());
+        break;
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
+
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
+
+  pou_info->while_condj_cnt.pop();
+  // pou_info->while_jmp_cnt.pop();
+#else
   TRACE("while_statement_c"); 
   s4o.print("WHILE ");
   symbol->expression->accept(*this);
@@ -2821,11 +3054,56 @@ void *visit(while_statement_c *symbol) {
   symbol->statement_list->accept(*this);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces); s4o.print("END_WHILE");
+#endif
   return NULL;
 }
 
 void *visit(repeat_statement_c *symbol) {
   TRACE("repeat_statement_c"); 
+#ifdef _CODE_GENERATOR
+  generate_assign_r_exp_c temp_repeat_exp(pou_info);
+  std::string temp_code;
+  std::string temp_reg_num;
+
+  s4o.print("REPEAT\n");
+
+  temp_code = "repeat_dummy_order";
+  pou_info->inst_code.push_back(temp_code);
+
+  s4o.indent_right();
+  symbol->statement_list->accept(*this);
+  s4o.indent_left();
+  s4o.print(s4o.indent_spaces); s4o.print("UNTIL ");
+
+  temp_code = "condj_repeat ";
+  temp_code += (char*)symbol->expression->accept(temp_repeat_exp) + std::string(" ");
+
+  auto temp_beg = pou_info->inst_code.rbegin();
+  auto temp_end = pou_info->inst_code.rend();
+  int temp_inst_num_diff = 0;
+  int find_cnt = 1;
+  while(temp_beg != temp_end) {
+    if((*temp_beg).find("repeat_dummy_order") == 0) {
+        temp_code += std::to_string(temp_inst_num_diff  * (-1));
+        pou_info->inst_code.erase((++temp_beg).base());
+        break;
+    }
+    temp_beg++;
+    temp_inst_num_diff++;
+  }
+  pou_info->inst_code.push_back(temp_code);
+  temp_beg = pou_info->inst_code.rbegin();
+  temp_end = pou_info->inst_code.rend();
+  for(int i = 0; i < temp_inst_num_diff + 1; i++) {
+    if((*temp_beg).find("jmp_exit") == 0) {
+      
+      *temp_beg = std::string("jmp ") + std::to_string(i + 1);
+    }
+    temp_beg ++;
+  }
+
+  s4o.print("\n" + s4o.indent_spaces + "END_REPEAT");
+#else
   s4o.print("REPEAT\n");
   s4o.indent_right();
   symbol->statement_list->accept(*this);
@@ -2833,12 +3111,20 @@ void *visit(repeat_statement_c *symbol) {
   s4o.print(s4o.indent_spaces); s4o.print("UNTIL ");
   symbol->expression->accept(*this);
   s4o.print("\n" + s4o.indent_spaces + "END_REPEAT");
+#endif
   return NULL;
 }
 
 void *visit(exit_statement_c *symbol) {
   TRACE("exit_statement_c"); 
+#ifdef _CODE_GENERATOR
+  std::string temp_code = "jmp_exit ";
+  pou_info->inst_code.push_back(temp_code);
+
   s4o.print("EXIT");
+#else
+  s4o.print("EXIT");
+#endif
   return NULL;
 }
 

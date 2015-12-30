@@ -1,4 +1,14 @@
-FUNCTION FUNC : INT
+
+
+FUNCTION USERADD : INT
+	VAR_INPUT
+		A, B : INT;
+	END_VAR
+
+	USERADD := A + B;
+END_FUNCTION
+
+(*FUNCTION FUNC : INT
 	VAR_INPUT
 		A, B : REAL := 1.56 ;
 		C : INT ;
@@ -7,16 +17,79 @@ FUNCTION FUNC : INT
 	VAR
 		D, E : INT := 5;
 		F : INT ;
-		G : BOOL := BOOL#false;
 	END_VAR
 	
-	FOR C := 1 TO 100 BY 1 DO
-		D := D + 1;
-		FOR E := 1 TO 10 BY 2 DO
-			F := F + 3;
-		END_FOR;
-	END_FOR;
+	
 
-	C := A  ;
+	D := USERADD(D, E) ;
+	F := USERADD(A := D, B:= 2);
 
-END_FUNCTION 
+END_FUNCTION *)
+
+
+(*FUNCTION_BLOCK FB
+	
+	VAR_INPUT
+		X : REAL := -1.01;
+		Y : INT ;
+	END_VAR
+
+	VAR_IN_OUT
+		W : INT;
+	END_VAR
+
+	VAR_OUTPUT
+		Z : INT ;
+	END_VAR
+
+	Z := X + Y + 1;
+
+END_FUNCTION_BLOCK*)
+
+PROGRAM MAIN
+	VAR_INPUT
+		IN : INT ;
+	END_VAR
+
+	VAR_OUTPUT
+		C : INT ;
+	END_VAR
+	
+
+	C := IN + 2;
+
+END_PROGRAM
+
+
+
+PROGRAM MAIN1
+	VAR_INPUT
+		IN : INT ;
+	END_VAR
+
+	VAR_OUTPUT
+		C : INT ;
+	END_VAR
+	
+
+	C := IN + 2;
+
+END_PROGRAM
+
+
+CONFIGURATION MAIN_CONFIG
+
+	RESOURCE RES1 ON CPU1
+		VAR_GLOBAL
+			Z : INT;
+		END_VAR
+
+		TASK fast(INTERVAL := T#10ms, PRIORITY := 4);
+		TASK slow(SINGLE := Z, PRIORITY := 2);
+
+		PROGRAM P1 WITH fast: MAIN(IN := 3);
+		PROGRAM P2 WITH slow: MAIN1(C => Z, IN := 2);
+
+	END_RESOURCE
+	
+END_CONFIGURATION

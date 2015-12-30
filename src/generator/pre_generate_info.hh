@@ -8,6 +8,7 @@
 #include <utility>
 #include <vector>
 #include <deque>
+#include <list>
 
 #include "utility_condition_statement_cnt.hh"
 
@@ -146,12 +147,19 @@ public:
 	cond_statement_cnt_c for_condj_cnt;
 	cond_statement_cnt_c for_jmp_cnt;
 
+	cond_statement_cnt_c while_condj_cnt;
+	// cond_statement_cnt_c while_jmp_cnt;
+
+	cond_statement_cnt_c repeat_condj_cnt;
+	// cond_statement_cnt_c repeat_jmp_cnt;
+
 	std::vector<IValue> input_variable;
 	std::vector<IValue> input_output_variable;
 	std::vector<IValue> output_variable;
 	std::vector<IValue> local_variable;
 	std::vector<IValue> constant_value;
-	std::vector<std::string> inst_code;
+
+	std::list<std::string> inst_code;
 
 
 
@@ -166,19 +174,138 @@ public:
 
 
 
+
+class task_info_c
+{
+public:
+	std::string task_name;
+	unsigned int task_interval;/* unit: ms */
+	unsigned int task_priority;
+	std::string task_signal;
+	bool task_is_signal;
+
+public:
+	task_info_c() {
+		task_interval = 0;
+		task_priority = 0;
+		task_is_signal = false;
+	}
+	~task_info_c() {}
+public:	
+
+	void print(void) {
+		std::cout << "task name: " << task_name << ", task interval: " << task_interval 
+			<< ", task priority: " << task_priority << ", task signal: " << task_signal
+			<< ", task is signal? : " << (task_is_signal ? "true":"false") << " ; " << std::endl;
+	} 
+};
+
+class program_arguement_c
+{
+public:
+	std::string key;
+	std::string value;
+public:
+	program_arguement_c() {}
+	~program_arguement_c() {}
+public:
+	void print() {
+		std::cout << "key: " << key << ", value: " << value << std::endl;
+	}
+	
+};
+
+class program_info_c
+{
+public:
+	std::string program_name;
+	std::string bind_task_name;
+	std::string program_instance_name;
+	std::vector<program_arguement_c> assign_arguement;
+	std::vector<program_arguement_c> sendto_arguement;
+public:
+	program_info_c()  {}
+	~program_info_c() {}
+
+public:
+	void print(void) {
+		std::cout << std::endl;
+		std::cout << "program name: " << program_name << ", bind task name: " << bind_task_name << std::endl;
+		std::cout << "program instance name: " << program_instance_name << std::endl;
+		std::cout << "assign arguement number: " << assign_arguement.size() << std::endl;
+		for(auto elem: assign_arguement)
+			elem.print();
+		std::cout << "sendto arguement number: " << sendto_arguement.size() << std::endl;
+		for(auto elem: sendto_arguement)
+			elem.print();
+	}
+	
+};
+
+
+class resource_info_c
+{
+public:
+	std::string resource_name;
+	std::string resource_typename;
+	std::vector<IValue> resource_global_var_set;
+	std::vector<task_info_c> task_list_set;
+	std::vector<program_info_c> program_list_set;
+public:
+	resource_info_c() {}
+	resource_info_c(std::string name) : resource_name(name) {}
+	~resource_info_c() {}
+
+public:
+	void print(void) {
+		std::cout << "resource name: " << resource_name << " resource_typename : " << resource_typename << std::endl;
+		std::cout << "resource global var  number: " << resource_global_var_set.size() << std::endl;
+		for(auto elem : resource_global_var_set)
+			elem.print();
+		std::cout << std::endl;
+		std::cout << "task number: " << task_list_set.size() << std::endl;
+		for(auto elem : task_list_set)
+			elem.print();
+		std::cout << std::endl;
+		std::cout << "program number: " << program_list_set.size() << std::endl;
+		for(auto elem : program_list_set)
+			elem.print();
+	}
+	
+};
+
+
+class configuration_info_c
+{
+public:
+	std::string configuration_name;
+	std::vector<IValue> config_global_var_set;
+	std::vector<resource_info_c> res_list_set;
+public:
+	configuration_info_c() {}
+	configuration_info_c(std::string name) : configuration_name(name) {}
+	~configuration_info_c() {}
+	
+};
+
+
 class pre_generate_info_c {
-private:
-	std::map<std::string, pre_generate_pou_info_c *> pre_generate_info_collector;
+public:
+	std::list<pre_generate_pou_info_c> pre_generate_info_collector;
+	configuration_info_c configuration_info;
 
 public:
 	pre_generate_info_c();
 
 	virtual ~pre_generate_info_c(){}
 
-	bool insert(std::string pou_name, pre_generate_pou_info_c *info);
+	bool insert(pre_generate_pou_info_c info);
 public:
 	unsigned int count;
 
+	void print(void);
+
 };
+
 
 #endif
