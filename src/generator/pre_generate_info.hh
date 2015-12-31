@@ -242,13 +242,34 @@ public:
 	
 };
 
+class global_var_value_c
+{
+public:
+	IValue type_value;
+	std::string location;
+public:
+	global_var_value_c() {
+		location = "";
+	}
+	~global_var_value_c() {
+
+	}
+
+public:
+	void print(void) {
+		type_value.print();
+		std::cout << "location: " << (location.empty() ? "no" : location) << std::endl;
+	}
+	
+};
 
 class resource_info_c
 {
 public:
 	std::string resource_name;
 	std::string resource_typename;
-	std::vector<IValue> resource_global_var_set;
+	std::vector<global_var_value_c> resource_global_var_set;
+	std::vector<global_var_value_c> resource_global_dir_set;
 	std::vector<task_info_c> task_list_set;
 	std::vector<program_info_c> program_list_set;
 public:
@@ -261,6 +282,10 @@ public:
 		std::cout << "resource name: " << resource_name << " resource_typename : " << resource_typename << std::endl;
 		std::cout << "resource global var  number: " << resource_global_var_set.size() << std::endl;
 		for(auto elem : resource_global_var_set)
+			elem.print();
+		std::cout << std::endl;
+		std::cout << "resource global dir  number: " << resource_global_dir_set.size() << std::endl;
+		for(auto elem : resource_global_dir_set)
 			elem.print();
 		std::cout << std::endl;
 		std::cout << "task number: " << task_list_set.size() << std::endl;

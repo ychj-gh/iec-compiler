@@ -188,3 +188,22 @@ void *utility_token_get_c::return_striped_hex_token(token_c *token, unsigned int
 
   return strdup(result.c_str());
 }
+
+
+
+internal_value_t utility_token_get_c::variable_type_check(std::string type)
+{
+  if(type == "SINT" || type == "INT" || type == "DINT" || type == "LINT")
+    return TINT;
+  else if(type == "USINT" || type == "UINT" || type == "UDINT" || type == "ULINT" 
+    || type == "BYTE" || type == "WORD" || type == "LWORD" || type == "DWORD" || type == "BOOL")
+    return TUINT;
+  else if(type == "REAL" || type == "LREAL")
+    return TDOUBLE;
+  else if(type == "STRING" || type == "WSTRING")
+    return TSTRING;
+  else
+    return TUNDEF;
+  
+}
+

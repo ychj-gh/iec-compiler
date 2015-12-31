@@ -33,6 +33,11 @@ private:
 	resource_info_c *temp_res_info;
 	program_info_c *temp_program_info;
 	program_arguement_c *temp_program_arguement_info;
+	global_var_value_c *temp_global_var;
+
+	int var_type;
+	std::string var_value;	
+	std::vector<std::string> var_set;
 
 public:
 	generate_configuration_c(pre_generate_pou_info_c* pou_info_param, pre_generate_info_c *pre_code_info_param) {
@@ -94,7 +99,33 @@ private:
 
 	/* SYM_REF5(interval_c, days, hours, minutes, seconds, milliseconds) */
 	void *visit(interval_c *symbol) ;
-	
+
+	/***********************************/
+	/* B 1.3.1 - Elementary Data Types */
+	/***********************************/
+	void *visit(time_type_name_c *symbol)        ;
+	void *visit(bool_type_name_c *symbol)        ;
+	void *visit(sint_type_name_c *symbol)        ;
+	void *visit(int_type_name_c *symbol)         ;
+	void *visit(dint_type_name_c *symbol)        ;
+	void *visit(lint_type_name_c *symbol)        ;
+	void *visit(usint_type_name_c *symbol)       ;
+	void *visit(uint_type_name_c *symbol)        ;
+	void *visit(udint_type_name_c *symbol)       ;
+	void *visit(ulint_type_name_c *symbol)       ;
+	void *visit(real_type_name_c *symbol)        ;
+	void *visit(lreal_type_name_c *symbol)       ;
+	void *visit(date_type_name_c *symbol)        ;
+	void *visit(tod_type_name_c *symbol)         ;
+	void *visit(dt_type_name_c *symbol)          ;
+	void *visit(byte_type_name_c *symbol)        ;
+	void *visit(word_type_name_c *symbol)        ;
+	void *visit(lword_type_name_c *symbol)       ;
+	void *visit(dword_type_name_c *symbol)       ;
+	void *visit(string_type_name_c *symbol)      ;
+	void *visit(wstring_type_name_c *symbol)     ;
+
+		
 
 	/*********************/
 	/* B 1.4 - Variables */
@@ -111,10 +142,30 @@ private:
 	/********************************/
 	/* B 1.7 Configuration elements */
 	/********************************/
-
 	/* intermediate helper symbol for configuration_declaration  */
 	/*  { global_var_declarations_list }   */
 	void *visit(global_var_declarations_list_c *symbol) ;
+
+	/*| VAR_GLOBAL [CONSTANT|RETAIN] global_var_decl_list END_VAR */
+	/* option -> may be NULL ! */
+	void *visit(global_var_declarations_c *symbol) ;
+
+	/* helper symbol for global_var_declarations */
+	/*| global_var_decl_list global_var_decl ';' */
+	void *visit(global_var_decl_list_c *symbol) ;
+
+	/*| global_var_spec ':' [located_var_spec_init|function_block_type_name] */
+	/* type_specification ->may be NULL ! */
+	void *visit(global_var_decl_c *symbol);
+
+	/*| global_var_name location */
+	void *visit(global_var_spec_c *symbol) ;
+
+	/*| global_var_list ',' global_var_name */
+	void *visit(global_var_list_c *symbol) ;
+
+	/* simple_specification ASSIGN constant */
+	void *visit(simple_spec_init_c *symbol) ;
 
 	/* helper symbol for configuration_declaration */
 	/*| resource_declaration_list resource_declaration */
@@ -194,6 +245,8 @@ private:
 	/* function_block_type_name ':=' structure_initialization */
 	void *visit(fb_initialization_c *symbol) ;
 
+	/*  AT direct_variable */
+	void *visit(location_c *symbol);
 
 
 

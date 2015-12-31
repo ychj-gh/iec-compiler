@@ -165,6 +165,32 @@ void *generate_configuration_c::generate_configuration_c::visit(interval_c *symb
   return strdup(temp_str.c_str());
 }
 
+/***********************************/
+/* B 1.3.1 - Elementary Data Types */
+/***********************************/
+void *generate_configuration_c::visit(time_type_name_c *symbol)        {TRACE("time_type_name_c");  return strdup("TIME");}
+void *generate_configuration_c::visit(bool_type_name_c *symbol)        {TRACE("bool_type_name_c");  return strdup("BOOL");}
+void *generate_configuration_c::visit(sint_type_name_c *symbol)        {TRACE("sint_type_name_c");  return strdup("SINT");}
+void *generate_configuration_c::visit(int_type_name_c *symbol)         {TRACE("int_type_name_c");  return strdup("INT");}
+void *generate_configuration_c::visit(dint_type_name_c *symbol)        {TRACE("dint_type_name_c");   return strdup("DINT");}
+void *generate_configuration_c::visit(lint_type_name_c *symbol)        {TRACE("lint_type_name_c");   return strdup("USINT");}
+void *generate_configuration_c::visit(usint_type_name_c *symbol)       {TRACE("usint_type_name_c");   return strdup("USINT");}
+void *generate_configuration_c::visit(uint_type_name_c *symbol)        {TRACE("uint_type_name_c");   return strdup("UINT");}
+void *generate_configuration_c::visit(udint_type_name_c *symbol)       {TRACE("udint_type_name_c");   return strdup("UDINT");}
+void *generate_configuration_c::visit(ulint_type_name_c *symbol)       {TRACE("ulint_type_name_c");   return strdup("ULINT");}
+void *generate_configuration_c::visit(real_type_name_c *symbol)        {TRACE("real_type_name_c");   return strdup("REAL");}
+void *generate_configuration_c::visit(lreal_type_name_c *symbol)       {TRACE("lreal_type_name_c");   return strdup("LREAL");}
+void *generate_configuration_c::visit(date_type_name_c *symbol)        {TRACE("date_type_name_c");   return strdup("DATE");}
+void *generate_configuration_c::visit(tod_type_name_c *symbol)         {TRACE("tod_type_name_c");    return strdup("TOD");}
+void *generate_configuration_c::visit(dt_type_name_c *symbol)          {TRACE("dt_type_name_c");  return strdup("DT");}
+void *generate_configuration_c::visit(byte_type_name_c *symbol)        {TRACE("byte_type_name_c");   return strdup("BYTE");}
+void *generate_configuration_c::visit(word_type_name_c *symbol)        {TRACE("word_type_name_c"); return strdup("WORD");}
+void *generate_configuration_c::visit(lword_type_name_c *symbol)       {TRACE("lword_type_name_c");  return strdup("LWORD");}
+void *generate_configuration_c::visit(dword_type_name_c *symbol)       {TRACE("dword_type_name_c");   return strdup("DWORD");}
+void *generate_configuration_c::visit(string_type_name_c *symbol)      {TRACE("string_type_name_c");  return strdup("STRING");}
+void *generate_configuration_c::visit(wstring_type_name_c *symbol)     {TRACE("wstring_type_name_c");   return strdup("WSTRING");}
+
+
 
 /*********************/
 /* B 1.4 - Variables */
@@ -194,8 +220,136 @@ void *generate_configuration_c::visit(direct_variable_c *symbol) {
 /* intermediate helper symbol for configuration_declaration  */
 /*  { global_var_declarations_list }   */
 void *generate_configuration_c::visit(global_var_declarations_list_c *symbol) {
-	TRACE("global_var_declarations_list_c"); 
-	return print_list(symbol);
+  TRACE("global_var_declarations_list_c"); 
+  return print_list(symbol);
+}
+
+/*| VAR_GLOBAL [CONSTANT|RETAIN] global_var_decl_list END_VAR */
+/* option -> may be NULL ! */
+void *generate_configuration_c::visit(global_var_declarations_c *symbol) {
+  TRACE("global_var_declarations_c");
+  if (symbol->option != NULL)
+    symbol->option->accept(*this);
+  symbol->global_var_decl_list->accept(*this);
+  return NULL;
+}
+
+/* helper symbol for global_var_declarations */
+/*| global_var_decl_list global_var_decl ';' */
+void *generate_configuration_c::visit(global_var_decl_list_c *symbol) {
+  TRACE("global_var_decl_list_c");
+  return print_list(symbol);
+}
+
+
+/*| global_var_spec ':' [located_var_spec_init|function_block_type_name] */
+/* type_specification ->may be NULL ! */
+void *generate_configuration_c::visit(global_var_decl_c *symbol) {
+  TRACE("global_var_decl_c");
+  CP(111)
+  symbol->global_var_spec->accept(*this);
+  CP(222)
+  if (symbol->type_specification != NULL)
+    symbol->type_specification->accept(*this);
+
+  if(typeid(*(symbol->global_var_spec)) == typeid(global_var_spec_c) ) {
+    temp_global_var->type_value.type = var_type;
+    if(var_type == TINT) {
+      if (!var_value.empty())
+        temp_global_var->type_value.v.value_i = std::stoi(var_value);
+    }
+    else if(var_type == TUINT) {
+      if (!var_value.empty())
+        temp_global_var->type_value.v.value_u = std::stoi(var_value);
+    }
+    else if(var_type == TDOUBLE) {
+      if (!var_value.empty())
+       temp_global_var->type_value.v.value_d = std::stod(var_value);
+    }
+    else {
+      temp_global_var->type_value.v.value_s.str = strdup(var_value.c_str());
+      temp_global_var->type_value.v.value_s.length = strlen(var_value.c_str());
+    }
+    temp_res_info->resource_global_dir_set.push_back(*temp_global_var);
+
+    delete temp_global_var;
+  } else if(typeid(*(symbol->global_var_spec)) == typeid(global_var_list_c) ) {
+    for(auto elem : var_set) {
+      temp_global_var = new global_var_value_c();
+
+      temp_global_var->type_value.name = elem;
+      temp_global_var->type_value.type = var_type;
+
+      if(var_type == TINT) {
+      if (!var_value.empty())
+        temp_global_var->type_value.v.value_i = std::stoi(var_value);
+      }
+      else if(var_type == TUINT) {
+      if (!var_value.empty())
+        temp_global_var->type_value.v.value_u = std::stoi(var_value);
+      }
+      else if(var_type == TDOUBLE) {
+      if (!var_value.empty())
+        temp_global_var->type_value.v.value_d = std::stod(var_value);
+      }
+      else {
+        temp_global_var->type_value.v.value_s.str = strdup(var_value.c_str());
+        temp_global_var->type_value.v.value_s.length = strlen(var_value.c_str());
+      }
+      temp_res_info->resource_global_var_set.push_back(*temp_global_var);
+
+      delete temp_global_var;
+    }
+  }
+
+  var_type = -1;
+  var_value = "";
+
+  return NULL;
+}
+
+/*| global_var_name location */
+void *generate_configuration_c::visit(global_var_spec_c *symbol) {
+  TRACE("global_var_spec_c");
+  temp_global_var = new global_var_value_c();
+  temp_global_var->type_value.name = (char*)symbol->global_var_name->accept(*this);
+  temp_global_var->location = (char*)symbol->location->accept(*this);
+  return NULL;
+}
+
+
+/*  AT direct_variable */
+void *generate_configuration_c::visit(location_c *symbol) {
+  TRACE("location_c");
+  
+  return symbol->direct_variable->accept(*this);
+}
+
+/*| global_var_list ',' global_var_name */
+void *generate_configuration_c::visit(global_var_list_c *symbol) {
+  TRACE("global_var_list_c"); 
+  std::string temp_str;
+  for(int i = 0; i < symbol->n; i++) {
+    temp_str = (char*)symbol->elements[i]->accept(*this);
+    var_set.push_back(temp_str);
+  }
+  return NULL;
+}
+
+
+/* simple_specification ASSIGN constant */
+void *generate_configuration_c::visit(simple_spec_init_c *symbol) {
+  TRACE("simple_spec_init_c"); 
+  var_type = utility_token_get_c::variable_type_check((char*)symbol->simple_specification->accept(*this));
+  
+  if (symbol->constant != NULL) {
+    CP(333)
+    var_value = (char*)symbol->constant->accept(*this);
+    CP(444)
+  }
+  
+
+  return NULL;
 }
 
 /* helper symbol for configuration_declaration */
@@ -335,9 +489,7 @@ void *generate_configuration_c::visit(program_configuration_c *symbol) {
   temp_program_info->program_instance_name = (char*)symbol->program_type_name->accept(*this);
 
   if (symbol->prog_conf_elements != NULL) {
-  	CP(111)
     symbol->prog_conf_elements->accept(*this);
-    CP(222)
   }
 
   temp_res_info->program_list_set.push_back(*temp_program_info);
@@ -436,3 +588,7 @@ void *generate_configuration_c::visit(fb_initialization_c *symbol) {
   symbol->structure_initialization->accept(*this);
   return NULL;
 }
+
+
+
+

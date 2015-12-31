@@ -1821,7 +1821,7 @@ void *visit(configuration_declaration_c *symbol) {
   s4o.print("\n");
   s4o.indent_right();
   if (symbol->global_var_declarations != NULL)
-    symbol->global_var_declarations->accept(temp_configuration_info);
+    symbol->global_var_declarations->accept(*this);
   symbol->resource_declarations->accept(temp_configuration_info);
   if (symbol->access_declarations != NULL)
     symbol->access_declarations->accept(temp_configuration_info);
