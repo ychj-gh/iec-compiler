@@ -51,6 +51,43 @@ public:
 		type = TUNDEF;
 		v.value_i = 0;
 	}
+
+	void operator=(const IValue& iv) {
+		this->name = iv.name;
+		this->type = iv.type;
+		if (this->type == TINT)
+			this->v.value_i = iv.v.value_i;
+		else if (this->type == TUINT)
+			this->v.value_u = iv.v.value_u;
+		else if (this->type == TDOUBLE)
+			this->v.value_d = iv.v.value_d;
+		else {
+			this->v.value_s.str = iv.v.value_s.str;
+			this->v.value_s.length = iv.v.value_s.length;
+		}
+	}
+
+	bool operator==(const IValue& iv) {
+		if(this->name == iv.name) {
+			if(this->type == iv.type) {
+				if (this->type == TINT)
+					return (this->v.value_i == iv.v.value_i);
+				else if (this->type == TUINT)
+					return (this->v.value_u == iv.v.value_u);
+				else if (this->type == TDOUBLE)
+					return (this->v.value_d == iv.v.value_d);
+				else {
+					return (this->v.value_s.str == iv.v.value_s.str);
+				}
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+public:
 	//just for debug
 	void print(void) {
 		std::cout << "IValue name: " << name 
@@ -92,12 +129,11 @@ private:
 	std::string pou_name;
 	unsigned int pou_status;
 	unsigned int pou_type;
-
-	unsigned int pou_reg_num;
-
+	
 	inst_number_t pou_inst_number;
 
 public:
+	unsigned int pou_reg_num;
 	pre_generate_pou_info_c(std::string pou_name) {
 		this->pou_name = pou_name; 
 		pre_code = "";
