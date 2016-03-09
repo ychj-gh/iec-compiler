@@ -1,10 +1,19 @@
+FUNCTION USERA : INT
 
+	VAR_INPUT
+		A : INT;
+	END_VAR
+
+	USERA := A + 3;
+
+END_FUNCTION
 
 FUNCTION USERADD : INT
 	VAR_INPUT
 		A, B : INT;
 	END_VAR
 
+	B := USERA(B);
 	USERADD := A + B;
 END_FUNCTION
 
@@ -57,6 +66,7 @@ PROGRAM MAIN
 	
 
 	C := IN + 2;
+	C := USERADD(C, 2);
 
 END_PROGRAM
 
@@ -71,8 +81,11 @@ PROGRAM MAIN1
 		C : INT ;
 	END_VAR
 	
-
-	C := IN + 2;
+	IF IN > 1 THEN
+		C := IN + 2;
+	ELSE
+		C := C + 2;
+	END_IF;
 
 END_PROGRAM
 
@@ -88,7 +101,7 @@ CONFIGURATION MAIN_CONFIG
 		TASK fast(INTERVAL := T#10ms, PRIORITY := 4);
 		TASK slow(SINGLE := Z, PRIORITY := 2);
 
-		PROGRAM P1 WITH fast: MAIN(IN := 3);
+		PROGRAM P1 WITH fast: MAIN;
 		PROGRAM P2 WITH slow: MAIN1(C => Z, IN := 2);
 
 	END_RESOURCE

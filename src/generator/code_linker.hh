@@ -87,9 +87,9 @@ class task_des_c
 public:
 	std::string task_name;
 
-	char task_priority;
-	char task_type;
-	char signal_source;
+	short task_priority;
+	short task_type;
+	short signal_source;
 	unsigned int task_period;
 
 	unsigned int string_pool_count;
@@ -167,10 +167,10 @@ public:
 
 		for(auto elem : user_pou_list)
 			elem.print();
-
+		std::cout << std::endl;
 		std::cout << "# OBJ PLC Task Constant Segment" << std::endl;
 		for(auto elem : const_list) {
-			std::cout << "K " << elem.type << std::string(" ") ;
+			std::cout << "K " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ") ;
 			if (elem.type == TINT)
 				std::cout << elem.v.value_i << std::endl;
 			else if (elem.type == TUINT)
@@ -229,11 +229,14 @@ public:
 
 	
 public:
-	obj_file_c() {}
+	obj_file_c() {
+		task_count = 0;
+	}
 	~obj_file_c() {}
 
 public:
 	void print(void) {
+		std::cout << std::endl;
 		std::cout << "# OBJ PLC Task List Segment" << std::endl;
 		std::cout << "plc_task_count " << task_count << std::endl;
 		for(auto elem : task_list)
@@ -262,6 +265,14 @@ public:
 
 public:
 	void link_code(void);
+
+	//注意：当字符串为空时，也会返回一个空字符串
+	void split(std::string& s, const std::string& delim,std::vector< std::string >* ret);
+
+	void link_task_pou(std::list<pre_generate_pou_info_c>::iterator& pou_iterator,  obj_task_c& temp_obj_task, 
+						std::string pou_ret);
+
+
 
 public:
 	void print(void) {

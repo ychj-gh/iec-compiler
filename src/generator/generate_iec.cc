@@ -37,6 +37,7 @@
 #include "utility_case_exp_value.hh"
 #include "generate_pou_invocation.hh"
 #include "generate_configuration.hh"
+#include "code_linker.hh"
 
 
 
@@ -246,8 +247,13 @@ void *visit(pragma_c *symbol)                  {TRACE("pragma_c"); return print_
 void *visit(library_c *symbol) {
   TRACE("library_c"); 
 #ifdef _CODE_GENERATOR
+  code_linker_c temp_code_linker(&pre_code_info);
+
   print_list(symbol);
   pre_code_info.print();
+
+  temp_code_linker.link_code();
+  temp_code_linker.print();
   return NULL;
 #else
   return print_list(symbol);
@@ -1592,6 +1598,8 @@ void *visit(program_declaration_c *symbol) {
   symbol->function_block_body->accept(*this);
   s4o.indent_left();
   s4o.print("END_PROGRAM\n\n\n");
+
+  pou_info->inst_code.push_back("halt 0 0 0");
   
   // pou_info->print_detail_info();
   pou_info->set_pou_status(POU_STA_INIT);
@@ -1817,6 +1825,7 @@ void *visit(configuration_declaration_c *symbol) {
   s4o.print("CONFIGURATION ");
   generate_configuration_c temp_configuration_info(pou_info, &pre_code_info);
 
+
   pre_code_info.configuration_info.configuration_name = (char*)symbol->configuration_name->accept(temp_configuration_info);
   s4o.print("\n");
   s4o.indent_right();
@@ -1829,6 +1838,7 @@ void *visit(configuration_declaration_c *symbol) {
     symbol->instance_specific_initializations->accept(temp_configuration_info);
   s4o.indent_left();
   s4o.print(s4o.indent_spaces + "END_CONFIGURATION\n\n\n");
+
 #else
   s4o.print("CONFIGURATION ");
   symbol->configuration_name->accept(*this);
