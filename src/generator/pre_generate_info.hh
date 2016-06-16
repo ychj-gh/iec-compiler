@@ -12,17 +12,24 @@
 
 #include "utility_condition_statement_cnt.hh"
 
+
 typedef unsigned int varible_number_t;
 typedef unsigned int inst_number_t;
 
+class pre_generate_info_c; // 前向声明
+
 
 typedef unsigned char internal_value_t;
+
+#include "utility_token_get.hh"
+
 /* Internal Value Type Tag */
 #define TUNDEF  0
 #define TINT    1
 #define TUINT   2
 #define TDOUBLE 3
 #define TSTRING 4
+#define TREF    5
 
 
 typedef signed long  IInt;
@@ -32,6 +39,11 @@ typedef struct {
     unsigned int length; /* '\0' included */
     char *str;
 } IString;
+
+typedef struct {
+    char* ref_type;  // 指示具体的复合数据类型名
+    uint16_t value_index;  // 指示该类型对应值的索引
+} IREF;
 
 /* Internal Value for Register | Constant | Global */
 class IValue {
@@ -43,7 +55,7 @@ public:
         IUInt value_u;
         IDouble value_d;
         IString value_s;
-        //uint16_t value_p; [> reference or pointer value <]
+        IREF value_p; //[> reference or pointer value <]
     } v;
 public:
 	IValue(){
@@ -90,9 +102,9 @@ public:
 public:
 	//just for debug
 	void print(void) {
-		std::cout << "IValue name: " << name 
-			<< " type: " 
-			<< (type == TINT ? "TINT " : (type == TUINT ? "TUINT" : (type == TDOUBLE ? "TDOUBLE" : "TSTRING"))) 
+		std::cout << "IValue name: " << name
+			<< " type: "
+			<< (type == TINT ? "TINT " : (type == TUINT ? "TUINT" : (type == TDOUBLE ? "TDOUBLE" : (type == TSTRING ? "TSTRING" : "TREF"))))
 			<< " value: ";
 		if (type == TINT)
 			std::cout << v.value_i << std::endl;
@@ -100,11 +112,44 @@ public:
 			std::cout << v.value_u << std::endl;
 		else if (type == TDOUBLE)
 			std::cout << v.value_d << std::endl;
-		else
+		else if (type == TSTRING)
 			std::cout << v.value_s.str << std::endl;
+        else
+            std::cout << "sub type: " << v.value_p.ref_type << ", index: " << v.value_p.value_index << std::endl;
 	}
 
 };
+
+
+/* 用于记录复合数据类型 */
+class struct_type_c{
+public:
+    std::string struct_name;
+    std::vector<IValue> elements;
+public:
+    void print(){
+        std::cout << "struct name: " << struct_name << std::endl;
+        for(int i = 0; i < elements.size(); i++){
+            elements[i].print();
+        }
+    }
+};
+
+/* 用于记录数组数据类型 */
+class array_type_c{
+public:
+    std::string array_name;
+    internal_value_t type;
+    unsigned int size;
+    std::vector<IValue> init_value;
+    void print(){
+        std::cout << "array name: " << array_name << ", type: " << type << ", size: " << size << std::endl;
+        for(int i = 0; i < init_value.size(); i ++){
+            init_value[i].print();
+        }
+    }
+};
+
 
 
 //pou status :
@@ -129,19 +174,20 @@ private:
 	std::string pou_name;
 	unsigned int pou_status;
 	unsigned int pou_type;
-	
+
 	inst_number_t pou_inst_number;
+
 
 public:
 	unsigned int pou_reg_num;
 	pre_generate_pou_info_c(std::string pou_name) {
-		this->pou_name = pou_name; 
+		this->pou_name = pou_name;
 		pre_code = "";
 		pou_status = POU_STA_INIT;
 		pou_reg_num = 0;
 	}
 	virtual ~pre_generate_pou_info_c(){}
-    
+
     void set_pou_name(std::string pou_name) { this->pou_name = pou_name; }
     std::string get_pou_name(void) const { return this->pou_name; }
 
@@ -151,7 +197,7 @@ public:
     void set_pou_type(unsigned int type) { pou_type = type; }
     unsigned int get_pou_type(void) const { return this->pou_type; }
 
-    std::string get_pou_reg_num() const { 
+    std::string get_pou_reg_num() const {
     	std::stringstream strm;
     	std::string result;
     	strm << (this->pou_reg_num + input_variable.size() + input_output_variable.size() + output_variable.size() + local_variable.size() );
@@ -169,14 +215,14 @@ public:
     	return result;
     }
 
-	
+
 
 public:
 	std::string pre_code;  //no use
-	
+
 	cond_statement_cnt_c if_condj_cnt;
 	cond_statement_cnt_c if_jmp_cnt;
-	
+
 	cond_statement_cnt_c case_condj_cnt;
 	cond_statement_cnt_c case_jmp_cnt;
 
@@ -197,10 +243,13 @@ public:
 
 	std::list<std::string> inst_code;
 
+    std::vector<struct_type_c> struct_var_collector; // 结构体变量集
+    std::vector<array_type_c> array_var_collector;  // 数组变量集
+
 
 
 public:
-	internal_value_t variable_type_check(std::string type);
+	static internal_value_t variable_type_check(std::string type);
 	int find_var_return_num(std::string var_name);
 
 	//just for debug
@@ -227,13 +276,13 @@ public:
 		task_is_signal = false;
 	}
 	~task_info_c() {}
-public:	
+public:
 
 	void print(void) {
-		std::cout << "task name: " << task_name << ", task interval: " << task_interval 
+		std::cout << "task name: " << task_name << ", task interval: " << task_interval
 			<< ", task priority: " << task_priority << ", task signal: " << task_signal
 			<< ", task is signal? : " << (task_is_signal ? "true":"false") << " ; " << std::endl;
-	} 
+	}
 };
 
 class program_arguement_c
@@ -248,7 +297,7 @@ public:
 	void print() {
 		std::cout << "key: " << key << ", value: " << value << std::endl;
 	}
-	
+
 };
 
 class program_info_c
@@ -275,7 +324,7 @@ public:
 		for(auto elem: sendto_arguement)
 			elem.print();
 	}
-	
+
 };
 
 class global_var_value_c
@@ -296,7 +345,7 @@ public:
 		type_value.print();
 		std::cout << "location: " << (location.empty() ? "no" : location) << std::endl;
 	}
-	
+
 };
 
 class resource_info_c
@@ -332,7 +381,7 @@ public:
 		for(auto elem : program_list_set)
 			elem.print();
 	}
-	
+
 };
 
 
@@ -346,7 +395,7 @@ public:
 	configuration_info_c() {}
 	configuration_info_c(std::string name) : configuration_name(name) {}
 	~configuration_info_c() {}
-	
+
 };
 
 
@@ -355,14 +404,28 @@ public:
 	std::list<pre_generate_pou_info_c> pre_generate_info_collector;
 	configuration_info_c configuration_info;
 
-public:
-	pre_generate_info_c();
+private:
+    pre_generate_info_c(){
 
+    }
+    static pre_generate_info_c *singleton ;
+
+public:
 	virtual ~pre_generate_info_c(){}
+
+    static pre_generate_info_c* getInstance(){
+        if(singleton == NULL){
+            singleton = new pre_generate_info_c();
+        }
+        return singleton;
+    }
 
 	bool insert(pre_generate_pou_info_c info);
 public:
 	unsigned int count;
+    std::vector<struct_type_c> struct_type_collector; // 结构体类型集
+    std::vector<array_type_c>  array_type_collector;   // 数组类型集
+
 
 	void print(void);
 

@@ -1,0 +1,83 @@
+TYPE TUM:
+	STRUCT
+		A : INT := 1;
+		B : INT ;
+	END_STRUCT;
+END_TYPE
+
+
+TYPE TU:
+	STRUCT
+		CU:	BOOL;
+		R:  BOOL;
+		PV: INT;
+		Q:  BOOL;
+		CV: INT;
+		AB: TUM;
+	END_STRUCT;
+END_TYPE
+
+
+TYPE AI:
+	ARRAY[1..8] OF INT := [4(1024), 4(-1024)];
+END_TYPE
+
+TYPE
+	AI1: ARRAY[1..8] OF REAL := [4, 20, 4, 3(20)];
+	DI1: ARRAY[1..16] OF BOOL ;
+END_TYPE
+
+FUNCTION USERADD : INT
+	VAR_INPUT
+		A, B : INT;
+		C, D : TUM;
+	END_VAR
+
+	USERADD := A + B + C.B ;
+END_FUNCTION
+
+FUNCTION_BLOCK FB
+
+	VAR_INPUT
+		X : REAL := -1.01;
+		Y : INT ;
+	END_VAR
+
+	VAR_IN_OUT
+		W : INT;
+	END_VAR
+
+	VAR_OUTPUT
+		Z : INT ;
+	END_VAR
+
+	VAR
+		TMP : INT;
+	END_VAR
+
+	TMP := X + Y + 1;
+	Z := TMP;
+
+END_FUNCTION_BLOCK
+
+PROGRAM MAIN
+	VAR_INPUT
+		IN : INT ;
+	END_VAR
+
+	VAR
+		FB1 : FB;
+	END_VAR
+
+	VAR_OUTPUT
+		C : INT ;
+	END_VAR
+
+	FB1(X:=1.23, Y:=IN);
+
+	C := FB1.Z + 2;
+
+END_PROGRAM
+
+(*
+*)

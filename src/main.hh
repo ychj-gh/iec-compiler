@@ -49,7 +49,7 @@ typedef struct {
 	bool ref_nonstand_extensions;  /* Allow the use of non-standard extensions to REF_TO datatypes: REF_TO ANY, and REF_TO in struct elements! */
 	bool nonliteral_in_array_size; /* Allow the use of constant non-literals when specifying size of arrays (ARRAY [1..max] OF INT) */
 	const char *includedir;        /* Include directory, where included files will be searched for... */
-	
+
    /* options specific to stage3 */
 	bool relaxed_datatype_model;   /* Use the relaxed datatype equivalence model, instead of the default strict equivalence model */
 } runtime_options_t;
@@ -69,7 +69,7 @@ extern runtime_options_t runtime_options;
 
  /* Function used throughout the code --> used to report failed assertions (i.e. internal compiler errors)! */
 #include <stddef.h>  /* required for NULL */
- 
+
 #define ERROR               error_exit(__FILE__,__LINE__)
 #define ERROR_MSG(msg, ...) error_exit(__FILE__,__LINE__, msg, ## __VA_ARGS__)
 
@@ -84,17 +84,17 @@ extern void error_exit(const char *file_name, int line_no, const char *errmsg = 
 #ifndef __STDC_LIMIT_MACROS
 #define __STDC_LIMIT_MACROS /* required to have UINTxx_MAX defined when including stdint.h from C++ source code. */
 #endif
-#include <stdint.h>         
+#include <stdint.h>
 #include <limits>
 
-#ifndef   UINT64_MAX 
+#ifndef   UINT64_MAX
   #define UINT64_MAX (std::numeric_limits< uint64_t >::max())
 #endif
-#ifndef    INT64_MAX 
+#ifndef    INT64_MAX
   #define  INT64_MAX (std::numeric_limits<  int64_t >::max())
 #endif
 #ifndef    INT64_MIN
-  #define  INT64_MIN (std::numeric_limits<  int64_t >::min()) 
+  #define  INT64_MIN (std::numeric_limits<  int64_t >::min())
 #endif
 
 
@@ -122,7 +122,7 @@ extern void error_exit(const char *file_name, int line_no, const char *errmsg = 
   #define real64_tX float
   #define real64_t  float
   #define REAL64_MAX  FLT_MAX
-#else 
+#else
   #error Could not find a 64 bit floating point data type on this platform. Aborting...
 #endif
 
@@ -139,7 +139,7 @@ extern void error_exit(const char *file_name, int line_no, const char *errmsg = 
   #define real32_tX float
   #define real32_t  float
   #define REAL32_MAX  FLT_MAX
-#else 
+#else
   #error Could not find a 32 bit floating point data type on this platform. Aborting...
 #endif
 

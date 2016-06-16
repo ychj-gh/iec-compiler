@@ -24,7 +24,7 @@ void *generate_pou_var_declaration_c::print_list(list_c *list,
              std::string pre_elem_str ,
              std::string inter_elem_str ,
              std::string post_elem_str ) {
- 
+
   for(int i = 0; i < list->n; i++) {
     list->elements[i]->accept(*this);
   }
@@ -60,9 +60,19 @@ void *generate_pou_var_declaration_c::print_unary_expression(symbol_c *symbol,
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
 /*******************************************/
-void *generate_pou_var_declaration_c::visit(                 identifier_c *symbol) { TRACE("identifier_c"); print_token(symbol); return strdup(symbol->value); }
-void *generate_pou_var_declaration_c::visit(derived_datatype_identifier_c *symbol) { TRACE("derived_datatype_identifier_c"); return print_token(symbol);}
-void *generate_pou_var_declaration_c::visit(         poutype_identifier_c *symbol) { TRACE("poutype_identifier_c"); return print_token(symbol);}
+void *generate_pou_var_declaration_c::visit(                 identifier_c *symbol) {
+    TRACE("identifier_c"); print_token(symbol);
+    return strdup(symbol->value);
+}
+void *generate_pou_var_declaration_c::visit(derived_datatype_identifier_c *symbol) {
+    TRACE("derived_datatype_identifier_c");
+    return strdup(symbol->value);
+}
+
+void *generate_pou_var_declaration_c::visit(         poutype_identifier_c *symbol) {
+    TRACE("poutype_identifier_c");
+    return print_token(symbol);
+}
 
 /*********************/
 /* B 1.2 - Constants */
@@ -76,46 +86,46 @@ void *generate_pou_var_declaration_c::visit(ref_value_null_literal_c *symbol)  {
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *generate_pou_var_declaration_c::visit(real_c *symbol)               { 
-  TRACE("real_c"); print_token(symbol); 
+void *generate_pou_var_declaration_c::visit(real_c *symbol)               {
+  TRACE("real_c"); print_token(symbol);
   return utility_token_get_c::return_striped_token(symbol);
 }
 
-void *generate_pou_var_declaration_c::visit(integer_c *symbol)            { 
-  TRACE("integer_c"); print_token(symbol); 
+void *generate_pou_var_declaration_c::visit(integer_c *symbol)            {
+  TRACE("integer_c"); print_token(symbol);
   return utility_token_get_c::return_striped_token(symbol);
 }
 
-void *generate_pou_var_declaration_c::visit(binary_integer_c *symbol)     { 
-  TRACE("binary_integer_c"); 
+void *generate_pou_var_declaration_c::visit(binary_integer_c *symbol)     {
+  TRACE("binary_integer_c");
   return utility_token_get_c::return_striped_binary_token(symbol, 2);
 }
 
 void *generate_pou_var_declaration_c::visit(octal_integer_c *symbol)      { TRACE("octal_integer_c"); return utility_token_get_c::return_striped_octal_token(symbol, 2);}
 void *generate_pou_var_declaration_c::visit(hex_integer_c *symbol)        { TRACE("hex_integer_c"); return utility_token_get_c::return_striped_hex_token(symbol, 3);}
 
-void *generate_pou_var_declaration_c::visit(neg_real_c *symbol)           { 
-  TRACE("neg_real_c"); 
+void *generate_pou_var_declaration_c::visit(neg_real_c *symbol)           {
+  TRACE("neg_real_c");
   std::string temp_str = "-";
   temp_str += (char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp));
   return strdup(temp_str.c_str());
 }
 
-void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        { 
-  TRACE("neg_integer_c"); 
+void *generate_pou_var_declaration_c::visit(neg_integer_c *symbol)        {
+  TRACE("neg_integer_c");
   std::string temp_str = "-";
   temp_str += (char*)utility_token_get_c::return_striped_token(dynamic_cast<token_c*>(symbol->exp));
   return strdup(temp_str.c_str());
 }
 
-void *generate_pou_var_declaration_c::visit(integer_literal_c *symbol)    { 
-  TRACE("integer_literal_c"); 
+void *generate_pou_var_declaration_c::visit(integer_literal_c *symbol)    {
+  TRACE("integer_literal_c");
   return print_literal(symbol->type, symbol->value);
 }
 void *generate_pou_var_declaration_c::visit(real_literal_c *symbol)       { TRACE("real_literal_c"); return print_literal(symbol->type, symbol->value);}
 void *generate_pou_var_declaration_c::visit(bit_string_literal_c *symbol) { TRACE("bit_string_literal_c"); return print_literal(symbol->type, symbol->value);}
-void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    { 
-  TRACE("boolean_literal_c"); 
+void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    {
+  TRACE("boolean_literal_c");
   if (NULL != symbol->type) {
     symbol->type->accept(*this);
   }
@@ -123,12 +133,12 @@ void *generate_pou_var_declaration_c::visit(boolean_literal_c *symbol)    {
 }
 
 /* helper class for boolean_literal_c */
-void *generate_pou_var_declaration_c::visit(boolean_true_c *symbol)       { 
-  TRACE("boolean_true_c");  
+void *generate_pou_var_declaration_c::visit(boolean_true_c *symbol)       {
+  TRACE("boolean_true_c");
   return strdup("1");
 }
-void *generate_pou_var_declaration_c::visit(boolean_false_c *symbol)      { 
-  TRACE("boolean_false_c");  
+void *generate_pou_var_declaration_c::visit(boolean_false_c *symbol)      {
+  TRACE("boolean_false_c");
   return strdup("0");
 }
 
@@ -176,10 +186,10 @@ void *generate_pou_var_declaration_c::visit(generic_type_any_c      *symbol) {TR
 /********************************/
 /*  TYPE type_declaration_list END_TYPE */
 void *generate_pou_var_declaration_c::visit(data_type_declaration_c *symbol) {
-  TRACE("data_type_declaration_c"); 
-  
+  TRACE("data_type_declaration_c");
+
   symbol->type_declaration_list->accept(*this);
-  
+
   return NULL;
 }
 
@@ -187,16 +197,16 @@ void *generate_pou_var_declaration_c::visit(data_type_declaration_c *symbol) {
 /* helper symbol for data_type_declaration */
 /*| type_declaration_list type_declaration ';' */
 void *generate_pou_var_declaration_c::visit(type_declaration_list_c *symbol) {
-  TRACE("type_declaration_list_c"); 
+  TRACE("type_declaration_list_c");
   return print_list(symbol,  std::string(""), ";\n" + std::string(""), ";\n");
 }
 
 
 /*  simple_type_name ':' simple_spec_init */
 void *generate_pou_var_declaration_c::visit(simple_type_declaration_c *symbol) {
-  TRACE("simple_type_declaration_c"); 
+  TRACE("simple_type_declaration_c");
   symbol->simple_type_name->accept(*this);
-  
+
   symbol->simple_spec_init->accept(*this);
   return NULL;
 }
@@ -204,11 +214,11 @@ void *generate_pou_var_declaration_c::visit(simple_type_declaration_c *symbol) {
 
 /* simple_specification ASSIGN constant */
 void *generate_pou_var_declaration_c::visit(simple_spec_init_c *symbol) {
-  TRACE("simple_spec_init_c"); 
+  TRACE("simple_spec_init_c");
   var_type = (char*)symbol->simple_specification->accept(*this);
-  
+
   if (symbol->constant != NULL) {
-    
+
     var_value = (char*)symbol->constant->accept(*this);
   } else {
     var_value = "0";
@@ -217,6 +227,16 @@ void *generate_pou_var_declaration_c::visit(simple_spec_init_c *symbol) {
   return NULL;
 }
 
+/* structure_type_name ASSIGN structure_initialization */
+/* structure_initialization may be NULL ! */
+void *generate_pou_var_declaration_c::visit(initialized_structure_c *symbol) {
+  TRACE("initialized_structure_c");
+  var_type = (char*)symbol->structure_type_name->accept(*this);
+  if (symbol->structure_initialization != NULL) {
+    symbol->structure_initialization->accept(*this);
+  }
+  return NULL;
+}
 
 
 
@@ -239,9 +259,9 @@ void *generate_pou_var_declaration_c::visit(direct_variable_c *symbol) {TRACE("d
 void *generate_pou_var_declaration_c::visit(array_variable_c *symbol) {
   TRACE("array_variable_c");
   symbol->subscripted_variable->accept(*this);
-  
+
   symbol->subscript_list->accept(*this);
-  
+
   return NULL;
 }
 
@@ -251,9 +271,9 @@ void *generate_pou_var_declaration_c::visit(subscript_list_c *symbol) {TRACE("su
 
 /*  record_variable '.' field_selector */
 void *generate_pou_var_declaration_c::visit(structured_variable_c *symbol) {
-  TRACE("structured_variable_c"); 
+  TRACE("structured_variable_c");
   symbol->record_variable->accept(*this);
-  
+
   symbol->field_selector->accept(*this);
   return NULL;
 }
@@ -269,15 +289,15 @@ void *generate_pou_var_declaration_c::visit(non_retain_option_c *symbol) {TRACE(
 /* VAR_INPUT [RETAIN | NON_RETAIN] input_declaration_list END_VAR */
 /* option -> the RETAIN/NON_RETAIN/<NULL> directive... */
 void *generate_pou_var_declaration_c::visit(input_declarations_c *symbol) {
-  TRACE("input_declarations_c"); 
+  TRACE("input_declarations_c");
   pou_info->set_pou_status(POU_STA_VAR_IN_DEC);
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
 
     if (symbol->option != NULL)
       symbol->option->accept(*this);
-    
+
     symbol->input_declaration_list->accept(*this);
-    
+
   }
   return NULL;
 }
@@ -285,14 +305,14 @@ void *generate_pou_var_declaration_c::visit(input_declarations_c *symbol) {
 /* helper symbol for input_declarations */
 /*| input_declaration_list input_declaration ';' */
 void *generate_pou_var_declaration_c::visit(input_declaration_list_c *symbol) {
-  TRACE("input_declaration_list_c"); 
+  TRACE("input_declaration_list_c");
 
   return print_list(symbol, std::string(""), ";\n" + std::string(""), ";\n");
 }
 
 /* edge -> The F_EDGE or R_EDGE directive */
 void *generate_pou_var_declaration_c::visit(edge_declaration_c *symbol) {
-  TRACE("edge_declaration_c"); 
+  TRACE("edge_declaration_c");
   symbol->var1_list->accept(*this);
 
   symbol->edge->accept(*this);
@@ -305,7 +325,7 @@ void *generate_pou_var_declaration_c::visit(implicit_definition_c *symbol) {TRAC
 
 /* EN : BOOL := 1 */
 void *generate_pou_var_declaration_c::visit(en_param_declaration_c *symbol) {
-  TRACE("en_param_declaration_c"); 
+  TRACE("en_param_declaration_c");
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     symbol->name->accept(*this);
 
@@ -316,7 +336,7 @@ void *generate_pou_var_declaration_c::visit(en_param_declaration_c *symbol) {
 
 /* ENO : BOOL */
 void *generate_pou_var_declaration_c::visit(eno_param_declaration_c *symbol) {
-  TRACE("eno_param_declaration_c"); 
+  TRACE("eno_param_declaration_c");
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     symbol->name->accept(*this);
 
@@ -326,13 +346,13 @@ void *generate_pou_var_declaration_c::visit(eno_param_declaration_c *symbol) {
 }
 
 void *generate_pou_var_declaration_c::visit(raising_edge_option_c *symbol) {
-  TRACE("raising_edge_option_c"); 
+  TRACE("raising_edge_option_c");
 
   return NULL;
 }
 
 void *generate_pou_var_declaration_c::visit(falling_edge_option_c *symbol) {
-  TRACE("falling_edge_option_c"); 
+  TRACE("falling_edge_option_c");
 
   return NULL;
 }
@@ -351,7 +371,7 @@ void *generate_pou_var_declaration_c::visit(var1_init_decl_c *symbol) {
   if((ivt = pou_info->variable_type_check(var_type)) == TUNDEF){
      ERROR_MSG("variable type check error!");
   }
-  
+
   for(auto elem : var_name_set) {
     IValue iv;
     iv.type = ivt;
@@ -402,11 +422,50 @@ void *generate_pou_var_declaration_c::visit(var1_list_c *symbol) {
   return NULL;
 }
 
+/*  var1_list ':' initialized_structure */
+void *generate_pou_var_declaration_c::visit(structured_var_init_decl_c *symbol) {
+  TRACE("structured_var_init_decl_c");
+  symbol->var1_list->accept(*this);
+
+  symbol->initialized_structure->accept(*this);
+
+  pre_generate_info_c *code_info = pre_generate_info_c::getInstance();
+  struct_type_c temp_struct_var;
+  for(auto elem : code_info->struct_type_collector){    // 查找结构变量对应类型
+      if(elem.struct_name == var_type){
+          temp_struct_var = elem;
+          break;
+      }
+  }
+  for(auto elem : var_name_set){            // 将结构体变量加入结构体变量集中
+      temp_struct_var.struct_name = var_type + " " + elem; // 将结构体变量集中的变量名设为类型名+变量名的形式
+      pou_info->struct_var_collector.push_back(temp_struct_var);
+
+    //   /* 将结构体变量索引信息加入POU变量集中, 暂时放一放 */
+    //   IValue iv;
+    //   iv.name = elem;
+    //   iv.type = TREF;
+    //   iv.v.value_p.ref_type = strdup(var_type.c_str());
+    //   iv.v.value_p.value_index = pou_info->struct_var_collector.size() - 1;
+    //   if(POU_STA_VAR_IN_DEC == pou_info->get_pou_status())
+    //     pou_info->input_variable.push_back(iv);
+    //   else if(POU_STA_VAR_OUT_DEC == pou_info->get_pou_status())
+    //     pou_info->output_variable.push_back(iv);
+    //   else if(POU_STA_VAR_INOUT_DEC == pou_info->get_pou_status())
+    //     pou_info->input_output_variable.push_back(iv);
+    //   else if(POU_STA_VAR_LOCAL_DEC == pou_info->get_pou_status())
+    //     pou_info->local_variable.push_back(iv);
+    //   else
+    //     ERROR_MSG("wrong pou status !");
+  }
+
+  return NULL;
+}
 
 /* VAR_OUTPUT [RETAIN | NON_RETAIN] var_init_decl_list END_VAR */
 /* option -> may be NULL ! */
 void *generate_pou_var_declaration_c::visit(output_declarations_c *symbol) {
-  TRACE("output_declarations_c"); 
+  TRACE("output_declarations_c");
   pou_info->set_pou_status(POU_STA_VAR_OUT_DEC);
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
 
@@ -421,7 +480,7 @@ void *generate_pou_var_declaration_c::visit(output_declarations_c *symbol) {
 
 /*  VAR_IN_OUT  END_VAR */
 void *generate_pou_var_declaration_c::visit(input_output_declarations_c *symbol) {
-  TRACE("input_output_declarations_c"); 
+  TRACE("input_output_declarations_c");
   pou_info->set_pou_status(POU_STA_VAR_INOUT_DEC);
   symbol->var_declaration_list->accept(*this);
   return NULL;
@@ -430,7 +489,7 @@ void *generate_pou_var_declaration_c::visit(input_output_declarations_c *symbol)
 /* helper symbol for input_output_declarations */
 /* var_declaration_list var_declaration ';' */
 void *generate_pou_var_declaration_c::visit(var_declaration_list_c *symbol) {
-  TRACE("var_declaration_list_c"); 
+  TRACE("var_declaration_list_c");
   return print_list(symbol);
 }
 
@@ -630,14 +689,14 @@ void *generate_pou_var_declaration_c::visit(var_init_decl_list_c *symbol) {
 /***********************/
 
 /* intermediate helper symbol for function_declaration */
-void *generate_pou_var_declaration_c::visit(var_declarations_list_c *symbol) { 
-  TRACE("var_declarations_list_c"); 
+void *generate_pou_var_declaration_c::visit(var_declarations_list_c *symbol) {
+  TRACE("var_declarations_list_c");
   pou_info->set_pou_status(POU_STA_VAR_DEC);
   return print_list(symbol);
 }
 
 void *generate_pou_var_declaration_c::visit(function_var_decls_c *symbol) {
-  TRACE("function_var_decls_c"); 
+  TRACE("function_var_decls_c");
   pou_info->set_pou_status(POU_STA_VAR_LOCAL_DEC);
 
   if (symbol->option != NULL)
@@ -650,7 +709,7 @@ void *generate_pou_var_declaration_c::visit(function_var_decls_c *symbol) {
 
 /* intermediate helper symbol for function_var_decls */
 void *generate_pou_var_declaration_c::visit(var2_init_decl_list_c *symbol) {
-  TRACE("var2_init_decl_list_c"); 
+  TRACE("var2_init_decl_list_c");
   print_list(symbol, std::string(""), ";\n" + std::string(""), ";\n");
   return NULL;
 }
@@ -660,7 +719,7 @@ void *generate_pou_var_declaration_c::visit(var2_init_decl_list_c *symbol) {
 /*****************************/
 /*  VAR_TEMP temp_var_decl_list END_VAR */
 void *generate_pou_var_declaration_c::visit(temp_var_decls_c *symbol) {
-  TRACE("temp_var_decls_c"); 
+  TRACE("temp_var_decls_c");
 
   symbol->var_decl_list->accept(*this);
 
@@ -672,10 +731,9 @@ void *generate_pou_var_declaration_c::visit(temp_var_decls_list_c *symbol) {TRAC
 
 /*  VAR NON_RETAIN var_init_decl_list END_VAR */
 void *generate_pou_var_declaration_c::visit(non_retentive_var_decls_c *symbol) {
-  TRACE("non_retentive_var_decls_c"); 
+  TRACE("non_retentive_var_decls_c");
 
   symbol->var_decl_list->accept(*this);
 
   return NULL;
 }
-

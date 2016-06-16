@@ -7,7 +7,7 @@ FUNCTION_BLOCK PID
     KP : REAL; (* Proportionality Gain *)
     TI : REAL; (* Reaet Time *)
     TD : REAL; (* Derivative Time *)
-    TS : TIME; (* Sampling Period *)
+    TS : UINT; (* Sampling Period *)
   END_VAR
   VAR_OUTPUT
     OUT : REAL;
@@ -23,13 +23,13 @@ FUNCTION_BLOCK PID
   IF (TI > 1.0e6 OR NOT AUTO) THEN 
     OUTI := 0.0;
   ELSIF AUTO THEN 
-    OUTI := OUTI + ERR * TIME_TO_REAL(TS);
+    OUTI := OUTI + ERR * TS;
   END_IF;
 
   IF NOT AUTO THEN 
     OUT := X0;
   ELSE 
-    OUTD := (ERR - X1) / TIME_TO_REAL(TS);
+    OUTD := (ERR - X1) / TS;
     X1 := ERR;
     OUT := KP * (ERR + OUTI / TI + OUTD * TD);
   END_IF;

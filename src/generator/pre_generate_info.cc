@@ -7,16 +7,31 @@ internal_value_t pre_generate_pou_info_c::variable_type_check(std::string type)
 {
 	if(type == "SINT" || type == "INT" || type == "DINT" || type == "LINT")
 		return TINT;
-	else if(type == "USINT" || type == "UINT" || type == "UDINT" || type == "ULINT" 
+	else if(type == "USINT" || type == "UINT" || type == "UDINT" || type == "ULINT"
 		|| type == "BYTE" || type == "WORD" || type == "LWORD" || type == "DWORD" || type == "BOOL")
 		return TUINT;
 	else if(type == "REAL" || type == "LREAL")
 		return TDOUBLE;
 	else if(type == "STRING" || type == "WSTRING")
 		return TSTRING;
-	else
+	else {		// 处理复合数据类型或未定义类型
+		pre_generate_info_c &pre_code_info = *(pre_generate_info_c::getInstance());
+		for(auto elem : pre_code_info.struct_type_collector){
+			if(elem.struct_name == type){
+				return TREF;
+			}
+		}
+
+		for(auto elem : pre_code_info.array_type_collector){
+			if(elem.array_name == type){
+				return TREF;
+			}
+		}
+
 		return TUNDEF;
-	
+	}
+
+
 }
 
 int pre_generate_pou_info_c::find_var_return_num(std::string var_name)
@@ -46,11 +61,19 @@ int pre_generate_pou_info_c::find_var_return_num(std::string var_name)
 		}
 		count ++;
 	}
+	count = 0;
+	for(auto elem : struct_var_collector){
+		std::vector<std::string> str = utility_token_get_c::split(elem.struct_name, " ");
+		if (str[1] == var_name){
+			return count;
+		}
+		count ++;
+	}
 	return -1;
 }
 
 void pre_generate_pou_info_c::print(void)
-{  
+{
 	std::cout << std::endl;
 	std::cout << "++++++POU INFO START++++++" << std::endl;
 	std::cout << "pou name: " << pou_name << std::endl;
@@ -68,7 +91,8 @@ void pre_generate_pou_info_c::print_detail_info(void)
 	unsigned int count = 0 ;
 	std::cout << std::endl;
 	std::cout << "++++++POU DETAIL INFO START++++++" << std::endl;
-	std::cout << "pou name: " << pou_name << std::endl;
+	std::cout << "pou name: " << pou_name << ", pou type: "
+			  << ((pou_type == POU_TYPE_FUN) ? "FUN" : ((pou_type == POU_TYPE_FB) ? "FB" : (pou_type == POU_TYPE_PROG ? "PROG" : "UNDEF") )) << std::endl;
 	std::cout << "--------------VAR----------------" << std::endl;
 	std::cout << "input number: " << input_variable.size() << std::endl;
 	for(auto elem : input_variable)
@@ -102,11 +126,7 @@ void pre_generate_pou_info_c::print_detail_info(void)
 
 
 
-
-pre_generate_info_c::pre_generate_info_c()
-{
-
-}
+pre_generate_info_c *pre_generate_info_c::singleton = NULL;
 
 bool pre_generate_info_c::insert(pre_generate_pou_info_c info)
 {
@@ -142,4 +162,23 @@ void pre_generate_info_c::print(void)
 		elem.print();
 	std::cout << std::endl;
 	std::cout << "|+++++CONFIGURATION INFO END+++++|" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "|++++STRUCT_TYPE INFO START++++|" << std::endl;
+	for(auto elem : struct_type_collector){
+		elem.print();
+		std::cout << "    --------------      "     << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "|++++STRUCT_TYPE INFO END++++++|" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "|++++ARRAY_TYPE INFO START++++|" << std::endl;
+	for(auto elem : array_type_collector){
+		elem.print();
+		std::cout << "    --------------      "     << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "|++++ARRAY_TYPE INFO END++++++|" << std::endl;
+
 }

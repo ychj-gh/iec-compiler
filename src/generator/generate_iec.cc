@@ -37,7 +37,10 @@
 #include "utility_case_exp_value.hh"
 #include "generate_pou_invocation.hh"
 #include "generate_configuration.hh"
+#include "generate_struct.hh"
+#include "generate_array.hh"
 #include "code_linker.hh"
+
 
 
 
@@ -52,7 +55,7 @@
 int  stage4_parse_options(char *options) {return 0;}
 
 void stage4_print_options(void) {
-  printf("          (no options available when generating IEC 61131-3 code)\n"); 
+  printf("          (no options available when generating IEC 61131-3 code)\n");
 }
 
 /***********************************************************************/
@@ -67,23 +70,27 @@ class generate_iec_c: public visitor_c {
     stage4out_c &s4o;
 
 #ifdef _CODE_GENERATOR
-    pre_generate_info_c pre_code_info;
+    pre_generate_info_c *pre_code_info ;
     pre_generate_pou_info_c* pou_info;
 #endif
 
   public:
-    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {}
+    generate_iec_c(stage4out_c *s4o_ptr): s4o(*s4o_ptr) {
+#ifdef _CODE_GENERATOR
+        pre_code_info = pre_generate_info_c::getInstance();
+#endif
+    }
     ~generate_iec_c(void) {}
 
 
   private:
 
-    
+
 void print_const_value(symbol_c *symbol) {
 #ifdef DEBUG_CONST_VALUE
   if (NULL == symbol) return;
   bool first = true;
-  
+
   if (NULL != symbol->const_value_uint64) {
     first?s4o.print("{"):s4o.print("; ");
     first = false;
@@ -120,7 +127,7 @@ void print_const_value(symbol_c *symbol) {
     if (symbol->const_value_bool->status == symbol_c::cs_overflow)
     s4o.print("OVERFLOW");
   }
-  if (!first) s4o.print("}");  
+  if (!first) s4o.print("}");
 #endif
   return;
 }
@@ -245,42 +252,42 @@ void *visit(pragma_c *symbol)                  {TRACE("pragma_c"); return print_
 /* B 0 - Programming Model */
 /***************************/
 void *visit(library_c *symbol) {
-  TRACE("library_c"); 
+  TRACE("library_c");
 #ifdef _CODE_GENERATOR
-  code_linker_c temp_code_linker(&pre_code_info);
+  code_linker_c temp_code_linker(pre_code_info);
 
   print_list(symbol);
-  pre_code_info.print();
+  pre_code_info->print();
 
   temp_code_linker.link_code();
   temp_code_linker.print();
   return NULL;
 #else
   return print_list(symbol);
-#endif 
-  
+#endif
+
 }
 
 /*******************************************/
 /* B 1.1 - Letters, digits and identifiers */
 /*******************************************/
-void *visit(                 identifier_c *symbol) { 
-	TRACE("identifier_c"); 
+void *visit(                 identifier_c *symbol) {
+	TRACE("identifier_c");
 #ifdef _CODE_GENERATOR
-	print_token(symbol); 
-	return strdup(symbol->value); 
+	print_token(symbol);
+	return strdup(symbol->value);
 #else
 	return print_token(symbol);
 #endif
 }
 void *visit(derived_datatype_identifier_c *symbol) { TRACE("derived_datatype_identifier_c"); return print_token(symbol);}
-void *visit(         poutype_identifier_c *symbol) { 
+void *visit(         poutype_identifier_c *symbol) {
 #ifdef _CODE_GENERATOR
-  TRACE("poutype_identifier_c"); 
+  TRACE("poutype_identifier_c");
   print_token(symbol);
-  return strdup(symbol->value); 
+  return strdup(symbol->value);
 #else
-  TRACE("poutype_identifier_c"); 
+  TRACE("poutype_identifier_c");
   return print_token(symbol);
 #endif
 }
@@ -297,26 +304,26 @@ void *visit(ref_value_null_literal_c *symbol)  { TRACE("ref_value_null_literal_c
 /******************************/
 /* B 1.2.1 - Numeric Literals */
 /******************************/
-void *visit(real_c *symbol)               { 
-	TRACE("real_c"); 
+void *visit(real_c *symbol)               {
+	TRACE("real_c");
 #ifdef _CODE_GENERATOR
-	print_token(symbol); 
+	print_token(symbol);
 	return utility_token_get_c::return_striped_token(symbol);
 #else
 	return print_token(symbol);
 #endif
 }
-void *visit(integer_c *symbol)            { 
-	TRACE("integer_c"); 
+void *visit(integer_c *symbol)            {
+	TRACE("integer_c");
 #ifdef _CODE_GENERATOR
-	print_token(symbol); 
+	print_token(symbol);
 	return utility_token_get_c::return_striped_token(symbol);
 #else
 	return print_token(symbol);
 #endif
 }
-void *visit(binary_integer_c *symbol)     { 
-  TRACE("binary_integer_c"); 
+void *visit(binary_integer_c *symbol)     {
+  TRACE("binary_integer_c");
 #ifdef _CODE_GENERATOR
   return utility_token_get_c::return_striped_binary_token(symbol, 2);
 #else
@@ -324,16 +331,16 @@ void *visit(binary_integer_c *symbol)     {
 #endif
 }
 
-void *visit(octal_integer_c *symbol)      { 
-	TRACE("octal_integer_c"); 
+void *visit(octal_integer_c *symbol)      {
+	TRACE("octal_integer_c");
 #ifdef _CODE_GENERATOR
 	return utility_token_get_c::return_striped_octal_token(symbol, 2);
 #else
 	return print_token(symbol);
 #endif
 }
-void *visit(hex_integer_c *symbol)        { 
-	TRACE("hex_integer_c"); 
+void *visit(hex_integer_c *symbol)        {
+	TRACE("hex_integer_c");
 #ifdef _CODE_GENERATOR
 	return utility_token_get_c::return_striped_hex_token(symbol, 3);
 #else
@@ -522,7 +529,7 @@ void *visit(generic_type_any_c      *symbol) {TRACE("generic_type_any_c"); s4o.p
 /********************************/
 /*  TYPE type_declaration_list END_TYPE */
 void *visit(data_type_declaration_c *symbol) {
-  TRACE("data_type_declaration_c"); 
+  TRACE("data_type_declaration_c");
   s4o.print("TYPE\n");
   s4o.indent_right();
   symbol->type_declaration_list->accept(*this);
@@ -535,14 +542,14 @@ void *visit(data_type_declaration_c *symbol) {
 /* helper symbol for data_type_declaration */
 /*| type_declaration_list type_declaration ';' */
 void *visit(type_declaration_list_c *symbol) {
-  TRACE("type_declaration_list_c"); 
+  TRACE("type_declaration_list_c");
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
 
 /*  simple_type_name ':' simple_spec_init */
 void *visit(simple_type_declaration_c *symbol) {
-  TRACE("simple_type_declaration_c"); 
+  TRACE("simple_type_declaration_c");
   symbol->simple_type_name->accept(*this);
   s4o.print(" : ");
   symbol->simple_spec_init->accept(*this);
@@ -553,10 +560,10 @@ std::string var_value;
 std::string var_type;
 /* simple_specification ASSIGN constant */
 void *visit(simple_spec_init_c *symbol) {
-  TRACE("simple_spec_init_c"); 
+  TRACE("simple_spec_init_c");
 #ifdef _CODE_GENERATOR
   var_type = (char*)symbol->simple_specification->accept(*this);
-  
+
   if (symbol->constant != NULL) {
     s4o.print(" := ");
     var_value = (char*)symbol->constant->accept(*this);
@@ -576,7 +583,7 @@ void *visit(simple_spec_init_c *symbol) {
 
 /*  subrange_type_name ':' subrange_spec_init */
 void *visit(subrange_type_declaration_c *symbol) {
-  TRACE("subrange_type_declaration_c"); 
+  TRACE("subrange_type_declaration_c");
   symbol->subrange_type_name->accept(*this);
   s4o.print(" : ");
   symbol->subrange_spec_init->accept(*this);
@@ -585,7 +592,7 @@ void *visit(subrange_type_declaration_c *symbol) {
 
 /* subrange_specification ASSIGN signed_integer */
 void *visit(subrange_spec_init_c *symbol) {
-  TRACE("subrange_spec_init_c"); 
+  TRACE("subrange_spec_init_c");
   symbol->subrange_specification->accept(*this);
   if (symbol->signed_integer != NULL) {
     s4o.print(" := ");
@@ -596,7 +603,7 @@ void *visit(subrange_spec_init_c *symbol) {
 
 /*  integer_type_name '(' subrange')' */
 void *visit(subrange_specification_c *symbol) {
-  TRACE("subrange_specification_c"); 
+  TRACE("subrange_specification_c");
   symbol->integer_type_name->accept(*this);
   if (symbol->subrange != NULL) {
     s4o.print("(");
@@ -608,7 +615,7 @@ void *visit(subrange_specification_c *symbol) {
 
 /*  signed_integer DOTDOT signed_integer */
 void *visit(subrange_c *symbol) {
-  TRACE("subrange_c"); 
+  TRACE("subrange_c");
   symbol->lower_limit->accept(*this);
   s4o.print(" .. ");
   symbol->upper_limit->accept(*this);
@@ -617,7 +624,7 @@ void *visit(subrange_c *symbol) {
 
 /*  enumerated_type_name ':' enumerated_spec_init */
 void *visit(enumerated_type_declaration_c *symbol) {
-  TRACE("enumerated_type_declaration_c"); 
+  TRACE("enumerated_type_declaration_c");
   symbol->enumerated_type_name->accept(*this);
   s4o.print(" : ");
   symbol->enumerated_spec_init->accept(*this);
@@ -626,7 +633,7 @@ void *visit(enumerated_type_declaration_c *symbol) {
 
 /* enumerated_specification ASSIGN enumerated_value */
 void *visit(enumerated_spec_init_c *symbol) {
-  TRACE("enumerated_spec_init_c"); 
+  TRACE("enumerated_spec_init_c");
   symbol->enumerated_specification->accept(*this);
   if (symbol->enumerated_value != NULL) {
     s4o.print(" := ");
@@ -641,7 +648,7 @@ void *visit(enumerated_value_list_c *symbol) {TRACE("enumerated_value_list_c"); 
 
 /* enumerated_type_name '#' identifier */
 void *visit(enumerated_value_c *symbol) {
-  TRACE("enumerated_value_c"); 
+  TRACE("enumerated_value_c");
   if (symbol->type != NULL) {
     symbol->type->accept(*this);
     s4o.print("#");
@@ -652,17 +659,38 @@ void *visit(enumerated_value_c *symbol) {
 
 /*  identifier ':' array_spec_init */
 void *visit(array_type_declaration_c *symbol) {
-  TRACE("array_type_declaration_c"); 
-  symbol->identifier->accept(*this);
+  TRACE("array_type_declaration_c");
+ #ifdef _CODE_GENERATOR
+  array_type_c temp_array_type;     // 定义数组类型变量描述结构体
+  generate_array_c temp_array_c(&temp_array_type);
+  temp_array_type.array_name = (char*)symbol->identifier->accept(temp_array_c);
   s4o.print(" : ");
-  symbol->array_spec_init->accept(*this);
+  symbol->array_spec_init->accept(temp_array_c);
+
+  int actual_size = temp_array_type.init_value.size();  // 数组中已显式初始化元素个数
+  int array_size = temp_array_type.size;    // 数组实际大小
+  std::cout << actual_size << " : " << array_size << std::endl;
+  if(actual_size < array_size){ // 将数组中未显式初始化的元素初始化为0
+      for(int i = 0; i < array_size - actual_size; i ++){
+          IValue iv;
+          iv.type = temp_array_type.type;
+          temp_array_type.init_value.push_back(iv);
+      }
+  }
+
+  pre_code_info->array_type_collector.push_back(temp_array_type);
+#else
+    symbol->identifier->accept(*this);
+    s4o.print(" : ");
+    symbol->array_spec_init->accept(*this);
+#endif
   return NULL;
 }
 
 /* array_specification [ASSIGN array_initialization} */
 /* array_initialization may be NULL ! */
 void *visit(array_spec_init_c *symbol) {
-  TRACE("array_spec_init_c"); 
+  TRACE("array_spec_init_c");
   symbol->array_specification->accept(*this);
   if (symbol->array_initialization != NULL) {
     s4o.print(" := ");
@@ -673,7 +701,7 @@ void *visit(array_spec_init_c *symbol) {
 
 /* ARRAY '[' array_subrange_list ']' OF non_generic_type_name */
 void *visit(array_specification_c *symbol) {
-  TRACE("array_specification_c"); 
+  TRACE("array_specification_c");
   s4o.print("ARRAY [");
   symbol->array_subrange_list->accept(*this);
   s4o.print("] OF ");
@@ -704,9 +732,19 @@ void *visit(array_initial_elements_c *symbol) {
 /*  structure_type_name ':' structure_specification */
 void *visit(structure_type_declaration_c *symbol) {
   TRACE("structure_type_declaration_c");
-  symbol->structure_type_name->accept(*this);
+#ifdef _CODE_GENERATOR
+  struct_type_c temp_struct_type;
+  generate_struct_c temp_struct_c(&temp_struct_type);
+  temp_struct_type.struct_name = (char*)symbol->structure_type_name->accept(temp_struct_c);
   s4o.print(" : ");
-  symbol->structure_specification->accept(*this);
+  symbol->structure_specification->accept(temp_struct_c);
+  // temp_struct_type.print();
+  pre_code_info->struct_type_collector.push_back(temp_struct_type);
+#else
+    symbol->structure_type_name->accept(*this);
+    s4o.print(" : ");
+    symbol->structure_specification->accept(*this);
+#endif
   return NULL;
 }
 
@@ -751,7 +789,7 @@ void *visit(structure_element_initialization_list_c *symbol) {TRACE("structure_e
 
 /*  structure_element_name ASSIGN value */
 void *visit(structure_element_initialization_c *symbol) {
-  TRACE("structure_element_initialization_c"); 
+  TRACE("structure_element_initialization_c");
   symbol->structure_element_name->accept(*this);
   s4o.print(" := ");
   symbol->value->accept(*this);
@@ -760,7 +798,7 @@ void *visit(structure_element_initialization_c *symbol) {
 
 /*  string_type_name ':' elementary_string_type_name string_type_declaration_size string_type_declaration_init */
 void *visit(string_type_declaration_c *symbol) {
-  TRACE("string_type_declaration_c"); 
+  TRACE("string_type_declaration_c");
   symbol->string_type_name->accept(*this);
   s4o.print(" : ");
   symbol->elementary_string_type_name->accept(*this);
@@ -773,7 +811,7 @@ void *visit(string_type_declaration_c *symbol) {
 /*  function_block_type_name ASSIGN structure_initialization */
 /* structure_initialization -> may be NULL ! */
 void *visit(fb_spec_init_c *symbol) {
-  TRACE("fb_spec_init_c"); 
+  TRACE("fb_spec_init_c");
   symbol->function_block_type_name->accept(*this);
   if (symbol->structure_initialization != NULL) {
     s4o.print(" := ");
@@ -787,18 +825,18 @@ void *visit(fb_spec_init_c *symbol) {
 /* ref_spec:  REF_TO (non_generic_type_name | function_block_type_name) */
 // SYM_REF1(ref_spec_c, type_name)
 void *visit(ref_spec_c *symbol) {
-  TRACE("ref_spec_c"); 
+  TRACE("ref_spec_c");
   s4o.print("REF_TO ");
   symbol->type_name->accept(*this);
   return NULL;
 }
 
 /* For the moment, we do not support initialising reference data types */
-/* ref_spec_init: ref_spec [ ASSIGN ref_initialization ]; */ 
+/* ref_spec_init: ref_spec [ ASSIGN ref_initialization ]; */
 /* NOTE: ref_initialization may be NULL!! */
 // SYM_REF2(ref_spec_init_c, ref_spec, ref_initialization)
 void *visit(ref_spec_init_c *symbol) {
-  TRACE("ref_spec_init_c"); 
+  TRACE("ref_spec_init_c");
   symbol->ref_spec->accept(*this);
   if (symbol->ref_initialization != NULL) {
     s4o.print(" := ");
@@ -810,7 +848,7 @@ void *visit(ref_spec_init_c *symbol) {
 /* ref_type_decl: identifier ':' ref_spec_init */
 // SYM_REF2(ref_type_decl_c, ref_type_name, ref_spec_init)
 void *visit(ref_type_decl_c *symbol) {
-  TRACE("ref_type_decl_c"); 
+  TRACE("ref_type_decl_c");
   symbol->ref_type_name->accept(*this);
   s4o.print(" : ");
   symbol->ref_spec_init->accept(*this);
@@ -827,7 +865,10 @@ void *visit(ref_type_decl_c *symbol) {
 /*********************/
 /* B 1.4 - Variables */
 /*********************/
-void *visit(symbolic_variable_c *symbol) {TRACE("symbolic_variable_c"); return symbol->var_name->accept(*this);}
+void *visit(symbolic_variable_c *symbol) {
+    TRACE("symbolic_variable_c");
+    return symbol->var_name->accept(*this);
+}
 void *visit(symbolic_constant_c *symbol) {TRACE("symbolic_constant_c"); return symbol->var_name->accept(*this);}
 
 /********************************************/
@@ -855,7 +896,7 @@ void *visit(subscript_list_c *symbol) {TRACE("subscript_list_c"); return print_l
 
 /*  record_variable '.' field_selector */
 void *visit(structured_variable_c *symbol) {
-  TRACE("structured_variable_c"); 
+  TRACE("structured_variable_c");
   symbol->record_variable->accept(*this);
   s4o.print(".");
   symbol->field_selector->accept(*this);
@@ -873,7 +914,7 @@ void *visit(non_retain_option_c *symbol) {TRACE("non_retain_option_c"); s4o.prin
 /* VAR_INPUT [RETAIN | NON_RETAIN] input_declaration_list END_VAR */
 /* option -> the RETAIN/NON_RETAIN/<NULL> directive... */
 void *visit(input_declarations_c *symbol) {
-  TRACE("input_declarations_c"); 
+  TRACE("input_declarations_c");
 #ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_IN_DEC);
 #endif
@@ -893,14 +934,14 @@ void *visit(input_declarations_c *symbol) {
 /* helper symbol for input_declarations */
 /*| input_declaration_list input_declaration ';' */
 void *visit(input_declaration_list_c *symbol) {
-  TRACE("input_declaration_list_c"); 
+  TRACE("input_declaration_list_c");
 
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
 /* edge -> The F_EDGE or R_EDGE directive */
 void *visit(edge_declaration_c *symbol) {
-  TRACE("edge_declaration_c"); 
+  TRACE("edge_declaration_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : BOOL ");
   symbol->edge->accept(*this);
@@ -913,7 +954,7 @@ void *visit(implicit_definition_c *symbol) {TRACE("implicit_definition_c"); retu
 
 /* EN : BOOL := 1 */
 void *visit(en_param_declaration_c *symbol) {
-  TRACE("en_param_declaration_c"); 
+  TRACE("en_param_declaration_c");
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     symbol->name->accept(*this);
     s4o.print(" : ");
@@ -924,7 +965,7 @@ void *visit(en_param_declaration_c *symbol) {
 
 /* ENO : BOOL */
 void *visit(eno_param_declaration_c *symbol) {
-  TRACE("eno_param_declaration_c"); 
+  TRACE("eno_param_declaration_c");
   if (typeid(*(symbol->method)) == typeid(explicit_definition_c)) {
     symbol->name->accept(*this);
     s4o.print(" : ");
@@ -934,13 +975,13 @@ void *visit(eno_param_declaration_c *symbol) {
 }
 
 void *visit(raising_edge_option_c *symbol) {
-  TRACE("raising_edge_option_c"); 
+  TRACE("raising_edge_option_c");
   s4o.print("R_EDGE");
   return NULL;
 }
 
 void *visit(falling_edge_option_c *symbol) {
-  TRACE("falling_edge_option_c"); 
+  TRACE("falling_edge_option_c");
   s4o.print("F_EDGE");
   return NULL;
 }
@@ -962,7 +1003,7 @@ void *visit(var1_init_decl_c *symbol) {
   if((ivt = pou_info->variable_type_check(var_type)) == TUNDEF){
      ERROR_MSG("variable type check error!");
   }
-  
+
   for(auto elem : var_name_set) {
     IValue iv;
     iv.type = ivt;
@@ -1030,18 +1071,18 @@ void *visit(var1_list_c *symbol) {
  *
  * This allows us to parse the declaration of standard
  * extensible functions and load their interface definition
- * into the abstract syntax tree just like we do to other 
+ * into the abstract syntax tree just like we do to other
  * user defined functions.
  * This has the advantage that we can later do semantic
  * checking of calls to functions (be it a standard or user defined
  * function) in (almost) exactly the same way.
  *
  * Of course, we have a flag that disables this syntax when parsing user
- * written code, so we only allow this extra syntax while parsing the 
+ * written code, so we only allow this extra syntax while parsing the
  * 'header' file that declares all the standard IEC 61131-3 functions.
  */
 void *visit(extensible_input_parameter_c *symbol) {
-  TRACE("extensible_input_parameter_c"); 
+  TRACE("extensible_input_parameter_c");
   symbol->var_name->accept(*this);
   s4o.print(" .. ");
   return NULL;
@@ -1050,7 +1091,7 @@ void *visit(extensible_input_parameter_c *symbol) {
 
 /* var1_list ':' array_spec_init */
 void *visit(array_var_init_decl_c *symbol) {
-  TRACE("array_var_init_decl_c"); 
+  TRACE("array_var_init_decl_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
   symbol->array_spec_init->accept(*this);
@@ -1060,7 +1101,7 @@ void *visit(array_var_init_decl_c *symbol) {
 
 /*  var1_list ':' initialized_structure */
 void *visit(structured_var_init_decl_c *symbol) {
-  TRACE("structured_var_init_decl_c"); 
+  TRACE("structured_var_init_decl_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
   symbol->initialized_structure->accept(*this);
@@ -1070,7 +1111,7 @@ void *visit(structured_var_init_decl_c *symbol) {
 /* name_list ':' function_block_type_name ASSIGN structure_initialization */
 /* structure_initialization -> may be NULL ! */
 void *visit(fb_name_decl_c *symbol) {
-  TRACE("fb_name_decl_c"); 
+  TRACE("fb_name_decl_c");
   symbol->fb_name_list->accept(*this);
   s4o.print(" : ");
   symbol->fb_spec_init->accept(*this);
@@ -1083,7 +1124,7 @@ void *visit(fb_name_list_c *symbol) {TRACE("fb_name_list_c"); return print_list(
 /* VAR_OUTPUT [RETAIN | NON_RETAIN] var_init_decl_list END_VAR */
 /* option -> may be NULL ! */
 void *visit(output_declarations_c *symbol) {
-  TRACE("output_declarations_c"); 
+  TRACE("output_declarations_c");
 #ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_OUT_DEC);
 #endif
@@ -1102,7 +1143,7 @@ void *visit(output_declarations_c *symbol) {
 
 /*  VAR_IN_OUT  END_VAR */
 void *visit(input_output_declarations_c *symbol) {
-  TRACE("input_output_declarations_c"); 
+  TRACE("input_output_declarations_c");
 #ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_INOUT_DEC);
 #endif
@@ -1118,13 +1159,13 @@ void *visit(input_output_declarations_c *symbol) {
 /* helper symbol for input_output_declarations */
 /* var_declaration_list var_declaration ';' */
 void *visit(var_declaration_list_c *symbol) {
-  TRACE("var_declaration_list_c"); 
+  TRACE("var_declaration_list_c");
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
 /*  var1_list ':' array_specification */
 void *visit(array_var_declaration_c *symbol) {
-  TRACE("array_var_declaration_c"); 
+  TRACE("array_var_declaration_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
   symbol->array_specification->accept(*this);
@@ -1133,7 +1174,7 @@ void *visit(array_var_declaration_c *symbol) {
 
 /*  var1_list ':' structure_type_name */
 void *visit(structured_var_declaration_c *symbol) {
-  TRACE("structured_var_declaration_c"); 
+  TRACE("structured_var_declaration_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
   symbol->structure_type_name->accept(*this);
@@ -1290,7 +1331,7 @@ void *visit(global_var_list_c *symbol) {TRACE("global_var_list_c"); return print
 
 /*  var1_list ':' single_byte_string_spec */
 void *visit(single_byte_string_var_declaration_c *symbol) {
-  TRACE("single_byte_string_var_declaration_c"); 
+  TRACE("single_byte_string_var_declaration_c");
   symbol->var1_list->accept(*this);
   s4o.print(" : ");
   symbol->single_byte_string_spec->accept(*this);
@@ -1300,7 +1341,7 @@ void *visit(single_byte_string_var_declaration_c *symbol) {
 /*  single_byte_limited_len_string_spec [ASSIGN single_byte_character_string] */
 /* single_byte_character_string ->may be NULL ! */
 void *visit(single_byte_string_spec_c *symbol) {
-  TRACE("single_byte_string_spec_c"); 
+  TRACE("single_byte_string_spec_c");
   symbol->string_spec->accept(*this);
   if (symbol->single_byte_character_string != NULL) {
     s4o.print(" := ");
@@ -1423,6 +1464,7 @@ void *visit(function_declaration_c *symbol) {
   temp = (char*)symbol->derived_function_name->accept(*this);
   pou_info = new pre_generate_pou_info_c(temp);
   pou_info->set_pou_status(POU_STA_HEADER);
+  pou_info->set_pou_type(POU_TYPE_FUN);
 
   s4o.print(" : ");
 
@@ -1436,7 +1478,7 @@ void *visit(function_declaration_c *symbol) {
 
   s4o.print("\n");
   s4o.indent_right();
-  
+
   generate_pou_var_declaration_c temp_pou_var_dec(pou_info);
   symbol->var_declarations_list->accept(temp_pou_var_dec);
 
@@ -1451,7 +1493,7 @@ void *visit(function_declaration_c *symbol) {
   // pou_info->print_detail_info();
   pou_info->set_pou_status(POU_STA_INIT);
 
-  pre_code_info.insert(*pou_info);
+  pre_code_info->insert(*pou_info);
   delete pou_info;
 #else
   s4o.print("FUNCTION ");
@@ -1470,8 +1512,8 @@ void *visit(function_declaration_c *symbol) {
 }
 
 /* intermediate helper symbol for function_declaration */
-void *visit(var_declarations_list_c *symbol) { 
-  TRACE("var_declarations_list_c"); 
+void *visit(var_declarations_list_c *symbol) {
+  TRACE("var_declarations_list_c");
 #ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_DEC);
 #endif
@@ -1479,11 +1521,11 @@ void *visit(var_declarations_list_c *symbol) {
 }
 
 void *visit(function_var_decls_c *symbol) {
-  TRACE("function_var_decls_c"); 
+  TRACE("function_var_decls_c");
 #ifdef _CODE_GENERATOR
   pou_info->set_pou_status(POU_STA_VAR_LOCAL_DEC);
 #endif
-  s4o.print(s4o.indent_spaces); 
+  s4o.print(s4o.indent_spaces);
   s4o.print("VAR ");
   if (symbol->option != NULL)
     symbol->option->accept(*this);
@@ -1497,7 +1539,7 @@ void *visit(function_var_decls_c *symbol) {
 
 /* intermediate helper symbol for function_var_decls */
 void *visit(var2_init_decl_list_c *symbol) {
-  TRACE("var2_init_decl_list_c"); 
+  TRACE("var2_init_decl_list_c");
   print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
   return NULL;
 }
@@ -1508,7 +1550,7 @@ void *visit(var2_init_decl_list_c *symbol) {
 /*  FUNCTION_BLOCK derived_function_block_name io_OR_other_var_declarations function_block_body END_FUNCTION_BLOCK */
 void *visit(function_block_declaration_c *symbol) {
 #ifdef _CODE_GENERATOR
-  TRACE("function_block_declaration_c"); 
+  TRACE("function_block_declaration_c");
 
   std::string temp;
 
@@ -1516,7 +1558,8 @@ void *visit(function_block_declaration_c *symbol) {
   temp = (char*)symbol->fblock_name->accept(*this);
   pou_info = new pre_generate_pou_info_c(temp);
   pou_info->set_pou_status(POU_STA_HEADER);
-  
+  pou_info->set_pou_type(POU_TYPE_FB);
+
   s4o.print("\n");
   s4o.indent_right();
 
@@ -1531,10 +1574,10 @@ void *visit(function_block_declaration_c *symbol) {
   // pou_info->print_detail_info();
   pou_info->set_pou_status(POU_STA_INIT);
 
-  pre_code_info.insert(*pou_info);
+  pre_code_info->insert(*pou_info);
   delete pou_info;
 #else
-  TRACE("function_block_declaration_c"); 
+  TRACE("function_block_declaration_c");
   s4o.print("FUNCTION_BLOCK ");
   symbol->fblock_name->accept(*this);
   s4o.print("\n");
@@ -1550,7 +1593,7 @@ void *visit(function_block_declaration_c *symbol) {
 
 /*  VAR_TEMP temp_var_decl_list END_VAR */
 void *visit(temp_var_decls_c *symbol) {
-  TRACE("temp_var_decls_c"); 
+  TRACE("temp_var_decls_c");
   s4o.print("VAR_TEMP\n");
   s4o.indent_right();
   symbol->var_decl_list->accept(*this);
@@ -1564,7 +1607,7 @@ void *visit(temp_var_decls_list_c *symbol) {TRACE("temp_var_decls_list_c"); retu
 
 /*  VAR NON_RETAIN var_init_decl_list END_VAR */
 void *visit(non_retentive_var_decls_c *symbol) {
-  TRACE("non_retentive_var_decls_c"); 
+  TRACE("non_retentive_var_decls_c");
   s4o.print("VAR NON_RETAIN\n");
   s4o.indent_right();
   symbol->var_decl_list->accept(*this);
@@ -1580,7 +1623,7 @@ void *visit(non_retentive_var_decls_c *symbol) {
 /*  PROGRAM program_type_name program_var_declarations_list function_block_body END_PROGRAM */
 void *visit(program_declaration_c *symbol) {
 #ifdef _CODE_GENERATOR
-  TRACE("program_declaration_c"); 
+  TRACE("program_declaration_c");
 
   std::string temp;
 
@@ -1588,11 +1631,13 @@ void *visit(program_declaration_c *symbol) {
   temp = (char*)symbol->program_type_name->accept(*this);
   pou_info = new pre_generate_pou_info_c(temp);
   pou_info->set_pou_status(POU_STA_HEADER);
+  pou_info->set_pou_type(POU_TYPE_PROG);
 
   s4o.print("\n");
   s4o.indent_right();
   generate_pou_var_declaration_c temp_pou_var_dec(pou_info);
   symbol->var_declarations->accept(temp_pou_var_dec);
+
 
   s4o.print("\n");
   symbol->function_block_body->accept(*this);
@@ -1600,14 +1645,14 @@ void *visit(program_declaration_c *symbol) {
   s4o.print("END_PROGRAM\n\n\n");
 
   pou_info->inst_code.push_back("halt 0 0 0");
-  
+
   // pou_info->print_detail_info();
   pou_info->set_pou_status(POU_STA_INIT);
 
-  pre_code_info.insert(*pou_info);
+  pre_code_info->insert(*pou_info);
   delete pou_info;
 #else
-  TRACE("program_declaration_c"); 
+  TRACE("program_declaration_c");
   s4o.print("PROGRAM ");
   symbol->program_type_name->accept(*this);
   s4o.print("\n");
@@ -1627,21 +1672,21 @@ void *visit(program_declaration_c *symbol) {
 
 /* sequential_function_chart {sfc_network} */
 void *visit(sequential_function_chart_c *symbol) {
-  TRACE("sequential_function_chart_c"); 
+  TRACE("sequential_function_chart_c");
   print_list(symbol, "", "\n", "");
   return NULL;
 }
 
 /* sfc_network {step | transition | action} */
 void *visit(sfc_network_c *symbol) {
-  TRACE("sfc_network_c"); 
+  TRACE("sfc_network_c");
   print_list(symbol, "", "\n", "");
   return NULL;
 }
 
 /* INITIAL_STEP step_name ':' [action_association_list] END_STEP */
 void *visit(initial_step_c *symbol) {
-  TRACE("initial_step_c"); 
+  TRACE("initial_step_c");
   s4o.print(s4o.indent_spaces);
   s4o.print("INITIAL_STEP ");
   symbol->step_name->accept(*this);
@@ -1657,7 +1702,7 @@ void *visit(initial_step_c *symbol) {
 
 /* STEP step_name ':' [action_association_list] END_STEP */
 void *visit(step_c *symbol) {
-  TRACE("step_c"); 
+  TRACE("step_c");
   s4o.print(s4o.indent_spaces);
   s4o.print("STEP ");
   symbol->step_name->accept(*this);
@@ -1673,14 +1718,14 @@ void *visit(step_c *symbol) {
 
 /* action_association_list {action_association} */
 void *visit(action_association_list_c *symbol) {
-  TRACE("action_association_list_c"); 
+  TRACE("action_association_list_c");
   print_list(symbol, "", "\n", "");
   return NULL;
 }
 
 /* action_name '(' [action_qualifier] [indicator_name_list] ')' */
 void *visit(action_association_c *symbol) {
-  TRACE("action_association_c"); 
+  TRACE("action_association_c");
   s4o.print(s4o.indent_spaces);
   symbol->action_name->accept(*this);
   s4o.print("(");
@@ -1696,14 +1741,14 @@ void *visit(action_association_c *symbol) {
 
 /* indicator_name_list ',' indicator_name */
 void *visit(indicator_name_list_c *symbol) {
-  TRACE("indicator_name_list_c"); 
+  TRACE("indicator_name_list_c");
   print_list(symbol, ", ", ", ", "");
   return NULL;
 }
 
 /* action_qualifier [',' action_time] */
 void *visit(action_qualifier_c *symbol) {
-  TRACE("action_qualifier_c"); 
+  TRACE("action_qualifier_c");
   symbol->action_qualifier->accept(*this);
   if(symbol->action_time != NULL){
     s4o.print(", ");
@@ -1714,25 +1759,25 @@ void *visit(action_qualifier_c *symbol) {
 
 /* N | R | S | P */
 void *visit(qualifier_c *symbol) {
-  TRACE("qualifier_c"); 
+  TRACE("qualifier_c");
   print_token(symbol);
   return NULL;
 }
 
 /* L | D | SD | DS | SL */
 void *visit(timed_qualifier_c *symbol) {
-  TRACE("timed_qualifier_c"); 
+  TRACE("timed_qualifier_c");
   print_token(symbol);
   return NULL;
 }
 
 /* TRANSITION [transition_name] ['(''PRIORITY'':='integer')']
- *   FROMstepsTO steps 
+ *   FROMstepsTO steps
  *   ':' simple_instr_list | ':=' expression
  * END_TRANSITION
  */
 void *visit(transition_c *symbol) {
-  TRACE("transition_c"); 
+  TRACE("transition_c");
   s4o.print(s4o.indent_spaces);
   s4o.print("TRANSITION ");
   if (symbol->transition_name != NULL){
@@ -1757,7 +1802,7 @@ void *visit(transition_c *symbol) {
 }
 
 void *visit(transition_condition_c *symbol) {
-  TRACE("transition_condition_c"); 
+  TRACE("transition_condition_c");
   if (symbol->transition_condition_il != NULL) {
     s4o.print(":\n");
     symbol->transition_condition_il->accept(*this);
@@ -1774,7 +1819,7 @@ void *visit(transition_condition_c *symbol) {
 
 /* step_name | step_name_list */
 void *visit(steps_c *symbol) {
-  TRACE("steps_c"); 
+  TRACE("steps_c");
   if(symbol->step_name != NULL){
     symbol->step_name->accept(*this);
   }
@@ -1786,14 +1831,14 @@ void *visit(steps_c *symbol) {
 
 /* '(' step_name ',' step_name {',' step_name} ')' */
 void *visit(step_name_list_c *symbol) {
-  TRACE("step_name_list_c"); 
+  TRACE("step_name_list_c");
   print_list(symbol, "(", ", ", ")");
   return NULL;
 }
 
 /* ACTION action_name ':' function_block_body END_ACTION */
 void *visit(action_c *symbol) {
-  TRACE("action_c"); 
+  TRACE("action_c");
   s4o.print(s4o.indent_spaces);
   s4o.print("ACTION ");
   symbol->action_name->accept(*this);
@@ -1805,9 +1850,9 @@ void *visit(action_c *symbol) {
   s4o.print("END_ACTION\n");
   return NULL;
 }
- 
- 
- 
+
+
+
 /********************************/
 /* B 1.7 Configuration elements */
 /********************************/
@@ -1823,10 +1868,10 @@ void *visit(configuration_declaration_c *symbol) {
   TRACE("configuration_declaration_c");
 #ifdef _CODE_GENERATOR
   s4o.print("CONFIGURATION ");
-  generate_configuration_c temp_configuration_info(pou_info, &pre_code_info);
+  generate_configuration_c temp_configuration_info(pou_info, pre_code_info);
 
 
-  pre_code_info.configuration_info.configuration_name = (char*)symbol->configuration_name->accept(temp_configuration_info);
+  pre_code_info->configuration_info.configuration_name = (char*)symbol->configuration_name->accept(temp_configuration_info);
   s4o.print("\n");
   s4o.indent_right();
   if (symbol->global_var_declarations != NULL)
@@ -1875,7 +1920,7 @@ END_RESOURCE
 */
 
 void *visit(resource_declaration_c *symbol) {
-  TRACE("resource_declaration_c"); 
+  TRACE("resource_declaration_c");
 
   s4o.print(s4o.indent_spaces + "RESOURCE ");
   symbol->resource_name->accept(*this);
@@ -1894,7 +1939,7 @@ void *visit(resource_declaration_c *symbol) {
 
 /* task_configuration_list program_configuration_list */
 void *visit(single_resource_declaration_c *symbol) {
-  TRACE("single_resource_declaration_c"); 
+  TRACE("single_resource_declaration_c");
   symbol->task_configuration_list->accept(*this);
   symbol->program_configuration_list->accept(*this);
   return NULL;
@@ -1903,7 +1948,7 @@ void *visit(single_resource_declaration_c *symbol) {
 /* helper symbol for single_resource_declaration */
 /*| task_configuration_list task_configuration ';'*/
 void *visit(task_configuration_list_c *symbol) {
-  TRACE("task_configuration_list_c"); 
+  TRACE("task_configuration_list_c");
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
@@ -1911,7 +1956,7 @@ void *visit(task_configuration_list_c *symbol) {
 /* helper symbol for single_resource_declaration */
 /*| program_configuration_list program_configuration ';'*/
 void *visit(program_configuration_list_c *symbol) {
-  TRACE("program_configuration_list_c"); 
+  TRACE("program_configuration_list_c");
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
@@ -2008,7 +2053,7 @@ void *visit(prog_conf_elements_c *symbol) {TRACE("prog_conf_elements_c"); return
 
 /*  fb_name WITH task_name */
 void *visit(fb_task_c *symbol) {
-  TRACE("fb_task_c"); 
+  TRACE("fb_task_c");
   symbol->fb_name->accept(*this);
   s4o.print(" WITH ");
   symbol->task_name->accept(*this);
@@ -2017,7 +2062,7 @@ void *visit(fb_task_c *symbol) {
 
 /*  any_symbolic_variable ASSIGN prog_data_source */
 void *visit(prog_cnxn_assign_c *symbol) {
-  TRACE("prog_cnxn_assign_c"); 
+  TRACE("prog_cnxn_assign_c");
   symbol->symbolic_variable->accept(*this);
   s4o.print(" := ");
   symbol->prog_data_source->accept(*this);
@@ -2026,7 +2071,7 @@ void *visit(prog_cnxn_assign_c *symbol) {
 
 /* any_symbolic_variable SENDTO data_sink */
 void *visit(prog_cnxn_sendto_c *symbol) {
-  TRACE("prog_cnxn_sendto_c"); 
+  TRACE("prog_cnxn_sendto_c");
   symbol->symbolic_variable->accept(*this);
   s4o.print(" => ");
   symbol->data_sink->accept(*this);
@@ -2035,7 +2080,7 @@ void *visit(prog_cnxn_sendto_c *symbol) {
 
 /* VAR_CONFIG instance_specific_init_list END_VAR */
 void *visit(instance_specific_initializations_c *symbol) {
-  TRACE("instance_specific_initializations_c"); 
+  TRACE("instance_specific_initializations_c");
   s4o.print(s4o.indent_spaces + "VAR_CONFIG\n");
   s4o.indent_right();
   symbol->instance_specific_init_list->accept(*this);
@@ -2047,7 +2092,7 @@ void *visit(instance_specific_initializations_c *symbol) {
 /* helper symbol for instance_specific_initializations */
 /*| instance_specific_init_list instance_specific_init ';'*/
 void *visit(instance_specific_init_list_c *symbol) {
-  TRACE("instance_specific_init_list_c"); 
+  TRACE("instance_specific_init_list_c");
   return print_list(symbol, s4o.indent_spaces, ";\n" + s4o.indent_spaces, ";\n");
 }
 
@@ -2055,7 +2100,7 @@ void *visit(instance_specific_init_list_c *symbol) {
     ((variable_name [location] ':' located_var_spec_init) | (fb_name ':' fb_initialization))
 */
 void *visit(instance_specific_init_c *symbol) {
-  TRACE("instance_specific_init_c"); 
+  TRACE("instance_specific_init_c");
   symbol->resource_name->accept(*this);
   s4o.print(".");
   symbol->program_name->accept(*this);
@@ -2076,7 +2121,7 @@ void *visit(instance_specific_init_c *symbol) {
 /* helper symbol for instance_specific_init */
 /* function_block_type_name ':=' structure_initialization */
 void *visit(fb_initialization_c *symbol) {
-  TRACE("fb_initialization_c"); 
+  TRACE("fb_initialization_c");
   symbol->function_block_type_name->accept(*this);
   s4o.print(" := ");
   symbol->structure_initialization->accept(*this);
@@ -2089,7 +2134,7 @@ void *visit(fb_initialization_c *symbol) {
 /***********************************/
 /*| instruction_list il_instruction */
 void *visit(instruction_list_c *symbol) {
-  TRACE("instruction_list_c"); 
+  TRACE("instruction_list_c");
   return print_list(symbol, s4o.indent_spaces, "\n" + s4o.indent_spaces, "\n");
 }
 
@@ -2102,7 +2147,7 @@ void *visit(il_instruction_c *symbol) {
   }
   if (symbol->il_instruction != NULL) {
     symbol->il_instruction->accept(*this);
-  }  
+  }
   return NULL;
 }
 
@@ -2339,7 +2384,7 @@ void *visit(   neg_expression_c *symbol) {TRACE("neg_expression_c"); return prin
 void *visit(   not_expression_c *symbol) {TRACE("not_expression_c"); return print_unary_expression (symbol, symbol->exp, "NOT ");}
 
 void *visit(function_invocation_c *symbol) {
-  TRACE("function_invocation_c"); 
+  TRACE("function_invocation_c");
 #ifdef _CODE_GENERATOR
   generate_pou_invocation_c temp_pou_invocation(pou_info);
   std::string temp_pou_invo_name;
@@ -2354,14 +2399,14 @@ void *visit(function_invocation_c *symbol) {
     temp_code += (char*)symbol->   formal_param_list->accept(temp_pou_invocation);
   }
   if (symbol->nonformal_param_list != NULL) {
-    std::cout << " nonformal param list " << std::endl; 
+    std::cout << " nonformal param list " << std::endl;
     temp_code += (char*)symbol->nonformal_param_list->accept(temp_pou_invocation);
   }
   temp_reg_num = pou_info->get_pou_reg_num();
   pou_info->inc_pou_reg_num();
 
   temp_code += std::string(" ") + temp_pou_invo_name + std::string(" ") + temp_reg_num;
-  
+
   pou_info->inst_code.push_back(temp_code);
   s4o.print(")");
   return strdup(temp_reg_num.c_str());
@@ -2369,7 +2414,7 @@ void *visit(function_invocation_c *symbol) {
   symbol->function_name->accept(*this);
   s4o.print("(");
 
-  /* If the syntax parser is working correctly, exactly one of the 
+  /* If the syntax parser is working correctly, exactly one of the
    * following two symbols will be NULL, while the other is != NULL.
    */
   if (symbol->   formal_param_list != NULL) {
@@ -2377,14 +2422,14 @@ void *visit(function_invocation_c *symbol) {
     symbol->   formal_param_list->accept(*this);
   }
   if (symbol->nonformal_param_list != NULL) {
-    std::cout << " nonformal param list " << std::endl; 
+    std::cout << " nonformal param list " << std::endl;
     symbol->nonformal_param_list->accept(*this);
   }
 
   s4o.print(")");
   return NULL;
 #endif
-  
+
 }
 
 /********************/
@@ -2408,11 +2453,11 @@ void *visit( assignment_statement_c *symbol) {
   generate_assign_l_exp_c temp_l_exp(pou_info);
 
   std::string temp_code = "mov ";
-  
+
   temp_code += (char*)symbol->l_exp->accept(temp_l_exp) + std::string(" ");
 
   s4o.print(" := ");
-  
+
   if(typeid(*symbol->r_exp) == typeid(function_invocation_c)) {
     temp_code += (char*)symbol->r_exp->accept(*this);
   } else {
@@ -2443,16 +2488,40 @@ void *visit(return_statement_c *symbol) {
 /* fb_name '(' [param_assignment_list] ')' */
 void *visit(fb_invocation_c *symbol) {
   TRACE("fb_invocation_c");
-  symbol->fb_name->accept(*this);
-  s4o.print("(");
-  /* If the syntax parser is working correctly, at most one of the 
-   * following two symbols will be NULL, while the other is != NULL.
-   * The two may be NULL simultaneously!
-   */
-  if (symbol->   formal_param_list != NULL) symbol->   formal_param_list->accept(*this);
-  if (symbol->nonformal_param_list != NULL) symbol->nonformal_param_list->accept(*this);
-
-  s4o.print(")");
+#ifdef _CODE_GENERATOR
+    generate_pou_invocation_c temp_pou_invocation(pou_info);
+    symbol->fb_name->accept(temp_pou_invocation);
+    s4o.print("(");
+    /* If the syntax parser is working correctly, at most one of the
+    * following two symbols will be NULL, while the other is != NULL.
+    * The two may be NULL simultaneously!
+    */
+    if (symbol->   formal_param_list != NULL) {
+      std::cout << "formal param list" << std::endl;
+      symbol->   formal_param_list->accept(temp_pou_invocation);
+    }
+    if (symbol->nonformal_param_list != NULL) {
+      std::cout << "nonformal param list" << std::endl;
+      symbol->nonformal_param_list->accept(temp_pou_invocation);
+    }
+    s4o.print(")");
+#else
+    symbol->fb_name->accept(*this);
+    s4o.print("(");
+    /* If the syntax parser is working correctly, at most one of the
+    * following two symbols wi   ll be NULL, while the other is != NULL.
+    * The two may be NULL simultaneously!
+    */
+    if (symbol->   formal_param_list != NULL) {
+      std::cout << "formal param list" << std::endl;
+      symbol->   formal_param_list->accept(*this);
+    }
+    if (symbol->nonformal_param_list != NULL) {
+      std::cout << "nonformal param list" << std::endl;
+      symbol->nonformal_param_list->accept(*this);
+    }
+    s4o.print(")");
+#endif
   return NULL;
 }
 
@@ -2460,13 +2529,13 @@ void *visit(fb_invocation_c *symbol) {
 /* helper symbol for fb_invocation */
 /* param_assignment_list ',' param_assignment */
 void *visit(param_assignment_list_c *symbol) {
-  TRACE("param_assignment_list_c"); 
+  TRACE("param_assignment_list_c");
   return print_list(symbol, "", ", ");
 }
 
 
 void *visit(input_variable_param_assignment_c *symbol) {
-  TRACE("input_variable_param_assignment_c"); 
+  TRACE("input_variable_param_assignment_c");
   symbol->variable_name->accept(*this);
   s4o.print(" := ");
   symbol->expression->accept(*this);
@@ -2475,7 +2544,7 @@ void *visit(input_variable_param_assignment_c *symbol) {
 
 
 void *visit(output_variable_param_assignment_c *symbol) {
-  TRACE("output_variable_param_assignment_c"); 
+  TRACE("output_variable_param_assignment_c");
   if (symbol->not_param != NULL)
     symbol->not_param->accept(*this);
   symbol->variable_name->accept(*this);
@@ -2486,7 +2555,7 @@ void *visit(output_variable_param_assignment_c *symbol) {
 
 
 void *visit(not_paramassign_c *symbol) {
-  TRACE("not_paramassign_c"); 
+  TRACE("not_paramassign_c");
   s4o.print("NOT ");
   return NULL;
 }
@@ -2496,7 +2565,7 @@ void *visit(not_paramassign_c *symbol) {
 /* B 3.2.3 Selection Statements */
 /********************************/
 void *visit(if_statement_c *symbol) {
-  TRACE("if_statement_c"); 
+  TRACE("if_statement_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_if_exp(pou_info);
   std::string temp_code;
@@ -2524,7 +2593,7 @@ void *visit(if_statement_c *symbol) {
   s4o.indent_right();
   symbol->statement_list->accept(*this);
   s4o.indent_left();
-  
+
 
   unsigned int temp_condj_insert_times = pou_info->if_condj_cnt.get_condj_insert_times();
   unsigned int temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
@@ -2542,7 +2611,7 @@ void *visit(if_statement_c *symbol) {
         } else {
           temp_cnt ++;
         }
-      } 
+      }
       temp_inst_num_diff ++;
       ++temp_beg;
     }
@@ -2552,8 +2621,8 @@ void *visit(if_statement_c *symbol) {
     pou_info->if_condj_cnt.set_condj_insert_times(0);
     pou_info->if_condj_cnt.set_condj_find_times(0);
   }
-   
-    
+
+
   symbol->elseif_statement_list->accept(*this);
 
   temp_code = "jmp_if ";
@@ -2567,7 +2636,7 @@ void *visit(if_statement_c *symbol) {
     symbol->else_statement_list->accept(*this);
     s4o.indent_left();
   }
-  
+
 
   auto temp_beg = pou_info->inst_code.rbegin();
   auto temp_end = pou_info->inst_code.rend();
@@ -2579,8 +2648,8 @@ void *visit(if_statement_c *symbol) {
       if(temp_cnt == pou_info->if_jmp_cnt.get_jmp_times_first_elem()) {
         pou_info->if_jmp_cnt.pop_jmp_times_first_elem();
         *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
-      }   
-    } 
+      }
+    }
     temp_inst_num_diff ++;
     ++temp_beg;
   }
@@ -2611,13 +2680,13 @@ void *visit(if_statement_c *symbol) {
 
 /* helper symbol for if_statement */
 void *visit(elseif_statement_list_c *symbol) {
-  TRACE("elseif_statement_list_c"); 
+  TRACE("elseif_statement_list_c");
   return print_list(symbol);
 }
 
 /* helper symbol for elseif_statement_list */
 void *visit(elseif_statement_c *symbol) {
-  TRACE("elseif_statement_c"); 
+  TRACE("elseif_statement_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_if_exp(pou_info);
   std::string temp_reg_num;
@@ -2625,7 +2694,7 @@ void *visit(elseif_statement_c *symbol) {
   pou_info->inst_code.push_back(temp_code);
   pou_info->if_jmp_cnt.inc_jmp_times();
   // pou_info->jmp_cnt.print_jmp_times();
-  
+
   s4o.print(s4o.indent_spaces); s4o.print("ELSIF ");
 
   temp_code = "lnot ";
@@ -2644,7 +2713,7 @@ void *visit(elseif_statement_c *symbol) {
   s4o.indent_right();
   symbol->statement_list->accept(*this);
   s4o.indent_left();
-  
+
   unsigned int temp_condj_insert_times = pou_info->if_condj_cnt.get_condj_insert_times();
   unsigned int temp_condj_find_times = pou_info->if_condj_cnt.get_condj_find_times();
   if(temp_condj_insert_times > temp_condj_find_times) {
@@ -2661,7 +2730,7 @@ void *visit(elseif_statement_c *symbol) {
         } else {
           temp_cnt ++;
         }
-      } 
+      }
       temp_inst_num_diff ++;
       ++temp_beg;
     }
@@ -2685,7 +2754,7 @@ void *visit(elseif_statement_c *symbol) {
 
 case_exp_value_c temp_case_exp_value;
 void *visit(case_statement_c *symbol) {
-  TRACE("case_statement_c"); 
+  TRACE("case_statement_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_case_exp(pou_info);
   temp_case_exp_value.push();
@@ -2716,8 +2785,8 @@ void *visit(case_statement_c *symbol) {
       if(temp_cnt == pou_info->case_jmp_cnt.get_jmp_times_first_elem()) {
         pou_info->case_jmp_cnt.pop_jmp_times_first_elem();
         *temp_beg += std::to_string(temp_inst_num_diff+1) + std::string(" ");
-      }   
-    } 
+      }
+    }
     temp_inst_num_diff ++;
     ++temp_beg;
   }
@@ -2797,7 +2866,7 @@ void *visit(case_element_c *symbol) {
         } else {
           temp_cnt ++;
         }
-      } 
+      }
       temp_inst_num_diff ++;
       ++temp_beg;
     }
@@ -2820,7 +2889,7 @@ void *visit(case_element_c *symbol) {
 }
 
 void *visit(case_list_c *symbol) {
-  TRACE("case_list_c"); 
+  TRACE("case_list_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_case_list_exp(pou_info);
   std::string temp_reg_num;
@@ -2858,7 +2927,7 @@ void *visit(case_list_c *symbol) {
 /* B 3.2.4 Iteration Statements */
 /********************************/
 void *visit(for_statement_c *symbol) {
-  TRACE("for_statement_c"); 
+  TRACE("for_statement_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_for_exp(pou_info);
   std::string temp_code ;
@@ -2918,7 +2987,7 @@ void *visit(for_statement_c *symbol) {
   s4o.indent_right();
   symbol->statement_list->accept(*this);
   s4o.indent_left();
-  
+
   temp_code = "add ";
   temp_code += temp_ctrl_var + std::string(" ") + temp_ctrl_var + std::string(" ") + temp_inc_exp;
   pou_info->inst_code.push_back(temp_code);
@@ -2978,7 +3047,7 @@ void *visit(for_statement_c *symbol) {
 
 void *visit(while_statement_c *symbol) {
 #ifdef _CODE_GENERATOR
-  TRACE("while_statement_c"); 
+  TRACE("while_statement_c");
   generate_assign_r_exp_c temp_while_exp(pou_info);
   std::string temp_code;
   std::string temp_reg_num;
@@ -3056,7 +3125,7 @@ void *visit(while_statement_c *symbol) {
   pou_info->while_condj_cnt.pop();
   // pou_info->while_jmp_cnt.pop();
 #else
-  TRACE("while_statement_c"); 
+  TRACE("while_statement_c");
   s4o.print("WHILE ");
   symbol->expression->accept(*this);
   s4o.print(" DO\n");
@@ -3069,7 +3138,7 @@ void *visit(while_statement_c *symbol) {
 }
 
 void *visit(repeat_statement_c *symbol) {
-  TRACE("repeat_statement_c"); 
+  TRACE("repeat_statement_c");
 #ifdef _CODE_GENERATOR
   generate_assign_r_exp_c temp_repeat_exp(pou_info);
   std::string temp_code;
@@ -3106,7 +3175,7 @@ void *visit(repeat_statement_c *symbol) {
   temp_end = pou_info->inst_code.rend();
   for(int i = 0; i < temp_inst_num_diff + 1; i++) {
     if((*temp_beg).find("jmp_exit") == 0) {
-      
+
       *temp_beg = std::string("jmp ") + std::to_string(i + 1);
     }
     temp_beg ++;
@@ -3126,7 +3195,7 @@ void *visit(repeat_statement_c *symbol) {
 }
 
 void *visit(exit_statement_c *symbol) {
-  TRACE("exit_statement_c"); 
+  TRACE("exit_statement_c");
 #ifdef _CODE_GENERATOR
   std::string temp_code = "jmp_exit ";
   pou_info->inst_code.push_back(temp_code);
@@ -3157,18 +3226,3 @@ void *visit(exit_statement_c *symbol) {
 
 visitor_c *new_code_generator(stage4out_c *s4o, const char *builddir)  {return new generate_iec_c(s4o);}
 void delete_code_generator(visitor_c *code_generator) {delete code_generator;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

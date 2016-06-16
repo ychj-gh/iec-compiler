@@ -5,9 +5,10 @@
  #ifndef _STANDARD_FUNCTION_NAMES_
  #define _STANDARD_FUNCTION_NAMES_
  #include <stdlib.h>
- 
- 
+
+
 const char *standard_function_names[] = {
+"SFUN_INTERP_UPDATE",//add by yaoshun for interp update
 "REAL_TO_SINT",
 "REAL_TO_LINT",
 "REAL_TO_DINT",

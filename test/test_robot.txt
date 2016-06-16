@@ -1,0 +1,72 @@
+(* 此代码主要用来测试基本的机器人代码编译功能 *)
+(* 程序中包含两个任务，其中MAIN为主任务，其中调用机器人插补程序；)*
+(*MAIN2为辅助任务，用来模拟安全报警任务 *)
+
+
+
+PROGRAM MAIN
+	VAR_INPUT
+		IN : INT ;
+	END_VAR
+
+    VAR
+        RET : INT ;
+    END_VAR
+
+	VAR_OUTPUT
+		OUT1 : INT ;
+        OUT2 : INT ;
+	END_VAR
+
+    IF IN > 10 THEN
+        OUT1 := 1;
+    ELSE
+        OUT1 := 2;
+    END_IF;
+
+(*    RET := SFUN_IO_UPDATE(0); *)
+
+	RET := SFUN_INTERP_UPDATE(0);
+
+(*    RET := SFUN_IO_UPDATE(1); *)
+
+
+END_PROGRAM
+
+PROGRAM MAIN2
+	VAR_INPUT
+		IN : INT ;
+	END_VAR
+
+	VAR_OUTPUT
+		OUT : INT ;
+	END_VAR
+
+	IF IN > 1 THEN
+		OUT := IN + 2;
+	ELSE
+		OUT := OUT + 2;
+	END_IF;
+
+END_PROGRAM
+
+CONFIGURATION MAIN_CONFIG
+
+	RESOURCE RES1 ON CPU1
+		VAR_GLOBAL
+			Z AT %QB0: BYTE := 1;
+            W AT %IB1: BYTE := 0;
+            V AT %QB2: BYTE := 0;
+			X,Y :INT := 0;
+		END_VAR
+
+		TASK fast(INTERVAL := T#8ms, PRIORITY := 81);
+		TASK slow(SINGLE := Z, PRIORITY := 82);
+
+		PROGRAM P1 WITH fast: MAIN(IN := W, OUT1 => Z, OUT2 => X);
+        PROGRAM P2 WITH slow: MAIN2(IN := X, OUT => V);
+
+
+	END_RESOURCE
+
+END_CONFIGURATION

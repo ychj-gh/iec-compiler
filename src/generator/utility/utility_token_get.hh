@@ -34,6 +34,33 @@ public:
 	static void *return_striped_hex_token(token_c *token, unsigned int offset = 0) ;
 
 	static internal_value_t variable_type_check(std::string type);
+
+	////字符串分割函数
+	static std::vector<std::string> split(std::string str,std::string pattern)
+	{
+		  std::string::size_type pos;
+		  std::vector<std::string> result;
+		  std::vector<std::string> realresult;
+		  str += pattern;//扩展字符串以方便操作
+		  int size=str.size();
+
+		  for(int i = 0; i < size; i ++)
+		  {
+			    pos = str.find(pattern, i);
+			    if(pos < size)
+			    {
+				      std::string s = str.substr(i, pos - i);
+				      result.push_back(s);
+				      i = pos+pattern.size() - 1;
+			    }
+		  }
+		  for(auto elem : result) {
+			  	if(!elem.empty()){
+			  		realresult.push_back(elem);
+			  	}
+		  }
+		  return realresult;
+	}
 };
 
 

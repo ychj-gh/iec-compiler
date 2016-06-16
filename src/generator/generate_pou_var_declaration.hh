@@ -109,7 +109,7 @@ public:
   void *visit(single_byte_character_string_c *symbol) ;
 
 
-  
+
   /***********************************/
   /* B 1.3.1 - Elementary Data Types */
   /***********************************/
@@ -157,6 +157,8 @@ public:
 
   /* simple_specification ASSIGN constant */
   void *visit(simple_spec_init_c *symbol) ;
+
+  void *visit(initialized_structure_c *symbol);
 
 
 
@@ -229,7 +231,7 @@ public:
 
   void *visit(var1_list_c *symbol) ;
 
-
+  void *visit(structured_var_init_decl_c *symbol);
   /* VAR_OUTPUT [RETAIN | NON_RETAIN] var_init_decl_list END_VAR */
   /* option -> may be NULL ! */
   void *visit(output_declarations_c *symbol) ;
@@ -347,15 +349,3 @@ public:
 
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
