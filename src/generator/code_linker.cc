@@ -23,12 +23,14 @@ void code_linker_c::link_task_pou(std::list<pre_generate_pou_info_c>::iterator& 
 									obj_task_c& temp_obj_task, std::string pou_ret) {
 	user_pou_c temp_user_pou;
 	temp_user_pou.user_pou_name = pou_iterator->get_pou_name();
+	temp_user_pou.pds_type = pou_iterator->get_pou_type();
 	temp_user_pou.input_count = pou_iterator->input_variable.size();
 	temp_user_pou.inout_count = pou_iterator->input_output_variable.size();
 	temp_user_pou.output_count = pou_iterator->output_variable.size();
 	temp_user_pou.local_count = std::stoi(pou_iterator->get_pou_reg_num()) - temp_user_pou.input_count - temp_user_pou.inout_count - temp_user_pou.output_count;
 	temp_user_pou.code_entry = temp_obj_task.code_list.size();
 
+	// 消除重复的常量,节省空间，但code is dirty， 需要优化
 	for(auto const_elem : pou_iterator->constant_value) {
 		bool flag = true;
 		for(auto obj_const_elem : temp_obj_task.const_list) {
@@ -42,6 +44,7 @@ void code_linker_c::link_task_pou(std::list<pre_generate_pou_info_c>::iterator& 
 		}
 	}
 
+	// 上一步中消除了重复变量，所以对应索引也发生了变化，需要更新代码中的常量索引
 	auto code_beg = pou_iterator->inst_code.begin();
 	auto code_end = pou_iterator->inst_code.end();
 	while(code_beg != code_end) {
@@ -80,48 +83,89 @@ void code_linker_c::link_task_pou(std::list<pre_generate_pou_info_c>::iterator& 
 	for(; inst_code_count > 0; inst_code_count --)
 		end_index ++;
 
+	/**
+	 * 解析ucall指令
+	 * 预生成信息类对象中格式为：ucall index1 name index2
+	 * 其中，index1为调用pou传入的寄存器其实索引，name为被调用pou名，index2为返回调用pou的寄存器索引
+	 * 在运行系统ucall指令格式为：ucall index1 pou_index
+	 * 因此，需要根据pou名找到对应pou索引
+	 */
 	std::string &ret_code_ref = temp_obj_task.code_list.back();
-	while(start_index != end_index) {
+	while(start_index != end_index) { // 查找代码中是否包含ucall指令
 		if ((*start_index).find("ucall") == 0) {
 			std::vector<std::string>  code_slice;
 
 			this->split(*start_index, " ", &code_slice);
-			if(code_slice.size() != 4) {
+			if(code_slice.size() != 4) { 	// 若ucall指令格式不对，则输出错误信息
 				std::cout << "ucall convertion error" << std::endl;
 				for(auto elem : code_slice)
 					std::cout << elem << std::string(" ") ;
 				std::cout << std::endl;
-			} else {
-				auto pou_begin = pre_code_info->pre_generate_info_collector.begin();
-				auto pou_ended = pre_code_info->pre_generate_info_collector.end();
-				while(pou_begin != pou_ended) {
-					if((*pou_begin).get_pou_name() == code_slice[2]) {
-						this->link_task_pou(pou_begin, temp_obj_task, code_slice[3]);
-
-						unsigned int i =0;
-						for(auto elem : temp_obj_task.user_pou_list) {
-							if(elem.user_pou_name == code_slice[2]) {
-								code_slice[2] = std::to_string(i);
-								break;
-							}
-							i++;
-						}
+			} else { // ucall指令格式正确，则检查该pou是否已添加temp_obj_task中。
+				bool flag = false; // 指示该pou是否已添加temp_obj_task中
+				unsigned int i =0;
+				for(auto elem : temp_obj_task.user_pou_list) {
+					if(elem.user_pou_name == code_slice[2]) {
+						code_slice[2] = std::to_string(i);
+						flag = true;
 						break;
 					}
-					pou_begin++;
+					i++;
 				}
-				*start_index = code_slice[0] + std::string(" ") + code_slice[1] + std::string(" ") + code_slice[2];
+				if (flag != true){  // 若在temp_obj_task中未找到，则需要在预生成信息类中查找
+					auto pou_begin = pre_code_info->pre_generate_info_collector.begin();
+					auto pou_ended = pre_code_info->pre_generate_info_collector.end();
+					while(pou_begin != pou_ended) {
+						if((*pou_begin).get_pou_name() == code_slice[2]) { // 若找到，则递归添加该pou到temp_obj_task中
+							flag = true;
+							this->link_task_pou(pou_begin, temp_obj_task, code_slice[3]);
+							unsigned int i =0;
+							for(auto elem : temp_obj_task.user_pou_list) {
+								if(elem.user_pou_name == code_slice[2]) {
+									code_slice[2] = std::to_string(i);
+									break;
+								}
+								i++;
+							}
+							break;
+						}
+						pou_begin++;
+					}
+				}
+				/**
+				 * 若该pou为系统级POU，则需要改用scall指令，该指令格式为： scall index1 pou_index
+				 * 在此处只需将指令写为ucall index1 pou_name即可，因为在后面翻译器（translator程序）运行时会将
+				 * pou_name变换为对应的系统级POU索引
+				 */
+				if(flag != true){	// 若仍然未找到对应pou，则在系统库pou中查找
+					int i = 0;
+					while(standard_function_names[i] != NULL){
+						if(code_slice[2] == standard_function_names[i]){
+							flag = true;
+							*start_index = std::string("scall ") + code_slice[1] + std::string(" ") + code_slice[2];
+							break;
+						}
+						i ++;
+					}
+					if(flag != true){
+						std::cout << "ERROR: There is a wrong pou invocation : " << code_slice[2] << std::endl;
+						exit(-1);
+					}
+				} else {
+					*start_index = code_slice[0] + std::string(" ") + code_slice[1] + std::string(" ") + code_slice[2];
+				}
 			}
 		}
 		start_index++;
 	}
-	CP(111)
+	/**
+     * FUNCTION型POU和FB型POU的结尾为ret指令，此指令格式为：ret A Bx，但A与Bx在目前运行系统中并未用到（前期有使用，后发现不合理）
+	 * 故在将A和Bx均设置为0
+	 */
 	if(ret_code_ref.find("ret") == 0) {
-		CP(333)
-		std::cout << pou_ret << std::endl;
-		ret_code_ref += pou_ret;
+		// std::cout << pou_ret << std::endl;
+		ret_code_ref += "0 0";
 	}
-	CP(222)
 
 
 
@@ -263,7 +307,7 @@ void code_linker_c::link_code(void) {
 					}
 					if(found == 1){   // 对应输入value的类型为任务间全局变量
 						// 全局变量加载指令：gload A Bx  ==> R[A]<--G[Bx]
-						std::string temp_code = "gload ";
+						std::string temp_code = "pgload ";
 						temp_code += std::to_string(index) + std::string(" ") + std::to_string(index2);
 						input_code.push_back(temp_code);
 					} else if(found == 2){ // 对应输入value的类型为直接变量
@@ -377,7 +421,7 @@ void code_linker_c::link_code(void) {
 					}
 					if(found == 1){   // 对应输入value的类型为任务间全局变量
 						// 全局变量存储指令：gstore A Bx  ==> R[A]-->G[Bx]
-						std::string temp_code = "gstore ";
+						std::string temp_code = "pgstore ";
 						temp_code += std::to_string(index) + std::string(" ") + std::to_string(index2);
 						output_code.push_back(temp_code);
 					} else if(found == 2){ // 对应输入value的类型为直接变量
@@ -459,12 +503,66 @@ void code_linker_c::link_code(void) {
 				5.处理ucall与scall；
 				6.处理functionblock；
 			*/
-			for(auto elem : output_code){
-				std::cout << elem << std::endl;
+			/**
+ 			 * 将任务的读入输入和刷新输出代码插入到主POU的前后
+			 * 即，将input_code指令集添加到主POU之前（实际也是所有程序之前），
+			 * 将output_code指令集添加到主POU的尾部，也就是halt指令之前
+			 */
+			// 1.将input_code代码加入到任务代码前面
+			temp_obj_task.code_list.insert(temp_obj_task.code_list.begin(), input_code.begin(), input_code.end());
+			// 2.将output_code代码加入到halt指令之前
+			auto code_tail = std::find(temp_obj_task.code_list.begin(), temp_obj_task.code_list.end(), "halt 0 0 0");
+			temp_obj_task.code_list.insert(code_tail, output_code.begin(), output_code.end());
+
+			/**
+			 * 将主POU（即PROGRAM）中的有名变量（包括input型，output型，inout型，var...end_var型）与任务内global区变量交换
+			 * 因为PROGRAM中的有名变量类似与FB中变量，属于静态变量，需要放在全局数据区，
+			 * 在FB中的处理方法是，对每一个FB对应一个ref_type型实体变量，放在refval区（引用类型数据区，其实也是一种任务内global区变量）
+			 * 但对应PROGRAM型POU，在每个PLC任务中只有一个，所以可以简化设计，直接在任务内global区对应，
+			 * 在程序开始前将变量从全局区加载到寄存器，程序结束前需要将寄存器中内容存储到全局区；
+			 * 即，任务内global区保存的唯一内容为PROGRAM的一般类型有名变量（非ref_type型变量，此变量需放置在refval区）
+			 */
+			/* 将有名变量（包括input型，inout型，output型，var...end_var型）加入global区,对应以下四行 */
+			temp_obj_task.global_list.insert(temp_obj_task.global_list.end(), (*pou_beg).input_variable.begin(), (*pou_beg).input_variable.end());
+			temp_obj_task.global_list.insert(temp_obj_task.global_list.end(), (*pou_beg).input_output_variable.begin(), (*pou_beg).input_output_variable.end());
+			temp_obj_task.global_list.insert(temp_obj_task.global_list.end(), (*pou_beg).output_variable.begin(), (*pou_beg).output_variable.end());
+			temp_obj_task.global_list.insert(temp_obj_task.global_list.end(), (*pou_beg).local_variable.begin(), (*pou_beg).local_variable.end());
+
+			std::vector<std::string> gload_code; // 在程序开始前将全局变量加载到寄存器代码
+			for(int i = 0; i < temp_obj_task.global_list.size(); i ++){
+				std::string temp_code = "gload ";
+				temp_code += std::to_string(i) + std::string(" ") + std::to_string(i);
+				gload_code.push_back(temp_code);
 			}
-			exit(-1);
+			std::vector<std::string> gstore_code; // 在程序结束前将寄存器存储到全局代码
+			for(int i = 0; i < temp_obj_task.global_list.size(); i ++){
+				std::string temp_code = "gstore ";
+				temp_code += std::to_string(i) + std::string(" ") + std::to_string(i);
+				gstore_code.push_back(temp_code);
+			}
+
+			/**
+ 			 * 将全局交换代码插入到主POU的前后
+			 * 即，将gload_code指令集添加到主POU之前（实际也是所有程序之前），
+			 * 将gstore_code指令集添加到主POU的尾部，也就是halt指令之前
+			 */
+			// 1.将gload_code代码加入到任务代码前面
+			temp_obj_task.code_list.insert(temp_obj_task.code_list.begin(), gload_code.begin(), gload_code.end());
+			// 2.将gstore_code代码加入到halt指令之前
+			code_tail = std::find(temp_obj_task.code_list.begin(), temp_obj_task.code_list.end(), "halt 0 0 0");
+			temp_obj_task.code_list.insert(code_tail, gstore_code.begin(), gstore_code.end());
 
 
+			/**
+			 * 更新所有pou的entry
+			 * 因为新插入的代码添加在主POU（即PROGRAM）的前后，且主POU代码总是放在code_list的开头；
+			 * 所以，entry值等于原entry值加上添加的指令个数；
+			 */
+			int offset = input_code.size() + output_code.size() + gload_code.size() + gstore_code.size(); // entry偏移值，即新添加的代码总的指令个数
+			// 因为主POU的entry值不需要修改，所以下面的循环中i从1开始
+			for(int i = 1; i < temp_obj_task.user_pou_list.size(); i ++){
+				temp_obj_task.user_pou_list[i].code_entry += offset;
+			}
 
 			temp_obj_task.task_des.pou_count = temp_obj_task.user_pou_list.size();
 			temp_obj_task.task_des.stack_count = temp_obj_task.user_pou_list.size() + 2; // 调用栈的个数为POU个数加2，富余2个；

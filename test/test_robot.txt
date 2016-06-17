@@ -2,7 +2,15 @@
 (* 程序中包含两个任务，其中MAIN为主任务，其中调用机器人插补程序；)*
 (*MAIN2为辅助任务，用来模拟安全报警任务 *)
 
+FUNCTION USERA : INT
 
+	VAR_INPUT
+		A : INT;
+	END_VAR
+
+	USERA := A + 3 + 4;
+
+END_FUNCTION
 
 PROGRAM MAIN
 	VAR_INPUT
@@ -10,7 +18,7 @@ PROGRAM MAIN
 	END_VAR
 
     VAR
-        RET : INT ;
+        RET : INT := 2;
     END_VAR
 
 	VAR_OUTPUT
@@ -43,9 +51,10 @@ PROGRAM MAIN2
 	END_VAR
 
 	IF IN > 1 THEN
-		OUT := IN + 2;
+		OUT := USERA(IN);
 	ELSE
-		OUT := OUT + 2;
+       OUT := USERA(IN); 
+		OUT := OUT + 3 + 4;
 	END_IF;
 
 END_PROGRAM

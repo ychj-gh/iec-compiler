@@ -7,7 +7,7 @@
  #include <stdlib.h>
 
 
-const char *standard_function_names[] = {
+static const char *standard_function_names[] = {
 "SFUN_INTERP_UPDATE",//add by yaoshun for interp update
 "REAL_TO_SINT",
 "REAL_TO_LINT",

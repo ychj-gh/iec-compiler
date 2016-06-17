@@ -21,6 +21,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include <typeinfo>
 #include <vector>
 #include "generate_iec.hh"
@@ -259,8 +260,9 @@ void *visit(library_c *symbol) {
   print_list(symbol);
   pre_code_info->print();
 
+  std::ofstream of("./code.txt");
   temp_code_linker.link_code();
-  temp_code_linker.print();
+  temp_code_linker.print(of);
   return NULL;
 #else
   return print_list(symbol);
@@ -2396,14 +2398,16 @@ void *visit(function_invocation_c *symbol) {
 
   if (symbol->   formal_param_list != NULL) {
     std::cout << " formal param list " << std::endl;
-    temp_code += (char*)symbol->   formal_param_list->accept(temp_pou_invocation);
+    temp_reg_num = (char*)symbol->   formal_param_list->accept(temp_pou_invocation);
+    temp_code += temp_reg_num;
   }
   if (symbol->nonformal_param_list != NULL) {
     std::cout << " nonformal param list " << std::endl;
-    temp_code += (char*)symbol->nonformal_param_list->accept(temp_pou_invocation);
+    temp_reg_num = (char*)symbol->nonformal_param_list->accept(temp_pou_invocation);
+    temp_code += temp_reg_num;
   }
-  temp_reg_num = pou_info->get_pou_reg_num();
-  pou_info->inc_pou_reg_num();
+  // temp_reg_num = pou_info->get_pou_reg_num();
+  // pou_info->inc_pou_reg_num();
 
   temp_code += std::string(" ") + temp_pou_invo_name + std::string(" ") + temp_reg_num;
 

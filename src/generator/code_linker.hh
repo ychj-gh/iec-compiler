@@ -11,10 +11,13 @@
 #include <typeinfo>
 #include <vector>
 #include <list>
+#include <algorithm>
 #include "generate_iec.hh"
 
 #include "stage4.hh"
 #include "../main.hh" // required for ERROR() and ERROR_MSG() macros.
+
+#include "standard_function_names.h"
 
 #include "pre_generate_info.hh"
 #include "generate_assignment_r_exp.hh"
@@ -76,19 +79,19 @@ public:
 	}
 
 public:
-	void print(void) {
-		std::cout << std::endl;
-		std::cout << "# OBJ POU Description Segment" << std::endl;
-		std::cout << "pds_name           " << user_pou_name << std::endl;
+	void print(std::ostream &out = std::cout) {
+		out << std::endl;
+		out << "# OBJ POU Description Segment" << std::endl;
+		out << "pds_name           " << user_pou_name << std::endl;
 
-		std::cout << "pds_type:          " << pds_type << std::endl;
-		std::cout << "pds_instance:      " << pds_instance << std::endl;
+		out << "pds_type:          " << ((pds_type == 1) ? "POU_TYPE_FUN" : (pds_type == 2 ? "POU_TYPE_FB" : (pds_type == 3 ? "POU_TYPE_PROG" : "POU_TYPE_UNDEF"))) << std::endl;
+		out << "pds_instance:      " << pds_instance << std::endl;
 
-		std::cout << "pds_input_count    " << input_count << std::endl;
-		std::cout << "pds_inout_count    " << inout_count << std::endl;
-		std::cout << "pds_output_count   " << output_count << std::endl;
-		std::cout << "pds_local_count    " << local_count << std::endl;
-		std::cout << "pds_entry          " << code_entry << std::endl;
+		out << "pds_input_count    " << input_count << std::endl;
+		out << "pds_inout_count    " << inout_count << std::endl;
+		out << "pds_output_count   " << output_count << std::endl;
+		out << "pds_local_count    " << local_count << std::endl;
+		out << "pds_entry          " << code_entry << std::endl;
 	}
 
 };
@@ -135,22 +138,22 @@ public:
 	~task_des_c() {}
 
 public:
-	void print(void) {
-		std::cout << std::endl;
-		std::cout << "# OBJ PLC Task Description Segment" << std::endl;
-		std::cout << "tds_name           " << task_name << std::endl;
-		std::cout << "tds_priority       " << task_priority << std::endl;
-		std::cout << "tds_type           " << (task_type == 0 ? "TASK_TYPE_INTERVAL" : "TASK_TYPE_SIGNAL") << std::endl;
-		std::cout << "tds_signal         " << signal_source << std::endl;
-		std::cout << "tds_interval       " << task_period << std::endl;
-		std::cout << "tds_sp_size        " << string_pool_count << std::endl;
-		std::cout << "tds_cs_size        " << stack_count << std::endl;
-		std::cout << "tds_pou_count      " << pou_count << std::endl;
-		std::cout << "tds_const_count    " << const_count << std::endl;
-		std::cout << "tds_global_count   " << global_count << std::endl;
-		std::cout << "tds_refval_count   " << refval_count << std::endl;
+	void print(std::ostream &out = std::cout) {
+		out << std::endl;
+		out << "# OBJ PLC Task Description Segment" << std::endl;
+		out << "tds_name           " << task_name << std::endl;
+		out << "tds_priority       " << task_priority << std::endl;
+		out << "tds_type           " << (task_type == 0 ? "TASK_TYPE_INTERVAL" : "TASK_TYPE_SIGNAL") << std::endl;
+		out << "tds_signal         " << signal_source << std::endl;
+		out << "tds_interval       " << task_period << std::endl;
+		out << "tds_sp_size        " << string_pool_count << std::endl;
+		out << "tds_cs_size        " << stack_count << std::endl;
+		out << "tds_pou_count      " << pou_count << std::endl;
+		out << "tds_const_count    " << const_count << std::endl;
+		out << "tds_global_count   " << global_count << std::endl;
+		out << "tds_refval_count   " << refval_count << std::endl;
 		// std::cout << "tds_retain_count " << elem.retain_count << std::endl;  //not achieved
-		std::cout << "tds_inst_count     " << inst_count << std::endl;
+		out << "tds_inst_count     " << inst_count << std::endl;
 	}
 
 };
@@ -177,60 +180,61 @@ public:
 
 	}
 public:
-	void print(void) {
-		task_des.print();
+	void print(std::ostream &out = std::cout) {
+		task_des.print(out);
 
 		for(auto elem : user_pou_list)
-			elem.print();
-		std::cout << std::endl;
-		std::cout << "# OBJ PLC Task Constant Segment" << std::endl;
+			elem.print(out);
+		out << std::endl;
+		out << "# OBJ PLC Task Constant Segment" << std::endl;
 		for(auto elem : const_list) {
-			std::cout << "K " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ") ;
+			out << "K " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ") ;
 			if (elem.type == TINT)
-				std::cout << elem.v.value_i << std::endl;
+				out << elem.v.value_i << std::endl;
 			else if (elem.type == TUINT)
-				std::cout << elem.v.value_u << std::endl;
+				out << elem.v.value_u << std::endl;
 			else if (elem.type == TDOUBLE)
-				std::cout << elem.v.value_d << std::endl;
+				out << elem.v.value_d << std::endl;
 			else
-				std::cout << elem.v.value_s.str << std::endl;
+				out << elem.v.value_s.str << std::endl;
 		}
-		std::cout << std::endl;
+		out << std::endl;
 
-		std::cout << "# OBJ PLC Task Global Variables Segment" << std::endl;
+		out << "# OBJ PLC Task Global Variables Segment" << std::endl;
 		for(auto elem : global_list) {
-			std::cout << "G " << elem.type << std::string(" ");
+			out << "G " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ") ;
 			if (elem.type == TINT)
-				std::cout << elem.v.value_i << std::endl;
+				out << elem.v.value_i << std::endl;
 			else if (elem.type == TUINT)
-				std::cout << elem.v.value_u << std::endl;
+				out << elem.v.value_u << std::endl;
 			else if (elem.type == TDOUBLE)
-				std::cout << elem.v.value_d << std::endl;
+				out << elem.v.value_d << std::endl;
 			else
-				std::cout << elem.v.value_s.str << std::endl;
+				out << elem.v.value_s.str << std::endl;
 		}
-		std::cout << std::endl;
+		out << std::endl;
 
-		std::cout << "# OBJ PLC Task Reference Variables Segment" << std::endl;
+		out << "# OBJ PLC Task Reference Variables Segment" << std::endl;
+		out << std::endl;
 
 		/*std::cout << "# OBJ PLC Task Retain Variables Segment" << std::endl;
 		for(auto elem : retain_list) {
-			std::cout << "R " << elem.type << std::string(" ");
+			out << "R " << elem.type << std::string(" ");
 			if (elem.type == TINT)
-				std::cout << elem.v.value_i << std::endl;
+				out << elem.v.value_i << std::endl;
 			else if (elem.type == TUINT)
-				std::cout << elem.v.value_u << std::endl;
+				out << elem.v.value_u << std::endl;
 			else if (elem.type == TDOUBLE)
-				std::cout << elem.v.value_d << std::endl;
+				out << elem.v.value_d << std::endl;
 			else
-				std::cout << elem.v.value_s.str << std::endl;
+				out << elem.v.value_s.str << std::endl;
 		}
-		std::cout << std::endl;*/
+		out << std::endl;*/
 
-		std::cout << "# OBJ PLC Task Code Segment" << std::endl;
+		out << "# OBJ PLC Task Code Segment" << std::endl;
 		for(auto elem : code_list) {
-			std::cout << "I ";
-			std::cout << elem << std::endl;
+			out << "I ";
+			out << elem << std::endl;
 		}
 	}
 
@@ -257,30 +261,30 @@ public:
 	~obj_file_c() {}
 
 public:
-	void print(void) {
-		std::cout << std::endl;
-		std::cout << "# OBJ PLC Task List Segment" << std::endl;
+	void print(std::ostream &out = std::cout) {
+		out << std::endl;
+		out << "# OBJ PLC Task List Segment" << std::endl;
 
-		std::cout << "plc_task_count " << task_count << std::endl;
-		std::cout << "plc_global_count " << global_count << std::endl;
-		std::cout << "plc_timer_count " << timer_count << std::endl;
-		std::cout << std::endl;
+		out << "plc_task_count " << task_count << std::endl;
+		out << "plc_global_count " << global_count << std::endl;
+		out << "plc_timer_count " << timer_count << std::endl;
+		out << std::endl;
 
 		for(auto elem : global_list) {
-			std::cout << "PG " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ");
+			out << "PG " << (elem.type == TINT ? "TINT":((elem.type == TUINT) ? "TUINT" : "TDOUBLE")) << std::string(" ");
 			if (elem.type == TINT)
-				std::cout << elem.v.value_i << std::endl;
+				out << elem.v.value_i << std::endl;
 			else if (elem.type == TUINT)
-				std::cout << elem.v.value_u << std::endl;
+				out << elem.v.value_u << std::endl;
 			else if (elem.type == TDOUBLE)
-				std::cout << elem.v.value_d << std::endl;
+				out << elem.v.value_d << std::endl;
 			else
-				std::cout << elem.v.value_s.str << std::endl;
+				out << elem.v.value_s.str << std::endl;
 		}
-		std::cout << std::endl;
+		out << std::endl;
 
 		for(auto elem : task_list)
-			elem.print();
+			elem.print(out);
 
 
 	}
@@ -316,8 +320,8 @@ public:
 
 
 public:
-	void print(void) {
-		obj_file.print();
+	void print(std::ostream &out = std::cout ) {
+		obj_file.print(out);
 	}
 
 };
